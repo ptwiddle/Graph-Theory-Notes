@@ -1,0 +1,15 @@
+\hypertarget {MAS341}{}
+\contentsline {chapter}{Preface}{vii}{chapter*.1}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}A first look a graphs}{1}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}The idea of a graph}{1}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}The formal definition of a graph}{1}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Named graphs, and basic examples and concepts}{2}{subsection.1.1.3}
+\contentsline {section}{\numberline {1.2}Degree and handshaking}{2}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Definition of degree}{2}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Extended example: Chemistry}{3}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Handshaking lemma and first applications}{4}{subsection.1.2.3}
+\contentsline {section}{\numberline {1.3}Graph Isomorphisms}{4}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Isomorphic graphs}{4}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Heuristics for showing graphs are or aren't isomorphic}{5}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Cultural Literacy: The Graph Isomorphism Problem}{5}{subsection.1.3.3}

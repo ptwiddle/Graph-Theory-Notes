@@ -1,0 +1,5 @@
+xsltproc --xinclude ../mathbook/xsl/mathbook-html.xsl index.mbx
+xsltproc --xinclude ../mathbook/xsl/mathbook-latex.xsl index.mbx
+pdflatex MAS341.tex
+
+

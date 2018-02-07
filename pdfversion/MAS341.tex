@@ -1,0 +1,340 @@
+%**************************************%
+%*    Generated from PreTeXt source   *%
+%*    on 2018-01-15T13:40:53Z    *%
+%*                                    *%
+%*   http://mathbook.pugetsound.edu   *%
+%*                                    *%
+%**************************************%
+\documentclass[10pt,]{book}
+%% Custom Preamble Entries, early (use latex.preamble.early)
+%% Inline math delimiters, \(, \), need to be robust
+%% 2016-01-31:  latexrelease.sty  supersedes  fixltx2e.sty
+%% If  latexrelease.sty  exists, bugfix is in kernel
+%% If not, bugfix is in  fixltx2e.sty
+%% See:  https://tug.org/TUGboat/tb36-3/tb114ltnews22.pdf
+%% and read "Fewer fragile commands" in distribution's  latexchanges.pdf
+\IfFileExists{latexrelease.sty}{}{\usepackage{fixltx2e}}
+%% Text height identically 9 inches, text width varies on point size
+%% See Bringhurst 2.1.1 on measure for recommendations
+%% 75 characters per line (count spaces, punctuation) is target
+%% which is the upper limit of Bringhurst's recommendations
+%% Load geometry package to allow page margin adjustments
+\usepackage{geometry}
+\geometry{letterpaper,total={340pt,9.0in}}
+%% Custom Page Layout Adjustments (use latex.geometry)
+%% This LaTeX file may be compiled with pdflatex, xelatex, or lualatex
+%% The following provides engine-specific capabilities
+%% Generally, xelatex and lualatex will do better languages other than US English
+%% You can pick from the conditional if you will only ever use one engine
+\usepackage{ifthen}
+\usepackage{ifxetex,ifluatex}
+\ifthenelse{\boolean{xetex} \or \boolean{luatex}}{%
+%% begin: xelatex and lualatex-specific configuration
+%% fontspec package will make Latin Modern (lmodern) the default font
+\ifxetex\usepackage{xltxtra}\fi
+\usepackage{fontspec}
+%% realscripts is the only part of xltxtra relevant to lualatex 
+\ifluatex\usepackage{realscripts}\fi
+%% 
+%% Extensive support for other languages
+\usepackage{polyglossia}
+%% Main document language is US English
+\setdefaultlanguage{english}
+%% Spanish
+\setotherlanguage{spanish}
+%% Vietnamese
+\setotherlanguage{vietnamese}
+%% end: xelatex and lualatex-specific configuration
+}{%
+%% begin: pdflatex-specific configuration
+%% translate common Unicode to their LaTeX equivalents
+%% Also, fontenc with T1 makes CM-Super the default font
+%% (\input{ix-utf8enc.dfu} from the "inputenx" package is possible addition (broken?)
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%% end: pdflatex-specific configuration
+}
+%% Symbols, align environment, bracket-matrix
+\usepackage{amsmath}
+\usepackage{amssymb}
+%% allow page breaks within display mathematics anywhere
+%% level 4 is maximally permissive
+%% this is exactly the opposite of AMSmath package philosophy
+%% there are per-display, and per-equation options to control this
+%% split, aligned, gathered, and alignedat are not affected
+\allowdisplaybreaks[4]
+%% allow more columns to a matrix
+%% can make this even bigger by overriding with  latex.preamble.late  processing option
+\setcounter{MaxMatrixCols}{30}
+%%
+%% Color support, xcolor package
+%% Always loaded.  Used for:
+%% mdframed boxes, add/delete text, author tools
+\PassOptionsToPackage{usenames,dvipsnames,svgnames,table}{xcolor}
+\usepackage{xcolor}
+%%
+%% Semantic Macros
+%% To preserve meaning in a LaTeX file
+%% Only defined here if required in this document
+%% Subdivision Numbering, Chapters, Sections, Subsections, etc
+%% Subdivision numbers may be turned off at some level ("depth")
+%% A section *always* has depth 1, contrary to us counting from the document root
+%% The latex default is 3.  If a larger number is present here, then
+%% removing this command may make some cross-references ambiguous
+%% The precursor variable $numbering-maxlevel is checked for consistency in the common XSL file
+\setcounter{secnumdepth}{3}
+%% Environments with amsthm package
+%% Theorem-like environments in "plain" style, with or without proof
+\usepackage{amsthm}
+\theoremstyle{plain}
+%% Numbering for Theorems, Conjectures, Examples, Figures, etc
+%% Controlled by  numbering.theorems.level  processing parameter
+%% Always need a theorem environment to set base numbering scheme
+%% even if document has no theorems (but has other environments)
+\newtheorem{theorem}{Theorem}[section]
+%% Only variants actually used in document appear here
+%% Style is like a theorem, and for statements without proofs
+%% Numbering: all theorem-like numbered consecutively
+%% i.e. Corollary 4.3 follows Theorem 4.2
+%% Definition-like environments, normal text
+%% Numbering is in sync with theorems, etc
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+%% Example-like environments, normal text
+%% Numbering is in sync with theorems, etc
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+%% Localize LaTeX supplied names (possibly none)
+\renewcommand*{\proofname}{Proof}
+\renewcommand*{\chaptername}{Chapter}
+%% Raster graphics inclusion, wrapped figures in paragraphs
+%% \resizebox sometimes used for images in side-by-side layout
+\usepackage{graphicx}
+%%
+%% More flexible list management, esp. for references and exercises
+%% But also for specifying labels (i.e. custom order) on nested lists
+\usepackage{enumitem}
+%% hyperref driver does not need to be specified, it will be detected
+\usepackage{hyperref}
+%% Hyperlinking active in PDFs, all links solid and blue
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
+\hypersetup{pdftitle={MAS341: Graph Theory}}
+%% If you manually remove hyperref, leave in this next command
+\providecommand\phantomsection{}
+%% If tikz has been loaded, replace ampersand with \amp macro
+%% extpfeil package for certain extensible arrows,
+%% as also provided by MathJax extension of the same name
+%% NB: this package loads mtools, which loads calc, which redefines
+%%     \setlength, so it can be removed if it seems to be in the 
+%%     way and your math does not use:
+%%     
+%%     \xtwoheadrightarrow, \xtwoheadleftarrow, \xmapsto, \xlongequal, \xtofrom
+%%     
+%%     we have had to be extra careful with variable thickness
+%%     lines in tables, and so also load this package late
+\usepackage{extpfeil}
+%% Custom Preamble Entries, late (use latex.preamble.late)
+%% Begin: Author-provided packages
+%% (From  docinfo/latex-preamble/package  elements)
+%% End: Author-provided packages
+%% Begin: Author-provided macros
+%% (From  docinfo/macros  element)
+%% Plus three from MBX for XML characters
+\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
+ \newcommand{\ints}{\mathbb{Z}}
+ \newcommand{\posints}{\mathbb{N}}
+ \newcommand{\rats}{\mathbb{Q}}
+ \newcommand{\reals}{\mathbb{R}}
+ \newcommand{\complexes}{\mathbb{C}}
+ \newcommand{\twospace}{\mathbb{R}^2}
+ \newcommand{\threepace}{\mathbb{R}^3}
+ \newcommand{\dspace}{\mathbb{R}^d}
+ \newcommand{\nni}{\mathbb{N}_0}
+ \newcommand{\nonnegints}{\mathbb{N}_0}
+ \newcommand{\dom}{\operatorname{dom}}
+ \newcommand{\ran}{\operatorname{ran}}
+ \newcommand{\prob}{\operatorname{prob}}
+ \newcommand{\Prob}{\operatorname{Prob}}
+ \newcommand{\height}{\operatorname{height}}
+ \newcommand{\width}{\operatorname{width}}
+ \newcommand{\length}{\operatorname{length}}
+ \newcommand{\crit}{\operatorname{crit}}
+ \newcommand{\inc}{\operatorname{inc}}
+ \newcommand{\HP}{\mathbf{H_P}}
+ \newcommand{\HCP}{\mathbf{H^c_P}}
+ \newcommand{\GP}{\mathbf{G_P}}
+ \newcommand{\GQ}{\mathbf{G_Q}}
+ \newcommand{\AG}{\mathbf{A_G}}
+ \newcommand{\GCP}{\mathbf{G^c_P}}
+ \newcommand{\PXP}{\mathbf{P}=(X,P)}
+ \newcommand{\QYQ}{\mathbf{Q}=(Y,Q)}
+ \newcommand{\GVE}{\mathbf{G}=(V,E)}
+ \newcommand{\HWF}{\mathbf{H}=(W,F)}
+ \newcommand{\bfC}{\mathbf{C}}
+ \newcommand{\bfG}{\mathbf{G}}
+ \newcommand{\bfH}{\mathbf{H}}
+ \newcommand{\bfF}{\mathbf{F}}
+ \newcommand{\bfI}{\mathbf{I}}
+ \newcommand{\bfK}{\mathbf{K}}
+ \newcommand{\bfP}{\mathbf{P}}
+ \newcommand{\bfQ}{\mathbf{Q}}
+ \newcommand{\bfR}{\mathbf{R}}
+ \newcommand{\bfS}{\mathbf{S}}
+ \newcommand{\bfT}{\mathbf{T}}
+ \newcommand{\bfNP}{\mathbf{NP}}
+ \newcommand{\bftwo}{\mathbf{2}}
+ \newcommand{\cgA}{\mathcal{A}}
+ \newcommand{\cgB}{\mathcal{B}}
+ \newcommand{\cgC}{\mathcal{C}}
+ \newcommand{\cgD}{\mathcal{D}}
+ \newcommand{\cgE}{\mathcal{E}}
+ \newcommand{\cgF}{\mathcal{F}}
+ \newcommand{\cgG}{\mathcal{G}}
+ \newcommand{\cgM}{\mathcal{M}}
+ \newcommand{\cgN}{\mathcal{N}}
+ \newcommand{\cgP}{\mathcal{P}}
+ \newcommand{\cgR}{\mathcal{R}}
+ \newcommand{\cgS}{\mathcal{S}}
+ \newcommand{\bfn}{\mathbf{n}}
+ \newcommand{\bfm}{\mathbf{m}}
+ \newcommand{\bfk}{\mathbf{k}}
+ \newcommand{\bfs}{\mathbf{s}}
+ \newcommand{\bijection}{\xrightarrow[\text{onto}]{\text{$1$--$1$}}}
+ \newcommand{\injection}{\xrightarrow[]{\text{$1$--$1$}}}
+ \newcommand{\surjection}{\xrightarrow[\text{onto}]{}}
+ \newcommand{\nin}{\not\in}
+ \newcommand{\prufer}{\mbox{prüfer}}
+ \DeclareMathOperator{\fix}{fix}
+ \DeclareMathOperator{\stab}{stab}
+ \DeclareMathOperator{\var}{var}
+ \newcommand{\inv}{^{-1}}
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\newcommand{\amp}{&}
+%% End: Author-provided macros
+%% Title page information for book
+\title{MAS341: Graph Theory}
+\author{Paul Johnson\\
+School of Mathematics and Statistics\\
+The University of Sheffield\\
+\href{mailto:paul.johnson@sheffield.ac.uk}{\nolinkurl{paul.johnson@sheffield.ac.uk}}
+}
+\date{2018 Edition}
+\begin{document}
+\frontmatter
+%% begin: half-title
+\thispagestyle{empty}
+{\centering
+\vspace*{0.28\textheight}
+{\Huge MAS341: Graph Theory}\\}
+\clearpage
+%% end:   half-title
+%% begin: adcard
+\thispagestyle{empty}
+\null%
+\clearpage
+%% end:   adcard
+%% begin: title page
+%% Inspired by Peter Wilson's "titleDB" in "titlepages" CTAN package
+\thispagestyle{empty}
+{\centering
+\vspace*{0.14\textheight}
+%% Target for xref to top-level element is ToC
+\addtocontents{toc}{\protect\hypertarget{MAS341}{}}
+{\Huge MAS341: Graph Theory}\\[3\baselineskip]
+{\Large Paul Johnson}\\[0.5\baselineskip]
+{\Large The University of Sheffield}\\[3\baselineskip]
+{\Large 2018 Edition}\\}
+\clearpage
+%% end:   title page
+%% begin: copyright-page
+\thispagestyle{empty}
+\vspace*{\stretch{2}}
+\vspace*{\stretch{1}}
+\null\clearpage
+%% end:   copyright-page
+\hypertarget{p-1}{}%
+Work builds on notes from previous course, as well as sections of the book Applied Combinatorics by Keller and Trotter, and Discrete Math by Oscar Levin.%
+%% begin: preface
+\chapter*{Preface}\label{preface-1}
+\addcontentsline{toc}{chapter}{Preface}
+Course notes for MAS341: Graph Theory at the University of Sheffield.%% end:   preface
+%% begin: table of contents
+%% Adjust Table of Contents
+\setcounter{tocdepth}{1}
+\renewcommand*\contentsname{Contents}
+\tableofcontents
+%% end:   table of contents
+\mainmatter
+\typeout{************************************************}
+\typeout{Chapter 1 Introduction}
+\typeout{************************************************}
+\chapter[{Introduction}]{Introduction}\label{ch_intro}
+\hypertarget{p-2}{}%
+The first chapter is an introduction, including the formal definition of a graph and many terms we will use throughout, but more importantly, examples of these concepts and how you should think abotu them.%
+\typeout{************************************************}
+\typeout{Section 1.1 A first look a graphs}
+\typeout{************************************************}
+\section[{A first look a graphs}]{A first look a graphs}\label{s_intro_firstlook}
+\hypertarget{p-3}{}%
+First and foremost, you should think of a graph as a certain type of picture, containing dots and lines connecting those dots, like so:%
+\par
+\hypertarget{p-4}{}%
+We will typically use the letters \(G, H\), or \(\Gamma\) (capital Gamma) to denote a graph.  The ``dots'' or the graph are called \emph{vertices} or \emph{nodes}, and the lines between the dots are called \emph{edges}. Graphs occur frequently in the ``real world'', and typically how to show how something is connected, with the vertices representing the things and the edges showing connections.  \leavevmode%
+\begin{itemize}[label=\textbullet]
+\item{}\emph{Transit networks:} The London tube map is a graph, with the vertices representing the stations, and an edge between two stations if the tube goes directly between them.  More generally, rail maps in general are graphs, with vertices stations and edges representing line, and road maps as well, with vertices being cities, and edges being roads.%
+\item{}\emph{Social networks:} The typical example would be Facebook, with the vertices being people, and edge between two people if they are friends on Facebook.%
+\item{}\emph{Molecules in Chemistry:} In organic chemistry, molecules are made up of different atoms, and are often represented as a graph, with the atoms being vertices, and edges representing covalent bonds between the vertices.%
+\end{itemize}
+%
+\par
+\hypertarget{p-5}{}%
+That is all rather informal, though, and to do mathematics we need very precise, formal definitions.  The one we will begin with is the following.%
+\begin{definition}[{}]\label{definition-1}
+\hypertarget{p-6}{}%
+A \emph{graph} \(G\) consists of a set \(V(G)\), called the \emph{vertices} of \(G\), and a set \(E(G)\), called the \emph{edges} of \(G\), of the two element subsets of \(V(G)\)%
+\end{definition}
+\begin{example}[]\label{example-1}
+\hypertarget{p-7}{}%
+Consider the water molecule.  It has three vertices, and so \(V(G)=\{O, H1, H2\}\), and two edges \(E(G)=\big\{\{O, H1\},\{O,H2\}\big\}\)%
+\end{example}
+\hypertarget{p-8}{}%
+This formal definition has some perhaps unintended consequences about what a graph is.  Because we have identified edges with the two things they connect, and have a set of edges, we can't have more than one edge between any two vertices.  In many real world examples, this is not the case: for example, on the London Tube, the Circle, District and Picadilly lines all connect Gloucester Road with South Kensington, and so there should be multiple edges between those two vertices on the graph.%
+\par
+\hypertarget{p-9}{}%
+Another consequence is that we require each edge to be a two element subset of \(V(G)\), and so we do not allow for the possibility of an edge between a vertex and itself, often called a \emph{loop}.%
+\par
+\hypertarget{p-10}{}%
+Graphs without multiple edges or loops are sometimes called \emph{simple graphs}.  We will sometimes deal with graphs with multiple edges or loops, and will try to be explicit when we allow this.  Our default assumption is that our graphs are simple.%
+\par
+\hypertarget{p-11}{}%
+Another consequence of the definition is that edges are symmetric, and work equally well in both directions.  This is not always the case: in road systems, there are often one-way streets.  If we were to model Twitter or Instragram as a graph, rather than the symmetric notion of friends we would have to work with ``following''.  To capture these, we have the notion of a \emph{directed graph}, where rather than just lines, we think of the edges as arrows, pointing from one vertex (the source) to another vertex (the target).  To model twitter or instagram, we would have an ege from vertex \(a\) to vertex \(b\) if \(a\) followed \(b\).%
+\typeout{************************************************}
+\typeout{Section 1.2 Degree and handhsaking}
+\typeout{************************************************}
+\section[{Degree and handhsaking}]{Degree and handhsaking}\label{s_intro_degrees}
+\hypertarget{p-12}{}%
+Intuitively, the \emph{degree} of a vertex is the ``number of edges coming out of it''. If we think of a graph \(G\) as a picture, then to find the degree of a vertex \(v\in V(G)\) we draw a very small circle around \(v\), the number of times the \(G\) intersects that circle is the degree of \(v\).  Formally, we have:%
+\begin{definition}[{}]\label{definition-2}
+\hypertarget{p-13}{}%
+Let \(G\) be a simple graph, and let \(v\in V(G)\) be a vertex of \(G\).  Then the \emph{degree of \(v\)}, written \(d(v)\), is the number of edges \(e\in E(G)\) with \(v\in e\). Alternatively, \(d(v)\) is the number of vertices \(v\) is adjacent to.%
+\end{definition}
+\begin{example}[]\label{example-2}
+\end{example}
+\hypertarget{p-14}{}%
+Note that in the definition we require \(G\) to be a simple graph.  The notion of degree has a few pitfalls to be careful of \(G\) has loops or multiple edges.  We still want to the degree \(d(v)\) to match the intuitive notion of the ``number of edges coming out of \(v\)'' captured in the drawing with a small circle.  The trap to beware is that this notion no longer agrees with ``the number of vertices adjacent to \(v\)'' or the ``the number of edges incident to \(v\)''%
+\begin{example}[]\label{example-3}
+\end{example}
+\begin{theorem}[{}]\label{theorem-1}
+\hypertarget{p-15}{}%
+(Euler's handshaking Lemma)%
+%
+\begin{equation*}
+\sum_{v\in V(G)}d(v)=2|E(G)|
+\end{equation*}
+\end{theorem}
+\begin{proof}\hypertarget{proof-1}{}
+\hypertarget{p-16}{}%
+We count the ``ends'' of edges two different ways.  On the one hand, every end occurs at a vertex, and at vertex \(v\) there are \(d(v)\) ends, and so the total number of ends is the sum on the left hand side. On the other hand, every edge has exactly two ends, and so the number of ends is twice the number of edges, giving the right hand side.%
+\end{proof}
+\end{document}

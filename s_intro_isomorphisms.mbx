@@ -1,0 +1,50 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_intro_isomorphisms">
+<title>Graph Isomorphisms</title>
+<introduction><p>Generally speaking in mathematics, we say that two objects are "isomorphic" if they are "the same" in terms of whatever structure we happen to be studying.  The symmetric group <m>S_3</m> and the symmetry group of an equilateral triangle <m>D_6</m> are isomorphic.  In this section we briefly briefly discuss isomorphisms of graphs.</p></introduction>
+<subsection><title>Isomorphic graphs</title>
+<p> It is possible to draw the same graph in the plane in many different ways – e.g., the pentagon <m>C_5</m>, and its complement the five sided star <m>C_5^c</m> are actually "the same", as indicated by the following labeling of the vertices:</p>
+
+
+<definition><p> An isomorphism <m>\varphi:G\to H</m> of simple graphs is a biject <m>\varphi:V(G)\to V(H)</m> between their vertex sets that preserves the number of edges between vertices.  In other words, <m>\varphi(v)</m> and <m>\varphi(w)</m> are adjacent in <m>H</m>if and only if <m>v</m> and <m>w</m> are adjancent in <m>G</m>.</p></definition>
+
+<example><p>This animated gif shows several graphs isomorphic to the Petersen graph, and demonstrates that they are isomorphic.</p>
+<image source="images/PetersenIsomorphismAnimated.gif" />
+<p>Animated gif by <url href="https://msollami.com/code/2014/12/24/graph-isomorphisms">Michael Sollami</url> for <url href="https://www.quantamagazine.org/algorithm-solves-graph-isomorphism-in-record-time-20151214/">this Quanta Magazine article</url> on the Graph Isomorphism problem </p>
+
+</example>
+<example><p>The cycle graph on 5 vertices, <m>C_5</m> is isomorphic to its complement, <m>C_5^c</m>.  The cycle <m>C_5</m> is usually drawn as a pentagon, and if we were then going to naively draw <m>C_5^c</m> we would draw a 5-sided star.  </p></example>
+
+
+<p>Although solving the graph isomorphism problem for general graphs is quite difficult, doing it for small graphs by hand is not too bad and is something you must be able to do for the exam.  If the two graphs are actually isomorphic, then you should show this by exhibiting an isomrophism; that is, writing down an explicit bijection between their vertex sets with the desired properties. The most attractive way of doing this, for humans, is to label the vertices of both copies with the same letter set.</p>
+
+
+<p>If two graphs are not isomorphic, then you have to be able to prove that they aren't. Of course, one can do this by exhaustively describing the possibilities, but usually it's easier to do this by giving an obstruction – something that is different between the two graphs. One easy example is that isomorphic graphs have to have the same number of edges and vertices. We'll discuss some others in the next section</p>
+
+</subsection>
+
+<subsection><title>Heuristics for showing graphs are or aren't isomorphic</title>
+
+
+<p>Another, only slightly more advanced invariant is the degree sequence of a graph that we saw last lecture in our discussion of chemistry.</p>
+
+<p> If <m>\varphi:G\to H</m> is an isomorphism of graphs, than we must have <m>d(\varphi(v))=d(v)</m> for all vertices <m>v\in G</m>, and since isomorphisms are bijections on the vertex set, we see the degree sequence must be preserved.  However, just because two graphs have the same degree sequences does not mean they are isomorphic.</p>
+
+<p>Slightly subtler invariants are number and length of cycles and paths.</p>
+
+
+</subsection>
+<subsection><title>Cultural Literacy: The Graph Isomorphism Problem</title>
+<p>This section, as all "Cultural Literacy" sections, is information that you may find interesting, but won't be examined.</p>
+
+<p>The graph isomorphism problem is the following: given two graphs <m>G</m> and <m>H</m>, determine whether or not <m>G</m> and <m>H</m> are isomorphic. Clearly, for any two graphs <m>G</m> and <m>H</m>, the problem is solvable: if <m>G</m> and <m>H</m> both of <m>n</m> vertices, then there are <m>n!</m> different bijections between their vertex sets.  One could simply examine each vertex bijection in turn, checking whether or not it maps edges to edges.</p>
+
+<p>The problem is interesting because the naive algorithm discussed above is not very efficient: for large <m>n</m>, <m>n!</m> is absolutely huge, and so in general this algorithm will take a long time.  The question is, is there are a faster way to do check? How fast can we get?</p>
+
+<p>The isomorphism problem is of fundamental importance to theoretical computer science. Apart from its practical applications, the exact difficulty of the problem is unknown. Clearly, if the graphs are isomorphic, this fact can be easily demonstrated and checked, which means the Graph Isomorphism is in NP.</p>
+
+<p>Most problems in NP are known either to be easy (solvable in polynomial time, P), or at least as difficult as any other problem in NP (NP complete). This is not true of the Graph Isomorphism problem. In November of last year, Laszlo Babai announced a quasipolynomial-time algorithm for the graph isomorphism problem – you can read about this work in this great popular science article.</p>
+
+
+
+</subsection>
+</section>

@@ -1,0 +1,88 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_intro_degrees">
+<title>Degree and handshaking</title>
+
+
+<subsection>
+<title>Definition of degree</title>
+
+<p>Intuitively, the <em>degree</em> of a vertex is the <q>number of edges coming out of it</q>. If we think of a graph <m>G</m> as a picture, then to find the degree of a vertex <m>v\in V(G)</m> we draw a very small circle around <m>v</m>, the number of times the <m>G</m> intersects that circle is the degree of <m>v</m>.  Formally, we have:</p>
+<definition><p>Let <m>G</m> be a simple graph, and let <m>v\in V(G)</m> be a vertex of <m>G</m>.  Then the <em>degree of <m>v</m></em>, written <m>d(v)</m>, is the number of edges <m>e\in E(G)</m> with <m>v\in e</m>. Alternatively, <m>d(v)</m> is the number of vertices <m>v</m> is adjacent to.</p></definition>
+<example></example>
+<p>Note that in the definition we require <m>G</m> to be a simple graph.  The notion of degree has a few pitfalls to be careful of <m>G</m> has loops or multiple edges.  We still want to the degree <m>d(v)</m> to match the intuitive notion of the <q>number of edges coming out of <m>v</m></q> captured in the drawing with a small circle.  The trap to beware is that this notion no longer agrees with <q>the number of vertices adjacent to <m>v</m></q> or the <q>the number of edges incident to <m>v</m></q></p>
+<example></example>
+
+</subsection>
+
+
+<subsection><title>Extended example: Chemistry</title>
+
+<p>In organic chemistry, molecules are frequently drawn as graphs, with the vertices being atoms, and an edge betwen two vertices if and only if the corresponding atoms have a covalent bond between them (that is, they share a vertex).</p>
+
+<example><title>Alkanes</title>
+</example>
+
+<p>The location of an element on the periodic table determines the valency of the element -- hence the degree that vertex has in any molecule containing that graph:</p>
+
+<ul><li> Hydrogen (H) and Fluorine (F) have degree 1</li>
+<li>Oxygen (O) and Sulfur (S) have degree 2</li>
+<li>Nitrogen (N) and Phosphorous (P) have degree 3</li>
+<li>Carbon (C) has degree 4</li>
+</ul>
+
+<p> Usually, most of the atoms involved are carbon and hydrogen. Carbon atoms are not labelled with a C, but just left blank, while hydrogen atoms are left off completely. One can then complete the full structure of the molecule using the valency of each vertex.  On the exam, you may have to know that Carbon has degree 4 and Hydrogen has degree 1; the valency of any other atom would be provided to you</p>
+
+<p>Graphs coming from organic chemistry do not have to be simple – sometimes there are double bonds, where a pair of carbon atoms have two edges between them.</p>
+
+<example>Saturated vs. unsaturated</example>
+
+<p>If we know the chemical formula of a molecule, then we know how many vertices of each degree it has.  For a general graph, this information is known as the degree sequence</p>
+
+<definition><title>Degree sequence</title><p>
+The degree sequence of a graph is just the list (with multiplicity) of the degrees of all the vertices.</p></definition>
+
+<p>The following sage code draws a random graph with 7 vertices and 10 edges, and then gives its degree sequence.  You can tweak the code to generate graphs with different number of vertices and edges, and run the code multiple times, and the degree sequence should become clear.</p>
+
+    <sage>
+        <input>
+vertices = 7
+edges = 10
+g = graphs.RandomGNM(vertices,edges)
+g.show()
+print g.degree_sequence()
+        </input>
+    </sage>
+
+
+<p>Knowing the chemical composition of a molecule determines the degree sequence of its corresponding graph. However, it is possible that the same set of atoms may be put together into a molecule in more than one different ways. In chemistry, these are called <em>isomers</em>.  In terms of graphs, this corresponds to different graphs that have the same degree sequence.</p>
+
+<p>An important special case is the constant degree sequence.</p>
+
+<definition><title>Regular graphs</title><p>A graph <m>\Gamma</m> is <m>d</m>-<em>regular</em>, or <em>regular of degree</em> <m>d</m> if every vertex <m>v\in\Gamma</m> has the same degree <m>d</m>, i.e. <m>d(v)=d</m>.</p></definition>
+
+<p>As a common special case, a regular graph where every vertex has degree three is called <em>trivalent</em>, or <em>cubic</em>.</p>
+
+<p>Some quick examples:
+<ol><li>The cycle graph <m>C_n</m> is two-regular</li>
+<li>The complete graph <m>K_n</m> is <m>(n-1)</m>-regular</li>
+<li>The Petersen graph is trivalent</li>
+</ol></p>
+
+<exercise><p>Show that a simple graph <m>\Gamma</m> with <m>n</m> is <m>d</m>-regular if and only if its complement <m>\Gamma^c</m> is <m>(n-1-k)</m>-regular.</p></exercise>
+
+</subsection>
+
+
+<subsection><title>Handshaking lemma and first applications</title>
+
+
+<theorem><p>(Euler's handshaking Lemma)</p><me>\sum_{v\in V(G)}d(v)=2|E(G)|</me>
+</theorem>
+
+<proof><p>We count the <q>ends</q> of edges two different ways.  On the one hand, every end occurs at a vertex, and at vertex <m>v</m> there are <m>d(v)</m> ends, and so the total number of ends is the sum on the left hand side. On the other hand, every edge has exactly two ends, and so the number of ends is twice the number of edges, giving the right hand side.</p></proof>
+
+<p>Euler's handshaking lemma will be particularly useful in Section 3, when we study graphs on surfaces, but already it still has some amusing corollaries.</p>
+
+</subsection>
+
+
+</section>
