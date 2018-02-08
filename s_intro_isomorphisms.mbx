@@ -5,7 +5,7 @@
 <p> It is possible to draw the same graph in the plane in many different ways – e.g., the pentagon <m>C_5</m>, and its complement the five sided star <m>C_5^c</m> are actually "the same", as indicated by the following labeling of the vertices:</p>
 
 
-<definition><p> An isomorphism <m>\varphi:G\to H</m> of simple graphs is a biject <m>\varphi:V(G)\to V(H)</m> between their vertex sets that preserves the number of edges between vertices.  In other words, <m>\varphi(v)</m> and <m>\varphi(w)</m> are adjacent in <m>H</m>if and only if <m>v</m> and <m>w</m> are adjancent in <m>G</m>.</p></definition>
+<definition><p> An isomorphism <m>\varphi:G\to H</m> of simple graphs is a biject <m>\varphi:V(G)\to V(H)</m> between their vertex sets that preserves the number of edges between vertices.  In other words, <m>\varphi(v)</m> and <m>\varphi(w)</m> are adjacent in <m>H</m> if and only if <m>v</m> and <m>w</m> are adjancent in <m>G</m>.</p></definition>
 
 <example><p>This animated gif shows several graphs isomorphic to the Petersen graph, and demonstrates that they are isomorphic.</p>
 <image source="images/PetersenIsomorphismAnimated.gif" />
@@ -13,8 +13,7 @@
 
 </example>
 <example><image source="images/cycleandstar.jpg" />
-<p>The cycle graph on 5 vertices, <m>C_5</m> is isomorphic to its complement, <m>C_5^c</m>.  The cycle <m>C_5</m> is usually drawn as a pentagon, and if we were then going to naively draw <m>C_5^c</m> we would draw a 5-sided star.  However, we could draw <m>C_5^c</m> differently as shown, making it clear that it is isomorphic to <m>C_5</m>, with isomorphism <m>\varphi:C_5\to C_5^c</m> defined by
-
+<p>The cycle graph on 5 vertices, <m>C_5</m> is isomorphic to its complement, <m>C_5^c</m>.  The cycle <m>C_5</m> is usually drawn as a pentagon, and if we were then going to naively draw <m>C_5^c</m> we would draw a 5-sided star.  However, we could draw <m>C_5^c</m> differently as shown, making it clear that it is isomorphic to <m>C_5</m>, with isomorphism <m>\varphi:C_5\to C_5^c</m> defined by <m>\varphi(a)=a, \varphi(b)=c, \varphi(c)=e, \varphi(d)=b, \varphi(e)=d</m>.
 </p></example>
 
 
