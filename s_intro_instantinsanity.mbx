@@ -4,7 +4,7 @@
 <subsection><title>A puzzle</title>
 <figure>
   <caption>Instant Insanity Package</caption>
-<image width="%80%" source="images/InstantInsanityPackage.JPG" />
+<image width="80%" source="images/InstantInsanityPackage.JPG" />
 </figure>
 <p>There is a puazzle marketed under the name "Instant Insanity", one version of which is shown above.  The puzzle is sometimes called "the four cubes problem", as it consists of four different cubes.   Each face of each cube is painted one of four different colours: blue, green, red or yellow. The goal of the puzzle is to line the four cubes up in a row, so that along the four long edges (front, top, back, bottom) each of the four colours appears eactly once.</p>
 
@@ -20,12 +20,14 @@
 <subsection><title>Enter graph theory</title>
 <p>It turns out that the important factor of the cubes is what color is on the opposite side of each face.  Suppose we want face one facing forward.  Then we have four different ways to rotate the cube to keep this the same.  The same face will always appear on the opposite side, but we can get any of the remaining four faces to be on top, say.</p>
 
-<image source="images/ImpossibleCubes.png" />
-
+<figure xml:id="fig_impossible_cubes"><caption>An impossible set of cubes</caption>
+<image size="90%" source="images/ImpossibleCubes.png" />
+</figure>
 <p>Let us encode this information in a graph.   The vertices of the graph will be the four colors, B, G, R and Y. We will put an edge between two colors each time they appear as opposite faces on a cube, and we will label that edge with a number 1-4 denoting which cube the two opposite faces appear. Thus, in the end the graph will have twelve edges, three with each label 1-4. For from the first cube, there will be a loop at B, and edge between G and R, and an edge between Y and R.  The graph corresponding to the four cubes above is the following:</p>
 
-<image source="images/InstantInsanityImpossibleGraph.png" />
-
+<figure xml:id="fig_graph_from_cubes"><caption>The graph constructed from the cubes in <xref ref="fig_impossible_cubes" /> </caption>
+<image width="90%" source="images/InstantInsanityImpossibleGraph.png" />
+</figure>
 </subsection>
 <subsection><title>Proving that our cubes were impossible</title><p>We now analyze the graph to prove that this set of cubes is not possible.</p>
 
@@ -55,15 +57,18 @@ As an exercise, one can check that given a pair of subgraphs satisfying 1-3, one
 
 <p>For subgraphs of type 2, the only triangle is G-R-Y, and B does have loops. The edge between Y-G must be labeled 3, which means the loop at B must be labeled 1. This means the edge between G and R must be labeled 4 and the edge between Y and R must be 2, giving the following subgraph:</p>
 
-<image source="images/InstantInsanityImpossibleFirst.png" />
+<figure xml:id="fig_impossible_first"><caption>A subgraph for a solution for one pair of faces</caption>
+<image width="40%" source="images/InstantInsanityImpossibleFirst.png" />
+</figure>
 
 <p>For type 3, the only option is to have loops at B and Y and a double edge between G and R. We see the loop at Y must be labeled 2, one of the edges between G and R must be 4, and the loop at B and the other edge between G and R can switch between 1 and 3, giving two possibilities:</p>
 
+<figure xml:id="fig_impossible_twoandthree"><caption>Two more subgraphs for a partial solutions</caption>
+<sidebyside widths="40% 40%" margins="auto" valign="middle">
 <image source="images/InstantInsanityImpossibleSecond.png" />
-
-<p>and</p>
-
 <image source="images/InstantInsanityImpossibleThird.png" />
+</sidebyside>
+</figure>
 
 <p>For subgraphs of type 4, the only option would be to have a double edge between B and G and another between Y and R; however, none of these edges are labeled 3 and this option is not possible.</p>
 

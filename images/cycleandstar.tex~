@@ -1,0 +1,10 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}[every node/.style={circle, thick, draw}]
+ \node (a) at (0:2cm);
+\node (b) at (0:2cm);
+\end{tikzpicture}
+\end{document} 

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exercises xml:id="s_intro_exercises">
+<exercise><statement><p>For each of the following sequences, either give an example of such a graph, or explain why one does not exist.</p>
+<ol>
+<li><p>A graph with six vertices whose degree sequence is <m>[5,5,4,3,2,2]</m></p></li>
+<li><p>A graph with six vertices whose degree sequence is <m>[5,5,4,3,3,2]</m></p></li>
+<li><p>A graph with six vertices whose degree sequence is <m>[5,5,5,5,3,3]</m></p></li>
+<li><p>A simple graph with six vertices whose degree sequence is <m>[5,5,5,5,3,3]</m></p></li></ol></statement></exercise>
+  <exercise>
+        <statement>
+            <p>For the next Olympic Winter Games, the organizers wish to expand the number of teams competing in curling. They wish to have <m>14</m> teams enter, divided into two pools of seven teams each. Right now, they're thinking of requiring that in preliminary play each team will play seven games against distinct opponents. Five of the opponents will come from their own pool and two of the opponents will come from the other pool. They're having trouble setting up such a schedule, so they've come to you. By using an appropriate graph-theoretic model, either argue that they cannot use their current plan or devise a way for them to do so.</p>
+        </statement>
+    </exercise>
+      <exercise>
+        <statement>
+            <p><xref ref="isomorphic_exercise" /> contains four graphs on six vertices. Determine which (if any) pairs of graphs are isomorphic. For pairs that are isomorphic, give an isomorphism between the two graphs. For pairs that are not isomorphic, explain why.</p>
+            <figure xml:id="isomorphic_exercise">
+                <caption>Are these graphs isomorphic?</caption>
+       
+                    <image width="55%" source="images/isomorphic_ex" />                  
+       
+            </figure>
+        </statement>
+    </exercise>
+<exercise><statement><p>Recall that <m>G^c</m> denotes the complement of a graph <m>G</m>.  Prove that <m>f:G\to H</m> is an isomorphism of graphs if and only if <m>f:G^c\to H^c</m> is an isomorphism.</p></statement></exercise>
+
+<exercise><statement><p>Determine the number of non-isomorphic simple graphs with seven vertices such that each vertex has degree at least five.</p></statement><hint><p>Consider the previous exercise</p></hint>
+
+</exercise>
+
+
+
+
+</exercises>

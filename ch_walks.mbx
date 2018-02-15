@@ -5,4 +5,8 @@
 </p>
 </introduction>
 <xi:include href="./s_walks_basics.mbx" />
+<xi:include href="./s_walks_eulerian.mbx" />
+<xi:include href="./s_walks_hamiltonian.mbx" />			  
+
+<xi:include href="./s_walks_exercises.mbx" />
 </chapter>

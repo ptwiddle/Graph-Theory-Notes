@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exercises xml:id="s_walks_exercises">
+
+    <exercise>
+        <statement>
+            <p>The questions in this exercise pertain to the graph <m>\bfG</m> shown in <xref ref="fig_graphs_graph_ex" />.
+            </p>
+            <sidebyside widths="60% 35%">
+                <ol>
+                    <li><p>What is the degree of vertex <m>8</m>?</p></li>
+                    <li><p>What is the degree of vertex <m>10</m>?</p></li>
+                    <li><p>How many vertices of degree <m>2</m> are there in <m>\bfG</m>? List
+                    them.</p></li>
+                    <li><p>Find a cycle of length <m>8</m> in <m>\bfG</m>.</p></li>
+                    <li><p>What is the length of a shortest path from <m>3</m> to <m>4</m>?</p></li>
+                    <li><p>What is the length of a shortest path from <m>8</m> to <m>7</m>?</p></li>
+                    <li><p>Find a path of length <m>5</m> from vertex <m>4</m> to vertex <m>6</m>.</p></li>
+                </ol>
+                <figure xml:id="fig_graphs_graph_ex">
+                    <caption>A graph</caption>
+                    <image source="images/graph_ex"/>
+                </figure>
+            </sidebyside>
+        </statement>
+    </exercise>
+    <exercise>
+        <statement>
+            <p>Draw a graph with <m>8</m> vertices, all of odd degree, that does not contain a path of length <m>3</m> or explain why such a graph does not exist.</p>
+        </statement>
+    </exercise>
+   <exercise>
+        <statement>
+            <p>Find an eulerian circuit in the graph <m>\bfG</m> in <xref ref="fig_graphs_euler_exercise" /> or explain why one does not exist.</p>
+            <figure xml:id="fig_graphs_euler_exercise">
+                <caption>A graph <m>\bfG</m></caption>
+                <image width="75%">
+                    <latex-image>\begin{overpic}[width=4in]{images/euler_exercise}
+                    \put(6,19.5){\(1\)}
+                    \put(64.3,5){\(2\)}
+                    \put(43.8,15){\(3\)}
+                    \put(60,23.5){\(4\)}
+                    \put(26,2){\(5\)}
+                    \put(21,32){\(6\)}
+                    \put(85,9){7}
+                    \put(32.3,26.3){\(8\)}
+                    \put(53,-1){\(9\)}
+                    \put(42,33){\(10\)}
+                    \put(71,26){\(11\)}
+                    \put(83,21){\(12\)}
+                    \end{overpic}</latex-image>
+                </image>
+            </figure>
+        </statement>
+    </exercise>
+     <exercise>
+        <statement>
+            <p>Consider the graph <m>\bfG</m> in <xref ref="fig_graphs_euler_hamilton_ex" />. Determine if the graph is eulerian. If it is, find an eulerian circuit. If it is not, explain why it is not. Determine if the graph is hamiltonian. If it is, find a hamiltonian cycle. If it is not, explain why it is not.</p>
+            <figure xml:id="fig_graphs_euler_hamilton_ex">
+                <caption>A graph <m>\bfG</m></caption>
+                <image width="65%" source="images/euler_hamilton_ex"/>
+            </figure>
+        </statement>
+    </exercise>
+
+
+</exercises>

@@ -1,0 +1,54 @@
+<section xmlns:xi="http://www.w3.org/2001/XIncludes" xml:id="s_walks_eulerian">
+<title>Eulerian Walks</title>
+<intro><p>In this section we introduce the problem of Eulerian walks, often hailed as the origins of graph theroy. We will see that determining whether or not a walk has an Eulerian circuit will turn out to be easy; in contrast, the problem of determining whether or not one has a Hamiltonian walk, which seems very similar, will turn out to be very difficult.</p>
+</intro>
+
+<subsection><title>The bridges of Konigsburg</title>
+
+<p>The city of Konigsberg (now Kaliningrad) was built on two sides of a river, near the site of two large islands.   The four sectors of the city were connected by seven bridges, as follows (picture from Wikipedia):</p>
+<figure xml:id="bridges_konigsberg"> <caption>The city of Konigsburg in Euler's time</caption>
+<image width="70%" source="images/Konigsberg_bridges.png" />
+</figure>
+<p>A group of friends enjoyed strolling through the city, and created a game: could they take a walk in the city, crossing every bridge exactly once, and return to where they started from? They couldn't find such a walk, but they couldn't prove such a walk wasn't possible, and so they wrote to the mathematician Euler, who proved that such a walk is not possible.</p>
+</subsection>
+
+<subsection><title>Eulerian Walks: definitions</title>
+<p>We will formalize the problem presented by the citizens of Konigsburg in graph theory, which will immediately present an obvious generalization.</p>
+
+<p>We may represent the city of Konigsburg as a graph <m>\Gamma_K</m>; the four sectors of town will be the vertices of <m>\Gamma_K</m>, and edges between vertices will represent the bridges (hence, this will not be a simple graph).</p>
+
+<p>Then, the question reduces to finding a closed walk in the graph that will uses every edge <em>exactly</em> once. In particular, this walk will not use any edge more than once and hence will be a trail.</p>
+
+<exercise>Which graphs have walks that use every vertex and edge exactly once?</exercise>
+
+<definition><p>Let <m>G</m> be a graph.  An <em>Eulerian cycle</em> is a closed walk that uses every edge of <m>G</m> exactly once.</p>
+
+<p>  If <m>G</m> has an Eulerian cycle, we say that <m>G</m> is <em>Eulerian</em>.</p>
+
+<p>If we weaken the requirement, and do not require the walk to be closed, we call it an Euler path, and if a graph <m>G</m> has an Eulerian path but not an Eulerian cycle, we say <m>G</m> is <em>semi-Eulerian</em></p></definition>
+
+<p>The question of the walkers of Konigsburg is then equivalent to asking if the graph <m>\Gamma_K</m> is Eulerian.</p>  
+</subsection>
+<subsection><title>The first theorm of graph theory</title>
+
+<theorem><p>A connected graph <m>\Gamma</m> is Eulerian if and only if every vertex of <m>\Gamma</m> has even degree</p></theorem>
+Before we formally give the proof, we sketch a few of the main ideas in plain English.  To see that
+
+<proof>
+
+</proof>
+
+<remark><p>Note that it does <em>not</em> say: "A graph <m>\Gamma</m> is Eulerian if and only if it is connected and every vertex has even degree." This statement in quotation marks is false, but for "stupid" reasons.  If <m>\Gamma</m> is Eulerian, and <m>E_n</m> is the graph with <m>n</m> vertices wit no edges, then <m>\Gamma\sqcup E_n</m> is Eulerian but not connected.  These are the only examples of such graphs.</p> </remark>
+
+<theorem><p>A connected graph <m>\Gamma</m> is semi-Eulerian if and only if it has exactly two vertices with odd degree.</p></theorem>
+
+<proof><p>A minor modification of our argument for Eulerian graphs shows that the condition is necessary.  Suppose that <m>\Gamma</m> is semi-Eulerian, with Eulerian path <m>v_0, e_1, v_1,e_2,v_3,\dots,e_n,v_n</m>.  Then at any vertex other than the starting or ending vertices, we can pair the entering and leaving edges up to get an even number of edges.</p>
+
+<p>However, at the first vertex <m>v_0</m> the path cleaves along <m>e_1</m> the first time but never enters it accordingly, so that <m>v_0</m> has an odd degree; similarly, at <m>v_n</m> the path enters one final time along <m>e_n</m> without leaving, and so <m>v_n</m> also has an odd degree.</p>
+
+<p>To see the condition is sufficient we could also modify the argument for the Eulerian case slightly, but it is slicker instead to <em>reduce</em> to the Eulerian case.  Suppose that <m>\Gamma</m> is connected, and that vertices <m>v</m> and <m>w</m> have odd degree and all other vertices of <m>\Gamma</m> have even degree.  Then we can construct a new graph <m>\Gamma^\prime</m> by adding an extra edge <m>e=vw</m> to <m>\Gamma</m>.  Then <m>\Gamma^\prime</m> is connected and every vertex has even degree, and so it has an Eulerian cycle.  Deleting the edge <m>e</m> that we added from this cycle gives an Eulerian path from <m>v</m> to <m>w</m> in <m>\Gamma</m>.</p></proof>
+</subsection>
+
+
+
+</section>

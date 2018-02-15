@@ -1,0 +1,27 @@
+<section xmlns:xi="http://www.w3.org/2001/XIncludes" xml:id="s_walks_hamiltonian">
+<title>Hamiltonian cycles</title>
+<intro><p>We now introduce the concept of Hamiltonian walks. Though on the surface the question seems very similar to determining whether or not a graph is Eulerian, it turns out to be much more difficult.</p>
+</intro>
+
+<definition><p>A graph is <em>Hamiltonian</em> if it has a closed walk that uses every vertex exactly once; such a path is called a <em>Hamiltonian cycle</em></p></definition>
+
+<p>First, some very basic examples:</p>
+<ol><li>The cycle graph <m>C_n</m> is Hamiltonian.</li>
+<li>Any graph obtained from <m>C_n</m> by adding edges is Hamiltonian</li>
+<li>The path graph <m>P_n</m> is <em>not</em> Hamiltonian.</li>
+</ol>
+
+<figure><caption>Image of the Icosian game from the <url href="https://www.puzzlemuseum.com/month/picm02/200207icosian.htm">Puzzle Musuem</url>; image of the solution from <url href="https://en.wikipedia.org/wiki/Icosian_game">
+Wikipedia</url></caption><sidebyside valigns="middle middle" widths="40% 40%">
+<image source="images/icosiangame.jpg" />
+<image source="images/icosiansolved.png" />
+</sidebyside>
+</figure>
+
+<p>The term Hamiltonian comes from William Hamiltonian, who invented (a not very successful) board game he termed the "icosian game", which was about finding Hamiltonian cycles on the dodecahedron graph (and possibly its subgraphs)</p>
+
+
+
+
+
+</section>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-02-08T16:10:31Z    *-->
+<!--*    on 2018-02-15T15:40:14Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -21,7 +21,7 @@ MathJax.Hub.Config({
         extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
         // scrolling to fragment identifiers is controlled by other Javascript
         positionToHash: false,
-        equationNumbers: { autoNumber: "none", },
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
         TagSide: "right",
         TagIndent: ".8em",
     },
@@ -35,81 +35,80 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><link href="https://aimath.org/knowlstyle.css" rel="stylesheet" type="text/css">
-<script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
 <link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div style="display:none;">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
- \newcommand{\ints}{\mathbb{Z}}
- \newcommand{\posints}{\mathbb{N}}
- \newcommand{\rats}{\mathbb{Q}}
- \newcommand{\reals}{\mathbb{R}}
- \newcommand{\complexes}{\mathbb{C}}
- \newcommand{\twospace}{\mathbb{R}^2}
- \newcommand{\threepace}{\mathbb{R}^3}
- \newcommand{\dspace}{\mathbb{R}^d}
- \newcommand{\nni}{\mathbb{N}_0}
- \newcommand{\nonnegints}{\mathbb{N}_0}
- \newcommand{\dom}{\operatorname{dom}}
- \newcommand{\ran}{\operatorname{ran}}
- \newcommand{\prob}{\operatorname{prob}}
- \newcommand{\Prob}{\operatorname{Prob}}
- \newcommand{\height}{\operatorname{height}}
- \newcommand{\width}{\operatorname{width}}
- \newcommand{\length}{\operatorname{length}}
- \newcommand{\crit}{\operatorname{crit}}
- \newcommand{\inc}{\operatorname{inc}}
- \newcommand{\HP}{\mathbf{H_P}}
- \newcommand{\HCP}{\mathbf{H^c_P}}
- \newcommand{\GP}{\mathbf{G_P}}
- \newcommand{\GQ}{\mathbf{G_Q}}
- \newcommand{\AG}{\mathbf{A_G}}
- \newcommand{\GCP}{\mathbf{G^c_P}}
- \newcommand{\PXP}{\mathbf{P}=(X,P)}
- \newcommand{\QYQ}{\mathbf{Q}=(Y,Q)}
- \newcommand{\GVE}{\mathbf{G}=(V,E)}
- \newcommand{\HWF}{\mathbf{H}=(W,F)}
- \newcommand{\bfC}{\mathbf{C}}
- \newcommand{\bfG}{\mathbf{G}}
- \newcommand{\bfH}{\mathbf{H}}
- \newcommand{\bfF}{\mathbf{F}}
- \newcommand{\bfI}{\mathbf{I}}
- \newcommand{\bfK}{\mathbf{K}}
- \newcommand{\bfP}{\mathbf{P}}
- \newcommand{\bfQ}{\mathbf{Q}}
- \newcommand{\bfR}{\mathbf{R}}
- \newcommand{\bfS}{\mathbf{S}}
- \newcommand{\bfT}{\mathbf{T}}
- \newcommand{\bfNP}{\mathbf{NP}}
- \newcommand{\bftwo}{\mathbf{2}}
- \newcommand{\cgA}{\mathcal{A}}
- \newcommand{\cgB}{\mathcal{B}}
- \newcommand{\cgC}{\mathcal{C}}
- \newcommand{\cgD}{\mathcal{D}}
- \newcommand{\cgE}{\mathcal{E}}
- \newcommand{\cgF}{\mathcal{F}}
- \newcommand{\cgG}{\mathcal{G}}
- \newcommand{\cgM}{\mathcal{M}}
- \newcommand{\cgN}{\mathcal{N}}
- \newcommand{\cgP}{\mathcal{P}}
- \newcommand{\cgR}{\mathcal{R}}
- \newcommand{\cgS}{\mathcal{S}}
- \newcommand{\bfn}{\mathbf{n}}
- \newcommand{\bfm}{\mathbf{m}}
- \newcommand{\bfk}{\mathbf{k}}
- \newcommand{\bfs}{\mathbf{s}}
- \newcommand{\bijection}{\xrightarrow[\text{onto}]{\text{$1$--$1$}}}
- \newcommand{\injection}{\xrightarrow[]{\text{$1$--$1$}}}
- \newcommand{\surjection}{\xrightarrow[\text{onto}]{}}
- \newcommand{\nin}{\not\in}
- \newcommand{\prufer}{\mbox{prüfer}}
- \DeclareMathOperator{\fix}{fix}
- \DeclareMathOperator{\stab}{stab}
- \DeclareMathOperator{\var}{var}
- \newcommand{\inv}{^{-1}}
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
+    \newcommand{\ints}{\mathbb{Z}}
+    \newcommand{\posints}{\mathbb{N}}
+    \newcommand{\rats}{\mathbb{Q}}
+    \newcommand{\reals}{\mathbb{R}}
+    \newcommand{\complexes}{\mathbb{C}}
+    \newcommand{\twospace}{\mathbb{R}^2}
+    \newcommand{\threepace}{\mathbb{R}^3}
+    \newcommand{\dspace}{\mathbb{R}^d}
+    \newcommand{\nni}{\mathbb{N}_0}
+    \newcommand{\nonnegints}{\mathbb{N}_0}
+    \newcommand{\dom}{\operatorname{dom}}
+    \newcommand{\ran}{\operatorname{ran}}
+    \newcommand{\prob}{\operatorname{prob}}
+    \newcommand{\Prob}{\operatorname{Prob}}
+    \newcommand{\height}{\operatorname{height}}
+    \newcommand{\width}{\operatorname{width}}
+    \newcommand{\length}{\operatorname{length}}
+    \newcommand{\crit}{\operatorname{crit}}
+    \newcommand{\inc}{\operatorname{inc}}
+    \newcommand{\HP}{\mathbf{H_P}}
+    \newcommand{\HCP}{\mathbf{H^c_P}}
+    \newcommand{\GP}{\mathbf{G_P}}
+    \newcommand{\GQ}{\mathbf{G_Q}}
+    \newcommand{\AG}{\mathbf{A_G}}
+    \newcommand{\GCP}{\mathbf{G^c_P}}
+    \newcommand{\PXP}{\mathbf{P}=(X,P)}
+    \newcommand{\QYQ}{\mathbf{Q}=(Y,Q)}
+    \newcommand{\GVE}{\mathbf{G}=(V,E)}
+    \newcommand{\HWF}{\mathbf{H}=(W,F)}
+    \newcommand{\bfC}{\mathbf{C}}
+    \newcommand{\bfG}{\mathbf{G}}
+    \newcommand{\bfH}{\mathbf{H}}
+    \newcommand{\bfF}{\mathbf{F}}
+    \newcommand{\bfI}{\mathbf{I}}
+    \newcommand{\bfK}{\mathbf{K}}
+    \newcommand{\bfP}{\mathbf{P}}
+    \newcommand{\bfQ}{\mathbf{Q}}
+    \newcommand{\bfR}{\mathbf{R}}
+    \newcommand{\bfS}{\mathbf{S}}
+    \newcommand{\bfT}{\mathbf{T}}
+    \newcommand{\bfNP}{\mathbf{NP}}
+    \newcommand{\bftwo}{\mathbf{2}}
+    \newcommand{\cgA}{\mathcal{A}}
+    \newcommand{\cgB}{\mathcal{B}}
+    \newcommand{\cgC}{\mathcal{C}}
+    \newcommand{\cgD}{\mathcal{D}}
+    \newcommand{\cgE}{\mathcal{E}}
+    \newcommand{\cgF}{\mathcal{F}}
+    \newcommand{\cgG}{\mathcal{G}}
+    \newcommand{\cgM}{\mathcal{M}}
+    \newcommand{\cgN}{\mathcal{N}}
+    \newcommand{\cgP}{\mathcal{P}}
+    \newcommand{\cgR}{\mathcal{R}}
+    \newcommand{\cgS}{\mathcal{S}}
+    \newcommand{\bfn}{\mathbf{n}}
+    \newcommand{\bfm}{\mathbf{m}}
+    \newcommand{\bfk}{\mathbf{k}}
+    \newcommand{\bfs}{\mathbf{s}}
+    \newcommand{\bijection}{\xrightarrow[\text{onto}]{\text{$1$--$1$}}}
+    \newcommand{\injection}{\xrightarrow[]{\text{$1$--$1$}}}
+    \newcommand{\surjection}{\xrightarrow[\text{onto}]{}}
+    \newcommand{\nin}{\not\in}
+    \newcommand{\prufer}{\mbox{prüfer}}
+    \DeclareMathOperator{\fix}{fix}
+    \DeclareMathOperator{\stab}{stab}
+    \DeclareMathOperator{\var}{var}
+    \newcommand{\inv}{^{-1}}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -117,100 +116,111 @@ MathJax.Hub.Config({
 <header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
 <a id="logo-link" href=""></a><div class="title-container">
 <h1 class="heading"><a href="MAS341.html"><span class="title">MAS341: Graph Theory</span></a></h1>
-<p class="byline">Paul Johnson</p>
+<p class="byline"></p>
 </div>
 </div></div>
-<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch_walks.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_walks.html" title="Up" alt="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch_walks.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_walks.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_walks_eulerian.html" title="Next" alt="Next">Next</a></span></div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch_walks.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_walks.html" title="Up" alt="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch_walks.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_walks.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="s_walks_eulerian.html" title="Next" alt="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
 <nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<ul><li><a href="preface-1.html" data-scroll="preface-1">Preface</a></li></ul>
 <h2 class="link"><a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
 <ul>
 <li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook">A first look a graphs</a></li>
 <li><a href="s_intro_degrees.html" data-scroll="s_intro_degrees">Degree and handshaking</a></li>
 <li><a href="s_intro_isomorphisms.html" data-scroll="s_intro_isomorphisms">Graph Isomorphisms</a></li>
 <li><a href="s_intro_instantinsanity.html" data-scroll="s_intro_instantinsanity">Instant Insanity</a></li>
+<li><a href="s_intro_exercises.html" data-scroll="s_intro_exercises">Exercises</a></li>
 </ul>
 <h2 class="link active"><a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span><span class="title">Walks</span></a></h2>
-<ul><li><a href="s_walks_basics.html" data-scroll="s_walks_basics" class="active">Walks: the basics</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
-</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="s_walks_basics"><header title="Section 2.1 Walks: the basics"><h1 class="heading hide-type" alt="Section 2.1 Walks: the basics">
-<span class="type">Section</span><span class="codenumber">2.1</span><span class="title">Walks: the basics</span><a href="s_walks_basics.html" class="permalink">¶ permalink</a>
-</h1></header><p id="p-76">If the edges in a graph \(\Gamma\) represent connections between different cities, it is obvious to strart planning longer trips that compose several of these connections.  The notion of a <!--Style me with CSS--><em>walk</em> formally captures this definition; the formal notions of <!--Style me with CSS--><em>path</em> and <!--Style me with CSS--><em>trail</em> further ask that we not double back on ourselves or repeat ourselves in certain formally defined ways.</p> <p id="p-77">Once we've done that, we investigate what it means for a graph to be connected or disconnected.</p>
-<section class="subsection" id="subsection-14"><header title="Subsection 2.1.1 Walks and connectedness"><h1 class="heading hide-type" alt="Subsection 2.1.1 Walks and connectedness">
+<ul>
+<li><a href="s_walks_basics.html" data-scroll="s_walks_basics" class="active">Walks: the basics</a></li>
+<li><a href="s_walks_eulerian.html" data-scroll="s_walks_eulerian">Eulerian Walks</a></li>
+<li><a href="s_walks_hamiltonian.html" data-scroll="s_walks_hamiltonian">Hamiltonian cycles</a></li>
+<li><a href="s_walks_exercises.html" data-scroll="s_walks_exercises">Exercises</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="s_walks_basics"><h2 class="heading hide-type" alt="Section 2.1 Walks: the basics">
+<span class="type">Section</span><span class="codenumber">2.1</span><span class="title">Walks: the basics</span>
+</h2>
+<a href="s_walks_basics.html" class="permalink">¶</a><p id="p-85">If the edges in a graph \(\Gamma\) represent connections between different cities, it is obvious to strart planning longer trips that compose several of these connections.  The notion of a <em class="emphasis">walk</em> formally captures this definition; the formal notions of <em class="emphasis">path</em> and <em class="emphasis">trail</em> further ask that we not double back on ourselves or repeat ourselves in certain formally defined ways.</p> <p id="p-86">Once we've done that, we investigate what it means for a graph to be connected or disconnected.</p>
+<section class="subsection" id="subsection-14"><h3 class="heading hide-type" alt="Subsection 2.1.1 Walks and connectedness">
 <span class="type">Subsection</span><span class="codenumber">2.1.1</span><span class="title">Walks and connectedness</span>
-</h1></header><p id="p-78">Before we see the formal definition of a walk, it will be useful to see an example:</p>
-<figure class="figure-like" id="fig_walkdrawing"><img width="70%" src="images/walkdrawing.png" alt=""><figcaption><span class="heading">Figure</span><span class="codenumber">2.1.1</span>Example of a walk</figcaption></figure><p id="p-79">In the graph shown, the vertices are labelled with letters, and the edges are labelled with numbers, and we have a walk highlighted in red, and with arrowtips drawn on the edges.  Starting from vertex \(A\text{,}\) we can take edge 6 to vertex \(D\text{,}\) and then edge 5 to vertex \(C\text{,}\) edge 5 to vertext \(F\text{,}\) edge 3 back to vertex \(D\text{,}\) and finally edge 8 to vertex \(E\text{.}\) Intuitively,then, a walk strings together several edges that share vertices in between.  Makign that formal, we have the following.</p>
-<article class="definition-like" id="definition-10"><h5 class="heading">
+</h3>
+<p id="p-87">Before we see the formal definition of a walk, it will be useful to see an example:</p>
+<figure class="figure-like" id="fig_walkdrawing"><img src="images/image-11.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">2.1.1</span>Example of a walk</figcaption></figure><p id="p-88">In the graph shown, the vertices are labelled with letters, and the edges are labelled with numbers, and we have a walk highlighted in red, and with arrowtips drawn on the edges.  Starting from vertex \(A\text{,}\) we can take edge 6 to vertex \(D\text{,}\) and then edge 5 to vertex \(C\text{,}\) edge 5 to vertext \(F\text{,}\) edge 3 back to vertex \(D\text{,}\) and finally edge 8 to vertex \(E\text{.}\) Intuitively,then, a walk strings together several edges that share vertices in between.  Makign that formal, we have the following.</p>
+<article class="definition-like" id="definition-10"><h6 class="heading">
 <span class="type">Definition</span><span class="codenumber">2.1.2</span><span class="title">Walk</span>
-</h5>
-<p id="p-80">\(walk\) in a graph \(\Gamma\) is a sequence</p>
+</h6>
+<p id="p-89">\(walk\) in a graph \(\Gamma\) is a sequence</p>
+<div class="displaymath">
 \begin{equation*}
 v_0, e_1, v_1,e_2, v_2,\dots, v_{n-1}, e_n, v_n
 \end{equation*}
-<p id="p-81">where the \(v_i\) are vertices, the \(e_j\) are edges, and the edge \(e_j\) goes between vertices \(v_{j-1}\) and \(v_j\text{.}\)</p>
-<p id="p-82">We say that the walk is between vertices \(a=v_0\) and \(b=v_n\)</p></article><p id="p-83">With this notation for a walk, Example <a knowl="./knowl/fig_walkdrawing.html" knowl-id="xref-fig_walkdrawing" alt="Figure 2.1.1 " title="Figure 2.1.1 ">Figure 1</a>, the walk shown would be written \(A, 6, D, 4, C, 5, F, 3, D, 8, E\text{.}\)  The visual representation of the walk on the graph is vastly more intuitive, the written one feeling cumbersome in comparison.</p>
-<p id="p-84">The definition of walk above contains some extra information.  If we just know the sequence of edges we can reconstruct what the vertices have to be (assuming we have at least two edges in the walk).  Alternatively, if the graph \(\Gamma\) does not have multiple edges, it is enough to just know the vertices \(v_i\text{,}\) but if \(\Gamma\) has multiple edges that just knowing the vertices does not determine the walk.</p>
-<article class="definition-like" id="definition-11"><h5 class="heading">
+</div>
+<p id="p-90">where the \(v_i\) are vertices, the \(e_j\) are edges, and the edge \(e_j\) goes between vertices \(v_{j-1}\) and \(v_j\text{.}\)</p>
+<p id="p-91">We say that the walk is between vertices \(a=v_0\) and \(b=v_n\)</p></article><p id="p-92">With this notation for a walk, Example <a knowl="./knowl/fig_walkdrawing.html" knowl-id="xref-fig_walkdrawing" alt="Figure 2.1.1 " title="Figure 2.1.1 ">Figure 2.1.1</a>, the walk shown would be written \(A, 6, D, 4, C, 5, F, 3, D, 8, E\text{.}\)  The visual representation of the walk on the graph is vastly more intuitive, the written one feeling cumbersome in comparison.</p>
+<p id="p-93">The definition of walk above contains some extra information.  If we just know the sequence of edges we can reconstruct what the vertices have to be (assuming we have at least two edges in the walk).  Alternatively, if the graph \(\Gamma\) does not have multiple edges, it is enough to just know the vertices \(v_i\text{,}\) but if \(\Gamma\) has multiple edges that just knowing the vertices does not determine the walk.</p>
+<article class="definition-like" id="definition-11"><h6 class="heading">
 <span class="type">Definition</span><span class="codenumber">2.1.3</span><span class="title">Connected</span>
-</h5>
-<p id="p-85">We say a graph \(\Gamma\) is <!--Style me with CSS--><em>connected</em> if for any two vertices \(v,w\text{,}\) there is a walk from \(v\) to \(w\) in \(\Gamma\text{.}\)</p></article><article class="definition-like" id="definition-12"><h5 class="heading">
+</h6>
+<p id="p-94">We say a graph \(\Gamma\) is <em class="emphasis">connected</em> if for any two vertices \(v,w\text{,}\) there is a walk from \(v\) to \(w\) in \(\Gamma\text{.}\)</p></article><article class="definition-like" id="definition-12"><h6 class="heading">
 <span class="type">Definition</span><span class="codenumber">2.1.4</span><span class="title">Disjoint union</span>
-</h5>
-<p id="p-86">Given two graphs \(\Gamma_1\) and \(\Gamma_2\text{,}\) the <!--Style me with CSS--><em>disjoint union</em> \(\Gamma_1\sqcup \Gamma_2\) is obtained by taking the disjoint union of both the vertices and edges of \(\Gamma_1\) and \(\Gamma_2\text{.}\)  So \(\Gamma_1\sqcup\Gamma_2\) consists of a copy of \(\Gamma_1\) and a copy of \(\Gamma_2\text{,}\) with no edges in between the two graphs.</p></article><article class="definition-like" id="definition-13"><h5 class="heading">
+</h6>
+<p id="p-95">Given two graphs \(\Gamma_1\) and \(\Gamma_2\text{,}\) the <em class="emphasis">disjoint union</em> \(\Gamma_1\sqcup \Gamma_2\) is obtained by taking the disjoint union of both the vertices and edges of \(\Gamma_1\) and \(\Gamma_2\text{.}\)  So \(\Gamma_1\sqcup\Gamma_2\) consists of a copy of \(\Gamma_1\) and a copy of \(\Gamma_2\text{,}\) with no edges in between the two graphs.</p></article><article class="definition-like" id="definition-13"><h6 class="heading">
 <span class="type">Definition</span><span class="codenumber">2.1.5</span><span class="title">Disconnected</span>
-</h5>
-<p id="p-87">A graph \(\Gamma\) is <!--Style me with CSS--><em>disconnected</em> if we can write \(\Gamma=\Gamma_1\sqcup \Gamma_2\) for two proper (i.e., not all of \(\Gamma\)) subgraphs \(\Gamma_1\) and \(\Gamma_2\text{.}\)</p></article><p id="p-88">We now have a definition for what it means for a graph to be connected, and another for what it means for a graph to be disconnected.  From everday usage of this words, we would certainly hope that a graph is disconnected if and only if it is not connected.  However, it is not immediately clear from the definitions as written that this is the case.</p>
-<article class="theorem-like" id="lemma-1"><h5 class="heading">
+</h6>
+<p id="p-96">A graph \(\Gamma\) is <em class="emphasis">disconnected</em> if we can write \(\Gamma=\Gamma_1\sqcup \Gamma_2\) for two proper (i.e., not all of \(\Gamma\)) subgraphs \(\Gamma_1\) and \(\Gamma_2\text{.}\)</p></article><p id="p-97">We now have a definition for what it means for a graph to be connected, and another for what it means for a graph to be disconnected.  From everday usage of this words, we would certainly hope that a graph is disconnected if and only if it is not connected.  However, it is not immediately clear from the definitions as written that this is the case.</p>
+<article class="theorem-like" id="lemma-1"><h6 class="heading">
 <span class="type">Lemma</span><span class="codenumber">2.1.6</span>
-</h5>
-<p id="p-89">The following are equivalent:</p>
-<ol id="ol-4" style="list-style-type: decimal;">
-<li id="li-20">. \(\Gamma\) is connected</li>
-<li id="li-21">\(\Gamma\) is not disconnected</li>
-</ol></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-2" id="proof-2"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-2" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-90">1 implies 2: Supppose that \(\Gamma\) is connected, and let \(v, w\in V(\Gamma)\text{;}\) we want to show that there is a walk from \(v\) to \(w\text{.}\)</p>
-<p id="p-91">Define \(S\subset V(\Gamma)\) to be the set of all vertices \(u\in V(\Gamma)\) so that there is a walk from \(v\) to \(u\text{;}\) we want to show that \(w\in S\text{.}\)</p>
-<p id="p-92">First, observe that there are no edges from \(S\) to \(V(\Gamma)\setminus S\text{.}\)  Suppose that \(e\) was an edge between \(a\in S\) and \(b\in\Gamma\setminus S\text{.}\)  Since \(a\in S\text{,}\) by the definition of \(S\) there is a walk \(v=v_0v_1v_2\cdots v_m=a\) from \(v\) to \(a\text{.}\)  We can add the edge \(e\) to the end of the walk, to get a walk from \(v\) to \(b\text{,}\) and hence by definition \(b\in S\text{.}\)</p>
-<p id="p-93">Now suppose that \(w\notin S\text{.}\)  Then \(S\) and \(V(\Gamma)\setminus S\) are both nonempty, and by the above there are no edges between them, and so \(\Gamma\) is not connected, a contradiction.</p>
-<p id="p-94">To prove 2 implies 1, we prove the contrapositive.  If \(\Gamma\) is not connected, then there are two vertices \(v,w\in V(\Gamma)\) so that there is no walk from \(v\) to \(w\text{.}\)</p>
-<p id="p-95">Suppose that \(\Gamma=\Gamma_1\sqcup\Gamma_2\text{,}\) and pick \(v\in V(\Gamma_1), w\in V(\Gamma_2)\text{.}\)  Any walk from \(v\) to \(w\) starts in \(V(\Gamma_1)\) and ends in \(V(\Gamma_2)\text{,}\) and so at some point there must be an edge from a vertex in \(\Gamma_1\) to a vertex in \(\Gamma_2\text{,}\) but there are no such edges \(\square\)</p></article></div></section><section class="subsection" id="subsection-15"><header title="Subsection 2.1.2 Types of Walks"><h1 class="heading hide-type" alt="Subsection 2.1.2 Types of Walks">
+</h6>
+<p id="p-98">The following are equivalent:</p>
+<ol class="decimal">
+<li id="li-24">. \(\Gamma\) is connected</li>
+<li id="li-25">\(\Gamma\) is not disconnected</li>
+</ol></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-2" id="proof-2"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-2" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-99">1 implies 2: Supppose that \(\Gamma\) is connected, and let \(v, w\in V(\Gamma)\text{;}\) we want to show that there is a walk from \(v\) to \(w\text{.}\)</p>
+<p id="p-100">Define \(S\subset V(\Gamma)\) to be the set of all vertices \(u\in V(\Gamma)\) so that there is a walk from \(v\) to \(u\text{;}\) we want to show that \(w\in S\text{.}\)</p>
+<p id="p-101">First, observe that there are no edges from \(S\) to \(V(\Gamma)\setminus S\text{.}\)  Suppose that \(e\) was an edge between \(a\in S\) and \(b\in\Gamma\setminus S\text{.}\)  Since \(a\in S\text{,}\) by the definition of \(S\) there is a walk \(v=v_0v_1v_2\cdots v_m=a\) from \(v\) to \(a\text{.}\)  We can add the edge \(e\) to the end of the walk, to get a walk from \(v\) to \(b\text{,}\) and hence by definition \(b\in S\text{.}\)</p>
+<p id="p-102">Now suppose that \(w\notin S\text{.}\)  Then \(S\) and \(V(\Gamma)\setminus S\) are both nonempty, and by the above there are no edges between them, and so \(\Gamma\) is not connected, a contradiction.</p>
+<p id="p-103">To prove 2 implies 1, we prove the contrapositive.  If \(\Gamma\) is not connected, then there are two vertices \(v,w\in V(\Gamma)\) so that there is no walk from \(v\) to \(w\text{.}\)</p>
+<p id="p-104">Suppose that \(\Gamma=\Gamma_1\sqcup\Gamma_2\text{,}\) and pick \(v\in V(\Gamma_1), w\in V(\Gamma_2)\text{.}\)  Any walk from \(v\) to \(w\) starts in \(V(\Gamma_1)\) and ends in \(V(\Gamma_2)\text{,}\) and so at some point there must be an edge from a vertex in \(\Gamma_1\) to a vertex in \(\Gamma_2\text{,}\) but there are no such edges \(\square\)</p></article></div></section><section class="subsection" id="subsection-15"><h3 class="heading hide-type" alt="Subsection 2.1.2 Types of Walks">
 <span class="type">Subsection</span><span class="codenumber">2.1.2</span><span class="title">Types of Walks</span>
-</h1></header><p id="p-96">Many questions in graph theory ask whether or not a walk of a certain type exists on a graph: we introduce some notation that will be needed for these questions.</p>
-<article class="definition-like" id="definition-14"><h5 class="heading">
+</h3>
+<p id="p-105">Many questions in graph theory ask whether or not a walk of a certain type exists on a graph: we introduce some notation that will be needed for these questions.</p>
+<article class="definition-like" id="definition-14"><h6 class="heading">
 <span class="type">Definition</span><span class="codenumber">2.1.7</span>
-</h5>
-<p id="p-97">We say a walk is <!--Style me with CSS--><em>closed</em> if it starts and ends on the same vertex; i.e., \(v_0=v_n\text{.}\)  The <!--Style me with CSS--><em>length</em> of a walk is \(n\text{,}\) the number of edges in it.  The <!--Style me with CSS--><em>distance</em> between two vertices \(v\) and \(w\) is the length of the shortest walk from \(v\) to \(w\text{,}\) if one exists, and \(\infty\) if one does not exist.</p></article><p id="p-98">It is sometimes convenient to have terminology for walks that don't backtrack on themselves:</p>
-<article class="definition-like" id="definition-15"><h5 class="heading">
+</h6>
+<p id="p-106">We say a walk is <em class="emphasis">closed</em> if it starts and ends on the same vertex; i.e., \(v_0=v_n\text{.}\)  The <em class="emphasis">length</em> of a walk is \(n\text{,}\) the number of edges in it.  The <em class="emphasis">distance</em> between two vertices \(v\) and \(w\) is the length of the shortest walk from \(v\) to \(w\text{,}\) if one exists, and \(\infty\) if one does not exist.</p></article><p id="p-107">It is sometimes convenient to have terminology for walks that don't backtrack on themselves:</p>
+<article class="definition-like" id="definition-15"><h6 class="heading">
 <span class="type">Definition</span><span class="codenumber">2.1.8</span>
-</h5>
-<ol id="ol-5" style="list-style-type: decimal;">
-<li id="li-22">If the edges \(e_i\) of the walk are all distinct, we call it a <!--Style me with CSS--><em>trail</em>
+</h6>
+<ol class="decimal">
+<li id="li-26">If the edges \(e_i\) of the walk are all distinct, we call it a <em class="emphasis">trail</em>
 </li>
-<li id="li-23">If the vertices \(v_i\) of the walk are all distinct (except possibly \(v_0=v_m\)), we call the walk a <!--Style me with CSS--><em>path</em>.  The exception is to allow for the possibility of closed paths.</li>
-</ol></article><article class="theorem-like" id="lemma-2"><h5 class="heading">
+<li id="li-27">If the vertices \(v_i\) of the walk are all distinct (except possibly \(v_0=v_m\)), we call the walk a <em class="emphasis">path</em>.  The exception is to allow for the possibility of closed paths.</li>
+</ol></article><article class="theorem-like" id="lemma-2"><h6 class="heading">
 <span class="type">Lemma</span><span class="codenumber">2.1.9</span>
-</h5>
-<p id="p-99">Let \(v,w\in V(\Gamma)\text{.}\)  The following are equivalent:</p>
-<ol id="ol-6" style="list-style-type: decimal;">
-<li id="li-24">There is a walk from \(v\) to \(w\)</li>
-<li id="li-25">There is a trail from \(v\) to \(w\)</li>
-<li id="li-26">There is a path from \(v\) to \(w\text{.}\)</li>
-</ol></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-3" id="proof-3"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-3" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-100">Obviously, 3 implies 2 which implies 1, as any path is a trail, and any trail is a walk.</p>
-<p id="p-101">That 1 implies 3 is intuitively obvious: if you repeat a vertex, then you've visited someplace twice, and weren't taking the shortest route.  Let's make this argument mathematically precise.</p>
-<p id="p-102">Suppose we have a walk \(v=v_0,e_1,\dots, e_m, v_m=w\) that is not a path.  Then, we must repeat some vertex, say \(v_i=v_k\text{,}\) with \(i\lt k\text{.}\)  Then we can cut out all the vertices and edges between \(v_i\) and \(v_k\) to obtain a new walk</p>
+</h6>
+<p id="p-108">Let \(v,w\in V(\Gamma)\text{.}\)  The following are equivalent:</p>
+<ol class="decimal">
+<li id="li-28">There is a walk from \(v\) to \(w\)</li>
+<li id="li-29">There is a trail from \(v\) to \(w\)</li>
+<li id="li-30">There is a path from \(v\) to \(w\text{.}\)</li>
+</ol></article><p id="p-109">As is often the case, the formal write-up of the proof makes something that can seem very easy intuitively look laborious, so it's worth anlysing it briefly for our example walk \(A-D-C-F-D-E\) from <a knowl="./knowl/fig_walkdrawing.html" knowl-id="xref-fig_walkdrawing" alt="Figure 2.1.1 " title="Figure 2.1.1 ">Figure 2.1.1</a>.  This walk is not a path as it repeats the vertex \(D\text{;}\) however, we may simply remove the triangle \(D-C-F-D\) from the walk to get the trail \(A-D-E\text{.}\)  this idea is what works in general.</p>
+<article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-3" id="proof-3"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-3" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-110">It is immediate from the definitions that 3 implies 2 which implies 1, as any path is a trail, and any trail is a walk.</p>
+<p id="p-111">That 1 implies 3 is intuitively obvious: if you repeat a vertex, then you've visited someplace twice, and weren't taking the shortest route.  Let's make this argument mathematically precise.</p>
+<p id="p-112">Suppose we have a walk \(v=v_0,e_1,\dots, e_m, v_m=w\) that is not a path.  Then, we must repeat some vertex, say \(v_i=v_k\text{,}\) with \(i\lt k\text{.}\)  Then we can cut out all the vertices and edges between \(v_i\) and \(v_k\) to obtain a new walk</p>
+<div class="displaymath">
 \begin{equation*}
-v=v_0,e_1, v_1,\dots, e_i, v_i, e_{k+1}, v_{k+1}, e_{k+2}, v_{k+2}, \dots, v_m
+v=v_0,e_1, v_1,\dots, e_i, v_i=v_k, e_{k+1}, v_{k+1}, e_{k+2}, v_{k+2}, \dots, v_m
 \end{equation*}
-<p id="p-103">Since \(i \lt k \text{,}\) the new walk is strictly shorter than our original walk.  Since the length of a walk is finite, if we iterate this process the result must eventually terminate.  That means all our vertices are distinct, and hence is a path.</p></article></div></section></section></div></main>
+</div>
+<p id="p-113">Since \(i \lt k \text{,}\) the new walk is strictly shorter than our original walk.  Since the length of a walk is finite, if we iterate this process the result must eventually terminate.  That means all our vertices are distinct, and hence is a path.</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

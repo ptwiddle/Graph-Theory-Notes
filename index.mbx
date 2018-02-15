@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mathbook xmlns:xi="http://www.w3.org/2001/XInclude">
 <docinfo>
-<macros>
-     \newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
+<latex-image-preamble>  
+      \usepackage{overpic,pict2e}
+  \usepackage{tikz}
+  \usetikzlibrary{arrows.meta}
+    </latex-image-preamble>
+
+  <macros>
+  \newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
       \newcommand{\ints}{\mathbb{Z}}
       \newcommand{\posints}{\mathbb{N}}
       \newcommand{\rats}{\mathbb{Q}}
@@ -76,24 +82,8 @@
 <book xml:id="MAS341">
   <title>MAS341: Graph Theory</title>
   <frontmatter>
-    <titlepage>
-      <author>
-	<personname>Paul Johnson</personname>
-	<department>School of Mathematics and Statistics</department>
-	<institution>The University of Sheffield</institution>
-	<email>paul.johnson@sheffield.ac.uk</email>
-      </author>
-      <date>2018 Edition</date>
-    </titlepage> 
-
-    <acknowledgements>
-      <p>Work builds on notes from previous course, as well as sections of the book Applied Combinatorics by Keller and Trotter, and Discrete Math by Oscar Levin.</p>
-    </acknowledgements>
-    <preface>
-      Course notes for MAS341: Graph Theory at the University of Sheffield.
-    </preface>
   </frontmatter>
-   <xi:include href="./ch_intro.mbx" />
+  <xi:include href="./ch_intro.mbx" />
    <xi:include href="./ch_walks.mbx" />
 
 </book>

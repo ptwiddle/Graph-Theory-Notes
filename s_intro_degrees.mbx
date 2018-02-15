@@ -7,7 +7,11 @@
 
 <p>Intuitively, the <em>degree</em> of a vertex is the <q>number of edges coming out of it</q>. If we think of a graph <m>G</m> as a picture, then to find the degree of a vertex <m>v\in V(G)</m> we draw a very small circle around <m>v</m>, the number of times the <m>G</m> intersects that circle is the degree of <m>v</m>.  Formally, we have:</p>
 <definition><p>Let <m>G</m> be a simple graph, and let <m>v\in V(G)</m> be a vertex of <m>G</m>.  Then the <em>degree of <m>v</m></em>, written <m>d(v)</m>, is the number of edges <m>e\in E(G)</m> with <m>v\in e</m>. Alternatively, <m>d(v)</m> is the number of vertices <m>v</m> is adjacent to.</p></definition>
-<example></example>
+<example><figure xml:id="fig_trumpet_graph"><caption>The graph <m>K</m></caption><image width="50%" source="images/degreeexamplegraph.png" />
+</figure>
+<p>In the graph <m>K</m> shown in <xref ref="fig_trumpet_graph" />, vertices <m>a</m> and <m>b</m> have degree 2, vertex <m>c</m> has degree 3, and vertex <m>d</m> has degree 1.</p>
+
+</example>
 <p>Note that in the definition we require <m>G</m> to be a simple graph.  The notion of degree has a few pitfalls to be careful of <m>G</m> has loops or multiple edges.  We still want to the degree <m>d(v)</m> to match the intuitive notion of the <q>number of edges coming out of <m>v</m></q> captured in the drawing with a small circle.  The trap to beware is that this notion no longer agrees with <q>the number of vertices adjacent to <m>v</m></q> or the <q>the number of edges incident to <m>v</m></q></p>
 <example></example>
 

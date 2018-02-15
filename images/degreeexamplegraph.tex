@@ -1,0 +1,15 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}[every node/.style={circle, thick, draw}]
+  \node (a) at (0,0) {$a$};
+  \node (b) at (0,4) {$b$};
+  \node (c) at (2,2) {$c$};
+  \node (d) at (4,2) {$d$};
+  \draw (d)--(c)--(b)--(a)--(c);
+  
+
+\end{tikzpicture}
+\end{document}
