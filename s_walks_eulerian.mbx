@@ -27,12 +27,27 @@
 
 <p>If we weaken the requirement, and do not require the walk to be closed, we call it an Euler path, and if a graph <m>G</m> has an Eulerian path but not an Eulerian cycle, we say <m>G</m> is <em>semi-Eulerian</em></p></definition>
 
-<p>The question of the walkers of Konigsburg is then equivalent to asking if the graph <m>\Gamma_K</m> is Eulerian.</p>  
-</subsection>
-<subsection><title>The first theorm of graph theory</title>
+<p>The question of the walkers of Konigsburg is then equivalent to asking if the graph <m>\Gamma_K</m> is Eulerian. The birth of graph theory is usually marked to the following theorem, proven by Euler:</p>  
 
-<theorem><p>A connected graph <m>\Gamma</m> is Eulerian if and only if every vertex of <m>\Gamma</m> has even degree</p></theorem>
-Before we formally give the proof, we sketch a few of the main ideas in plain English.  To see that
+<theorem xml:id="thm_eulerian"><p>A connected graph <m>\Gamma</m> is Eulerian if and only if every vertex of <m>\Gamma</m> has even degree</p></theorem>
+
+
+</subsection>
+
+
+<subsection><title>A digression on proofs, formality, and intuition</title>
+
+<p>Before discussing the proof of <xref ref="thm_eulerian" />, it's worth a little meta-discussion about proofs, intuition vs. rigor, and mathematics as a whole.  The proofing <xref ref="thm_eulerian" /> is a common exam question, and you may not be used to studying for reproducing proofs on exams.  Certainly one way to prepare for such a question is to memorize the proof word for word.  There doesn't seem to be a lot of obvious value in this approach, however.  So why ask these questions on the exam? And this opens the door to more philosophical questions as well: how should we think/interact with proofs anyway?  What's the point of it all?</p>
+
+<p>Usually in books or in lectures, proofs are only given in slick, elegant, polished formal versions.  There are many reasons for this: there's a certain beauty to it; it's important to write it out formally to make sure it's all correct; there's only so much time in lectures, and brevity is a virtue anyway.  People turn away from long works, and the main point of a proof, after all, is to prove something, and it's easier to check that it's all correct if it's shorter.</p>
+
+<p>But there's a very real downside to this presentation of proofs as the finished, elegant thing.  Most important to me is that the way mathematics is written formally on the page is very different from how it lives actively in our brains (or my brain, at least).  Nobody (or certainly very few people) comes up with proofs in the elegant short start to finish way that they're written.  Typically, there's a mess of chaotic half ideas that slowly get refined down to the written proof that you see.  But often the mess is the exciting part, </p>  
+
+<p>
+
+we sketch a few of the main ideas in an informal setting.  To learn this proof for the exam, you should have this informal picture in your head, and perhaps a skeleton outline of the main formal points that need to be shown.  You shouldn't try to memorize the formal proof word for word like a poem; instead, practice expanding out from the informal ideas/skeleton proof to the full formal proof on your own a few times.</p>
+
+<p>
 
 <proof>
 

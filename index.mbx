@@ -85,7 +85,7 @@
   </frontmatter>
   <xi:include href="./ch_intro.mbx" />
    <xi:include href="./ch_walks.mbx" />
-
+  <xi:include href="./ch_algorithms.mbx" />
 </book>
 
 

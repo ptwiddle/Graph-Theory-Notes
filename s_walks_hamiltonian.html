@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-02-15T15:40:14Z    *-->
+<!--*    on 2018-02-21T12:07:43Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -121,11 +121,11 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_walks_eulerian.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_walks.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_walks_exercises.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch_walks.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_walks.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_walks_exercises.html" title="Next" alt="Next">Next</a></span></div>
 <button class="sidebar-right-toggle-button button active">Annotations</button>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_walks_eulerian.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_walks.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="s_walks_exercises.html" title="Next" alt="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch_walks.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_walks.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="s_walks_exercises.html" title="Next" alt="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
@@ -141,28 +141,34 @@ MathJax.Hub.Config({
 <h2 class="link active"><a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span><span class="title">Walks</span></a></h2>
 <ul>
 <li><a href="s_walks_basics.html" data-scroll="s_walks_basics">Walks: the basics</a></li>
-<li><a href="s_walks_eulerian.html" data-scroll="s_walks_eulerian">Eulerian Walks</a></li>
 <li><a href="s_walks_hamiltonian.html" data-scroll="s_walks_hamiltonian" class="active">Hamiltonian cycles</a></li>
 <li><a href="s_walks_exercises.html" data-scroll="s_walks_exercises">Exercises</a></li>
+</ul>
+<h2 class="link"><a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span><span class="title">Algorithms</span></a></h2>
+<ul>
+<li><a href="s_graphalgorithms_min-wt-span.html" data-scroll="s_graphalgorithms_min-wt-span">Minimum Weight Spanning Trees</a></li>
+<li><a href="s_graphalgorithms_digraphs.html" data-scroll="s_graphalgorithms_digraphs">Digraphs</a></li>
+<li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
+<li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises">Exercises</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
-</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="s_walks_hamiltonian"><h2 class="heading hide-type" alt="Section 2.3 Hamiltonian cycles">
-<span class="type">Section</span><span class="codenumber">2.3</span><span class="title">Hamiltonian cycles</span>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="s_walks_hamiltonian"><h2 class="heading hide-type" alt="Section 2.2 Hamiltonian cycles">
+<span class="type">Section</span><span class="codenumber">2.2</span><span class="title">Hamiltonian cycles</span>
 </h2>
-<a href="s_walks_hamiltonian.html" class="permalink">¶</a><p id="p-130">We now introduce the concept of Hamiltonian walks. Though on the surface the question seems very similar to determining whether or not a graph is Eulerian, it turns out to be much more difficult.</p>
-<article class="definition-like" id="definition-17"><h6 class="heading">
-<span class="type">Definition</span><span class="codenumber">2.3.1</span>
+<a href="s_walks_hamiltonian.html" class="permalink">¶</a><p id="p-114">We now introduce the concept of Hamiltonian walks. Though on the surface the question seems very similar to determining whether or not a graph is Eulerian, it turns out to be much more difficult.</p>
+<article class="definition-like" id="definition-16"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">2.2.1</span>
 </h6>
-<p id="p-131">A graph is <em class="emphasis">Hamiltonian</em> if it has a closed walk that uses every vertex exactly once; such a path is called a <em class="emphasis">Hamiltonian cycle</em></p></article><p id="p-132">First, some very basic examples:</p>
+<p id="p-115">A graph is <em class="emphasis">Hamiltonian</em> if it has a closed walk that uses every vertex exactly once; such a path is called a <em class="emphasis">Hamiltonian cycle</em></p></article><p id="p-116">First, some very basic examples:</p>
 <ol class="decimal">
 <li id="li-31">The cycle graph \(C_n\) is Hamiltonian.</li>
 <li id="li-32">Any graph obtained from \(C_n\) by adding edges is Hamiltonian</li>
 <li id="li-33">The path graph \(P_n\) is <em class="emphasis">not</em> Hamiltonian.</li>
 </ol>
-<figure class="figure-like" id="figure-11"><div class="sidebyside" id="sidebyside-2"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<figure class="figure-like" id="figure-10"><div class="sidebyside" id="sidebyside-2"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
 <div class="sbspanel" style="width:44.4444444444444%;justify-content:center;"><img width="100%" src="images/icosiangame.jpg" alt=""></div>
 <div class="sbspanel" style="width:44.4444444444444%;justify-content:center;"><img width="100%" src="images/icosiansolved.png" alt=""></div>
 </div></div>
-<figcaption><span class="type">Figure</span><span class="codenumber">2.3.2</span>Image of the Icosian game from the <a class="url" href="https://www.puzzlemuseum.com/month/picm02/200207icosian.htm" target="_blank">Puzzle Musuem</a>; image of the solution from <a class="url" href="https://en.wikipedia.org/wiki/Icosian_game" target="_blank">Wikipedia</a></figcaption></figure><p id="p-133">The term Hamiltonian comes from William Hamiltonian, who invented (a not very successful) board game he termed the "icosian game", which was about finding Hamiltonian cycles on the dodecahedron graph (and possibly its subgraphs)</p></section></div></main>
+<figcaption><span class="type">Figure</span><span class="codenumber">2.2.2</span>The Icosian game (from <a class="url" href="https://www.puzzlemuseum.com/month/picm02/200207icosian.htm" target="_blank">Puzzle Musuem</a>) and its solution (from <a class="url" href="https://en.wikipedia.org/wiki/Icosian_game" target="_blank">Wikipedia</a>)</figcaption></figure><p id="p-117">The term Hamiltonian comes from William Hamiltonian, who invented (a not very successful) board game he termed the "icosian game", which was about finding Hamiltonian cycles on the dodecahedron graph (and possibly its subgraphs)</p></section></div></main>
 </div>
 </body>
 </html>

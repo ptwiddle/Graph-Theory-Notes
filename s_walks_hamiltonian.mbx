@@ -11,8 +11,8 @@
 <li>The path graph <m>P_n</m> is <em>not</em> Hamiltonian.</li>
 </ol>
 
-<figure><caption>Image of the Icosian game from the <url href="https://www.puzzlemuseum.com/month/picm02/200207icosian.htm">Puzzle Musuem</url>; image of the solution from <url href="https://en.wikipedia.org/wiki/Icosian_game">
-Wikipedia</url></caption><sidebyside valigns="middle middle" widths="40% 40%">
+<figure><caption>The Icosian game (from <url href="https://www.puzzlemuseum.com/month/picm02/200207icosian.htm">Puzzle Musuem</url>) and its solution (from <url href="https://en.wikipedia.org/wiki/Icosian_game">
+Wikipedia</url>)</caption><sidebyside valigns="middle middle" widths="40% 40%">
 <image source="images/icosiangame.jpg" />
 <image source="images/icosiansolved.png" />
 </sidebyside>
