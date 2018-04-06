@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-02-21T12:07:43Z    *-->
+<!--*    on 2018-04-04T15:38:46+01:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Before establishing why Dijkstra's algorithm works, it may be helpful to see an example of how it works. To do this, consider the digraph \(\bfG\) shown in <a knowl="./knowl/fig_graphalgorithms_dijkstragraph.html" knowl-id="xref-fig_graphalgorithms_dijkstragraph" alt="Figure 3.3.3 " title="Figure 3.3.3 ">Figure 3.3.3</a>. For visual clarity, we have chosen a digraph which is an <dfn class="terminology">oriented graph</dfn>, i.e., for each distinct pair \(x,y\) of vertices, the graph contains at most one of the two possible directed edges \((x,y)\) and \((y,x)\text{.}\)</p>
-<span class="incontext"><a href="s_graphalgorithms_shortest-paths.html#p-177">in-context</a></span>
+<dl class="description-list">
+<dt>Initialization.</dt>
+<dd><p>Set \(W=\{r\}\) and \(S=\emptyset\text{.}\)</p></dd>
+<dt>Inductive Step.</dt>
+<dd>
+<p>While \(|W| \lt n\text{,}\) let \(e\) be an edge of minimum weight among all edges with one endpoint in \(W\) and the other not in \(W\text{.}\)  If \(e=xy\text{,}\) \(x\in W\) and \(y\not\in W\text{,}\) update \(W\) and \(S\) by setting (using pseudo-code)</p>
+<div class="displaymath">
+\begin{equation*}
+W = W\cup\{y\}\quad\text{and} \quad S = S\cup\{e\}.
+\end{equation*}
+</div>
+</dd>
+</dl>
+<span class="incontext"><a href="s_graphalgorithms_min-wt-span.html#p-177">in-context</a></span>
 </body>
 </html>

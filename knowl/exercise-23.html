@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-02-21T12:07:43Z    *-->
+<!--*    on 2018-04-04T15:38:46+01:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,74 +13,9 @@
 </head>
 <body>
 <article class="exercise-like"><h6 class="heading">
-<span class="type">Exercise</span><span class="codenumber">12</span>
+<span class="type">Exercise</span><span class="codenumber">11</span>
 </h6>
-<p><a knowl="./knowl/tab_digraph1.html" knowl-id="xref-tab_digraph1" alt="Table 3.4.12 " title="Table 3.4.12 ">Table 3.4.12</a> contains the length of the directed edge \((x,y)\) in the intersection of <em class="emphasis">row</em> \(x\) and <em class="emphasis">column</em> \(y\) in a digraph with vertex set \(\{a,b,c,d,e,f\}\text{.}\) For example, \(w(b,d)=21\text{.}\) (On the other hand, \(w(d,b)=10\text{.}\)) Use this data and Dijkstra's algorithm to find the distance from \(a\) to each of the other vertices and a directed path of that length from \(a\text{.}\)</p>
-<figure class="figure-like"><table>
-<tr>
-<td class="l m b1 r1 l0 t0 lines">\(w\)</td>
-<td class="l m b1 r0 l0 t0 lines">\(a\)</td>
-<td class="l m b1 r0 l0 t0 lines">\(b\)</td>
-<td class="l m b1 r0 l0 t0 lines">\(c\)</td>
-<td class="l m b1 r0 l0 t0 lines">\(d\)</td>
-<td class="l m b1 r0 l0 t0 lines">\(e\)</td>
-<td class="l m b1 r0 l0 t0 lines">\(f\)</td>
-</tr>
-<tr>
-<td class="l m b0 r1 l0 t0 lines">\(a\)</td>
-<td class="l m b0 r0 l0 t0 lines">0</td>
-<td class="l m b0 r0 l0 t0 lines">12</td>
-<td class="l m b0 r0 l0 t0 lines">8</td>
-<td class="l m b0 r0 l0 t0 lines">43</td>
-<td class="l m b0 r0 l0 t0 lines">79</td>
-<td class="l m b0 r0 l0 t0 lines">35</td>
-</tr>
-<tr>
-<td class="l m b0 r1 l0 t0 lines">\(b\)</td>
-<td class="l m b0 r0 l0 t0 lines">93</td>
-<td class="l m b0 r0 l0 t0 lines">0</td>
-<td class="l m b0 r0 l0 t0 lines">18</td>
-<td class="l m b0 r0 l0 t0 lines">21</td>
-<td class="l m b0 r0 l0 t0 lines">60</td>
-<td class="l m b0 r0 l0 t0 lines">33</td>
-</tr>
-<tr>
-<td class="l m b0 r1 l0 t0 lines">\(c\)</td>
-<td class="l m b0 r0 l0 t0 lines">17</td>
-<td class="l m b0 r0 l0 t0 lines">3</td>
-<td class="l m b0 r0 l0 t0 lines">0</td>
-<td class="l m b0 r0 l0 t0 lines">37</td>
-<td class="l m b0 r0 l0 t0 lines">50</td>
-<td class="l m b0 r0 l0 t0 lines">30</td>
-</tr>
-<tr>
-<td class="l m b0 r1 l0 t0 lines">\(d\)</td>
-<td class="l m b0 r0 l0 t0 lines">85</td>
-<td class="l m b0 r0 l0 t0 lines">10</td>
-<td class="l m b0 r0 l0 t0 lines">91</td>
-<td class="l m b0 r0 l0 t0 lines">0</td>
-<td class="l m b0 r0 l0 t0 lines">17</td>
-<td class="l m b0 r0 l0 t0 lines">7</td>
-</tr>
-<tr>
-<td class="l m b0 r1 l0 t0 lines">\(e\)</td>
-<td class="l m b0 r0 l0 t0 lines">28</td>
-<td class="l m b0 r0 l0 t0 lines">47</td>
-<td class="l m b0 r0 l0 t0 lines">39</td>
-<td class="l m b0 r0 l0 t0 lines">14</td>
-<td class="l m b0 r0 l0 t0 lines">0</td>
-<td class="l m b0 r0 l0 t0 lines">108</td>
-</tr>
-<tr>
-<td class="l m b0 r1 l0 t0 lines">\(f\)</td>
-<td class="l m b0 r0 l0 t0 lines">31</td>
-<td class="l m b0 r0 l0 t0 lines">7</td>
-<td class="l m b0 r0 l0 t0 lines">29</td>
-<td class="l m b0 r0 l0 t0 lines">73</td>
-<td class="l m b0 r0 l0 t0 lines">20</td>
-<td class="l m b0 r0 l0 t0 lines">0</td>
-</tr>
-</table>
-<figcaption><span class="type">Table</span><span class="codenumber">3.4.12</span>A digraph represented as a table of data</figcaption></figure></article><span class="incontext"><a href="s_graphalgorithms_exercises.html#exercise-23">in-context</a></span>
+<p>Use Dijkstra's algorithm to find the distance from \(a\) to each other vertex in the digraph shown in <a knowl="./knowl/fig_graphalgorithms_dijkstra_ex1.html" knowl-id="xref-fig_graphalgorithms_dijkstra_ex1" alt="Figure 3.5.16 " title="Figure 3.5.16 ">Figure 3.5.16</a> and a directed path of that length.</p>
+<figure class="figure-like"><img src="images/dijkstra_ex1.svg" width="65%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.5.16</span>A directed graph</figcaption></figure></article><span class="incontext"><a href="s_graphalgorithms_exercises.html#exercise-23">in-context</a></span>
 </body>
 </html>

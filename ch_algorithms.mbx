@@ -9,6 +9,7 @@
 </introduction>
 <xi:include href="./s_graphalgorithms_min-wt-span.mbx" />
 <xi:include href="./s_graphalgorithms_digraphs.mbx" />
-<xi:include href="./s_graphalgorithms_shortest-paths.mbx" />			  
+<xi:include href="./s_graphalgorithms_shortest-paths.mbx" />			<xi:include href="./s_graphalgorithms_prufer.mbx" />
+
 <xi:include href="./s_graphalgorithms_exercises.mbx" />
 </chapter>

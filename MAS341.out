@@ -1,5 +1,17 @@
-\BOOKMARK [0][-]{chapter*.1}{Preface}{}% 1
-\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 2
-\BOOKMARK [1][-]{section.1.1}{A first look a graphs}{chapter.1}% 3
-\BOOKMARK [1][-]{section.1.2}{Degree and handshaking}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.3}{Graph Isomorphisms}{chapter.1}% 5
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{A first look a graphs}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Degree and handshaking}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Graph Isomorphisms}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Instant Insanity}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.5}{Exercises}{chapter.1}% 6
+\BOOKMARK [0][-]{chapter.2}{Walks}{}% 7
+\BOOKMARK [1][-]{section.2.1}{Walks: the basics}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.2}{Eulerian Walks}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.3}{Hamiltonian cycles}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.4}{Exercises}{chapter.2}% 11
+\BOOKMARK [0][-]{chapter.3}{Algorithms}{}% 12
+\BOOKMARK [1][-]{section.3.1}{Minimum Weight Spanning Trees}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.2}{Digraphs}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.3}{Dijkstra's Algorithm for Shortest Paths}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.4}{Pr\374fer Codes}{chapter.3}% 16
+\BOOKMARK [1][-]{section.3.5}{Exercises}{chapter.3}% 17

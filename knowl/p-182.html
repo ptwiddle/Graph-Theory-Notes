@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-02-21T12:07:43Z    *-->
+<!--*    on 2018-04-04T15:38:46+01:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Before proceeding to the next step, vertex \(c\) is made permanent by making it \(v_3\text{.}\) In Step 3, therefore, the scan is from vertex \(c\text{.}\) Vertices \(b\text{,}\) \(d\text{,}\) and \(g\) have their paths updated. However, although \(\delta(c) + w(c,e) = 47+23=70=\delta(e)\text{,}\) we do not change \(P(e)\) since \(\delta(e)\) is not <em class="emphasis">decreased</em> by routing \(P(e)\) through \(c\text{.}\)</p>
-<span class="incontext"><a href="s_graphalgorithms_shortest-paths.html#p-182">in-context</a></span>
+<p>An implementation of Kruskal's algorithm seems to require that the edges be sorted. If the graph has \(n\) vertices and \(m\) edges, this requires \(m\log m\) operations just for the sort. But once the sort is done, the process takes only \(n-1\) steps—provided you keep track of the components as the spanning forest expands.  Regardless, it is easy to see that at most \(O(n^2\log n)\) operations are required.</p>
+<span class="incontext"><a href="s_graphalgorithms_min-wt-span.html#p-182">in-context</a></span>
 </body>
 </html>

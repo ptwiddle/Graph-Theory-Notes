@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exercises xml:id="s_intro_exercises">
+<exercise><statement><p>For each of the following sequences, either give an example of such a graph, or explain why one does not exist.</p>
+<ol>
+<li><p>A graph with six vertices whose degree sequence is <m>[5,5,4,3,2,2]</m></p></li>
+<li><p>A graph with six vertices whose degree sequence is <m>[5,5,4,3,3,2]</m></p></li>
+<li><p>A graph with six vertices whose degree sequence is <m>[5,5,5,5,3,3]</m></p></li>
+<li><p>A simple graph with six vertices whose degree sequence is <m>[5,5,5,5,3,3]</m></p></li></ol></statement></exercise>
+

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-02-21T12:07:43Z    *-->
+<!--*    on 2018-04-04T15:38:46+01:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let \(x\) be a vertex and let \(P=(r=u_0,u_1,\dots,u_t=x)\) be a shortest path from \(r\) to \(x\text{.}\) Then for every integer \(j\) with \(0\lt j\lt t\text{,}\) \((u_0,u_1,\dots,u_j)\) is a shortest path from \(r\) to \(u_j\) and \((u_j,u_{j+1},\dots,u_t)\) is a shortest path from \(u_j\) to \(u_t\)</p>
+<p>If \(i\lt n\text{,}\) then for each temporary \(x\text{,}\) let</p>
+<div class="displaymath">
+\begin{equation*}
+\delta(x) = \min\{\delta(x), \delta(v_i)+w(v_i,x)\}.
+\end{equation*}
+</div>
+<p>If this assignment results in a reduction in the value of \(\delta(x)\text{,}\) let \(P(x)\) be the path obtained by adding \(x\) to the end of \(P(v_i)\text{.}\)</p>
 <span class="incontext"><a href="s_graphalgorithms_shortest-paths.html#p-195">in-context</a></span>
 </body>
 </html>

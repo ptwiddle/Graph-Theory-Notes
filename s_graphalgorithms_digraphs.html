@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-02-21T12:07:43Z    *-->
+<!--*    on 2018-04-04T15:38:45+01:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -141,6 +141,7 @@ MathJax.Hub.Config({
 <h2 class="link"><a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span><span class="title">Walks</span></a></h2>
 <ul>
 <li><a href="s_walks_basics.html" data-scroll="s_walks_basics">Walks: the basics</a></li>
+<li><a href="s_walks_eulerian.html" data-scroll="s_walks_eulerian">Eulerian Walks</a></li>
 <li><a href="s_walks_hamiltonian.html" data-scroll="s_walks_hamiltonian">Hamiltonian cycles</a></li>
 <li><a href="s_walks_exercises.html" data-scroll="s_walks_exercises">Exercises</a></li>
 </ul>
@@ -149,14 +150,15 @@ MathJax.Hub.Config({
 <li><a href="s_graphalgorithms_min-wt-span.html" data-scroll="s_graphalgorithms_min-wt-span">Minimum Weight Spanning Trees</a></li>
 <li><a href="s_graphalgorithms_digraphs.html" data-scroll="s_graphalgorithms_digraphs" class="active">Digraphs</a></li>
 <li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
+<li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
 <li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises">Exercises</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="s_graphalgorithms_digraphs"><h2 class="heading hide-type" alt="Section 3.2 Digraphs">
 <span class="type">Section</span><span class="codenumber">3.2</span><span class="title">Digraphs</span>
 </h2>
-<a href="s_graphalgorithms_digraphs.html" class="permalink">¶</a><p id="p-164">In this section, we introduce another useful variant of a graph. In a graph, the existence of an edge \(xy\) can be used to model a connection between \(x\) and \(y\) that goes in both ways. However, sometimes such a model is insufficient. For instance, perhaps it is possible to fly from Atlanta directly to Fargo but not possible to fly from Fargo directly to Atlanta. In a graph representing the airline network, an edge between Atlanta and Fargo would lose the information that the flights only operate in one direction. To deal with this problem, we introduce a new discrete structure. A <dfn class="terminology">digraph</dfn> \(\bfG\) is a pair \((V,E)\) where \(V\) is a vertex set and \(E\subset V\times V\) with \(x\neq y\) for every \((x,y)\in E\text{.}\) We consider the pair \((x,y)\) as a <dfn class="terminology">directed edge</dfn> from \(x\) to \(y\text{.}\) Note that for distinct vertices \(x\) and \(y\) from \(V\text{,}\) the ordered pairs \((x,y)\) and \((y,x)\) are distinct, so the digraph may have one, both or neither of the directed edges \((x,y)\) and \((y,x)\text{.}\) This is in contrast to graphs, where edges are sets, so \(\{x,y\}\) and \(\{y,x\}\) are the same.</p>
-<p id="p-165">Diagrams of digraphs use arrowheads on the edges to indicate direction.  This is illustrated in <a knowl="./knowl/fig_graphalgorithms_digraph.html" knowl-id="xref-fig_graphalgorithms_digraph" alt="Figure 3.2.1 " title="Figure 3.2.1 ">Figure 3.2.1</a>. For example, the digraph illustrated there contains the edge \((a,f)\) but not the edge \((f,a)\text{.}\) It does contain both edges \((c,d)\) and \((d,c)\text{,}\) however.</p>
-<figure class="figure-like" id="fig_graphalgorithms_digraph"><img src="images/digraph.svg" width="85%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.2.1</span>A Digraph</figcaption></figure><p id="p-166">When \(\bfG\) is a digraph, a sequence \(P=(r=u_0,u_1,\dots,u_t=x)\) of distinct vertices is called a <dfn class="terminology">directed path</dfn> from \(r\) to \(x\) when \((u_iu_{i+1})\) is a directed edge in \(\bfG\) for every \(i=0,1,\dots,t-1\text{.}\) A directed path \(C=(r=u_0,u_1,\dots,u_t=x)\) is called a <dfn class="terminology">directed cycle</dfn> when \((u_t,u_0)\) is a directed edge of \(\bfG\text{.}\)</p></section></div></main>
+<a href="s_graphalgorithms_digraphs.html" class="permalink">¶</a><p id="p-184">In this section, we introduce another useful variant of a graph. In a graph, the existence of an edge \(xy\) can be used to model a connection between \(x\) and \(y\) that goes in both ways. However, sometimes such a model is insufficient. For instance, perhaps it is possible to fly from Atlanta directly to Fargo but not possible to fly from Fargo directly to Atlanta. In a graph representing the airline network, an edge between Atlanta and Fargo would lose the information that the flights only operate in one direction. To deal with this problem, we introduce a new discrete structure. A <dfn class="terminology">digraph</dfn> \(\bfG\) is a pair \((V,E)\) where \(V\) is a vertex set and \(E\subset V\times V\) with \(x\neq y\) for every \((x,y)\in E\text{.}\) We consider the pair \((x,y)\) as a <dfn class="terminology">directed edge</dfn> from \(x\) to \(y\text{.}\) Note that for distinct vertices \(x\) and \(y\) from \(V\text{,}\) the ordered pairs \((x,y)\) and \((y,x)\) are distinct, so the digraph may have one, both or neither of the directed edges \((x,y)\) and \((y,x)\text{.}\) This is in contrast to graphs, where edges are sets, so \(\{x,y\}\) and \(\{y,x\}\) are the same.</p>
+<p id="p-185">Diagrams of digraphs use arrowheads on the edges to indicate direction.  This is illustrated in <a knowl="./knowl/fig_graphalgorithms_digraph.html" knowl-id="xref-fig_graphalgorithms_digraph" alt="Figure 3.2.1 " title="Figure 3.2.1 ">Figure 3.2.1</a>. For example, the digraph illustrated there contains the edge \((a,f)\) but not the edge \((f,a)\text{.}\) It does contain both edges \((c,d)\) and \((d,c)\text{,}\) however.</p>
+<figure class="figure-like" id="fig_graphalgorithms_digraph"><img src="images/digraph.svg" width="85%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.2.1</span>A Digraph</figcaption></figure><p id="p-186">When \(\bfG\) is a digraph, a sequence \(P=(r=u_0,u_1,\dots,u_t=x)\) of distinct vertices is called a <dfn class="terminology">directed path</dfn> from \(r\) to \(x\) when \((u_iu_{i+1})\) is a directed edge in \(\bfG\) for every \(i=0,1,\dots,t-1\text{.}\) A directed path \(C=(r=u_0,u_1,\dots,u_t=x)\) is called a <dfn class="terminology">directed cycle</dfn> when \((u_t,u_0)\) is a directed edge of \(\bfG\text{.}\)</p></section></div></main>
 </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-02-21T11:59:22Z    *-->
+<!--*    on 2018-04-04T15:38:45+01:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -145,11 +145,12 @@ MathJax.Hub.Config({
 <li><a href="s_walks_hamiltonian.html" data-scroll="s_walks_hamiltonian">Hamiltonian cycles</a></li>
 <li><a href="s_walks_exercises.html" data-scroll="s_walks_exercises">Exercises</a></li>
 </ul>
-<h2 class="link"><a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">3</span><span class="title">Walks</span></a></h2>
+<h2 class="link"><a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span><span class="title">Algorithms</span></a></h2>
 <ul>
 <li><a href="s_graphalgorithms_min-wt-span.html" data-scroll="s_graphalgorithms_min-wt-span">Minimum Weight Spanning Trees</a></li>
 <li><a href="s_graphalgorithms_digraphs.html" data-scroll="s_graphalgorithms_digraphs">Digraphs</a></li>
 <li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
+<li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
 <li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises">Exercises</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="s_walks_eulerian"><h2 class="heading hide-type" alt="Section 2.2 Eulerian Walks">
@@ -174,22 +175,27 @@ MathJax.Hub.Config({
 </h6>
 <p id="p-120">Let \(G\) be a graph.  An <em class="emphasis">Eulerian cycle</em> is a closed walk that uses every edge of \(G\) exactly once.</p>
 <p id="p-121">If \(G\) has an Eulerian cycle, we say that \(G\) is <em class="emphasis">Eulerian</em>.</p>
-<p id="p-122">If we weaken the requirement, and do not require the walk to be closed, we call it an Euler path, and if a graph \(G\) has an Eulerian path but not an Eulerian cycle, we say \(G\) is <em class="emphasis">semi-Eulerian</em></p></article><p id="p-123">The question of the walkers of Konigsburg is then equivalent to asking if the graph \(\Gamma_K\) is Eulerian.</p></section><section class="subsection" id="subsection-18"><h3 class="heading hide-type" alt="Subsection 2.2.3 The first theorm of graph theory">
-<span class="type">Subsection</span><span class="codenumber">2.2.3</span><span class="title">The first theorm of graph theory</span>
-</h3>
-<article class="theorem-like" id="theorem-2"><h6 class="heading">
+<p id="p-122">If we weaken the requirement, and do not require the walk to be closed, we call it an Euler path, and if a graph \(G\) has an Eulerian path but not an Eulerian cycle, we say \(G\) is <em class="emphasis">semi-Eulerian</em></p></article><p id="p-123">The question of the walkers of Konigsburg is then equivalent to asking if the graph \(\Gamma_K\) is Eulerian. The birth of graph theory is usually marked to the following theorem, proven by Euler:</p>
+<article class="theorem-like" id="thm_eulerian"><h6 class="heading">
 <span class="type">Theorem</span><span class="codenumber">2.2.4</span>
 </h6>
-<p id="p-124">A connected graph \(\Gamma\) is Eulerian if and only if every vertex of \(\Gamma\) has even degree</p></article> Before we formally give the proof, we sketch a few of the main ideas in plain English.  To see that <article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-4" id="proof-4"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-4" class="hidden-content tex2jax_ignore"><article class="hiddenproof"></article></div>
+<p id="p-124">A connected graph \(\Gamma\) is Eulerian if and only if every vertex of \(\Gamma\) has even degree</p></article></section><section class="subsection" id="subsection-18"><h3 class="heading hide-type" alt="Subsection 2.2.3 A digression on proofs, formality, and intuition">
+<span class="type">Subsection</span><span class="codenumber">2.2.3</span><span class="title">A digression on proofs, formality, and intuition</span>
+</h3>
+<p id="p-125">Before discussing the proof of <a knowl="./knowl/thm_eulerian.html" knowl-id="xref-thm_eulerian" alt="Theorem 2.2.4 " title="Theorem 2.2.4 ">Theorem 2.2.4</a>, it's worth a little meta-discussion about proofs, intuition vs. rigor, and mathematics as a whole.  The proofing <a knowl="./knowl/thm_eulerian.html" knowl-id="xref-thm_eulerian" alt="Theorem 2.2.4 " title="Theorem 2.2.4 ">Theorem 2.2.4</a> is a common exam question, and you may not be used to studying for reproducing proofs on exams.  Certainly one way to prepare for such a question is to memorize the proof word for word.  There doesn't seem to be a lot of obvious value in this approach, however.  So why ask these questions on the exam? And this opens the door to more philosophical questions as well: how should we think/interact with proofs anyway?  What's the point of it all?</p>
+<p id="p-126">Usually in books or in lectures, proofs are only given in slick, elegant, polished formal versions.  There are many reasons for this: there's a certain beauty to it; it's important to write it out formally to make sure it's all correct; there's only so much time in lectures, and brevity is a virtue anyway.  People turn away from long works, and the main point of a proof, after all, is to prove something, and it's easier to check that it's all correct if it's shorter.</p>
+<p id="p-127">But there's a very real downside to this presentation of proofs as the finished, elegant thing.  Most important to me is that the way mathematics is written formally on the page is very different from how it lives actively in our brains (or my brain, at least).  Nobody (or certainly very few people) comes up with proofs in the elegant short start to finish way that they're written.  Typically, there's a mess of chaotic half ideas that slowly get refined down to the written proof that you see.  But often the mess is the exciting part,</p>
+<p id="p-128">we sketch a few of the main ideas in an informal setting.  To learn this proof for the exam, you should have this informal picture in your head, and perhaps a skeleton outline of the main formal points that need to be shown.  You shouldn't try to memorize the formal proof word for word like a poem; instead, practice expanding out from the informal ideas/skeleton proof to the full formal proof on your own a few times.</p>
+<article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-4" id="proof-4"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-4" class="hidden-content tex2jax_ignore"><article class="hiddenproof"></article></div>
 <article class="remark-like" id="remark-1"><h6 class="heading">
 <span class="type">Remark</span><span class="codenumber">2.2.5</span>
 </h6>
-<p id="p-125">Note that it does <em class="emphasis">not</em> say: "A graph \(\Gamma\) is Eulerian if and only if it is connected and every vertex has even degree." This statement in quotation marks is false, but for "stupid" reasons.  If \(\Gamma\) is Eulerian, and \(E_n\) is the graph with \(n\) vertices wit no edges, then \(\Gamma\sqcup E_n\) is Eulerian but not connected.  These are the only examples of such graphs.</p></article><article class="theorem-like" id="theorem-3"><h6 class="heading">
+<p id="p-129">Note that it does <em class="emphasis">not</em> say: "A graph \(\Gamma\) is Eulerian if and only if it is connected and every vertex has even degree." This statement in quotation marks is false, but for "stupid" reasons.  If \(\Gamma\) is Eulerian, and \(E_n\) is the graph with \(n\) vertices wit no edges, then \(\Gamma\sqcup E_n\) is Eulerian but not connected.  These are the only examples of such graphs.</p></article><article class="theorem-like" id="theorem-3"><h6 class="heading">
 <span class="type">Theorem</span><span class="codenumber">2.2.6</span>
 </h6>
-<p id="p-126">A connected graph \(\Gamma\) is semi-Eulerian if and only if it has exactly two vertices with odd degree.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-5" id="proof-5"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-5" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-127">A minor modification of our argument for Eulerian graphs shows that the condition is necessary.  Suppose that \(\Gamma\) is semi-Eulerian, with Eulerian path \(v_0, e_1, v_1,e_2,v_3,\dots,e_n,v_n\text{.}\)  Then at any vertex other than the starting or ending vertices, we can pair the entering and leaving edges up to get an even number of edges.</p>
-<p id="p-128">However, at the first vertex \(v_0\) the path cleaves along \(e_1\) the first time but never enters it accordingly, so that \(v_0\) has an odd degree; similarly, at \(v_n\) the path enters one final time along \(e_n\) without leaving, and so \(v_n\) also has an odd degree.</p>
-<p id="p-129">To see the condition is sufficient we could also modify the argument for the Eulerian case slightly, but it is slicker instead to <em class="emphasis">reduce</em> to the Eulerian case.  Suppose that \(\Gamma\) is connected, and that vertices \(v\) and \(w\) have odd degree and all other vertices of \(\Gamma\) have even degree.  Then we can construct a new graph \(\Gamma^\prime\) by adding an extra edge \(e=vw\) to \(\Gamma\text{.}\)  Then \(\Gamma^\prime\) is connected and every vertex has even degree, and so it has an Eulerian cycle.  Deleting the edge \(e\) that we added from this cycle gives an Eulerian path from \(v\) to \(w\) in \(\Gamma\text{.}\)</p></article></div></section></section></div></main>
+<p id="p-130">A connected graph \(\Gamma\) is semi-Eulerian if and only if it has exactly two vertices with odd degree.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-5" id="proof-5"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-5" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-131">A minor modification of our argument for Eulerian graphs shows that the condition is necessary.  Suppose that \(\Gamma\) is semi-Eulerian, with Eulerian path \(v_0, e_1, v_1,e_2,v_3,\dots,e_n,v_n\text{.}\)  Then at any vertex other than the starting or ending vertices, we can pair the entering and leaving edges up to get an even number of edges.</p>
+<p id="p-132">However, at the first vertex \(v_0\) the path cleaves along \(e_1\) the first time but never enters it accordingly, so that \(v_0\) has an odd degree; similarly, at \(v_n\) the path enters one final time along \(e_n\) without leaving, and so \(v_n\) also has an odd degree.</p>
+<p id="p-133">To see the condition is sufficient we could also modify the argument for the Eulerian case slightly, but it is slicker instead to <em class="emphasis">reduce</em> to the Eulerian case.  Suppose that \(\Gamma\) is connected, and that vertices \(v\) and \(w\) have odd degree and all other vertices of \(\Gamma\) have even degree.  Then we can construct a new graph \(\Gamma^\prime\) by adding an extra edge \(e=vw\) to \(\Gamma\text{.}\)  Then \(\Gamma^\prime\) is connected and every vertex has even degree, and so it has an Eulerian cycle.  Deleting the edge \(e\) that we added from this cycle gives an Eulerian path from \(v\) to \(w\) in \(\Gamma\text{.}\)</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

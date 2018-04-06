@@ -1,0 +1,1 @@
+python ../mathbook/script/mbx -vv -c latex-image -f svg -i ~/Graph-Theory-Notes/images -d ~/Graph-Theory-Notes/images ~/Graph-Theory-Notes/index.mbx

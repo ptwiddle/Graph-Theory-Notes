@@ -39,8 +39,6 @@
     \path  (B) edge[bend right=60] node {$10$} (E); 
 \end{scope}
 \end{tikzpicture}]]></latex-image></image>
-
-source="images/walkdrawing.png" />
 </figure>
 <p>In the graph shown, the vertices are labelled with letters, and the edges are labelled with numbers, and we have a walk highlighted in red, and with arrowtips drawn on the edges.  Starting from vertex <m>A</m>, we can take edge 6 to vertex <m>D</m>, and then edge 5 to vertex <m>C</m>, edge 5 to vertext <m>F</m>, edge 3 back to vertex <m>D</m>, and finally edge 8 to vertex <m>E</m>. Intuitively,then, a walk strings together several edges that share vertices in between.  Makign that formal, we have the following.</p>
 

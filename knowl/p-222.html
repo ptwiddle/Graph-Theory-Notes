@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-02-21T11:59:22Z    *-->
+<!--*    on 2018-04-04T15:38:46+01:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For the graph in <a knowl="./knowl/fig_span_tree_ex2.html" knowl-id="xref-fig_span_tree_ex2" alt="Figure 3.4.9 " title="Figure 3.4.9 ">Figure 3.4.9</a>, use Kruskal's algorithm (“avoid cycles”) to find a minimum weight spanning tree. Your answer should include a complete list of the edges, indicating which edges you take for your tree and which (if any) you reject in the course of running the algorithm.</p>
-<span class="incontext"><a href="s_graphalgorithms_exercises.html#p-222">in-context</a></span>
+<p>Let \(i\) and \(j\) be the unique integers for which \(u_k=v_i\) and \(x=v_j\text{.}\) If \(j \lt i\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\delta(x)= \delta(v_j)\le \delta(v_i)= \delta(u_k)\le
+\delta(u_k)+w(u_k).
+\end{equation*}
+</div>
+<p>Therefore the algorithm has found a path \(P(x)\) from \(r\) to \(x\) having length \(\delta(x)\) which is at most the distance from \(r\) to \(x\text{.}\) Clearly, this implies that \(\delta(x)\) is the distance from \(r\) to \(x\) and that \(P(x)\) is a shortest path.</p>
+<span class="incontext"><a href="s_graphalgorithms_shortest-paths.html#p-222">in-context</a></span>
 </body>
 </html>
