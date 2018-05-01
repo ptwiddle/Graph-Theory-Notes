@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-04-04T15:38:46+01:00    *-->
+<!--*    on 2018-05-01T17:29:35+01:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Given a combinatorial structure, such as a graph or a tree, it is natural to ask how many of such structures there are.  Often, there is no nice formula, for instance, for the number of different trees on \(n\) vertices there.  But if the vertices are labelled, then it turns out there's a nice answer.</p>
-<span class="incontext"><a href="s_graphalgorithms_prufer.html#p-225">in-context</a></span>
+<div class="displaymath">
+\begin{align*}
+\sigma\amp=(a,f,c,e,b,g,d,h)\\
+\delta(a)\amp=0; \amp P(a)\amp=(a)\\
+\delta(b)\amp=101; \amp P(b)\amp=(a,e,b)\\
+\delta(c)\amp=47; \amp P(c)\amp=(a,c)\\
+\delta(d)\amp= 132; \amp P(d)\amp=(a,e,b,d)\\
+\delta(e)\amp=70; \amp P(e)\amp=(a,e)\\
+\delta(f)\amp=24; \amp P(f)\amp=(a,f)\\
+\delta(g)\amp=112; \amp P(g)\amp=(a,e,g)\\
+\delta(h)\amp=161; \amp P(h)\amp=(a,e,b,d,h)
+\end{align*}
+</div>
+<span class="incontext"><a href="s_graphalgorithms_shortest-paths.html#p-225">in-context</a></span>
 </body>
 </html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-05-01T17:29:35+01:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Euler's Theorem</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
+    \newcommand{\ints}{\mathbb{Z}}
+    \newcommand{\posints}{\mathbb{N}}
+    \newcommand{\rats}{\mathbb{Q}}
+    \newcommand{\reals}{\mathbb{R}}
+    \newcommand{\complexes}{\mathbb{C}}
+    \newcommand{\twospace}{\mathbb{R}^2}
+    \newcommand{\threepace}{\mathbb{R}^3}
+    \newcommand{\dspace}{\mathbb{R}^d}
+    \newcommand{\nni}{\mathbb{N}_0}
+    \newcommand{\nonnegints}{\mathbb{N}_0}
+    \newcommand{\dom}{\operatorname{dom}}
+    \newcommand{\ran}{\operatorname{ran}}
+    \newcommand{\prob}{\operatorname{prob}}
+    \newcommand{\Prob}{\operatorname{Prob}}
+    \newcommand{\height}{\operatorname{height}}
+    \newcommand{\width}{\operatorname{width}}
+    \newcommand{\length}{\operatorname{length}}
+    \newcommand{\crit}{\operatorname{crit}}
+    \newcommand{\inc}{\operatorname{inc}}
+    \newcommand{\HP}{\mathbf{H_P}}
+    \newcommand{\HCP}{\mathbf{H^c_P}}
+    \newcommand{\GP}{\mathbf{G_P}}
+    \newcommand{\GQ}{\mathbf{G_Q}}
+    \newcommand{\AG}{\mathbf{A_G}}
+    \newcommand{\GCP}{\mathbf{G^c_P}}
+    \newcommand{\PXP}{\mathbf{P}=(X,P)}
+    \newcommand{\QYQ}{\mathbf{Q}=(Y,Q)}
+    \newcommand{\GVE}{\mathbf{G}=(V,E)}
+    \newcommand{\HWF}{\mathbf{H}=(W,F)}
+    \newcommand{\bfC}{\mathbf{C}}
+    \newcommand{\bfG}{\mathbf{G}}
+    \newcommand{\bfH}{\mathbf{H}}
+    \newcommand{\bfF}{\mathbf{F}}
+    \newcommand{\bfI}{\mathbf{I}}
+    \newcommand{\bfK}{\mathbf{K}}
+    \newcommand{\bfP}{\mathbf{P}}
+    \newcommand{\bfQ}{\mathbf{Q}}
+    \newcommand{\bfR}{\mathbf{R}}
+    \newcommand{\bfS}{\mathbf{S}}
+    \newcommand{\bfT}{\mathbf{T}}
+    \newcommand{\bfNP}{\mathbf{NP}}
+    \newcommand{\bftwo}{\mathbf{2}}
+    \newcommand{\cgA}{\mathcal{A}}
+    \newcommand{\cgB}{\mathcal{B}}
+    \newcommand{\cgC}{\mathcal{C}}
+    \newcommand{\cgD}{\mathcal{D}}
+    \newcommand{\cgE}{\mathcal{E}}
+    \newcommand{\cgF}{\mathcal{F}}
+    \newcommand{\cgG}{\mathcal{G}}
+    \newcommand{\cgM}{\mathcal{M}}
+    \newcommand{\cgN}{\mathcal{N}}
+    \newcommand{\cgP}{\mathcal{P}}
+    \newcommand{\cgR}{\mathcal{R}}
+    \newcommand{\cgS}{\mathcal{S}}
+    \newcommand{\bfn}{\mathbf{n}}
+    \newcommand{\bfm}{\mathbf{m}}
+    \newcommand{\bfk}{\mathbf{k}}
+    \newcommand{\bfs}{\mathbf{s}}
+    \newcommand{\bijection}{\xrightarrow[\text{onto}]{\text{$1$--$1$}}}
+    \newcommand{\injection}{\xrightarrow[]{\text{$1$--$1$}}}
+    \newcommand{\surjection}{\xrightarrow[\text{onto}]{}}
+    \newcommand{\nin}{\not\in}
+    \newcommand{\prufer}{\mbox{prüfer}}
+    \DeclareMathOperator{\fix}{fix}
+    \DeclareMathOperator{\stab}{stab}
+    \DeclareMathOperator{\var}{var}
+    \newcommand{\inv}{^{-1}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="MAS341.html"><span class="title">MAS341: Graph Theory</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_graphs_on_surfaces_other_surfaces.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_graphs_on_surfaces.html" title="Up" alt="Up">Up</a><span id="nextbutton" class="next-button button toolbar-item disabled">Next</span></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_graphs_on_surfaces_other_surfaces.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_graphs_on_surfaces.html" title="Up" alt="Up">Up</a><span class="next-button button toolbar-item disabled">Next</span>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook">A first look a graphs</a></li>
+<li><a href="s_intro_degrees.html" data-scroll="s_intro_degrees">Degree and handshaking</a></li>
+<li><a href="s_intro_isomorphisms.html" data-scroll="s_intro_isomorphisms">Graph Isomorphisms</a></li>
+<li><a href="s_intro_instantinsanity.html" data-scroll="s_intro_instantinsanity">Instant Insanity</a></li>
+<li><a href="s_intro_exercises.html" data-scroll="s_intro_exercises">Exercises</a></li>
+</ul>
+<h2 class="link"><a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span><span class="title">Walks</span></a></h2>
+<ul>
+<li><a href="s_walks_basics.html" data-scroll="s_walks_basics">Walks: the basics</a></li>
+<li><a href="s_walks_eulerian.html" data-scroll="s_walks_eulerian">Eulerian Walks</a></li>
+<li><a href="s_walks_hamiltonian.html" data-scroll="s_walks_hamiltonian">Hamiltonian cycles</a></li>
+<li><a href="s_walks_exercises.html" data-scroll="s_walks_exercises">Exercises</a></li>
+</ul>
+<h2 class="link"><a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span><span class="title">Algorithms</span></a></h2>
+<ul>
+<li><a href="s_graphalgorithms_min-wt-span.html" data-scroll="s_graphalgorithms_min-wt-span">Minimum Weight Spanning Trees</a></li>
+<li><a href="s_graphalgorithms_digraphs.html" data-scroll="s_graphalgorithms_digraphs">Digraphs</a></li>
+<li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
+<li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
+<li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises">Exercises</a></li>
+</ul>
+<h2 class="link active"><a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">4</span><span class="title">Graphs on Surfaces</span></a></h2>
+<ul>
+<li><a href="s_graphs_on_surfaces_intro.html" data-scroll="s_graphs_on_surfaces_intro">Introduction to Graphs on Surfaces</a></li>
+<li><a href="s_graphs_on_surfaces_planarity_algorithm.html" data-scroll="s_graphs_on_surfaces_planarity_algorithm">The planarity algorith</a></li>
+<li><a href="s_graphs_on_surfaces_Kuratowski.html" data-scroll="s_graphs_on_surfaces_Kuratowski">Kuratowski's Theorem</a></li>
+<li><a href="s_graphs_on_surfaces_other_surfaces.html" data-scroll="s_graphs_on_surfaces_other_surfaces">Drawing Graphs on Other surfaces</a></li>
+<li><a href="s_graphs_on_surfaces_euler.html" data-scroll="s_graphs_on_surfaces_euler" class="active">Euler's Theorem</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="s_graphs_on_surfaces_euler"><h2 class="heading hide-type" alt="Section 4.5 Euler's Theorem">
+<span class="type">Section</span><span class="codenumber">4.5</span><span class="title">Euler's Theorem</span>
+</h2>
+<a href="s_graphs_on_surfaces_euler.html" class="permalink">¶</a><section class="introduction" id="introduction-13"><p id="p-321">This section cover's Euler's theorem on planar graphs and its applications.  We give a proof by of Euler's theorem by induction, and gave several applications of the theorem itself: more proofs that \(K_{3,3}\) and \(K_5\) aren't planar, that footballs have five pentagons, and a proof that our video game designers couldn't have made their map into a sphere without doing something very strange.</p></section><section class="subsection" id="subsection-31"><h3 class="heading hide-type" alt="Subsection 4.5.1 counting Faces">
+<span class="type">Subsection</span><span class="codenumber">4.5.1</span><span class="title">counting Faces</span>
+</h3>
+<p id="p-322">A <dfn class="terminology">face</dfn> of a planar drawing of a graph is a region bounded by edges and vertices and not containing any other vertices or edges.</p>
+<p id="p-323"><a knowl="./knowl/fig_planar.html" knowl-id="xref-fig_planar" alt="Figure 4.5.1 " title="Figure 4.5.1 ">Figure 4.5.1</a> shows a planar drawing of a graph with \(6\) vertices and \(9\) edges. Notice how one of the edges is drawn as a true polygonal arc rather than a straight line segment. This drawing determines \(5\) regions, since we also count the unbounded region that surrounds the drawing.</p>
+<figure class="figure-like" id="fig_planar"><img src="images/planar_graph.svg" width="35%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.5.1</span>A planar drawing of a graph</figcaption></figure><p id="p-324"><a knowl="./knowl/fig_k4-planar.html" knowl-id="xref-fig_k4-planar" alt="Figure 4.5.2 " title="Figure 4.5.2 ">Figure 4.5.2</a> shows a planar drawing of the complete graph \(\bfK_4\text{.}\) There are \(4\) vertices, \(6\) edges, and \(4\) faces in the drawing.</p>
+<figure class="figure-like" id="fig_k4-planar"><img src="images/k4_planar.svg" width="35%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.5.2</span>A planar drawing of \(\bfK_4\)</figcaption></figure><p id="p-325">What happens if we compute the number of vertices minus the number of edges plus the number of faces for these drawings? We have</p>
+<div class="displaymath">
+\begin{align*}
+6-9+5 \amp = 2\\
+4-6+4 \amp =2
+\end{align*}
+</div>
+<p id="p-326">While it might seem like a coincidence that this computation results in \(2\) for these planar drawings, there's a more general principle at work here, and in fact it holds for <em class="emphasis">any</em> planar drawing of <em class="emphasis">any</em> planar graph.</p>
+<p id="p-327">In fact, the number \(2\) here actually results from a fundamental property of the plane, and there are a corresponding theorems for other surfaces. However, we only need the result as stated above.</p>
+<article class="theorem-like" id="theorem-8"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">4.5.3</span><span class="title">Euler's Formula</span>
+</h6>
+<p id="p-328">Let \(\bfG\) be a connected planar graph with \(n\) vertices and \(m\) edges. Every planar drawing of \(\bfG\) has \(f\) faces, where \(f\) satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+n-m+f=2.
+\end{equation*}
+</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-11" id="proof-11"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-11" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-329">Our proof is by induction on the number \(m\) of edges. If \(m=0\text{,}\) then since \(\bfG\) is connected, our graph has a single vertex, and so there is one face. Thus \(n-m+f = 1-0+1=2\) as needed. Now suppose that we have proven Euler's formula for all graphs with less than \(m\) edges and let \(\bfG\) have \(m\) edges. Pick an edge \(e\) of \(\bfG\text{.}\) What happens if we form a new graph \(\bfG'\) by deleting \(e\) from \(\bfG\text{?}\) If \(\bfG'\) is connected, our inductive hypothesis applies. Say that \(\bfG'\) has \(n'\) vertices, \(m'\) edges, and \(f'\) faces. Then by induction, these numbers satisfy</p>
+<div class="displaymath">
+\begin{equation*}
+n'-m'+f'=2.
+\end{equation*}
+</div>
+<p>Since we only deleted one edge, \(n'=n\) and \(m'=m-1\text{.}\) What did the removal of \(e\) do to the number of faces? In \(\bfG'\) there's a new face that was formerly two faces divided by \(e\) in \(\bfG\text{.}\) Thus, \(f'=f-1\text{.}\) Substituting these into \(n'-m'+f'=2\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+n-(m-1)+(f-1)=2 \iff n-m+f=2.
+\end{equation*}
+</div>
+<p>Thus, if \(\bfG'\) is connected, we are done. If \(\bfG'\) is disconnected, however, we cannot apply the inductive assumption to \(\bfG'\) directly. Fortunately, since we removed only one edge, \(\bfG'\) has two components, which we can view as two connected graphs \(\bfG'_1\) and \(\bfG'_2\text{.}\) Each of these has fewer than \(m\) edges, so we may apply the inductive hypothesis to them. For \(i=1,2\text{,}\) let \(n'_i\) be the number of vertices of \(\bfG'_i\text{,}\) \(m'_i\) the number of edges of \(\bfG'_i\text{,}\) and \(f'_i\) the number of faces of \(\bfG'_i\text{.}\) Then by induction we have</p>
+<div class="displaymath">
+\begin{equation*}
+n'_1 - m'_1 + f'_1 = 2 \quad \text{and} \quad n'_2-m'_2+f'_2 =2.
+\end{equation*}
+</div>
+<p>Adding these together, we have</p>
+<div class="displaymath">
+\begin{equation*}
+(n'_1 + n'_2) - (m'_1 + m'_2) + (f'_1 + f'_2) = 4.
+\end{equation*}
+</div>
+<p>But now \(n=n'_1 + n'_2\text{,}\) and \(m'_1 + m'_2 = m-1\text{,}\) so the equality becomes</p>
+<div class="displaymath">
+\begin{equation*}
+n - (m-1) + (f'_1+f'_2) = 4 \iff n-m + (f'_1 + f'_2) = 3.
+\end{equation*}
+</div>
+<p>The only thing we have yet to figure out is how \(f'_1+f'_2\) relates to \(f\text{,}\) and we have to hope that it will allow us to knock the \(3\) down to a \(2\text{.}\) Every face of \(\bfG'_1\) and \(\bfG'_2\) is a face of \(\bfG\text{,}\) since the fact that removing \(e\) disconnects \(\bfG\) means that \(e\) must be part of the boundary of the unbounded face. Further, the unbounded face is counted twice in the sum \(f'_1 + f'_2\text{,}\) so \(f=f'_1 + f'_2 -1\text{.}\) This gives exactly what we need to complete the proof.</p></article></div>
+<article class="remark-like" id="remark-3"><h6 class="heading">
+<span class="type">Remark</span><span class="codenumber">4.5.4</span><span class="title">Alternative method of dealing with the second case</span>
+</h6>
+<p id="p-330">In our proof of Euler's theorem, the most complicated part was dealing with the situation if the edge \(e\) disconnects our graph \(\bfG\) when we remove it. In this case, instead of deleting the edge \(e\) we can contract it -- that is, shrink it to a point.  This would have result in a graph that is still planar and still connected, but with one less edge (\(e\) is no longer around), and one less vertex (the two vertices \(e\) connects are now merged into one).  The number of faces remains unchanged.  So the number of edges and the number of faces each decreased by one, these two changes cancel out when we calculate \(n-m+f\text{,}\) and hence both are equal to two.</p></article></section><section class="subsection" id="subsection-32"><h3 class="heading hide-type" alt="Subsection 4.5.2 Applications of Euler's theorem">
+<span class="type">Subsection</span><span class="codenumber">4.5.2</span><span class="title">Applications of Euler's theorem</span>
+</h3>
+<p id="p-331">By itself, Euler's theorem doesn't seem that useful: there are three variables (the numbers of edges, vertices, and faces) and only one equation between them, so there are still lots of degrees of freedom.  For it to be particularly useful, we want to have other relationships between these numbers.  In many applications, these relationships can come from handshaking.</p>
+<p id="p-332">Recall that Euler's handshaking lemma said that</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{v\in G} d(v)=2 |E(G),
+\end{equation*}
+</div>
+<p>the sum of the degrees of all the vertices is twice the number of edges.  If we had some knowledge about the degrees of these vertices, we could get another relationship between the number of vertices and the number of edges.  For example, if \(G\) is regular of degree \(k\text{,}\) then every vertex has degree \(k\text{,}\) and hence the sum of all the degrees is just \(kn\text{.}\)  Hence, handshaking would tell us that \(kn=2m\text{,}\) and we would have another relationship between the three variables \(m,n\) and \(f\text{.}\)</p>
+<p id="p-333">Similarly, there is a handshaking between faces and edges.  Let the <em class="emphasis">degree</em> of a face be the number of edges that occur around it -- so, a triangle would have degree three.  Then, if we sum up the degrees of all the faces, we're counting each edge twice again -- once from the face on its left, and once from the face on its right.  so we have</p>
+<div class="displaymath">
+\begin{equation*}
+sum_{f\in \text{faces}(G)}d(f)=2 |E(G)|
+\end{equation*}
+</div>
+<p>Note that this is just the usual vertex-edge handshaking for the dual graph.</p>
+<p id="p-334">Thus, vertex-edge and face-edge handshaking can potentially give us two other sources of relationships between the numbers of vertices, edges, and faces.  Most applications of Euler's theorem proceed by combining all three relationships, as we shall see.</p></section></section></div></main>
+</div>
+</body>
+</html>

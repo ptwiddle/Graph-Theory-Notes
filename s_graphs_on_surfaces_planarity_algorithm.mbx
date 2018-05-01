@@ -1,0 +1,335 @@
+<section xml:id="s_graphs_on_surfaces_planarity_algorithm">
+    <title>The planarity algorith</title>
+
+<introduction> <p>In the previous chapter we showed that <m>K_{3,3}</m> isn't planar; in this section we investigate how the ideas we used to solve the utilities problem for <m>K_{3,3}</m>-- namely, the Jordan Curve theorem and the fact that <m>K_{3,3}</m> is Hamiltonian -- generalize to other graphs.  In the end, this will culminate in "The Planarity Algorithm for Hamiltonian Graphs".</p>
+
+</introduction>
+<subsection> <title>Stereographic Projection and Unnecessary cases</title>
+<p>It will make our life easier if before we investigate other graphs we streamline our proof for <m>K_{3,3}</m> slightly: there were a few times where we had to treat different cases that wound up behaving essentially the same, and we'd like to see that we didn't actually need to treat them as separate cases.  In particular, we would like to show that the following three seemingly different ways to connect the first two vertices lead to the same analysis:
+<ol>
+<li> Connecting them inside the Hamiltonian cycle</li>
+<li> Connecting them outside "to the left"</li>
+<li> Connecting them outside "to the right"</li>
+</ol>
+</p>
+<figure xml:id="fig_inside_outside"><caption>The three cases</caption>
+<image width="70%"><latex-image><![CDATA[\begin{tikzpicture}[scale=.7]
+\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+\node[vertex] (a) at (0,1) {};
+\node[vertex] (x) at (1,2) {};
+\node[vertex] (b) at (3,2) {};
+\node[vertex] (y) at (4,1) {};
+\node[vertex] (c) at (3,0) {};
+\node[vertex] (z) at (1,0) {};
+
+\path 
+(a) edge (x)
+    edge (z)
+    edge[dashed] (y)
+(b) edge (x)
+    edge (y)
+(c) edge (z)
+    edge (y);
+
+\begin{scope}[xshift=5cm]
+\node[vertex] (a) at (0,1) {};
+\node[vertex] (x) at (1,2) {};
+\node[vertex] (b) at (3,2) {};
+\node[vertex] (y) at (4,1) {};
+\node[vertex] (c) at (3,0) {};
+\node[vertex] (z) at (1,0) {};
+
+\path 
+(a) edge (x)
+    edge (z)
+    edge[bend right=225, looseness=3, dashed] (y)
+(b) edge (x)
+    edge (y)
+(c) edge (z)
+    edge (y);
+
+\end{scope}
+
+\begin{scope}[xshift=10cm]
+\node[vertex] (a) at (0,1) {};
+\node[vertex] (x) at (1,2) {};
+\node[vertex] (b) at (3,2) {};
+\node[vertex] (y) at (4,1) {};
+\node[vertex] (c) at (3,0) {};
+\node[vertex] (z) at (1,0) {};
+
+\path 
+(a) edge (x)
+    edge (z)
+    edge[bend left=225, looseness=3, dashed] (y)
+(b) edge (x)
+    edge (y)
+(c) edge (z)
+    edge (y);
+
+\end{scope}
+
+\end{tikzpicture}
+]]> </latex-image></image></figure>
+
+
+<p>The solution will be to think about drawing the graphs on the sphere <m>S^2</m> instead of the plane.  First, let's see why this solves our problem.  On the plane, the inside of a circle is different from the outside of a circle -- the inside is bounded, but the outside is unbounded.  However, on the sphere, the two sides of a circle are equivalent -- you can deform any circle to be an equator, and then the northern hemisphere is equivalent to the southern hemisphere. This shows on there sphere, the inside and the outside aren't really different cases.</p>
+
+<p>Furthermore, going around the outside to "the left" or "to the right" are equivalent on the sphere -- you can slowly make the path around the sphere bigger and bigger, and then slip it around the north or south pole, and back.  Alternatively, we've already seen that the inside of the circle is equivalent to the outside of the circle on the sphere <m>S^2</m>, and on the inside of the circle it doesn't matter exactly how the two points are connected, and so it shouldn't matter on the outside, either.</p>
+
+<p>So we've argued that if we're trying to draw a graph on the sphere, all three cases are the same, but it should still feel like a bait-and-switch: we weren't trying to draw graphs on there sphere, we were trying to draw graphs on the plane.  The connection comes from the fact that the sphere can be viewed as a plane with one additional point.</p>
+
+<proposition><statement>Let <m>p\in S^2</m> be any point.  Then <m>S^2\setminus\{p\}\cong\reals^2</m>.</statement>
+<proof>
+<p>
+  One way to visualize this is imagine the sphere as being made from very flexible clay.  If we poke a small hole in the top of the sphere, we could stick our fingers in and make the hole larger, and gradually stretch and bend and reform for the sphere to be a flat disk. </p>
+
+<p>Alternatively, one could use <a href="https://en.wikipedia.org/wiki/Stereographic_projection">stereographic projection</a>, as shown in Figure .  Draw <m>S^2</m> in <m>\R^3</m> as the unit sphere at the origin, and let <m>N=(0,0,1)</m> be the north pole of the sphere.  Stereographic projection gives a bijection between <m>S^2\setminus\{N\}</m> (the sphere minus the north pole) to the plane, as follows: for any point <m>p\neq N</m> the line through <m>p</m> and <m>N</m> must meet the <m>xy</m>-plane at one point.  On the other hand, any line through <m>N</m> and a point on the <m>xy</m>-plane must meet the sphere at one other point.</p>
+
+<p>Accepting that <m>S^2</m> is <m>\reals^2</m> minus one point, we see that we can draw a given graph <m>G</m> on <m>S^</m> if and only if we can draw <m>G</m> on <m>\reals^2</m>: if we draw it on <m>\reals^2</m>, we can view the <m>\reals^2</m> as a small patch of <m>S^2</m>. And if we have a drawing on <m>S^2</m>, there must be at least one point on <m>S^2</m> that isn't in the drawing of <m>G</m>, and doing stereographic projection from that point gives a drawing of <m>G</m> on the plane <m>\reals^2</m>.</p>
+</proof>
+</proposition>
+</subsection>
+
+<subsection><title>The planarity algorith</title>
+<p>The preceeding discussion may have felt heavy going, but the upshot is that the cases that seemed "the same" in our analysis of <m>K_{3,3}</m> actually are the same, and similar cases will be the same for any graph. This will make it much easier to extend our reasoning to more complicated graphs.</p>
+
+<p>Suppose that <m>G</m> is Hamiltonian, and choose a Hamiltonian cycle; if <m>G</m> were planar than this cycle must be drawn as a circle, and every other edge must either lie entirely inside or entirely outside the graph.  Now consider two edges <m>e=ab</m> and <m>f=xy</m> that are not part of the cycle.  Depending on the order that <m>a,b,x</m> and <m>y</m> appear as you go around the Hamiltonian cycle, one of two things will happen:
+<ol><li>If the vertices of <m>e</m> and <m>f</m> do not interlace (e.g. <m>abxy, yxab, xbay,\cdots</m>), or if they share a vertex (e.g., <m>a=x</m>), then <m>e</m> may be drawn both inside or both outside the circle without crossing</li>
+<li> If the vertices of <m>e</m> and <m>f</m> do interlace (e.g. <m>axby, xayb, yaxb,\dots...</m>) then if <m>e</m> and <m>f</m> are drawn both inside or both outside the circle, they must cross </li></ol></p>
+
+<p>This motivates the following definition</p>
+<definition><title>Cross(<m>G,C</m>)</title> <statement><p>Let <m>G</m> be a Hamiltonian graph, and <m>C</m> a Hamiltonian cycle in <m>G</m>.  The <em>crossing graph </em> of <m>G</m> and <m>C</m>, denoted Cross(<m>G,C</m>) has as vertices the edges of <m>G</m> that aren't in the cycle, and an edge between vertices <m>p</m> and <m>q</m> if the vertices of the corresponding edges interleave -- that is, <m>p</m> and <m>q</m> are adjacent if they cannot be drawn on the same side of the cycle <m>C</m> without crossing.</p></statement></definition>
+
+<algorithm><title>The planarity algorithm for complete graphs</title><statement><p>Suppose that <m>G</m> is Hamiltonian, and <m>C</m> is a Hamiltonian cycle.  Then <m>G</m> is planar if and only if Cross(<m>G,C</m>) is bipartite.</p></statement></algorithm>
+
+<p>The idea is that if <m>G</m> is planar, the vertices of Cross(<m>G,C</m>) are naturally bicolored, with the red vertices, say, corresponding to the edges that are drawn inside the cycle <m>C</m>, and the blue edge corresponding to the edges that are drawn outside the cycle <m>C</m>.  The definition of the edges of Cross(<m>G,C</m>) guarantees there are no edges between vertices of the same color.</p>
+
+<p>Similarly, if we can find a colouring of the vertices of Cross(<m>G,C</m>) so that adjacent vertices have different colours, then we can draw all the edges of <m>G</m> corresponding to red vertices of Cross(<m>G,C</m>) inside (or outside) <m>C</m> without having any of them cross.</p>
+
+<example><title><m>K_5</m></title> <p>Let's apply the planarity algorithm to the complete graph <m>K_5</m>.  Let's label the vertices 1-5, and take our Hamiltonian cycle <m>C</m> to be 123451, which we've drawn as the outside pentagon in the following figure:
+<figure xml:id="fig_planarity_crossk5_edge13"><caption> The graph (<m>K_5</m>)</caption>
+<image width="70%"><latex-image><![CDATA[\begin{tikzpicture}[scale=.7]
+\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+\node[vertex] (1) at (1,0) {$1$};
+\node[vertex] (2) at (0,2) {$2$};
+\node[vertex] (3) at (2,3) {$3$};
+\node[vertex] (4) at (4,2) {$4$};
+\node[vertex] (5) at (3,0) {$5$};
+
+
+\path 
+(1) edge (2)
+    edge (3)
+    edge (4)
+    edge (5)
+(2) edge (3)
+    edge (4)
+    edge (5)
+(3) edge (4)
+    edge (5)
+(4) edge (5);
+
+\end{tikzpicture}
+]]> </latex-image></image></figure>
+
+
+
+Since <m>K_5</m> has <m>\binom{5}{2}=10</m> vertices, there are 5 edges that aren't used in <m>C</m>, namely 13,14, 24,25, and 35.  So Cross(<m>K_5, 123451</m>) will consist of these five vertices.  We see that 13 will be adjacent to 24 and 25, since these edges would cross if drawn inside, but 13 is not adjacent to 14 or 35, since these edges would cross 13 if drawn on the same side of the circle, as illustrated in the next figure</p>
+<figure xml:id="fig_planarity_crossk5edges"><caption> The edges 13 does and does not cross</caption>
+<image width="70%"><latex-image><![CDATA[\begin{tikzpicture}[scale=.7]
+\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+
+
+\node[vertex] (1) at (1,0) {$1$};
+\node[vertex] (2) at (0,2) {$2$};
+\node[vertex] (3) at (2,3) {$3$};
+\node[vertex] (4) at (4,2) {$4$};
+\node[vertex] (5) at (3,0) {$5$};
+\path 
+(1) edge (2)
+    edge (3)
+    edge (5)
+(2) edge (3)
+    edge (4)
+(3) edge (4)
+(4) edge (5);
+
+
+\begin{scope}[yshift=-5cm]
+\node at (2,-1) {13 crosses 24 and 25};
+\node[vertex] (1) at (1,0) {$1$};
+\node[vertex] (2) at (0,2) {$2$};
+\node[vertex] (3) at (2,3) {$3$};
+\node[vertex] (4) at (4,2) {$4$};
+\node[vertex] (5) at (3,0) {$5$};
+\path 
+(1) edge (2)
+    edge (3)
+    edge (5)
+(2) edge (3)
+    edge (5)
+(3) edge (4)
+(4) edge (5);
+\end{scope}
+
+
+\begin{scope}[xshift=8cm]
+\node[vertex] (1) at (1,0) {$1$};
+\node[vertex] (2) at (0,2) {$2$};
+\node[vertex] (3) at (2,3) {$3$};
+\node[vertex] (4) at (4,2) {$4$};
+\node[vertex] (5) at (3,0) {$5$};
+\path 
+(1) edge (2)
+    edge (3)
+    edge (4)
+    edge (5)
+(2) edge (3)
+(3) edge (4)
+(4) edge (5);
+
+
+\begin{scope}[yshift=-5cm]
+\node at (2,-1) {13 doesn't cross 14 or 35};
+\node[vertex] (1) at (1,0) {$1$};
+\node[vertex] (2) at (0,2) {$2$};
+\node[vertex] (3) at (2,3) {$3$};
+\node[vertex] (4) at (4,2) {$4$};
+\node[vertex] (5) at (3,0) {$5$};
+\path 
+(1) edge (2)
+    edge (3)
+    edge (5)
+(2) edge (3)
+(3) edge (4)
+    edge (5)
+(4) edge (5);
+\end{scope}
+
+
+
+
+\end{scope}
+
+\end{tikzpicture}
+]]> </latex-image></image></figure>
+
+
+
+<p>Similar consideration with the other edges show that Cross(<m>K_5, 123451</m>) is the following graph, which is isomorphic to a five cycle:</p>
+
+<figure xml:id="fig_planarity_crossk5"><caption> The graph Cross(<m>K_5, 123451</m>)</caption>
+<image width="70%"><latex-image><![CDATA[\begin{tikzpicture}[scale=.7]
+\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+\node[vertex] (13) at (1,0) {$13$};
+\node[vertex] (14) at (0,2) {$14$};
+\node[vertex] (24) at (2,3) {$24$};
+\node[vertex] (25) at (4,2) {$25$};
+\node[vertex] (35) at (3,0) {$35$};
+
+
+\path 
+(13) edge (24)
+    edge (25)
+(14) edge (25)
+    edge (35)
+(24) edge (35);
+
+\end{tikzpicture}
+]]> </latex-image></image></figure>
+
+
+
+<p> In particular, Cross(<m>K_5, 123451</m>) is not bipartite.  Hence, by the planarity algorithm for Hamiltonian graphs, we see that <m>K_5</m> is not planar.</p></example>
+
+<example><title>A planar graph</title>
+<p>Let's use the planarity algorithm for Hamiltonian graphs to find a planar drawing of the graph shown in the next figure.</p>
+
+<figure xml:id="fig_planarity_example_mess"><caption> A graph <m>H</m></caption>
+<image width="70%"><latex-image><![CDATA[\begin{tikzpicture}[scale=.7]
+\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+\node[vertex] (b) at (0,1) {$b$};
+\node[vertex] (c) at (1,2) {$c$};
+\node[vertex] (x) at (3,2) {$x$};
+\node[vertex] (y) at (4,1) {$y$};
+\node[vertex] (z) at (3,0) {$z$};
+\node[vertex] (a) at (1,0) {$a$};
+
+\path 
+(a) edge (b)
+    edge (x)
+    edge (y)
+    edge (z)
+(b) edge (c)
+    edge (x)
+    edge (z)
+(c) edge (x)
+    edge (y)
+    edge (z)
+(x) edge (y)
+(y) edge (z);
+
+
+\end{tikzpicture}
+]]> </latex-image></image></figure>
+<p>We see that <m>H</m> is Hamiltonian and take as our Hamiltonian cycle the path around the outside, namely <m>abcxyza</m>.  There are then six edges not contained in the Hamiltonian cycle, and we find that Cross(<m>H, abcxyz</m>) is as follows:</p>
+
+<figure xml:id="fig_planarity_example_cross"><caption> The graph Cross(<m>H, abcxyza)</m></caption>
+<image width="70%"><latex-image><![CDATA[\begin{tikzpicture}[scale=.7]
+\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+\node[vertex] (ax) at (0,1) {$ax$};
+\node[vertex] (cy) at (1,2) {$cy$};
+\node[vertex] (bx) at (3,2) {$bx$};
+\node[vertex] (cz) at (4,1) {$cz$};
+\node[vertex] (ay) at (3,0) {$ay$};
+\node[vertex] (bz) at (1,0) {$bz$};
+
+\path 
+(ax) edge (bz)
+    edge (cy)
+    edge (cz)
+(bx) edge (cy)
+    edge (cz)
+(ay) edge (cz)
+    edge (bz);
+\end{tikzpicture}
+]]> </latex-image></image></figure>
+<p>For instance, in <m>H</m> the edge <m>ax</m> crosses the three edges <m>cy, cz</m> and <m>bz</m>, and so in Cross(<m>H, abcxyza</m>), the vertex <m>ax</m> is adjacent to these vertices.</p>
+
+<p>The graph Cross(<m>H, abcxyza)</m> has no odd cycles and hence is bipartite -- for instance, we may color <m>ax, bx</m> and <m>ay</m> red, and the other three vertices blue.  Then, to draw <m>H</m> in the plane without edges crossing, we draw the red edges inside the cycle, and the blue edges outside the cycle:</p>
+
+<figure xml:id="fig_planarity_example_planar_drawing"><caption> The graph <m>H</m> drawn without edges crossing</caption>
+<image width="70%"><latex-image><![CDATA[\begin{tikzpicture}[scale=.7]
+\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+\node[vertex] (b) at (0,1) {$b$};
+\node[vertex] (c) at (1,2) {$c$};
+\node[vertex] (x) at (3,2) {$x$};
+\node[vertex] (y) at (4,1) {$y$};
+\node[vertex] (z) at (3,0) {$z$};
+\node[vertex] (a) at (1,0) {$a$};
+
+\path 
+(a) edge (b)
+    edge (x)
+    edge (y)
+    edge (z)
+(b) edge (c)
+    edge (x)
+    edge[bend right=90, looseness=1] (z)
+(c) edge (x)
+    edge[bend left=90, looseness=1] (y)
+    edge[bend left=135, looseness=3] (z)
+(x) edge (y)
+(y) edge (z);
+
+
+\end{tikzpicture}
+]]> </latex-image></image></figure>
+</example>
+
+
+
+
+</subsection>
+</section>

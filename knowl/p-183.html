@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-04-04T15:38:46+01:00    *-->
+<!--*    on 2018-05-01T17:29:35+01:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>On the other hand, an implementation of Prim's algorithm requires the program to conveniently keep track of the edges incident with each vertex and always be able to identify the edge with least weight among subsets of these edges. In computer science, the data structure that enables this task to be carried out is called a <dfn class="terminology">heap</dfn>.</p>
+<dl class="description-list">
+<dt>Initialization.</dt>
+<dd><p>Set \(S=\emptyset\) and \(i=0\text{.}\)</p></dd>
+<dt>Inductive Step.</dt>
+<dd>
+<p>While \(|S| \lt n-1\text{,}\) let \(j\) be the least non-negative integer so that \(j &gt; i\) and there are no cycles in \(S\cup\{e_j\}\text{.}\) Then (using pseudo-code) set</p>
+<div class="displaymath">
+\begin{equation*}
+i = j\quad\text{and} \quad S= S\cup\{j\}.
+\end{equation*}
+</div>
+</dd>
+</dl>
 <span class="incontext"><a href="s_graphalgorithms_min-wt-span.html#p-183">in-context</a></span>
 </body>
 </html>

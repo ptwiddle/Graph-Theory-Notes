@@ -86,6 +86,7 @@
   <xi:include href="./ch_intro.mbx" />
    <xi:include href="./ch_walks.mbx" />
   <xi:include href="./ch_algorithms.mbx" />
+  <xi:include href="./ch_graphs_on_surfaces.mbx" />
 </book>
 
 

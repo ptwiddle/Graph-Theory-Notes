@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-04-04T15:38:46+01:00    *-->
+<!--*    on 2018-05-01T17:29:35+01:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>By the inductive hypothesis, \(\delta(u_k)\) is the distance from \(r\) to \(u_k\text{,}\) and \(P(u_k)\) is a shortest path from \(r\) to \(u_k\text{.}\) Note that \(P(u_k)\) need not be the same as path \(Q\text{,}\) as we suggest in <a knowl="./knowl/fig_graphalgorithms_dijkstra-proof.html" knowl-id="xref-fig_graphalgorithms_dijkstra-proof" alt="Figure 3.3.7 " title="Figure 3.3.7 ">Figure 3.3.7</a>. However, if distinct, the two paths will have the same length, namely \(\delta(u_k)\text{.}\)  Also, the distance from \(r\) to \(x\) is \(\delta(u_k)+w(u_k,x)\ge \delta(u_k)\) since \(P\) is a shortest path from \(r\) to \(x\) and \(w(u_k,x)\geq 0\text{.}\)</p>
+<div class="displaymath">
+\begin{align*}
+\sigma\amp=(a,f,c,e,b,g)\\
+\delta(a)\amp=0; \amp P(a)\amp=(a)\\
+\delta(b)\amp=101; \amp P(b)\amp=(a,e,b)\\
+\delta(c)\amp=47; \amp P(c)\amp=(a,c)\\
+\delta(d)\amp= 132; \amp P(d)\amp=(a,e,b,d)\\
+\delta(e)\amp=70; \amp P(e)\amp=(a,e)\\
+\delta(f)\amp=24; \amp P(f)\amp=(a,f)\\
+\delta(g)\amp=112; \amp P(g)\amp=(a,e,g)\\
+\delta(h)\amp=178 = 112+66=\delta(g)+w(g,h); \amp P(h)\amp=(a,e,g,h)\quad\text{updated}
+\end{align*}
+</div>
 <span class="incontext"><a href="s_graphalgorithms_shortest-paths.html#p-221">in-context</a></span>
 </body>
 </html>

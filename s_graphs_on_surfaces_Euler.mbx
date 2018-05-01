@@ -1,0 +1,89 @@
+<section xml:id="s_graphs_on_surfaces_euler">
+    <title>Euler's Theorem</title>
+
+<introduction> <p>This section cover's Euler's theorem on planar graphs and its applications.  We give a proof by of Euler's theorem by induction, and gave several applications of the theorem itself: more proofs that <m>K_{3,3}</m> and <m>K_5</m> aren't planar, that footballs have five pentagons, and a proof that our video game designers couldn't have made their map into a sphere without doing something very strange.</p>
+</introduction>
+<subsection> <title>counting Faces</title><p>
+A <term>face</term><idx><h>face</h></idx> of a planar drawing of a graph is a region bounded by edges and vertices and not containing any other vertices or edges.
+    </p>
+
+    <p><xref ref="fig_planar"  /> shows a planar drawing of a graph with <m>6</m> vertices and <m>9</m> edges. Notice how one of the edges is drawn as a true polygonal arc rather than a straight line segment. This drawing determines <m>5</m> regions, since we also count the unbounded region that surrounds the drawing.
+    </p>
+    <figure xml:id="fig_planar" >
+        <caption>A planar drawing of a graph</caption>
+        <image width="35%" source="images/planar_graph" />
+    </figure>
+    <p><xref ref="fig_k4-planar"  /> shows a planar drawing of the complete graph <m>\bfK_4</m>. There are <m>4</m> vertices, <m>6</m> edges, and <m>4</m> faces in the drawing.
+    </p>
+    <figure xml:id="fig_k4-planar" >
+        <caption>A planar drawing of <m>\bfK_4</m></caption>
+        <image width="35%" source="images/k4_planar" />
+    </figure>
+    <p>What happens if we compute the number of vertices minus the number of edges plus the number of faces for these drawings? We have
+    <md>
+        <mrow>  6-9+5 \amp = 2</mrow>
+        <mrow>  4-6+4 \amp =2</mrow>
+    </md>
+    </p>
+    <p>While it might seem like a coincidence that this computation results in <m>2</m> for these planar drawings, there's a more general principle at work here, and in fact it holds for <em>any</em> planar drawing of <em>any</em> planar graph.
+    </p>
+
+    <p>In fact, the number <m>2</m> here actually results from a fundamental property of the plane, and there are a corresponding theorems for other surfaces. However, we only need the result as stated above.
+    </p>
+
+    
+    <theorem>
+        <title>Euler's Formula</title>
+        <idx><h>Euler's formula</h></idx>
+        <statement>
+            <p>Let <m>\bfG</m> be a connected planar graph with <m>n</m> vertices and <m>m</m> edges. Every planar drawing of <m>\bfG</m> has <m>f</m> faces, where <m>f</m> satisfies
+            <me>
+                n-m+f=2.
+            </me>
+            </p>
+        </statement>
+
+
+        <proof>
+            <p>Our proof is by induction on the number <m>m</m> of edges. If <m>m=0</m>, then since <m>\bfG</m> is connected, our graph has a single vertex, and so there is one face. Thus <m>n-m+f = 1-0+1=2</m> as needed. Now suppose that we have proven Euler's formula for all graphs with less than <m>m</m> edges and let <m>\bfG</m> have <m>m</m> edges. Pick an edge <m>e</m> of <m>\bfG</m>. What happens if we form a new graph <m>\bfG'</m> by deleting <m>e</m> from <m>\bfG</m>? If <m>\bfG'</m> is connected, our inductive hypothesis applies. Say that <m>\bfG'</m> has <m>n'</m> vertices, <m>m'</m> edges, and <m>f'</m> faces. Then by induction, these numbers satisfy
+        <me>
+            n'-m'+f'=2.
+        </me>
+        Since we only deleted one edge, <m>n'=n</m> and <m>m'=m-1</m>. What did the removal of <m>e</m> do to the number of faces? In <m>\bfG'</m> there's a new face that was formerly two faces divided by <m>e</m> in <m>\bfG</m>. Thus, <m>f'=f-1</m>. Substituting these into <m>n'-m'+f'=2</m>, we have
+        <me>
+            n-(m-1)+(f-1)=2 \iff n-m+f=2.
+        </me>
+        Thus, if <m>\bfG'</m> is connected, we are done. If <m>\bfG'</m> is disconnected, however, we cannot apply the inductive assumption to <m>\bfG'</m> directly. Fortunately, since we removed only one edge, <m>\bfG'</m> has two components, which we can view as two connected graphs <m>\bfG'_1</m> and <m>\bfG'_2</m>. Each of these has fewer than <m>m</m> edges, so we may apply the inductive hypothesis to them. For <m>i=1,2</m>, let <m>n'_i</m> be the number of vertices of <m>\bfG'_i</m>, <m>m'_i</m> the number of edges of <m>\bfG'_i</m>, and <m>f'_i</m> the number of faces of <m>\bfG'_i</m>. Then by induction we have
+        <me>
+            n'_1 - m'_1 + f'_1 = 2 \quad \text{and} \quad n'_2-m'_2+f'_2 =2.
+        </me>
+        Adding these together, we have
+        <me>
+            (n'_1 + n'_2) - (m'_1 + m'_2) + (f'_1 + f'_2) = 4.
+        </me>
+        But now <m>n=n'_1 + n'_2</m>, and <m>m'_1 + m'_2 = m-1</m>, so the equality becomes
+        <me>
+            n - (m-1) + (f'_1+f'_2) = 4 \iff n-m + (f'_1 + f'_2) = 3.
+        </me>
+        The only thing we have yet to figure out is how <m>f'_1+f'_2</m> relates to <m>f</m>, and we have to hope that it will allow us to knock the <m>3</m> down to a <m>2</m>. Every face of <m>\bfG'_1</m> and <m>\bfG'_2</m> is a face of <m>\bfG</m>, since the fact that removing <m>e</m> disconnects <m>\bfG</m> means that <m>e</m> must be part of the boundary of the unbounded face. Further, the unbounded face is counted twice in the sum <m>f'_1 + f'_2</m>, so <m>f=f'_1 + f'_2 -1</m>. This gives exactly what we need to complete the proof.
+            </p>
+        </proof>
+    </theorem>
+<remark><title>Alternative method of dealing with the second case</title><p>In our proof of Euler's theorem, the most complicated part was dealing with the situation if the edge <m>e</m> disconnects our graph <m>\bfG</m> when we remove it. In this case, instead of deleting the edge <m>e</m> we can contract it -- that is, shrink it to a point.  This would have result in a graph that is still planar and still connected, but with one less edge (<m>e</m> is no longer around), and one less vertex (the two vertices <m>e</m> connects are now merged into one).  The number of faces remains unchanged.  So the number of edges and the number of faces each decreased by one, these two changes cancel out when we calculate <m>n-m+f</m>, and hence both are equal to two.</p></remark>  
+
+
+</subsection>
+<subsection><title>Applications of Euler's theorem</title>
+
+<p>By itself, Euler's theorem doesn't seem that useful: there are three variables (the numbers of edges, vertices, and faces) and only one equation between them, so there are still lots of degrees of freedom.  For it to be particularly useful, we want to have other relationships between these numbers.  In many applications, these relationships can come from handshaking.</p>
+
+<p>Recall that Euler's handshaking lemma said that <me>\sum_{v\in G} d(v)=2 |E(G),</me>
+the sum of the degrees of all the vertices is twice the number of edges.  If we had some knowledge about the degrees of these vertices, we could get another relationship between the number of vertices and the number of edges.  For example, if <m>G</m> is regular of degree <m>k</m>, then every vertex has degree <m>k</m>, and hence the sum of all the degrees is just <m>kn</m>.  Hence, handshaking would tell us that <m>kn=2m</m>, and we would have another relationship between the three variables <m>m,n</m> and <m>f</m>.</p>
+
+<p>Similarly, there is a handshaking between faces and edges.  Let the <em>degree</em> of a face be the number of edges that occur around it -- so, a triangle would have degree three.  Then, if we sum up the degrees of all the faces, we're counting each edge twice again -- once from the face on its left, and once from the face on its right.  so we have
+<me>sum_{f\in \text{faces}(G)}d(f)=2 |E(G)|</me>
+Note that this is just the usual vertex-edge handshaking for the dual graph.</p>
+
+<p>Thus, vertex-edge and face-edge handshaking can potentially give us two other sources of relationships between the numbers of vertices, edges, and faces.  Most applications of Euler's theorem proceed by combining all three relationships, as we shall see.</p> 
+</subsection>
+</section>

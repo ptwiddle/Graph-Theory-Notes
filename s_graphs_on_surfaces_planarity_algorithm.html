@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-05-01T17:29:35+01:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The planarity algorith</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
+    \newcommand{\ints}{\mathbb{Z}}
+    \newcommand{\posints}{\mathbb{N}}
+    \newcommand{\rats}{\mathbb{Q}}
+    \newcommand{\reals}{\mathbb{R}}
+    \newcommand{\complexes}{\mathbb{C}}
+    \newcommand{\twospace}{\mathbb{R}^2}
+    \newcommand{\threepace}{\mathbb{R}^3}
+    \newcommand{\dspace}{\mathbb{R}^d}
+    \newcommand{\nni}{\mathbb{N}_0}
+    \newcommand{\nonnegints}{\mathbb{N}_0}
+    \newcommand{\dom}{\operatorname{dom}}
+    \newcommand{\ran}{\operatorname{ran}}
+    \newcommand{\prob}{\operatorname{prob}}
+    \newcommand{\Prob}{\operatorname{Prob}}
+    \newcommand{\height}{\operatorname{height}}
+    \newcommand{\width}{\operatorname{width}}
+    \newcommand{\length}{\operatorname{length}}
+    \newcommand{\crit}{\operatorname{crit}}
+    \newcommand{\inc}{\operatorname{inc}}
+    \newcommand{\HP}{\mathbf{H_P}}
+    \newcommand{\HCP}{\mathbf{H^c_P}}
+    \newcommand{\GP}{\mathbf{G_P}}
+    \newcommand{\GQ}{\mathbf{G_Q}}
+    \newcommand{\AG}{\mathbf{A_G}}
+    \newcommand{\GCP}{\mathbf{G^c_P}}
+    \newcommand{\PXP}{\mathbf{P}=(X,P)}
+    \newcommand{\QYQ}{\mathbf{Q}=(Y,Q)}
+    \newcommand{\GVE}{\mathbf{G}=(V,E)}
+    \newcommand{\HWF}{\mathbf{H}=(W,F)}
+    \newcommand{\bfC}{\mathbf{C}}
+    \newcommand{\bfG}{\mathbf{G}}
+    \newcommand{\bfH}{\mathbf{H}}
+    \newcommand{\bfF}{\mathbf{F}}
+    \newcommand{\bfI}{\mathbf{I}}
+    \newcommand{\bfK}{\mathbf{K}}
+    \newcommand{\bfP}{\mathbf{P}}
+    \newcommand{\bfQ}{\mathbf{Q}}
+    \newcommand{\bfR}{\mathbf{R}}
+    \newcommand{\bfS}{\mathbf{S}}
+    \newcommand{\bfT}{\mathbf{T}}
+    \newcommand{\bfNP}{\mathbf{NP}}
+    \newcommand{\bftwo}{\mathbf{2}}
+    \newcommand{\cgA}{\mathcal{A}}
+    \newcommand{\cgB}{\mathcal{B}}
+    \newcommand{\cgC}{\mathcal{C}}
+    \newcommand{\cgD}{\mathcal{D}}
+    \newcommand{\cgE}{\mathcal{E}}
+    \newcommand{\cgF}{\mathcal{F}}
+    \newcommand{\cgG}{\mathcal{G}}
+    \newcommand{\cgM}{\mathcal{M}}
+    \newcommand{\cgN}{\mathcal{N}}
+    \newcommand{\cgP}{\mathcal{P}}
+    \newcommand{\cgR}{\mathcal{R}}
+    \newcommand{\cgS}{\mathcal{S}}
+    \newcommand{\bfn}{\mathbf{n}}
+    \newcommand{\bfm}{\mathbf{m}}
+    \newcommand{\bfk}{\mathbf{k}}
+    \newcommand{\bfs}{\mathbf{s}}
+    \newcommand{\bijection}{\xrightarrow[\text{onto}]{\text{$1$--$1$}}}
+    \newcommand{\injection}{\xrightarrow[]{\text{$1$--$1$}}}
+    \newcommand{\surjection}{\xrightarrow[\text{onto}]{}}
+    \newcommand{\nin}{\not\in}
+    \newcommand{\prufer}{\mbox{prüfer}}
+    \DeclareMathOperator{\fix}{fix}
+    \DeclareMathOperator{\stab}{stab}
+    \DeclareMathOperator{\var}{var}
+    \newcommand{\inv}{^{-1}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="MAS341.html"><span class="title">MAS341: Graph Theory</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_graphs_on_surfaces_intro.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_graphs_on_surfaces.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_graphs_on_surfaces_Kuratowski.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_graphs_on_surfaces_intro.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_graphs_on_surfaces.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="s_graphs_on_surfaces_Kuratowski.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook">A first look a graphs</a></li>
+<li><a href="s_intro_degrees.html" data-scroll="s_intro_degrees">Degree and handshaking</a></li>
+<li><a href="s_intro_isomorphisms.html" data-scroll="s_intro_isomorphisms">Graph Isomorphisms</a></li>
+<li><a href="s_intro_instantinsanity.html" data-scroll="s_intro_instantinsanity">Instant Insanity</a></li>
+<li><a href="s_intro_exercises.html" data-scroll="s_intro_exercises">Exercises</a></li>
+</ul>
+<h2 class="link"><a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span><span class="title">Walks</span></a></h2>
+<ul>
+<li><a href="s_walks_basics.html" data-scroll="s_walks_basics">Walks: the basics</a></li>
+<li><a href="s_walks_eulerian.html" data-scroll="s_walks_eulerian">Eulerian Walks</a></li>
+<li><a href="s_walks_hamiltonian.html" data-scroll="s_walks_hamiltonian">Hamiltonian cycles</a></li>
+<li><a href="s_walks_exercises.html" data-scroll="s_walks_exercises">Exercises</a></li>
+</ul>
+<h2 class="link"><a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span><span class="title">Algorithms</span></a></h2>
+<ul>
+<li><a href="s_graphalgorithms_min-wt-span.html" data-scroll="s_graphalgorithms_min-wt-span">Minimum Weight Spanning Trees</a></li>
+<li><a href="s_graphalgorithms_digraphs.html" data-scroll="s_graphalgorithms_digraphs">Digraphs</a></li>
+<li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
+<li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
+<li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises">Exercises</a></li>
+</ul>
+<h2 class="link active"><a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">4</span><span class="title">Graphs on Surfaces</span></a></h2>
+<ul>
+<li><a href="s_graphs_on_surfaces_intro.html" data-scroll="s_graphs_on_surfaces_intro">Introduction to Graphs on Surfaces</a></li>
+<li><a href="s_graphs_on_surfaces_planarity_algorithm.html" data-scroll="s_graphs_on_surfaces_planarity_algorithm" class="active">The planarity algorith</a></li>
+<li><a href="s_graphs_on_surfaces_Kuratowski.html" data-scroll="s_graphs_on_surfaces_Kuratowski">Kuratowski's Theorem</a></li>
+<li><a href="s_graphs_on_surfaces_other_surfaces.html" data-scroll="s_graphs_on_surfaces_other_surfaces">Drawing Graphs on Other surfaces</a></li>
+<li><a href="s_graphs_on_surfaces_euler.html" data-scroll="s_graphs_on_surfaces_euler">Euler's Theorem</a></li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="s_graphs_on_surfaces_planarity_algorithm"><h2 class="heading hide-type" alt="Section 4.2 The planarity algorith">
+<span class="type">Section</span><span class="codenumber">4.2</span><span class="title">The planarity algorith</span>
+</h2>
+<a href="s_graphs_on_surfaces_planarity_algorithm.html" class="permalink">¶</a><section class="introduction" id="introduction-10"><p id="p-296">In the previous chapter we showed that \(K_{3,3}\) isn't planar; in this section we investigate how the ideas we used to solve the utilities problem for \(K_{3,3}\)-- namely, the Jordan Curve theorem and the fact that \(K_{3,3}\) is Hamiltonian -- generalize to other graphs.  In the end, this will culminate in "The Planarity Algorithm for Hamiltonian Graphs".</p></section><section class="subsection" id="subsection-28"><h3 class="heading hide-type" alt="Subsection 4.2.1 Stereographic Projection and Unnecessary cases">
+<span class="type">Subsection</span><span class="codenumber">4.2.1</span><span class="title">Stereographic Projection and Unnecessary cases</span>
+</h3>
+<p id="p-297">It will make our life easier if before we investigate other graphs we streamline our proof for \(K_{3,3}\) slightly: there were a few times where we had to treat different cases that wound up behaving essentially the same, and we'd like to see that we didn't actually need to treat them as separate cases.  In particular, we would like to show that the following three seemingly different ways to connect the first two vertices lead to the same analysis: </p>
+<ol class="decimal">
+<li id="li-53">Connecting them inside the Hamiltonian cycle</li>
+<li id="li-54">Connecting them outside "to the left"</li>
+<li id="li-55">Connecting them outside "to the right"</li>
+</ol>
+<figure class="figure-like" id="fig_inside_outside"><img src="images/image-41.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.1</span>The three cases</figcaption></figure><p id="p-298">The solution will be to think about drawing the graphs on the sphere \(S^2\) instead of the plane.  First, let's see why this solves our problem.  On the plane, the inside of a circle is different from the outside of a circle -- the inside is bounded, but the outside is unbounded.  However, on the sphere, the two sides of a circle are equivalent -- you can deform any circle to be an equator, and then the northern hemisphere is equivalent to the southern hemisphere. This shows on there sphere, the inside and the outside aren't really different cases.</p>
+<p id="p-299">Furthermore, going around the outside to "the left" or "to the right" are equivalent on the sphere -- you can slowly make the path around the sphere bigger and bigger, and then slip it around the north or south pole, and back.  Alternatively, we've already seen that the inside of the circle is equivalent to the outside of the circle on the sphere \(S^2\text{,}\) and on the inside of the circle it doesn't matter exactly how the two points are connected, and so it shouldn't matter on the outside, either.</p>
+<p id="p-300">So we've argued that if we're trying to draw a graph on the sphere, all three cases are the same, but it should still feel like a bait-and-switch: we weren't trying to draw graphs on there sphere, we were trying to draw graphs on the plane.  The connection comes from the fact that the sphere can be viewed as a plane with one additional point.</p>
+<article class="theorem-like" id="proposition-5"><h6 class="heading">
+<span class="type">Proposition</span><span class="codenumber">4.2.2</span>
+</h6>Let \(p\in S^2\) be any point.  Then \(S^2\setminus\{p\}\cong\reals^2\text{.}\)</article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-10" id="proof-10"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-10" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-301">One way to visualize this is imagine the sphere as being made from very flexible clay.  If we poke a small hole in the top of the sphere, we could stick our fingers in and make the hole larger, and gradually stretch and bend and reform for the sphere to be a flat disk.</p>
+<p id="p-302">Alternatively, one could use stereographic projection, as shown in Figure .  Draw \(S^2\) in \(\R^3\) as the unit sphere at the origin, and let \(N=(0,0,1)\) be the north pole of the sphere.  Stereographic projection gives a bijection between \(S^2\setminus\{N\}\) (the sphere minus the north pole) to the plane, as follows: for any point \(p\neq N\) the line through \(p\) and \(N\) must meet the \(xy\)-plane at one point.  On the other hand, any line through \(N\) and a point on the \(xy\)-plane must meet the sphere at one other point.</p>
+<p id="p-303">Accepting that \(S^2\) is \(\reals^2\) minus one point, we see that we can draw a given graph \(G\) on \(S^\) if and only if we can draw \(G\) on \(\reals^2\text{:}\) if we draw it on \(\reals^2\text{,}\) we can view the \(\reals^2\) as a small patch of \(S^2\text{.}\) And if we have a drawing on \(S^2\text{,}\) there must be at least one point on \(S^2\) that isn't in the drawing of \(G\text{,}\) and doing stereographic projection from that point gives a drawing of \(G\) on the plane \(\reals^2\text{.}\)</p></article></div></section><section class="subsection" id="subsection-29"><h3 class="heading hide-type" alt="Subsection 4.2.2 The planarity algorith">
+<span class="type">Subsection</span><span class="codenumber">4.2.2</span><span class="title">The planarity algorith</span>
+</h3>
+<p id="p-304">The preceeding discussion may have felt heavy going, but the upshot is that the cases that seemed "the same" in our analysis of \(K_{3,3}\) actually are the same, and similar cases will be the same for any graph. This will make it much easier to extend our reasoning to more complicated graphs.</p>
+<p id="p-305">Suppose that \(G\) is Hamiltonian, and choose a Hamiltonian cycle; if \(G\) were planar than this cycle must be drawn as a circle, and every other edge must either lie entirely inside or entirely outside the graph.  Now consider two edges \(e=ab\) and \(f=xy\) that are not part of the cycle.  Depending on the order that \(a,b,x\) and \(y\) appear as you go around the Hamiltonian cycle, one of two things will happen: </p>
+<ol class="decimal">
+<li id="li-56">If the vertices of \(e\) and \(f\) do not interlace (e.g. \(abxy, yxab, xbay,\cdots\)), or if they share a vertex (e.g., \(a=x\)), then \(e\) may be drawn both inside or both outside the circle without crossing</li>
+<li id="li-57">If the vertices of \(e\) and \(f\) do interlace (e.g. \(axby, xayb, yaxb,\dots...\)) then if \(e\) and \(f\) are drawn both inside or both outside the circle, they must cross</li>
+</ol>
+<p id="p-306">This motivates the following definition</p>
+<article class="definition-like" id="definition-21"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">4.2.3</span><span class="title">Cross(\(G,C\))</span>
+</h6>
+<p id="p-307">Let \(G\) be a Hamiltonian graph, and \(C\) a Hamiltonian cycle in \(G\text{.}\)  The <em class="emphasis">crossing graph</em> of \(G\) and \(C\text{,}\) denoted Cross(\(G,C\)) has as vertices the edges of \(G\) that aren't in the cycle, and an edge between vertices \(p\) and \(q\) if the vertices of the corresponding edges interleave -- that is, \(p\) and \(q\) are adjacent if they cannot be drawn on the same side of the cycle \(C\) without crossing.</p></article><article class="theorem-like" id="algorithm-5"><h6 class="heading">
+<span class="type">Algorithm</span><span class="codenumber">4.2.4</span><span class="title">The planarity algorithm for complete graphs</span>
+</h6>
+<p id="p-308">Suppose that \(G\) is Hamiltonian, and \(C\) is a Hamiltonian cycle.  Then \(G\) is planar if and only if Cross(\(G,C\)) is bipartite.</p></article><p id="p-309">The idea is that if \(G\) is planar, the vertices of Cross(\(G,C\)) are naturally bicolored, with the red vertices, say, corresponding to the edges that are drawn inside the cycle \(C\text{,}\) and the blue edge corresponding to the edges that are drawn outside the cycle \(C\text{.}\)  The definition of the edges of Cross(\(G,C\)) guarantees there are no edges between vertices of the same color.</p>
+<p id="p-310">Similarly, if we can find a colouring of the vertices of Cross(\(G,C\)) so that adjacent vertices have different colours, then we can draw all the edges of \(G\) corresponding to red vertices of Cross(\(G,C\)) inside (or outside) \(C\) without having any of them cross.</p>
+<article class="example-like"><a knowl="" class="id-ref" refid="hk-example-13" id="example-13"><h6 class="heading">
+<span class="type">Example</span><span class="codenumber">4.2.5</span><span class="title">\(K_5\)</span>
+</h6></a></article><div id="hk-example-13" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-311">Let's apply the planarity algorithm to the complete graph \(K_5\text{.}\)  Let's label the vertices 1-5, and take our Hamiltonian cycle \(C\) to be 123451, which we've drawn as the outside pentagon in the following figure: <figure class="figure-like" id="fig_planarity_crossk5_edge13"><img src="images/image-42.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.6</span>The graph (\(K_5\))</figcaption></figure> Since \(K_5\) has \(\binom{5}{2}=10\) vertices, there are 5 edges that aren't used in \(C\text{,}\) namely 13,14, 24,25, and 35.  So Cross(\(K_5, 123451\)) will consist of these five vertices.  We see that 13 will be adjacent to 24 and 25, since these edges would cross if drawn inside, but 13 is not adjacent to 14 or 35, since these edges would cross 13 if drawn on the same side of the circle, as illustrated in the next figure</p>
+<figure class="figure-like" id="fig_planarity_crossk5edges"><img src="images/image-43.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.7</span>The edges 13 does and does not cross</figcaption></figure><p id="p-312">Similar consideration with the other edges show that Cross(\(K_5, 123451\)) is the following graph, which is isomorphic to a five cycle:</p>
+<figure class="figure-like" id="fig_planarity_crossk5"><img src="images/image-44.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.8</span>The graph Cross(\(K_5, 123451\))</figcaption></figure><p id="p-313">In particular, Cross(\(K_5, 123451\)) is not bipartite.  Hence, by the planarity algorithm for Hamiltonian graphs, we see that \(K_5\) is not planar.</p></article></div>
+<article class="example-like"><a knowl="" class="id-ref" refid="hk-example-14" id="example-14"><h6 class="heading">
+<span class="type">Example</span><span class="codenumber">4.2.9</span><span class="title">A planar graph</span>
+</h6></a></article><div id="hk-example-14" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-314">Let's use the planarity algorithm for Hamiltonian graphs to find a planar drawing of the graph shown in the next figure.</p>
+<figure class="figure-like" id="fig_planarity_example_mess"><img src="images/image-45.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.10</span>A graph \(H\)</figcaption></figure><p id="p-315">We see that \(H\) is Hamiltonian and take as our Hamiltonian cycle the path around the outside, namely \(abcxyza\text{.}\)  There are then six edges not contained in the Hamiltonian cycle, and we find that Cross(\(H, abcxyz\)) is as follows:</p>
+<figure class="figure-like" id="fig_planarity_example_cross"><img src="images/image-46.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.11</span>The graph Cross(\(H, abcxyza)\)</figcaption></figure><p id="p-316">For instance, in \(H\) the edge \(ax\) crosses the three edges \(cy, cz\) and \(bz\text{,}\) and so in Cross(\(H, abcxyza\)), the vertex \(ax\) is adjacent to these vertices.</p>
+<p id="p-317">The graph Cross(\(H, abcxyza)\) has no odd cycles and hence is bipartite -- for instance, we may color \(ax, bx\) and \(ay\) red, and the other three vertices blue.  Then, to draw \(H\) in the plane without edges crossing, we draw the red edges inside the cycle, and the blue edges outside the cycle:</p>
+<figure class="figure-like" id="fig_planarity_example_planar_drawing"><img src="images/image-47.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.12</span>The graph \(H\) drawn without edges crossing</figcaption></figure></article></div></section></section></div></main>
+</div>
+</body>
+</html>

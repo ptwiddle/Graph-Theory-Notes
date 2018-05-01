@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-04-04T15:38:46+01:00    *-->
+<!--*    on 2018-05-01T17:29:35+01:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,27 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Let \(n=|V|\text{.}\) At Step \(i\text{,}\) where \(1\le i\le n\text{,}\) we will have determined: </p>
+<ol class="decimal">
+<li><p>A sequence \(\sigma=(v_1,v_2,v_3,\dots,v_i)\) of distinct vertices from \(\bfG\) with \(r=v_1\text{.}\)  These vertices are called <dfn class="terminology">permanent vertices</dfn>, while the remaining vertices will be called <dfn class="terminology">temporary vertices</dfn>.</p></li>
+<li><p>For each vertex \(x\in V\text{,}\) we will have determined a number \(\delta(x)\) and a path \(P(x)\) from \(r\) to \(x\) of length \(\delta(x)\text{.}\)</p></li>
+</ol>
+<p> </p>
+<dl class="description-list">
+<dt>Initialization (Step 1)</dt>
+<dd><p>Set \(i=1\text{.}\) Set \(\delta(r)=0\) and let \(P(r)=(r)\) be the trivial one-point path. Also, set \(\sigma= (r)\text{.}\) For each \(x\neq r\text{,}\) set \(\delta(x)= w(r,x)\) and \(P(x)=(r,x)\text{.}\) Let \(x\) be a temporary vertex for which \(\delta(x)\) is minimum. Set \(v_2 = x\text{,}\) and update \(\sigma\) by appending \(v_2\) to the end of it. Increment \(i\text{.}\)</p></dd>
+<dt>Inductive Step (Step \(i\text{,}\) \(i&gt;1\))</dt>
+<dd>
+<p>If \(i\lt n\text{,}\) then for each temporary \(x\text{,}\) let</p>
 <div class="displaymath">
-\begin{align*}
-\sigma\amp=(a,f,c)\\
-\delta(a)\amp=0; \amp P(a)\amp=(a)\\
-\delta(b)\amp=102=47+55= \delta(c)+w(c,b); \amp P(b)\amp=(a,c,b)\quad\text{updated}\\
-\delta(c)\amp=47; \amp P(c)\amp=(a,c)\\
-\delta(d)\amp=135=47+88 = \delta(c)+w(c,d); \amp P(d)\amp=(a,c,d)\quad\text{updated} \\
-\delta(e)\amp=70; \amp P(e)\amp=(a,e)\\
-\delta(f)\amp=24; \amp P(f)\amp=(a,f)\\
-\delta(g)\amp=113=47+66= \delta(c)+w(c,g); \amp P(g)\amp=(a,c,g)\quad\text{updated} \\
-\delta(h)\amp=\infty; \amp P(h)\amp=(a,h)
-\end{align*}
+\begin{equation*}
+\delta(x) = \min\{\delta(x), \delta(v_i)+w(v_i,x)\}.
+\end{equation*}
 </div>
+<p>If this assignment results in a reduction in the value of \(\delta(x)\text{,}\) let \(P(x)\) be the path obtained by adding \(x\) to the end of \(P(v_i)\text{.}\)</p>
+<p>Let \(x\) be a temporary vertex for which \(\delta(x)\) is minimum. Set \(v_{i+1}=x\text{,}\) and update \(\sigma\) by appending \(v_{i+1}\) to it. Increment \(i\text{.}\)</p>
+</dd>
+</dl>
 <span class="incontext"><a href="s_graphalgorithms_shortest-paths.html#p-203">in-context</a></span>
 </body>
 </html>

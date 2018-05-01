@@ -3,9 +3,13 @@
 <introduction>
 <p>The first chapter is an introduction, including the formal definition of a graph and many terms we will use throughout, but more importantly, examples of these concepts and how you should think abotu them.</p>
 </introduction>
+
 <xi:include href="./s_intro_firstlook.mbx" />
 <xi:include href="./s_intro_degrees.mbx" />
 <xi:include href="./s_intro_isomorphisms.mbx" />
 <xi:include href="./s_intro_instantinsanity.mbx" />
 <xi:include href="./s_intro_exercises.mbx" />
+
+
+
 </chapter>

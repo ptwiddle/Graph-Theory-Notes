@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-04-04T15:38:46+01:00    *-->
+<!--*    on 2018-05-01T17:29:35+01:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Let \(x\) be a vertex and let \(P=(r=u_0,u_1,\dots,u_t=x)\) be a shortest path from \(r\) to \(x\text{.}\) Then for every integer \(j\) with \(0\lt j\lt t\text{,}\) \((u_0,u_1,\dots,u_j)\) is a shortest path from \(r\) to \(u_j\) and \((u_j,u_{j+1},\dots,u_t)\) is a shortest path from \(u_j\) to \(u_t\)</p>
+<div class="displaymath">
+\begin{align*}
+\sigma\amp=(a,f,c)\\
+\delta(a)\amp=0; \amp P(a)\amp=(a)\\
+\delta(b)\amp=102=47+55= \delta(c)+w(c,b); \amp P(b)\amp=(a,c,b)\quad\text{updated}\\
+\delta(c)\amp=47; \amp P(c)\amp=(a,c)\\
+\delta(d)\amp=135=47+88 = \delta(c)+w(c,d); \amp P(d)\amp=(a,c,d)\quad\text{updated} \\
+\delta(e)\amp=70; \amp P(e)\amp=(a,e)\\
+\delta(f)\amp=24; \amp P(f)\amp=(a,f)\\
+\delta(g)\amp=113=47+66= \delta(c)+w(c,g); \amp P(g)\amp=(a,c,g)\quad\text{updated} \\
+\delta(h)\amp=\infty; \amp P(h)\amp=(a,h)
+\end{align*}
+</div>
 <span class="incontext"><a href="s_graphalgorithms_shortest-paths.html#p-215">in-context</a></span>
 </body>
 </html>

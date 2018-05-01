@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-04-04T15:38:45+01:00    *-->
+<!--*    on 2018-05-01T17:29:35+01:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -152,48 +152,56 @@ MathJax.Hub.Config({
 <li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths" class="active">Dijkstra's Algorithm for Shortest Paths</a></li>
 <li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
 <li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises">Exercises</a></li>
+</ul>
+<h2 class="link"><a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">4</span><span class="title">Graphs on Surfaces</span></a></h2>
+<ul>
+<li><a href="s_graphs_on_surfaces_intro.html" data-scroll="s_graphs_on_surfaces_intro">Introduction to Graphs on Surfaces</a></li>
+<li><a href="s_graphs_on_surfaces_planarity_algorithm.html" data-scroll="s_graphs_on_surfaces_planarity_algorithm">The planarity algorith</a></li>
+<li><a href="s_graphs_on_surfaces_Kuratowski.html" data-scroll="s_graphs_on_surfaces_Kuratowski">Kuratowski's Theorem</a></li>
+<li><a href="s_graphs_on_surfaces_other_surfaces.html" data-scroll="s_graphs_on_surfaces_other_surfaces">Drawing Graphs on Other surfaces</a></li>
+<li><a href="s_graphs_on_surfaces_euler.html" data-scroll="s_graphs_on_surfaces_euler">Euler's Theorem</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="s_graphalgorithms_shortest-paths"><h2 class="heading hide-type" alt="Section 3.3 Dijkstra's Algorithm for Shortest Paths">
 <span class="type">Section</span><span class="codenumber">3.3</span><span class="title">Dijkstra's Algorithm for Shortest Paths</span>
 </h2>
-<a href="s_graphalgorithms_shortest-paths.html" class="permalink">¶</a><section class="introduction" id="introduction-7"><p id="p-187">Just as with graphs, it is useful to assign weights to the directed edges of a digraph. Specifically, in this section we consider a pair \((\bfG,w)\) where \(\GVE\) is a digraph and \(w\colon E\rightarrow\nonnegints\) is a function assigning to each directed edge \((x,y)\) a non-negative weight \(w(x,y)\text{.}\) However, in this section, we interpret weight as <dfn class="terminology">distance</dfn> so that \(w(x,y)\) is now called the <dfn class="terminology">length</dfn> of the edge \((x,y)\text{.}\) If \(P=(r=u_0,u_1,\dots,u_t=x)\) is a directed path from \(r\) to \(x\text{,}\) then the <dfn class="terminology">length</dfn> of the path \(P\) is just the sum of the lengths of the edges in the path, \(\sum_{i=0}^{t-1} w(u_iu_{i+1})\text{.}\) The <dfn class="terminology">distance</dfn> from \(r\) to \(x\) is then defined to be the minimum length of a directed path from \(r\) to \(x\text{.}\) Our goal in this section is to solve the following natural problem, which has many applications:</p>
+<a href="s_graphalgorithms_shortest-paths.html" class="permalink">¶</a><section class="introduction" id="introduction-7"><p id="p-199">Just as with graphs, it is useful to assign weights to the directed edges of a digraph. Specifically, in this section we consider a pair \((\bfG,w)\) where \(\GVE\) is a digraph and \(w\colon E\rightarrow\nonnegints\) is a function assigning to each directed edge \((x,y)\) a non-negative weight \(w(x,y)\text{.}\) However, in this section, we interpret weight as <dfn class="terminology">distance</dfn> so that \(w(x,y)\) is now called the <dfn class="terminology">length</dfn> of the edge \((x,y)\text{.}\) If \(P=(r=u_0,u_1,\dots,u_t=x)\) is a directed path from \(r\) to \(x\text{,}\) then the <dfn class="terminology">length</dfn> of the path \(P\) is just the sum of the lengths of the edges in the path, \(\sum_{i=0}^{t-1} w(u_iu_{i+1})\text{.}\) The <dfn class="terminology">distance</dfn> from \(r\) to \(x\) is then defined to be the minimum length of a directed path from \(r\) to \(x\text{.}\) Our goal in this section is to solve the following natural problem, which has many applications:</p>
 <article class="example-like"><a knowl="" class="id-ref" refid="hk-problem-2" id="problem-2"><h6 class="heading">
 <span class="type">Problem</span><span class="codenumber">3.3.1</span>
-</h6></a></article><div id="hk-problem-2" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-188">For each vertex \(x\text{,}\) find the distance from \(r\) to \(x\text{.}\) Also, find a shortest path from \(r\) to \(x\text{.}\)</p></article></div></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type" alt="Subsection 3.3.1 Description of the Algorithm">
+</h6></a></article><div id="hk-problem-2" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-200">For each vertex \(x\text{,}\) find the distance from \(r\) to \(x\text{.}\) Also, find a shortest path from \(r\) to \(x\text{.}\)</p></article></div></section><section class="subsection" id="subsection-23"><h3 class="heading hide-type" alt="Subsection 3.3.1 Description of the Algorithm">
 <span class="type">Subsection</span><span class="codenumber">3.3.1</span><span class="title">Description of the Algorithm</span>
 </h3>
-<p id="p-189">To describe <dfn class="terminology">Dijkstra's algorithm</dfn> in a compact manner, it is useful to extend the definition of the function \(w\text{.}\) We do this by setting \(w(x,y)=\infty\) when \(x\neq y\) and \((x,y)\) is not a directed edge of \(\bfG\text{.}\) In this way, we will treat \(\infty\) as if it were a number (although it is not!).<span class="footnote"><a knowl="" class="id-ref" refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a></span><span id="hk-fn-1" class="hidden-content tex2jax_ignore"><span class="footnote">This is not an issue for computer implementation of the algorithm, as instead of using \(\infty\text{,}\) a value given by the product of the number of vertices and the maximum edge weight may be used to simulate infinity.</span></span></p>
-<p id="p-190">We are now prepared to describe Dijkstra's Algorithm.</p>
+<p id="p-201">To describe <dfn class="terminology">Dijkstra's algorithm</dfn> in a compact manner, it is useful to extend the definition of the function \(w\text{.}\) We do this by setting \(w(x,y)=\infty\) when \(x\neq y\) and \((x,y)\) is not a directed edge of \(\bfG\text{.}\) In this way, we will treat \(\infty\) as if it were a number (although it is not!).<span class="footnote"><a knowl="" class="id-ref" refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a></span><span id="hk-fn-1" class="hidden-content tex2jax_ignore"><span class="footnote">This is not an issue for computer implementation of the algorithm, as instead of using \(\infty\text{,}\) a value given by the product of the number of vertices and the maximum edge weight may be used to simulate infinity.</span></span></p>
+<p id="p-202">We are now prepared to describe Dijkstra's Algorithm.</p>
 <article class="theorem-like" id="alg_dijkstra"><h6 class="heading">
 <span class="type">Algorithm</span><span class="codenumber">3.3.2</span><span class="title">Dijkstra's Algorithm</span>
 </h6>
-<p id="p-191">Let \(n=|V|\text{.}\) At Step \(i\text{,}\) where \(1\le i\le n\text{,}\) we will have determined: </p>
+<p id="p-203">Let \(n=|V|\text{.}\) At Step \(i\text{,}\) where \(1\le i\le n\text{,}\) we will have determined: </p>
 <ol class="decimal">
-<li id="li-47"><p id="p-192">A sequence \(\sigma=(v_1,v_2,v_3,\dots,v_i)\) of distinct vertices from \(\bfG\) with \(r=v_1\text{.}\)  These vertices are called <dfn class="terminology">permanent vertices</dfn>, while the remaining vertices will be called <dfn class="terminology">temporary vertices</dfn>.</p></li>
-<li id="li-48"><p id="p-193">For each vertex \(x\in V\text{,}\) we will have determined a number \(\delta(x)\) and a path \(P(x)\) from \(r\) to \(x\) of length \(\delta(x)\text{.}\)</p></li>
+<li id="li-47"><p id="p-204">A sequence \(\sigma=(v_1,v_2,v_3,\dots,v_i)\) of distinct vertices from \(\bfG\) with \(r=v_1\text{.}\)  These vertices are called <dfn class="terminology">permanent vertices</dfn>, while the remaining vertices will be called <dfn class="terminology">temporary vertices</dfn>.</p></li>
+<li id="li-48"><p id="p-205">For each vertex \(x\in V\text{,}\) we will have determined a number \(\delta(x)\) and a path \(P(x)\) from \(r\) to \(x\) of length \(\delta(x)\text{.}\)</p></li>
 </ol>
 <p> </p>
 <dl class="description-list">
 <dt id="li-49">Initialization (Step 1)</dt>
-<dd><p id="p-194">Set \(i=1\text{.}\) Set \(\delta(r)=0\) and let \(P(r)=(r)\) be the trivial one-point path. Also, set \(\sigma= (r)\text{.}\) For each \(x\neq r\text{,}\) set \(\delta(x)= w(r,x)\) and \(P(x)=(r,x)\text{.}\) Let \(x\) be a temporary vertex for which \(\delta(x)\) is minimum. Set \(v_2 = x\text{,}\) and update \(\sigma\) by appending \(v_2\) to the end of it. Increment \(i\text{.}\)</p></dd>
+<dd><p id="p-206">Set \(i=1\text{.}\) Set \(\delta(r)=0\) and let \(P(r)=(r)\) be the trivial one-point path. Also, set \(\sigma= (r)\text{.}\) For each \(x\neq r\text{,}\) set \(\delta(x)= w(r,x)\) and \(P(x)=(r,x)\text{.}\) Let \(x\) be a temporary vertex for which \(\delta(x)\) is minimum. Set \(v_2 = x\text{,}\) and update \(\sigma\) by appending \(v_2\) to the end of it. Increment \(i\text{.}\)</p></dd>
 <dt id="li-50">Inductive Step (Step \(i\text{,}\) \(i&gt;1\))</dt>
 <dd>
-<p id="p-195">If \(i\lt n\text{,}\) then for each temporary \(x\text{,}\) let</p>
+<p id="p-207">If \(i\lt n\text{,}\) then for each temporary \(x\text{,}\) let</p>
 <div class="displaymath">
 \begin{equation*}
 \delta(x) = \min\{\delta(x), \delta(v_i)+w(v_i,x)\}.
 \end{equation*}
 </div>
 <p>If this assignment results in a reduction in the value of \(\delta(x)\text{,}\) let \(P(x)\) be the path obtained by adding \(x\) to the end of \(P(v_i)\text{.}\)</p>
-<p id="p-196">Let \(x\) be a temporary vertex for which \(\delta(x)\) is minimum. Set \(v_{i+1}=x\text{,}\) and update \(\sigma\) by appending \(v_{i+1}\) to it. Increment \(i\text{.}\)</p>
+<p id="p-208">Let \(x\) be a temporary vertex for which \(\delta(x)\) is minimum. Set \(v_{i+1}=x\text{,}\) and update \(\sigma\) by appending \(v_{i+1}\) to it. Increment \(i\text{.}\)</p>
 </dd>
 </dl></article></section><section class="subsection" id="subsection-24"><h3 class="heading hide-type" alt="Subsection 3.3.2 Example of Dijkstra's Algorithm">
 <span class="type">Subsection</span><span class="codenumber">3.3.2</span><span class="title">Example of Dijkstra's Algorithm</span>
 </h3>
-<p id="p-197">Before establishing why Dijkstra's algorithm works, it may be helpful to see an example of how it works. To do this, consider the digraph \(\bfG\) shown in <a knowl="./knowl/fig_graphalgorithms_dijkstragraph.html" knowl-id="xref-fig_graphalgorithms_dijkstragraph" alt="Figure 3.3.3 " title="Figure 3.3.3 ">Figure 3.3.3</a>. For visual clarity, we have chosen a digraph which is an <dfn class="terminology">oriented graph</dfn>, i.e., for each distinct pair \(x,y\) of vertices, the graph contains at most one of the two possible directed edges \((x,y)\) and \((y,x)\text{.}\)</p>
-<figure class="figure-like" id="fig_graphalgorithms_dijkstragraph"><img src="images/dijkstragraph.svg" width="85%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.3.3</span>A digraph with edge lengths</figcaption></figure><p id="p-198">Suppose that the root vertex \(r\) is the vertex labeled \(a\text{.}\) The initialization step of Dijkstra's algorithm then results in the following values for \(\delta\) and \(P\text{:}\)</p>
+<p id="p-209">Before establishing why Dijkstra's algorithm works, it may be helpful to see an example of how it works. To do this, consider the digraph \(\bfG\) shown in <a knowl="./knowl/fig_graphalgorithms_dijkstragraph.html" knowl-id="xref-fig_graphalgorithms_dijkstragraph" alt="Figure 3.3.3 " title="Figure 3.3.3 ">Figure 3.3.3</a>. For visual clarity, we have chosen a digraph which is an <dfn class="terminology">oriented graph</dfn>, i.e., for each distinct pair \(x,y\) of vertices, the graph contains at most one of the two possible directed edges \((x,y)\) and \((y,x)\text{.}\)</p>
+<figure class="figure-like" id="fig_graphalgorithms_dijkstragraph"><img src="images/dijkstragraph.svg" width="85%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.3.3</span>A digraph with edge lengths</figcaption></figure><p id="p-210">Suppose that the root vertex \(r\) is the vertex labeled \(a\text{.}\) The initialization step of Dijkstra's algorithm then results in the following values for \(\delta\) and \(P\text{:}\)</p>
 <article class="paragraphs" id="paragraphs-1"><h5 class="heading"><span class="title">Step 1. Initialization</span></h5>
-<div class="displaymath" id="p-199">
+<div class="displaymath" id="p-211">
 \begin{align*}
 \sigma\amp=(a)\amp\amp\\
 \delta(a)\amp=0; \amp P(a)\amp=(a)\\
@@ -206,8 +214,8 @@ MathJax.Hub.Config({
 \delta(h) \amp=\infty; \amp P(h)\amp=(a,h)
 \end{align*}
 </div>
-<p id="p-200">Before finishing Step 1, the algorithm identifies vertex \(f\) as closest to \(a\) and appends it to \(\sigma\text{,}\) making \(a\) permanent. When entering Step 2, Dijkstra's algorithm attempts to find shorter paths from \(a\) to each of the temporary vertices by going through \(f\text{.}\) We call this process “scanning from vertex \(f\text{.}\)” In this scan, the path to vertex \(d\) is updated, since \(\delta(f) + w(f,d)=24+120=144\lt \infty=w(a,d)\text{.}\)</p></article><article class="paragraphs" id="paragraphs-2"><h5 class="heading"><span class="title">Step 2.  Scan from vertex \(f\)</span></h5>
-<div class="displaymath" id="p-201">
+<p id="p-212">Before finishing Step 1, the algorithm identifies vertex \(f\) as closest to \(a\) and appends it to \(\sigma\text{,}\) making \(a\) permanent. When entering Step 2, Dijkstra's algorithm attempts to find shorter paths from \(a\) to each of the temporary vertices by going through \(f\text{.}\) We call this process “scanning from vertex \(f\text{.}\)” In this scan, the path to vertex \(d\) is updated, since \(\delta(f) + w(f,d)=24+120=144\lt \infty=w(a,d)\text{.}\)</p></article><article class="paragraphs" id="paragraphs-2"><h5 class="heading"><span class="title">Step 2.  Scan from vertex \(f\)</span></h5>
+<div class="displaymath" id="p-213">
 \begin{align*}
 \sigma\amp=(a,f)\amp\amp\\
 \delta(a)\amp=0; \amp P(a)\amp=(a)\\
@@ -220,8 +228,8 @@ MathJax.Hub.Config({
 \delta(h)\amp=\infty; \amp P(h)\amp=(a,h)
 \end{align*}
 </div>
-<p id="p-202">Before proceeding to the next step, vertex \(c\) is made permanent by making it \(v_3\text{.}\) In Step 3, therefore, the scan is from vertex \(c\text{.}\) Vertices \(b\text{,}\) \(d\text{,}\) and \(g\) have their paths updated. However, although \(\delta(c) + w(c,e) = 47+23=70=\delta(e)\text{,}\) we do not change \(P(e)\) since \(\delta(e)\) is not <em class="emphasis">decreased</em> by routing \(P(e)\) through \(c\text{.}\)</p></article><article class="paragraphs" id="paragraphs-3"><h5 class="heading"><span class="title">Step 3.  Scan from vertex \(c\)</span></h5>
-<div class="displaymath" id="p-203">
+<p id="p-214">Before proceeding to the next step, vertex \(c\) is made permanent by making it \(v_3\text{.}\) In Step 3, therefore, the scan is from vertex \(c\text{.}\) Vertices \(b\text{,}\) \(d\text{,}\) and \(g\) have their paths updated. However, although \(\delta(c) + w(c,e) = 47+23=70=\delta(e)\text{,}\) we do not change \(P(e)\) since \(\delta(e)\) is not <em class="emphasis">decreased</em> by routing \(P(e)\) through \(c\text{.}\)</p></article><article class="paragraphs" id="paragraphs-3"><h5 class="heading"><span class="title">Step 3.  Scan from vertex \(c\)</span></h5>
+<div class="displaymath" id="p-215">
 \begin{align*}
 \sigma\amp=(a,f,c)\\
 \delta(a)\amp=0; \amp P(a)\amp=(a)\\
@@ -234,8 +242,8 @@ MathJax.Hub.Config({
 \delta(h)\amp=\infty; \amp P(h)\amp=(a,h)
 \end{align*}
 </div>
-<p id="p-204">Now vertex \(e\) is made permanent.</p></article><article class="paragraphs" id="paragraphs-4"><h5 class="heading"><span class="title">Step 4.  Scan from vertex \(e\)</span></h5>
-<div class="displaymath" id="p-205">
+<p id="p-216">Now vertex \(e\) is made permanent.</p></article><article class="paragraphs" id="paragraphs-4"><h5 class="heading"><span class="title">Step 4.  Scan from vertex \(e\)</span></h5>
+<div class="displaymath" id="p-217">
 \begin{align*}
 \sigma\amp=(a,f,c,e)\\
 \delta(a)\amp=0; \amp P(a)\amp=(a)\\
@@ -248,8 +256,8 @@ MathJax.Hub.Config({
 \delta(h)\amp=\infty; \amp P(h)\amp=(a,h)
 \end{align*}
 </div>
-<p id="p-206">Now vertex \(b\) is made permanent.</p></article><article class="paragraphs" id="paragraphs-5"><h5 class="heading"><span class="title">Step 5.  Scan from vertex \(b\)</span></h5>
-<div class="displaymath" id="p-207">
+<p id="p-218">Now vertex \(b\) is made permanent.</p></article><article class="paragraphs" id="paragraphs-5"><h5 class="heading"><span class="title">Step 5.  Scan from vertex \(b\)</span></h5>
+<div class="displaymath" id="p-219">
 \begin{align*}
 \sigma\amp=(a,f,c,e,b)\\
 \delta(a)\amp=0; \amp P(a)\amp=(a)\\
@@ -262,8 +270,8 @@ MathJax.Hub.Config({
 \delta(h)\amp=180 = 101+79=\delta(b)+w(b,h); \amp P(h)\amp=(a,e,b,h)\quad\text{updated} 
 \end{align*}
 </div>
-<p id="p-208">Now vertex \(g\) is made permanent.</p></article><article class="paragraphs" id="paragraphs-6"><h5 class="heading"><span class="title">Step 6.  Scan from vertex \(g\)</span></h5>
-<div class="displaymath" id="p-209">
+<p id="p-220">Now vertex \(g\) is made permanent.</p></article><article class="paragraphs" id="paragraphs-6"><h5 class="heading"><span class="title">Step 6.  Scan from vertex \(g\)</span></h5>
+<div class="displaymath" id="p-221">
 \begin{align*}
 \sigma\amp=(a,f,c,e,b,g)\\
 \delta(a)\amp=0; \amp P(a)\amp=(a)\\
@@ -276,8 +284,8 @@ MathJax.Hub.Config({
 \delta(h)\amp=178 = 112+66=\delta(g)+w(g,h); \amp P(h)\amp=(a,e,g,h)\quad\text{updated}
 \end{align*}
 </div>
-<p id="p-210">Now vertex \(d\) is made permanent.</p></article><article class="paragraphs" id="paragraphs-7"><h5 class="heading"><span class="title">Step 7.  Scan from vertex \(d\)</span></h5>
-<div class="displaymath" id="p-211">
+<p id="p-222">Now vertex \(d\) is made permanent.</p></article><article class="paragraphs" id="paragraphs-7"><h5 class="heading"><span class="title">Step 7.  Scan from vertex \(d\)</span></h5>
+<div class="displaymath" id="p-223">
 \begin{align*}
 \sigma\amp=(a,f,c,e,b,g,d)\\
 \delta(a)\amp=0; \amp P(a)\amp=(a)\\
@@ -290,8 +298,8 @@ MathJax.Hub.Config({
 \delta(h)\amp=161 = 132+29=\delta(d)+w(d,h); \amp P(h)\amp=(a,e,b,d,h)\quad\text{updated}
 \end{align*}
 </div>
-<p id="p-212">Now vertex \(h\) is made permanent. Since this is the last vertex, the algorithm halts and returns the following:</p></article><article class="paragraphs" id="paragraphs-8"><h5 class="heading"><span class="title">Final Results of Dijkstra's Algorithm</span></h5>
-<div class="displaymath" id="p-213">
+<p id="p-224">Now vertex \(h\) is made permanent. Since this is the last vertex, the algorithm halts and returns the following:</p></article><article class="paragraphs" id="paragraphs-8"><h5 class="heading"><span class="title">Final Results of Dijkstra's Algorithm</span></h5>
+<div class="displaymath" id="p-225">
 \begin{align*}
 \sigma\amp=(a,f,c,e,b,g,d,h)\\
 \delta(a)\amp=0; \amp P(a)\amp=(a)\\
@@ -306,26 +314,26 @@ MathJax.Hub.Config({
 </div></article></section><section class="subsection" id="subsection-25"><h3 class="heading hide-type" alt="Subsection 3.3.3 The Correctness of Dijkstra's Algorithm">
 <span class="type">Subsection</span><span class="codenumber">3.3.3</span><span class="title">The Correctness of Dijkstra's Algorithm</span>
 </h3>
-<p id="p-214">Now that we've illustrated Dijkstra's algorithm, it's time to prove that it actually does what we claimed it does: find the distance from the root vertex to each of the other vertices and a path of that length. To do this, we first state two elementary propositions. The first is about shortest paths in general, while the second is specific to the sequence of permanent vertices produced by Dijkstra's algorithm.</p>
+<p id="p-226">Now that we've illustrated Dijkstra's algorithm, it's time to prove that it actually does what we claimed it does: find the distance from the root vertex to each of the other vertices and a path of that length. To do this, we first state two elementary propositions. The first is about shortest paths in general, while the second is specific to the sequence of permanent vertices produced by Dijkstra's algorithm.</p>
 <article class="theorem-like" id="proposition-3"><h6 class="heading">
 <span class="type">Proposition</span><span class="codenumber">3.3.4</span>
 </h6>
-<p id="p-215">Let \(x\) be a vertex and let \(P=(r=u_0,u_1,\dots,u_t=x)\) be a shortest path from \(r\) to \(x\text{.}\) Then for every integer \(j\) with \(0\lt j\lt t\text{,}\) \((u_0,u_1,\dots,u_j)\) is a shortest path from \(r\) to \(u_j\) and \((u_j,u_{j+1},\dots,u_t)\) is a shortest path from \(u_j\) to \(u_t\)</p></article><article class="theorem-like" id="proposition-4"><h6 class="heading">
+<p id="p-227">Let \(x\) be a vertex and let \(P=(r=u_0,u_1,\dots,u_t=x)\) be a shortest path from \(r\) to \(x\text{.}\) Then for every integer \(j\) with \(0\lt j\lt t\text{,}\) \((u_0,u_1,\dots,u_j)\) is a shortest path from \(r\) to \(u_j\) and \((u_j,u_{j+1},\dots,u_t)\) is a shortest path from \(u_j\) to \(u_t\)</p></article><article class="theorem-like" id="proposition-4"><h6 class="heading">
 <span class="type">Proposition</span><span class="codenumber">3.3.5</span>
 </h6>
-<p id="p-216">When the algorithm halts, let \(\sigma=(v_1,v_2,v_3,\dots,v_n)\text{.}\)  Then</p>
+<p id="p-228">When the algorithm halts, let \(\sigma=(v_1,v_2,v_3,\dots,v_n)\text{.}\)  Then</p>
 <div class="displaymath">
 \begin{equation*}
 \delta(v_1)\le \delta(v_2)\le\dots \le \delta(v_n).
 \end{equation*}
-</div></article><p id="p-217">We are now ready to prove the correctness of the algorithm. The proof we give will be inductive, but the induction will have nothing to do with the total number of vertices in the digraph or the step number the algorithm is in.</p>
+</div></article><p id="p-229">We are now ready to prove the correctness of the algorithm. The proof we give will be inductive, but the induction will have nothing to do with the total number of vertices in the digraph or the step number the algorithm is in.</p>
 <article class="theorem-like" id="theorem-4"><h6 class="heading">
 <span class="type">Theorem</span><span class="codenumber">3.3.6</span>
 </h6>
-<p id="p-218">Dijkstra's algorithm yields shortest paths for every vertex \(x\) in \(\bfG\text{.}\) That is, when Dijkstra's algorithm terminates, for each \(x\in V\text{,}\) the value \(\delta(x)\) is the distance from \(r\) to \(x\) and \(P(x)\) is a shortest path from \(r\) to \(x\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-8" id="proof-8"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-8" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-219">The theorem holds trivially when \(x=r\text{.}\) So we consider the case where \(x\neq r\text{.}\) We argue that \(\delta(x)\) is the distance from \(r\) to \(x\) and that \(P(x)\) is a shortest path from \(r\) to \(x\) by induction on the minimum number \(k\) of edges in a shortest path from \(r\) to \(x\text{.}\) When \(k=1\text{,}\) the edge \((r,x)\) is a shortest path from \(r\) to \(x\text{.}\) Since \(v_1=r\text{,}\) we will set \(\delta(x)=w(r,x)\) and \(P(x)=(r,x)\) at Step 1.</p>
-<p id="p-220">Now fix a positive integer \(k\text{.}\) Assume that if the minimum number of edges in a shortest path from \(r\) to \(x\) is at most \(k\text{,}\) then \(\delta(x)\) is the distance from \(r\) to \(x\) and \(P(x)\) is a shortest path from \(r\) to \(x\text{.}\) Let \(x\) be a vertex for which the minimum number of edges in a shortest path from \(r\) to \(x\) is \(k+1\text{.}\) Fix a shortest path \(P=(u_0,u_1,u_2,\dots,u_{k+1})\) from \(r=u_0\) to \(x=u_{k+1}\text{.}\) Then \(Q=(u_0,u_1,\dots,u_k)\) is a shortest path from \(r\) to \(u_k\text{.}\) (See <a knowl="./knowl/fig_graphalgorithms_dijkstra-proof.html" knowl-id="xref-fig_graphalgorithms_dijkstra-proof" alt="Figure 3.3.7 " title="Figure 3.3.7 ">Figure 3.3.7</a>.)</p>
-<figure class="figure-like" id="fig_graphalgorithms_dijkstra-proof"><img src="images/image-23.svg" width="75%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.3.7</span>Shortest paths</figcaption></figure><p id="p-221">By the inductive hypothesis, \(\delta(u_k)\) is the distance from \(r\) to \(u_k\text{,}\) and \(P(u_k)\) is a shortest path from \(r\) to \(u_k\text{.}\) Note that \(P(u_k)\) need not be the same as path \(Q\text{,}\) as we suggest in <a knowl="./knowl/fig_graphalgorithms_dijkstra-proof.html" knowl-id="xref-fig_graphalgorithms_dijkstra-proof" alt="Figure 3.3.7 " title="Figure 3.3.7 ">Figure 3.3.7</a>. However, if distinct, the two paths will have the same length, namely \(\delta(u_k)\text{.}\)  Also, the distance from \(r\) to \(x\) is \(\delta(u_k)+w(u_k,x)\ge \delta(u_k)\) since \(P\) is a shortest path from \(r\) to \(x\) and \(w(u_k,x)\geq 0\text{.}\)</p>
-<p id="p-222">Let \(i\) and \(j\) be the unique integers for which \(u_k=v_i\) and \(x=v_j\text{.}\) If \(j \lt i\text{,}\) then</p>
+<p id="p-230">Dijkstra's algorithm yields shortest paths for every vertex \(x\) in \(\bfG\text{.}\) That is, when Dijkstra's algorithm terminates, for each \(x\in V\text{,}\) the value \(\delta(x)\) is the distance from \(r\) to \(x\) and \(P(x)\) is a shortest path from \(r\) to \(x\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-8" id="proof-8"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-8" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-231">The theorem holds trivially when \(x=r\text{.}\) So we consider the case where \(x\neq r\text{.}\) We argue that \(\delta(x)\) is the distance from \(r\) to \(x\) and that \(P(x)\) is a shortest path from \(r\) to \(x\) by induction on the minimum number \(k\) of edges in a shortest path from \(r\) to \(x\text{.}\) When \(k=1\text{,}\) the edge \((r,x)\) is a shortest path from \(r\) to \(x\text{.}\) Since \(v_1=r\text{,}\) we will set \(\delta(x)=w(r,x)\) and \(P(x)=(r,x)\) at Step 1.</p>
+<p id="p-232">Now fix a positive integer \(k\text{.}\) Assume that if the minimum number of edges in a shortest path from \(r\) to \(x\) is at most \(k\text{,}\) then \(\delta(x)\) is the distance from \(r\) to \(x\) and \(P(x)\) is a shortest path from \(r\) to \(x\text{.}\) Let \(x\) be a vertex for which the minimum number of edges in a shortest path from \(r\) to \(x\) is \(k+1\text{.}\) Fix a shortest path \(P=(u_0,u_1,u_2,\dots,u_{k+1})\) from \(r=u_0\) to \(x=u_{k+1}\text{.}\) Then \(Q=(u_0,u_1,\dots,u_k)\) is a shortest path from \(r\) to \(u_k\text{.}\) (See <a knowl="./knowl/fig_graphalgorithms_dijkstra-proof.html" knowl-id="xref-fig_graphalgorithms_dijkstra-proof" alt="Figure 3.3.7 " title="Figure 3.3.7 ">Figure 3.3.7</a>.)</p>
+<figure class="figure-like" id="fig_graphalgorithms_dijkstra-proof"><img src="images/image-28.svg" width="75%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.3.7</span>Shortest paths</figcaption></figure><p id="p-233">By the inductive hypothesis, \(\delta(u_k)\) is the distance from \(r\) to \(u_k\text{,}\) and \(P(u_k)\) is a shortest path from \(r\) to \(u_k\text{.}\) Note that \(P(u_k)\) need not be the same as path \(Q\text{,}\) as we suggest in <a knowl="./knowl/fig_graphalgorithms_dijkstra-proof.html" knowl-id="xref-fig_graphalgorithms_dijkstra-proof" alt="Figure 3.3.7 " title="Figure 3.3.7 ">Figure 3.3.7</a>. However, if distinct, the two paths will have the same length, namely \(\delta(u_k)\text{.}\)  Also, the distance from \(r\) to \(x\) is \(\delta(u_k)+w(u_k,x)\ge \delta(u_k)\) since \(P\) is a shortest path from \(r\) to \(x\) and \(w(u_k,x)\geq 0\text{.}\)</p>
+<p id="p-234">Let \(i\) and \(j\) be the unique integers for which \(u_k=v_i\) and \(x=v_j\text{.}\) If \(j \lt i\text{,}\) then</p>
 <div class="displaymath">
 \begin{equation*}
 \delta(x)= \delta(v_j)\le \delta(v_i)= \delta(u_k)\le
@@ -333,7 +341,7 @@ MathJax.Hub.Config({
 \end{equation*}
 </div>
 <p>Therefore the algorithm has found a path \(P(x)\) from \(r\) to \(x\) having length \(\delta(x)\) which is at most the distance from \(r\) to \(x\text{.}\) Clearly, this implies that \(\delta(x)\) is the distance from \(r\) to \(x\) and that \(P(x)\) is a shortest path.</p>
-<p id="p-223">On the other hand, if \(j&gt;i\text{,}\) then the inductive step at Step \(i\) results in</p>
+<p id="p-235">On the other hand, if \(j&gt;i\text{,}\) then the inductive step at Step \(i\) results in</p>
 <div class="displaymath">
 \begin{equation*}
 \delta(x)\le \delta(v_i)+w(v_i,y)=\delta(u_k)+w(u_k,x).
