@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.30)  4 APR 2018 15:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.30)  25 APR 2018 15:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1427,7 +1427,7 @@ Section 1.2 Degree and handshaking
 ************************************************
 Subsection 1.2.1 Definition of degree
 ************************************************
-<images/degreeexamplegraph.png, id=100, 132.495pt x 131.49126pt>
+<images/degreeexamplegraph.png, id=130, 132.495pt x 131.49126pt>
 File: images/degreeexamplegraph.png Graphic file (type png)
 
 <use images/degreeexamplegraph.png>
@@ -1469,7 +1469,7 @@ Type  H <return>  for immediate help.
 l.606 ...]{images/PetersenIsomorphismAnimated.gif}
                                                   
 ? 
-<images/cycleandstar.jpg, id=186, 2814.515pt x 1088.065pt>
+<images/cycleandstar.jpg, id=216, 2814.515pt x 1088.065pt>
 File: images/cycleandstar.jpg Graphic file (type jpg)
 
 <use images/cycleandstar.jpg>
@@ -1489,7 +1489,7 @@ Section 1.4 Instant Insanity
 ************************************************
 Subsection 1.4.1 A puzzle
 ************************************************
-<images/InstantInsanityPackage.JPG, id=205, 1505.625pt x 856.19875pt>
+<images/InstantInsanityPackage.JPG, id=235, 1505.625pt x 856.19875pt>
 File: images/InstantInsanityPackage.JPG Graphic file (type jpg)
 
 <use images/InstantInsanityPackage.JPG>
@@ -1503,7 +1503,7 @@ Underfull \vbox (badness 1546) has occurred while \output is active []
 ************************************************
 Subsection 1.4.2 Enter graph theory
 ************************************************
-<images/ImpossibleCubes.png, id=224, 971.63pt x 345.29pt>
+<images/ImpossibleCubes.png, id=254, 971.63pt x 345.29pt>
 File: images/ImpossibleCubes.png Graphic file (type png)
 
 <use images/ImpossibleCubes.png>
@@ -1513,7 +1513,7 @@ Package pdftex.def Info: images/ImpossibleCubes.png used on input line 691.
 Underfull \vbox (badness 2875) has occurred while \output is active []
 
  [7 <./images/InstantInsanityPackage.JPG>]
-<images/InstantInsanityImpossibleGraph.png, id=238, 747.79375pt x 519.9425pt>
+<images/InstantInsanityImpossibleGraph.png, id=268, 747.79375pt x 519.9425pt>
 File: images/InstantInsanityImpossibleGraph.png Graphic file (type png)
 
 <use images/InstantInsanityImpossibleGraph.png>
@@ -1525,7 +1525,7 @@ t line 698.
 Subsection 1.4.3 Proving that our cubes were impossible
 ************************************************
 [8 <./images/ImpossibleCubes.png> <./images/InstantInsanityImpossibleGraph.png>
-] <images/InstantInsanityImpossibleFirst.png, id=256, 501.875pt x 352.31625pt>
+] <images/InstantInsanityImpossibleFirst.png, id=287, 501.875pt x 352.31625pt>
 File: images/InstantInsanityImpossibleFirst.png Graphic file (type png)
 
 <use images/InstantInsanityImpossibleFirst.png>
@@ -1534,7 +1534,7 @@ t line 742.
 (pdftex.def)             Requested size: 135.99792pt x 95.4707pt.
 \panelboxAimage=\box60
 
-<images/InstantInsanityImpossibleSecond.png, id=257, 517.935pt x 335.2525pt>
+<images/InstantInsanityImpossibleSecond.png, id=288, 517.935pt x 335.2525pt>
 File: images/InstantInsanityImpossibleSecond.png Graphic file (type png)
 
 <use images/InstantInsanityImpossibleSecond.png>
@@ -1544,7 +1544,7 @@ ut line 755.
 \phAimage=\skip59
 \panelboxBimage=\box61
 
-<images/InstantInsanityImpossibleThird.png, id=258, 517.935pt x 335.2525pt>
+<images/InstantInsanityImpossibleThird.png, id=289, 517.935pt x 335.2525pt>
 File: images/InstantInsanityImpossibleThird.png Graphic file (type png)
 
 <use images/InstantInsanityImpossibleThird.png>
@@ -1556,7 +1556,7 @@ t line 763.
 ************************************************
 Subsection 1.4.4 Other cube sets
 ************************************************
-<images/video-1.jpg, id=288, 481.8pt x 361.35pt>
+<images/video-1.jpg, id=318, 481.8pt x 361.35pt>
 File: images/video-1.jpg Graphic file (type jpg)
  <use images/video-1.jpg>
 Package pdftex.def Info: images/video-1.jpg used on input line 798.
@@ -1565,7 +1565,7 @@ Package pdftex.def Info: images/video-1.jpg used on input line 798.
 ************************************************
 Exercises 1.5 Exercises
 ************************************************
-<images/isomorphic_ex.pdf, id=292, 245.718pt x 234.8775pt>
+<images/isomorphic_ex.pdf, id=322, 245.718pt x 234.8775pt>
 File: images/isomorphic_ex.pdf Graphic file (type pdf)
 
 <use images/isomorphic_ex.pdf>
@@ -1597,7 +1597,7 @@ Section 2.2 Eulerian Walks
 ************************************************
 Subsection 2.2.1 The bridges of Konigsburg
 ************************************************
-<images/Konigsberg_bridges.png, id=428, 303.1325pt x 238.8925pt>
+<images/Konigsberg_bridges.png, id=458, 303.1325pt x 238.8925pt>
 File: images/Konigsberg_bridges.png Graphic file (type png)
 
 <use images/Konigsberg_bridges.png>
@@ -1612,697 +1612,26 @@ Subsection 2.2.2 Eulerian Walks: definitions
 ************************************************
 Subsection 2.2.3 A digression on proofs, formality, and intuition
 ************************************************
-
-LaTeX Warning: Hyper reference `thm_eulerian' on page 17 undefined on input lin
-e 1061.
-
-
-LaTeX Warning: Reference `thm_eulerian' on page 17 undefined on input line 1061
-.
-
-
-LaTeX Warning: Hyper reference `thm_eulerian' on page 17 undefined on input lin
-e 1061.
-
-
-LaTeX Warning: Reference `thm_eulerian' on page 17 undefined on input line 1061
-.
-
 [17]
-************************************************
-Section 2.3 Hamiltonian cycles
-************************************************
-<images/icosiangame.jpg, id=467, 803.0pt x 476.78125pt>
-File: images/icosiangame.jpg Graphic file (type jpg)
-
-<use images/icosiangame.jpg>
-Package pdftex.def Info: images/icosiangame.jpg used on input line 1117.
-(pdftex.def)             Requested size: 135.99792pt x 80.74619pt.
-
-<images/icosiansolved.png, id=468, 220.825pt x 211.79124pt>
-File: images/icosiansolved.png Graphic file (type png)
-
-<use images/icosiansolved.png>
-Package pdftex.def Info: images/icosiansolved.png used on input line 1125.
-(pdftex.def)             Requested size: 135.99792pt x 130.4399pt.
-
-************************************************
-Exercises 2.4 Exercises
-************************************************
-\panelboxAol=\box62
-\phAol=\skip61
-<images/graph_ex.pdf, id=475, 233.87375pt x 290.08376pt>
-File: images/graph_ex.pdf Graphic file (type pdf)
-
-<use images/graph_ex.pdf>
-Package pdftex.def Info: images/graph_ex.pdf used on input line 1184.
-(pdftex.def)             Requested size: 119.00208pt x 147.60435pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1153--1195
-
- []
-
-[18 <./images/icosiangame.jpg> <./images/icosiansolved.png>]
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 1202.
-See the caption package documentation for explanation.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1195--1205
-
- []
-
-<images/euler_exercise.pdf, id=499, 505.89pt x 180.675pt>
-File: images/euler_exercise.pdf Graphic file (type pdf)
-
-<use images/euler_exercise.pdf>
-Package pdftex.def Info: images/euler_exercise.pdf used on input line 1214.
-(pdftex.def)             Requested size: 289.07999pt x 103.24495pt.
-
-<images/euler_hamilton_ex.pdf, id=502, 289.08pt x 224.037pt>
-File: images/euler_hamilton_ex.pdf Graphic file (type pdf)
-
-<use images/euler_hamilton_ex.pdf>
-Package pdftex.def Info: images/euler_hamilton_ex.pdf used on input line 1236.
-(pdftex.def)             Requested size: 220.99792pt x 171.2715pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19 <./images/graph_ex.pdf> <./images/euler_exercise.pdf>]
-************************************************
-Chapter 3 Algorithms
-************************************************
-[20 <./images/euler_hamilton_ex.pdf>]
-Chapter 3.
-************************************************
-Section 3.1 Minimum Weight Spanning Trees
-************************************************
-
-LaTeX Warning: Hyper reference `fig_graphalgorithms_spantreegraph' on page 21 u
-ndefined on input line 1258.
-
-
-LaTeX Warning: Reference `fig_graphalgorithms_spantreegraph' on page 21 undefin
-ed on input line 1258.
-
-<images/spantreegraph.pdf, id=601, 498.663pt x 372.19049pt>
-File: images/spantreegraph.pdf Graphic file (type pdf)
-
-<use images/spantreegraph.pdf>
-Package pdftex.def Info: images/spantreegraph.pdf used on input line 1261.
-(pdftex.def)             Requested size: 305.99792pt x 228.3875pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [21
-
-]
-************************************************
-Subsection 3.1.1 Preliminaries
-************************************************
-
-LaTeX Warning: Hyper reference `fig_graphalgorithms_exchange' on page 22 undefi
-ned on input line 1301.
-
-
-LaTeX Warning: Reference `fig_graphalgorithms_exchange' on page 22 undefined on
- input line 1301.
-
-<images/exchange1.pdf, id=613, 513.11702pt x 325.215pt>
-File: images/exchange1.pdf Graphic file (type pdf)
-
-<use images/exchange1.pdf>
-Package pdftex.def Info: images/exchange1.pdf used on input line 1310.
-(pdftex.def)             Requested size: 163.19855pt x 103.43573pt.
-
-<images/exchange2.pdf, id=614, 513.11702pt x 325.215pt>
-File: images/exchange2.pdf Graphic file (type pdf)
-
-<use images/exchange2.pdf>
-Package pdftex.def Info: images/exchange2.pdf used on input line 1318.
-(pdftex.def)             Requested size: 163.19855pt x 103.43573pt.
- [22 <./images/spantreegraph.pdf>]
-
-Package hyperref Warning: Suppressing link with empty target on input line 1354
-.
-
-
-LaTeX Warning: Hyper reference `lem_graphalgorithms_tech' on page 23 undefined 
-on input line 1354.
-
-
-LaTeX Warning: Reference `lem_graphalgorithms_tech' on page 23 undefined on inp
-ut line 1354.
-
-[23 <./images/exchange1.pdf> <./images/exchange2.pdf>]
-************************************************
-Subsection 3.1.2 Kruskal's Algorithm
-************************************************
-
-LaTeX Warning: Hyper reference `lem_graphalgorithms_tech' on page 24 undefined 
-on input line 1384.
-
-
-LaTeX Warning: Reference `lem_graphalgorithms_tech' on page 24 undefined on inp
-ut line 1384.
-
-\panelboxAp=\box63
-
-LaTeX Warning: Hyper reference `fig_graphalgorithms_spantreegraph' on page 24 u
-ndefined on input line 1392.
-
-
-LaTeX Warning: Reference `fig_graphalgorithms_spantreegraph' on page 24 undefin
-ed on input line 1392.
-
-\phAp=\skip62
-\panelboxApre=\box64
-\phApre=\skip63
-
-Underfull \hbox (badness 10000) in paragraph at lines 1423--1430
-
- []
-
-
-Underfull \vbox (badness 3219) has occurred while \output is active []
-
- [24]
-************************************************
-Subsection 3.1.3 Prim's Algorithm
-************************************************
-
-LaTeX Warning: Hyper reference `lem_graphalgorithms_tech' on page 25 undefined 
-on input line 1453.
-
-
-LaTeX Warning: Reference `lem_graphalgorithms_tech' on page 25 undefined on inp
-ut line 1453.
-
-
-LaTeX Warning: Hyper reference `fig_graphalgorithms_spantreegraph' on page 25 u
-ndefined on input line 1461.
-
-
-LaTeX Warning: Reference `fig_graphalgorithms_spantreegraph' on page 25 undefin
-ed on input line 1461.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1492--1499
-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25]
-************************************************
-Subsection 3.1.4 Comments on Efficiency
-************************************************
-************************************************
-Section 3.2 Digraphs
-************************************************
-
-LaTeX Warning: Hyper reference `fig_graphalgorithms_digraph' on page 26 undefin
-ed on input line 1517.
-
-
-LaTeX Warning: Reference `fig_graphalgorithms_digraph' on page 26 undefined on 
-input line 1517.
-
-<images/digraph.pdf, id=748, 433.62pt x 271.0125pt>
-File: images/digraph.pdf Graphic file (type pdf)
- <use images/digraph.pdf>
-Package pdftex.def Info: images/digraph.pdf used on input line 1520.
-(pdftex.def)             Requested size: 289.00208pt x 180.63457pt.
-
-[26]
-************************************************
-Section 3.3 Dijkstra's Algorithm for Shortest Paths
-************************************************
-************************************************
-Subsection 3.3.1 Description of the Algorithm
-************************************************
-[27 <./images/digraph.pdf>]
-************************************************
-Subsection 3.3.2 Example of Dijkstra's Algorithm
-************************************************
-
-LaTeX Warning: Hyper reference `fig_graphalgorithms_dijkstragraph' on page 28 u
-ndefined on input line 1574.
-
-
-LaTeX Warning: Reference `fig_graphalgorithms_dijkstragraph' on page 28 undefin
-ed on input line 1574.
-
-<images/dijkstragraph.pdf, id=803, 433.62pt x 267.39899pt>
-File: images/dijkstragraph.pdf Graphic file (type pdf)
-
-<use images/dijkstragraph.pdf>
-Package pdftex.def Info: images/dijkstragraph.pdf used on input line 1577.
-(pdftex.def)             Requested size: 289.00208pt x 178.2261pt.
-
-************************************************
-Paragraphs Step 1. Initialization
-************************************************
-[28 <./images/dijkstragraph.pdf>]
-************************************************
-Paragraphs Step 2. Scan from vertex\nobreakspace {}\(f\)
-************************************************
-************************************************
-Paragraphs Step 3. Scan from vertex\nobreakspace {}\(c\)
-************************************************
-************************************************
-Paragraphs Step 4. Scan from vertex\nobreakspace {}\(e\)
-************************************************
-[29]
-************************************************
-Paragraphs Step 5. Scan from vertex\nobreakspace {}\(b\)
-************************************************
-************************************************
-Paragraphs Step 6. Scan from vertex\nobreakspace {}\(g\)
-************************************************
-************************************************
-Paragraphs Step 7. Scan from vertex\nobreakspace {}\(d\)
-************************************************
-************************************************
-Paragraphs Final Results of Dijkstra's Algorithm
-************************************************
-[30]
-************************************************
-Subsection 3.3.3 The Correctness of Dijkstra's Algorithm
-************************************************
-
-LaTeX Warning: Hyper reference `fig_graphalgorithms_dijkstra-proof' on page 31 
-undefined on input line 1776.
-
-
-LaTeX Warning: Reference `fig_graphalgorithms_dijkstra-proof' on page 31 undefi
-ned on input line 1776.
-
-<images/dijkstra-proof.pdf, id=881, 505.89pt x 180.675pt>
-File: images/dijkstra-proof.pdf Graphic file (type pdf)
-
-<use images/dijkstra-proof.pdf>
-Package pdftex.def Info: images/dijkstra-proof.pdf used on input line 1780.
-(pdftex.def)             Requested size: 204.00208pt x 72.85867pt.
- [31]
-
-LaTeX Warning: Hyper reference `fig_graphalgorithms_dijkstra-proof' on page 32 
-undefined on input line 1792.
-
-
-LaTeX Warning: Reference `fig_graphalgorithms_dijkstra-proof' on page 32 undefi
-ned on input line 1792.
-
-************************************************
-Section 3.4 Pr\IeC {\"u}fer Codes
-************************************************
-[32 <./images/dijkstra-proof.pdf>]
-\panelboxAtabular=\box65
-
-Overfull \hbox (23.96686pt too wide) in paragraph at lines 1874--1874
- [][] 
- []
-
-\phAtabular=\skip64
-
-Overfull \hbox (31.74274pt too wide) in paragraph at lines 1908--1908
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1884--1918
-
- []
-
-
-Overfull \hbox (39.51862pt too wide) in paragraph at lines 1942--1942
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1918--1952
-
- []
-
-
-Overfull \hbox (47.2945pt too wide) in paragraph at lines 1976--1976
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1952--1986
-
- []
-
-
-Overfull \hbox (62.84625pt too wide) in paragraph at lines 2010--2010
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1986--2020
-
- []
-
-
-Overfull \hbox (21.18976pt too wide) in paragraph at lines 2044--2044
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2020--2054
-
- []
-
-\panelboxAlatex=\box66
-\phAlatex=\skip65
-! Missing number, treated as zero.
-<to be read again> 
-                   i
-l.2076 ...oxAlatex-image+\dp\panelboxAlatex-image}
-                                                  
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   i
-l.2076 ...oxAlatex-image+\dp\panelboxAlatex-image}
-                                                  
-? 
-
-! Package calc Error: `i' invalid at this point.
-
-See the calc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2076 ...oxAlatex-image+\dp\panelboxAlatex-image}
-                                                  
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   i
-l.2076 ...oxAlatex-image+\dp\panelboxAlatex-image}
-                                                  
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   i
-l.2076 ...oxAlatex-image+\dp\panelboxAlatex-image}
-                                                  
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   i
-l.2076 ...oxAlatex-image+\dp\panelboxAlatex-image}
-                                                  
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   i
-l.2076 ...oxAlatex-image+\dp\panelboxAlatex-image}
-                                                  
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   \setbox 
-l.2077 ...x-image}{\usebox{\panelboxAlatex-image}}
-                                                  
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \setbox 
-l.2077 ...x-image}{\usebox{\panelboxAlatex-image}}
-                                                  
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   i
-l.2077 ...x-image}{\usebox{\panelboxAlatex-image}}
-                                                  
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   i
-l.2077 ...x-image}{\usebox{\panelboxAlatex-image}}
-                                                  
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   \setbox 
-l.2077 ...x-image}{\usebox{\panelboxAlatex-image}}
-                                                  
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \setbox 
-l.2077 ...x-image}{\usebox{\panelboxAlatex-image}}
-                                                  
-? 
-! Missing number, treated as zero.
-<to be read again> 
-                   i
-l.2078 ...max}{\maxof{\panelmax}{\phAlatex-image}}
-                                                  
-? 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   i
-l.2078 ...max}{\maxof{\panelmax}{\phAlatex-image}}
-                                                  
-? 
-
-! Package calc Error: `i' invalid at this point.
-
-See the calc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2078 ...max}{\maxof{\panelmax}{\phAlatex-image}}
-                                                  
-? 
-[33]
 ! Extra }, or forgotten \endgroup.
-<recently read> }
-                 
-l.2090 }
-        % end: group for a single side-by-side
+l.1150 }
+        
 ? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 2084--2091
-
- []
-
-************************************************
-Exercises 3.5 Exercises
-************************************************
-
-LaTeX Warning: Hyper reference `fig_span_tree_ex1' on page 34 undefined on inpu
-t line 2098.
-
-
-LaTeX Warning: Reference `fig_span_tree_ex1' on page 34 undefined on input line
- 2098.
-
-<images/span_tree_ex1.pdf, id=952, 234.8775pt x 198.7425pt>
-File: images/span_tree_ex1.pdf Graphic file (type pdf)
-
-<use images/span_tree_ex1.pdf>
-Package pdftex.def Info: images/span_tree_ex1.pdf used on input line 2101.
-(pdftex.def)             Requested size: 220.99792pt x 186.99689pt.
-
-
-LaTeX Warning: Hyper reference `fig_span_tree_ex1' on page 34 undefined on inpu
-t line 2106.
-
-
-LaTeX Warning: Reference `fig_span_tree_ex1' on page 34 undefined on input line
- 2106.
-
-
-LaTeX Warning: Hyper reference `fig_span_tree_ex2' on page 34 undefined on inpu
-t line 2109.
-
-
-LaTeX Warning: Reference `fig_span_tree_ex2' on page 34 undefined on input line
- 2109.
-
-<images/span_tree_ex2.pdf, id=953, 234.8775pt x 198.7425pt>
-File: images/span_tree_ex2.pdf Graphic file (type pdf)
-
-<use images/span_tree_ex2.pdf>
-Package pdftex.def Info: images/span_tree_ex2.pdf used on input line 2112.
-(pdftex.def)             Requested size: 220.99792pt x 186.99689pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [34 <./images/span_tree_ex1.pdf>]
-
-LaTeX Warning: Hyper reference `fig_span_tree_ex2' on page 35 undefined on inpu
-t line 2117.
-
-
-LaTeX Warning: Reference `fig_span_tree_ex2' on page 35 undefined on input line
- 2117.
-
-
-LaTeX Warning: Hyper reference `fig_span_tree_ex3' on page 35 undefined on inpu
-t line 2120.
-
-
-LaTeX Warning: Reference `fig_span_tree_ex3' on page 35 undefined on input line
- 2120.
-
-<images/span_tree_ex3.pdf, id=990, 144.54pt x 151.767pt>
-File: images/span_tree_ex3.pdf Graphic file (type pdf)
-
-<use images/span_tree_ex3.pdf>
-Package pdftex.def Info: images/span_tree_ex3.pdf used on input line 2123.
-(pdftex.def)             Requested size: 152.99896pt x 160.65688pt.
-
-
-LaTeX Warning: Hyper reference `fig_span_tree_ex3' on page 35 undefined on inpu
-t line 2128.
-
-
-LaTeX Warning: Reference `fig_span_tree_ex3' on page 35 undefined on input line
- 2128.
-
-[35 <./images/span_tree_ex2.pdf> <./images/span_tree_ex3.pdf>]
-
-LaTeX Warning: Hyper reference `prop_graphalgorithms_spanforest' on page 36 und
-efined on input line 2150.
-
-
-LaTeX Warning: Reference `prop_graphalgorithms_spanforest' on page 36 undefined
- on input line 2150.
-
-
-LaTeX Warning: Hyper reference `fig_graphalgorithms_dijkstra_ex1' on page 36 un
-defined on input line 2156.
-
-
-LaTeX Warning: Reference `fig_graphalgorithms_dijkstra_ex1' on page 36 undefine
-d on input line 2156.
-
-<images/dijkstra_ex1.pdf, id=1054, 343.2825pt x 252.945pt>
-File: images/dijkstra_ex1.pdf Graphic file (type pdf)
-
-<use images/dijkstra_ex1.pdf>
-Package pdftex.def Info: images/dijkstra_ex1.pdf used on input line 2159.
-(pdftex.def)             Requested size: 220.99792pt x 162.83757pt.
-
-
-LaTeX Warning: Hyper reference `tab_digraph1' on page 36 undefined on input lin
-e 2164.
-
-
-LaTeX Warning: Reference `tab_digraph1' on page 36 undefined on input line 2164
-.
-
-
-Underfull \vbox (badness 2717) has occurred while \output is active []
-
- [36 <./images/dijkstra_ex1.pdf>]
-
-LaTeX Warning: Hyper reference `fig_graphalgorithms_dijkstra_ex2' on page 37 un
-defined on input line 2180.
-
-
-LaTeX Warning: Reference `fig_graphalgorithms_dijkstra_ex2' on page 37 undefine
-d on input line 2180.
-
-<images/dijkstra_ex2.pdf, id=1093, 343.2825pt x 231.26399pt>
-File: images/dijkstra_ex2.pdf Graphic file (type pdf)
-
-<use images/dijkstra_ex2.pdf>
-Package pdftex.def Info: images/dijkstra_ex2.pdf used on input line 2183.
-(pdftex.def)             Requested size: 220.99792pt x 148.88005pt.
-
-
-LaTeX Warning: Hyper reference `tab_digraph2' on page 37 undefined on input lin
-e 2188.
-
-
-LaTeX Warning: Reference `tab_digraph2' on page 37 undefined on input line 2188
-.
-
-[37 <./images/dijkstra_ex2.pdf>] [38]
-
-! LaTeX Error: \begin{example} on input line 1854 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
+! TeX capacity exceeded, sorry [input stack size=5000].
+\pgf@selectfontorig ->\pgf@selectfontorig 
+                                          \nullfont 
+l.1151 ...in \(\Gamma\)\label{fig_euler_example2}}
                                                   
-l.2217 \end{document}
-                     
-? 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2217.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2217.
-(./MAS341.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2217.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2217.
+If you really absolutely need more capacity,
+you can ask a wizard to enlarge me.
 
-
-
-Package rerunfilecheck Warning: File `MAS341.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `MAS341.out':
-(rerunfilecheck)             Before: BDD2E0D67CC310EB18298E42DA233899;647
-(rerunfilecheck)             After:  A75A67E4DCF167A2B141A5A73BCB282F;1028.
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- )
-(\end occurred inside a group at level 3)
-
-### semi simple group (level 3) entered at line 2076 (\begingroup)
-### simple group (level 2) entered at line 2062 ({)
-### semi simple group (level 1) entered at line 1854 (\begingroup)
-### bottom level 
+ 
 Here is how much of TeX's memory you used:
- 26524 strings out of 493029
- 486853 string characters out of 6136234
- 609667 words of memory out of 5000000
- 29006 multiletter control sequences out of 15000+600000
- 29120 words of font info for 75 fonts, out of 8000000 for 9000
+ 26194 strings out of 493029
+ 483095 string characters out of 6136234
+ 605908 words of memory out of 5000000
+ 28981 multiletter control sequences out of 15000+600000
+ 20686 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 54i,13n,83p,1847b,1424s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/us
-r/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-5.enc}{/usr/share/
-texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/
-fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/
-share/texmf/fonts/type1/public/cm-super/sfbi1000.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/
-sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-frm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/sh
-are/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type
-1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
-sl1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on MAS341.pdf (40 pages, 3924733 bytes).
-PDF statistics:
- 1344 PDF objects out of 1440 (max. 8388607)
- 1023 compressed objects within 11 object streams
- 556 named destinations out of 1000 (max. 500000)
- 236 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 5000i,13n,83p,1847b,1424s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!

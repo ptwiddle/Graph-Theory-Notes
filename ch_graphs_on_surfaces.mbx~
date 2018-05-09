@@ -1,0 +1,9 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_graphs_on_surfaces">
+    <title>Graphs on Surfaces</title>
+<introduction>
+<p>This chapter covers drawing graphs on surfaces.  We start with discussing whether or not graphs are planar, proving that <m>K_{3,3}</m> and <m>K_5</m> are not planar using a method we call the Planarity Algorithm for Hamiltonian graphs.  We discuss the more general Kuratowski's theorem for proving any graph is planar or not.  We introduce other surfaces, and how to draw graphs on them -- the sphere, Mobius band, and torus in particular.  After a brief discussion of dual graphs, we prove Euler's theorem about planar graphs and explore several applications.</p>
+
+</introduction>
+<xi:include href="./s_graphs_on_surfaces_introduction_planarity.mbx" />
+<xi:include href="./s_graphs_on_surfaces_other_surfaces.mbx" />
+</chapter>

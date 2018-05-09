@@ -1,0 +1,10 @@
+<section xml:id="s_chromatic_number">
+<title>Chromatic number</title>
+
+
+<definition><title>Chromatic number</title>
+<p>The <em>chromatic number</em> of a graph G is the least number of colours needed to colour the vertices of G so that adjacent vertices have distinct colours.
+</p></definition>
+
+
+</section>

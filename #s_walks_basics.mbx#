@@ -10,7 +10,35 @@
 <subsection><title>Walks and connectedness</title>
 <p>Before we see the formal definition of a walk, it will be useful to see an example:</p>
 <figure xml:id="fig_walkdrawing"> <caption>Example of a walk</caption>
-<image width="70%" source="images/walkdrawing.png" />
+<image width="70%">
+<latex-image><![CDATA[\begin{tikzpicture}
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (A) at (0,0) {A};
+    \node (B) at (0,3) {B};
+    \node (C) at (2.5,4) {C};
+    \node (D) at (2.5,1) {D};
+    \node (E) at (2.5,-3) {E};
+    \node (F) at (5,3) {F} ;
+\end{scope}
+
+\begin{scope}[every node/.style={fill=white,circle}, >={Stealth[black]}]
+  \begin{scope}[            
+              every edge/.style={draw=red,very thick}]
+
+  \path [->] (A) edge node {$6$} (D);
+ \path [->] (D) edge node {$4$} (C);
+    \path [->] (C) edge node {$5$} (F);
+    \path [->] (F) edge node {$3$} (D);
+    \path [->] (D) edge node {$8$} (E);
+\end{scope}
+    
+    \path  (A) edge node {$3$} (B);
+    \path  (B) edge node {$1$} (C); 
+    \path  (A) edge node {$7$} (E);
+    \path  (E) edge node {$9$} (F); 
+    \path  (B) edge[bend right=60] node {$10$} (E); 
+\end{scope}
+\end{tikzpicture}]]></latex-image></image>
 </figure>
 <p>In the graph shown, the vertices are labelled with letters, and the edges are labelled with numbers, and we have a walk highlighted in red, and with arrowtips drawn on the edges.  Starting from vertex <m>A</m>, we can take edge 6 to vertex <m>D</m>, and then edge 5 to vertex <m>C</m>, edge 5 to vertext <m>F</m>, edge 3 back to vertex <m>D</m>, and finally edge 8 to vertex <m>E</m>. Intuitively,then, a walk strings together several edges that share vertices in between.  Makign that formal, we have the following.</p>
 
@@ -23,7 +51,7 @@
 <p>We say that the walk is between vertices <m>a=v_0</m> and <m>b=v_n</m></p>
 </definition>
 
-<p>In this notation, the walk in <xref ref="fig_walkdrawing" /> goes from <m>A</m> to <m>E</m>, and would be written <m>A, 6, D, 4, C, 5, F, 3, D, 8, E</m>.  The visual representation of the walk on the graph is vastly more intuitive, the written one feeling cumbersome in comparison.</p>
+<p>With this notation for a walk, Example <xref ref="fig_walkdrawing" />, the walk shown would be written <m>A, 6, D, 4, C, 5, F, 3, D, 8, E</m>.  The visual representation of the walk on the graph is vastly more intuitive, the written one feeling cumbersome in comparison.</p>
 
 <p>The definition of walk above contains some extra information.  If we just know the sequence of edges we can reconstruct what the vertices have to be (assuming we have at least two edges in the walk).  Alternatively, if the graph <m>\Gamma</m> does not have multiple edges, it is enough to just know the vertices <m>v_i</m>, but if <m>\Gamma</m> has multiple edges that just knowing the vertices does not determine the walk.</p>
 
@@ -86,13 +114,15 @@ A graph <m>\Gamma</m> is <em>disconnected</em> if we can write <m>\Gamma=\Gamma_
 <li> There is a path from <m>v</m> to <m>w</m>.</li>
 </ol></lemma>
 
-<proof><p>Obviously, 3 implies 2 which implies 1, as any path is a trail, and any trail is a walk.  </p>
+<p>As is often the case, the formal write-up of the proof makes something that can seem very easy intuitively look laborious, so it's worth anlysing it briefly for our example walk <m>A-D-C-F-D-E</m> from <xref ref="fig_walkdrawing" />.  This walk is not a path as it repeats the vertex <m>D</m>; however, we may simply remove the triangle <m>D-C-F-D</m> from the walk to get the trail <m>A-D-E</m>.  this idea is what works in general.</p>
+
+<proof><p>It is immediate from the definitions that 3 implies 2 which implies 1, as any path is a trail, and any trail is a walk.</p>
 
 <p>That 1 implies 3 is intuitively obvious: if you repeat a vertex, then you've visited someplace twice, and weren't taking the shortest route.  Let's make this argument mathematically precise.</p>
 
 <p>Suppose we have a walk <m>v=v_0,e_1,\dots, e_m, v_m=w</m> that is not a path.  Then, we must repeat some vertex, say <m>v_i=v_k</m>, with <m>i\lt k</m>.  Then we can cut out all the vertices and edges between <m>v_i</m> and <m>v_k</m> to obtain a new walk </p>
 
-<me>v=v_0,e_1, v_1,\dots, e_i, v_i, e_{k+1}, v_{k+1}, e_{k+2}, v_{k+2}, \dots, v_m</me>
+<me>v=v_0,e_1, v_1,\dots, e_i, v_i=v_k, e_{k+1}, v_{k+1}, e_{k+2}, v_{k+2}, \dots, v_m</me>
 
 <p>Since <m> i \lt k </m>, the new walk is strictly shorter than our original walk.  Since the length of a walk is finite, if we iterate this process the result must eventually terminate.  That means all our vertices are distinct, and hence is a path.</p></proof>
 

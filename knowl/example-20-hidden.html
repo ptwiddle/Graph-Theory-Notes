@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-05-09T15:51:02+01:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="example-like"><p>Let's label the vertices \(v_0,\dots, v_{n-1}\text{,}\) and colour them one by one in the given order.  When we colour the first vertex \(v_0\text{,}\) no other vertices have been coloured, and we can use whichever of the \(k\) vertice we like.  However, when we go to colour \(v_1\) we note that it is adjacent to \(v_0\text{,}\) and so whatever colour we used for \(v_0\) we can't for \(v_1\text{,}\) and so we have \(k-1\) colours to choose for \(v_1\)</p>
+<p>Continuing in this way, we see that since all the vertices are adjacent, they all most have different colours.  So when we go to colour \(v_i\text{,}\) we have already coloured \(v_o,\dots, v_{i-1}\) with \(i\) different colours, and we can't use any of these to colour \(v_i\text{,}\) and so we have \(k-i\) choices to colour \(v_i\text{.}\)</p>
+<p>Putting it all together, we see that:</p>
+<div class="displaymath">
+\begin{equation*}
+\chi_{K_n}(k)=k\cdot (k-1)\cdot (k-2)\cdots k-n+1
+\end{equation*}
+</div></article></body>
+</html>

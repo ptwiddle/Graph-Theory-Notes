@@ -1,0 +1,13 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="ch_colourings">
+    <title>Colourings</title>
+<introduction>
+<p>This chapter covers several types of colouring questions on graphs.  The initial motivation for these questions comes from an early question about colouring the countries on maps so that adjacent countries have different colours.</p>
+
+
+
+</introduction>
+<xi:include href="./s_chromatic_number.mbx" />
+<xi:include href="./s_chromatic_index.mbx" />
+<xi:include href="./s_chromatic_polynomial.mbx" />
+<xi:include href="./s_chromatic_big_theorems.mbx" />
+</chapter>

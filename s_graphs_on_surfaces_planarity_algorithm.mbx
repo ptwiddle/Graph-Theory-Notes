@@ -1,5 +1,5 @@
 <section xml:id="s_graphs_on_surfaces_planarity_algorithm">
-    <title>The planarity algorith</title>
+    <title>The planarity algorithm for Hamiltonian graphs</title>
 
 <introduction> <p>In the previous chapter we showed that <m>K_{3,3}</m> isn't planar; in this section we investigate how the ideas we used to solve the utilities problem for <m>K_{3,3}</m>-- namely, the Jordan Curve theorem and the fact that <m>K_{3,3}</m> is Hamiltonian -- generalize to other graphs.  In the end, this will culminate in "The Planarity Algorithm for Hamiltonian Graphs".</p>
 
@@ -107,7 +107,7 @@
 
 <p>Similarly, if we can find a colouring of the vertices of Cross(<m>G,C</m>) so that adjacent vertices have different colours, then we can draw all the edges of <m>G</m> corresponding to red vertices of Cross(<m>G,C</m>) inside (or outside) <m>C</m> without having any of them cross.</p>
 
-<example><title><m>K_5</m></title> <p>Let's apply the planarity algorithm to the complete graph <m>K_5</m>.  Let's label the vertices 1-5, and take our Hamiltonian cycle <m>C</m> to be 123451, which we've drawn as the outside pentagon in the following figure:
+<example><title>The complete graph <m>K_5</m> isn't planar</title> <p>Let's apply the planarity algorithm to the complete graph <m>K_5</m>.  Let's label the vertices 1-5, and take our Hamiltonian cycle <m>C</m> to be 123451, which we've drawn as the outside pentagon in the following figure:
 <figure xml:id="fig_planarity_crossk5_edge13"><caption> The graph (<m>K_5</m>)</caption>
 <image width="70%"><latex-image><![CDATA[\begin{tikzpicture}[scale=.7]
 \tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]

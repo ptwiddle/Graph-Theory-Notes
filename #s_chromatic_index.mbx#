@@ -1,0 +1,10 @@
+<section xml:id="s_chromatic_index">
+<title>Chromatic index</title>
+
+
+<definition><title>Chromatic index</title>
+<p>The <em>chromatic number</em> <m>\chi^\prime(G)</m> of a graph G is the least number of colours needed to colour the edges of G so that edges that share a vertex have different colours.
+</p></definition>
+
+
+</section>

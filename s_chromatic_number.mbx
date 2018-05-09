@@ -1,0 +1,45 @@
+<section xml:id="s_chromatic_number">
+<title>Chromatic number</title>
+
+
+<definition><title>Chromatic number</title>
+<p>The <em>chromatic number</em> of a graph <m>\bfG</m> is the least number of colours needed to colour the vertices of <m>G</m> so that adjacent vertices are given different colours.
+</p></definition>
+
+<example><title>Complete graph</title> <p>What's the chromatic number <m>\chi(K_n)</m> of the complete graph?  Since every vertex is adjacent to every other vertex, any two vertices need to have different colours, and so <m>\chi(K_n)\geq n</m>.  But certainly if we colour every vertex a different colour, then two adjacent vertices have the same colour, and that's a valid colouring of <m>K_n</m>, so <m>\chi(K_n)\leq n</m>.   So <m>\chi(K_n)=n</m>.</p></example>
+
+<example><title>Trees</title> <p>Suppose that <m>T_n</m> is a tree on <m>n\geq 2</m> vertices.  Then <m>T_n</m> has an edge, and the two vertices on this edge must be different colours, and so <m>\chi(T_n)\geq 2</m>.  On the other hand, we can colour any tree with two colours as follows: pick any vertex, and colour it blue; then pick any vertex next to it and colour it red, then we can colour the vertices next to that blue, and colour the vertices next to those red, and continuing on outwards from our starting vertex.  Hence, <m>\chi(T_n)\leq 2</m> and so <m>\chi(T_n)=2</m>.</p>
+
+<p>Another way of phrasing this is that along any path we colour the vertices alternating red-blue-red-blue-red-blue.  This wouldn't work for a general graph, because there may be two paths of different lengths between a pair of vertices <m>v</m> and <m>w</m>.  But in trees because there is always exactly one path between any two vertices, and so once we colour one vertex, there's a unique way to colour all the others with two colours in this way.</p></example>
+
+<example><title>Cyclic graphs <m>C_n</m></title><p>As with trees, as long as <m>n\geq 2</m> the graph has at least one edge, and thus has <m>\chi(C_n)\geq 2</m>.  Can we colour <m>C_n</m> with two colours?</p>
+
+<p>If we could, the vertices would have to alternate red-blue-red-blue all the way around.  This works if <m>n</m> is even, but if <m>n</m> is odd then the vertex we started with would have the same colour as the vertex we ended with, but they're adjacent.  Thus, when <m>n</m> is odd we need at least three colours to colour the graph, but it's easy to do with three colours -- we can alternate red-blue-red-blue, but make the very last vertex green, for instance.</p>
+
+<p>Summarizing, we have:<me><![CDATA[\chi(C_n)=\begin{cases} 2 & n \text{ odd} \\ 3 & n \text{ even} \end{cases}]]></me>
+</p></example>
+
+<p>In fact, as thinking about the examples of trees and cycles should show, we've already met one instance of the chromatic number -- a graph <m>\bfG</m> is bipartite if and only if <m>\chi(\bfG)=2</m>, as follows immediately from the definition.</p>
+
+<p>Another useful observation about the examples we've seen is that, since the chromatic number <m>\chi(\bfG)</m> is the <em>least</em> number of colours needed to colour <m>\chi(\bfG)</m>, to show that <m>\chi(\bfG)=s</m> requires doing two things:
+<ol><li>Showing that <m>\bfG</m> <em>can</em> be coloured with <m>s</m> colours, and hence <m>\bfG\leq s</m></li>
+<li>Showing that <m>\bfG</m> <em>can't</em> be coloured with <m>s-1</m> colours, and hence <m>\bfG\geq s</m> </li>
+</ol></p>
+
+<example><title>The Wheel graph</title> <p>The wheel graph <m>W_n</m> consists of an <m>n</m>-cycle together with one additional vertex, that is connected to all vertices of the <m>n</m>-cycle.  Note that this with this convention, <m>W_n</m> confusingly has <m>n-1</m> vertices; other people may use a different convention where <m>W_n</m> has <m>n</m> vertices, but then it only has a <m>n-1</m> vertices on the actual wheel.</p>
+
+<p>Since the central vertex is connected to all other vertices, once we colour it, we can never use that colour again.  But deleting that vertex we just have the <m>n</m>-cycle, and we already know the chromatic number of that.  So we have <m>\chi(W_n)=\chi(C_n)+1</m>.</p></example>
+
+<definition><statement><p>We write <m>\Delta(\bfG)</m> for the maxium degree of any vertex in <m>\bfG</m>:<me>\Delta(\bfG)=\max_{v\in \bfG} d(v)</me></p>
+</statement></definition>
+
+<theorem><statement><p>We have <m>\chi(\bfG)\leq \Delta(\bfG)+1</m></p></statement>
+<proof><p>We need to show that we can colour any graph <m>\bfG</m> with <m>\Delta(G)+1</m> colours.  But we can just colour the vertices of <m>\bfG</m> one by one in whatever order we want.  When we go to colour the <m>i</m>th vertex <m>v_i</m>, we look at the <m>d(v_i)</m> vertices adjacent to <m>v_i</m>.  Some of them may not be coloured yet, in which case they don't affect anything, but for each vertex adjacent to <m>v_i</m> that is coloured, we can't use that colour for <m>v_i</m>.</p>
+
+<p>So there are most <m>d(v_i)\leq \Delta(\bfG)</m> colours we have to avoid; if we have <m>\Delta(\bfG)+1</m> colours to choose from we can always find one that hasn't been used at a vertex adjacent to <m>v_i</m></p>.
+
+</proof>
+</theorem>
+
+
+</section>

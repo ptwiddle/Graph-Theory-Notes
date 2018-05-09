@@ -1,0 +1,11 @@
+<section xml:id="s_graphs_on_surfaces_euler">
+    <title>Euler's Theorem</title>
+
+<introduction> <p>This section cover's Euler's theorem on planar graphs and its applications.  We give a proof by of Euler's theorem by induction, and gave several applications of the theorem itself: more proofs that <m>K_{3,3}</m> and <m>K_5</m> aren't planar, that footballs have five pentagons, and a proof that our video game designers couldn't have made their map into a sphere without doing something very strange.</p>
+</introduction>
+<subsection> <title>counting Faces</title>
+</subsection>
+
+
+
+</section>

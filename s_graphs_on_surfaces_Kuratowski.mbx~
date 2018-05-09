@@ -1,0 +1,11 @@
+<section xml:id="s_graphs_on_surfaces_Kuratowski">
+    <title>Kuratowski's Theorem</title>
+
+<introduction> <p>The planrity Algorithm for Hamiltonian graphs gives a very convenient and systematic way to determine whether a Hamiltonian graph is planar or not, and we saw that with some work it can be hacked to work for graphs that are "almost" Hamiltonian -- that have a cycle that go through all but one or two vertices, say.</p>
+
+<p>Stretching these ideas further, the general logic of considering cycles and applying the Jordan Curve theorem to them would provide a way to prove whether an abritrary graph is planar or not, but as we have more or more vertices that aren't on our cycle to consider the arguments would get more and more complicated, and it's clear that a better method is desirable.  In this section we will present (but not prove) a general theorem that will give a method to determine whether or not an arbitrary graph is planar.</p>
+</introduction>
+<subection> <title>Planarity and Subgraphs</title>
+
+</subsection>
+</section>
