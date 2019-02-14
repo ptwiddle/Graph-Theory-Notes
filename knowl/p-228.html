@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-05-09T15:51:02+01:00    *-->
+<!--*    on 2019-02-14T13:28:37Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,11 +13,18 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>When the algorithm halts, let \(\sigma=(v_1,v_2,v_3,\dots,v_n)\text{.}\)  Then</p>
 <div class="displaymath">
-\begin{equation*}
-\delta(v_1)\le \delta(v_2)\le\dots \le \delta(v_n).
-\end{equation*}
+\begin{align*}
+\sigma\amp=(a,f,c,e)\\
+\delta(a)\amp=0; \amp P(a)\amp=(a)\\
+\delta(b)\amp=101=70+31= \delta(e)+w(e,b); \amp P(b)\amp=(a,e,b)\quad\text{updated}\\
+\delta(c)\amp=47; \amp P(c)\amp=(a,c)\\
+\delta(d)\amp=135; \amp P(d)\amp=(a,c,d)\\
+\delta(e)\amp=70; \amp P(e)\amp=(a,e)\\
+\delta(f)\amp=24; \amp P(f)\amp=(a,f)\\
+\delta(g)\amp=112=70+42= \delta(e)+w(e,g); \amp P(g)\amp=(a,e,g)\quad\text{updated}\\
+\delta(h)\amp=\infty; \amp P(h)\amp=(a,h)
+\end{align*}
 </div>
 <span class="incontext"><a href="s_graphalgorithms_shortest-paths.html#p-228">in-context</a></span>
 </body>

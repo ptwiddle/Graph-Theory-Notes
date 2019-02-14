@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-05-09T15:51:01+01:00    *-->
+<!--*    on 2019-02-14T13:28:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -132,7 +132,7 @@ MathJax.Hub.Config({
 <nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
 <h2 class="link"><a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
 <ul>
-<li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook">A first look a graphs</a></li>
+<li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook">A first look at graphs</a></li>
 <li><a href="s_intro_degrees.html" data-scroll="s_intro_degrees">Degree and handshaking</a></li>
 <li><a href="s_intro_isomorphisms.html" data-scroll="s_intro_isomorphisms">Graph Isomorphisms</a></li>
 <li><a href="s_intro_instantinsanity.html" data-scroll="s_intro_instantinsanity">Instant Insanity</a></li>
@@ -164,40 +164,40 @@ MathJax.Hub.Config({
 <h2 class="link"><a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">5</span><span class="title">Colourings</span></a></h2>
 <ul>
 <li><a href="s_chromatic_number.html" data-scroll="s_chromatic_number">Chromatic number</a></li>
-<li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index</a></li>
+<li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index and applications</a></li>
 <li><a href="s_chromatic_polynomial.html" data-scroll="s_chromatic_polynomial">Chromatic polynomial</a></li>
 <li><a href="s_chromatic_big_theorems.html" data-scroll="s_chromatic_big_theorems">Big Theorems</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="s_graphalgorithms_prufer"><h2 class="heading hide-type" alt="Section 3.4 Prüfer Codes">
 <span class="type">Section</span><span class="codenumber">3.4</span><span class="title">Prüfer Codes</span>
 </h2>
-<a href="s_graphalgorithms_prufer.html" class="permalink">¶</a><p id="p-236">This section covers the Prüfer Code, a bijection between labelled trees and certain sequences of integers. This bijection allows us to prove Cayley's theorem, giving a count of such labelled trees.</p>
-<p id="p-237">Given a combinatorial structure, such as a graph or a tree, it is natural to ask how many of such structures there are.  Often, there is no nice formula, for instance, for the number of different trees on \(n\) vertices there.  But if the vertices are labelled, then it turns out there's a nice answer.</p>
+<a href="s_graphalgorithms_prufer.html" class="permalink">¶</a><p id="p-247">This section covers the Prüfer Code, a bijection between labelled trees and certain sequences of integers. This bijection allows us to prove Cayley's theorem, giving a count of such labelled trees.</p>
+<p id="p-248">Given a combinatorial structure, such as a graph or a tree, it is natural to ask how many of such structures there are.  Often, there is no nice formula, for instance, for the number of different trees on \(n\) vertices there.  But if the vertices are labelled, then it turns out there's a nice answer.</p>
 <article class="definition-like" id="definition-18"><h6 class="heading">
 <span class="type">Definition</span><span class="codenumber">3.4.1</span><span class="title">Labelled tree</span>
 </h6>
-<p id="p-238">A <em class="emphasis">labelled tree</em> on \(n\) vertices is a tree with \(n\) vertices, which are labelled \(1,2,\dots,n.\)</p></article><article class="theorem-like" id="theorem-5"><h6 class="heading">
+<p id="p-249">A <em class="emphasis">labelled tree</em> on \(n\) vertices is a tree with \(n\) vertices, which are labelled \(1,2,\dots,n.\)</p></article><article class="theorem-like" id="theorem-5"><h6 class="heading">
 <span class="type">Theorem</span><span class="codenumber">3.4.2</span><span class="title">Cayley's Theorem</span>
 </h6>
-<p id="p-239">There are \(n^{n-2}\) labelled trees on \(n\) vertices.</p></article><p id="p-240">One more convenient way of writing down a labelled tree is to write down all the edges.  If there tree has \(n\) vertices, then there are \(n-1\) edges, and writing down all the edges takes \(2n-2\) numbers between \(1...n\text{.}\)  However, we see that we're writing down the same tree lots of different times, by changing the order of the edges, and which vertex from each edge we write first.  Furthermore, not every sequence of \(2n-2\) numbers between \(1...n\) will result in a tree.</p>
-<p id="p-241">To fix this problem, we will write down the edges in a particular order.  Every tree has at least two leaves, and deleting a leaf gives a small tree.  We will use these facts to give a systematic ordering to the edges in a labelled tree, as follows: the first edge will be the edge connecting the leaf with the smallest label to the rest of the tree.  We will record that edge, with the leaf on the bottom row, and the "parent" vertex, i.e., the vertex the leaf is connected to, in the top row.  Deleting the leaf and the vertex gives a tree with one fewer vertex, and we iterate the process.</p>
+<p id="p-250">There are \(n^{n-2}\) labelled trees on \(n\) vertices.</p></article><p id="p-251">One more convenient way of writing down a labelled tree is to write down all the edges.  If there tree has \(n\) vertices, then there are \(n-1\) edges, and writing down all the edges takes \(2n-2\) numbers between \(1...n\text{.}\)  However, we see that we're writing down the same tree lots of different times, by changing the order of the edges, and which vertex from each edge we write first.  Furthermore, not every sequence of \(2n-2\) numbers between \(1...n\) will result in a tree.</p>
+<p id="p-252">To fix this problem, we will write down the edges in a particular order.  Every tree has at least two leaves, and deleting a leaf gives a small tree.  We will use these facts to give a systematic ordering to the edges in a labelled tree, as follows: the first edge will be the edge connecting the leaf with the smallest label to the rest of the tree.  We will record that edge, with the leaf on the bottom row, and the "parent" vertex, i.e., the vertex the leaf is connected to, in the top row.  Deleting the leaf and the vertex gives a tree with one fewer vertex, and we iterate the process.</p>
 <article class="theorem-like" id="algorithm-4"><h6 class="heading">
 <span class="type">Algorithm</span><span class="codenumber">3.4.3</span><span class="title">Pruning Algorithm</span>
 </h6>
-<p id="p-242">Input:  A labelled tree \(T\) on \(n\) vertices.</p>
-<p id="p-243">Output: A \(2\times n-1\) table with entries in \(\{1,\dots,n\}\) that records the edges of \(T\) in a specified order.</p>
-<p id="p-244">Find the leaf \(v\) with the lowest label; it will have one edge \(e\text{,}\) connecting it to some vertex (its "parent") \(w\text{.}\)   Form a new tree \(T^\prime\) by deleting \(v\) and \(e\text{,}\) and record \(e\) in the output table, putting the deleted vertex \(v\) in the bottom row and its parent \(w\) above it in the top row.</p></article><p id="p-245">This method fixes the problem of the ordering of the edges not being unique, but as of now we are still recording more information than needed.  But note the following: since we delete a vertex when we put it in the bottom row, no number will appear twice on the bottom row.  The last column is the last two vertices existing, and if we look at the bottom row and the last entry on the top row, we see that every number from 1 to \(n\) will appear exactly once in these spots.</p>
+<p id="p-253">Input:  A labelled tree \(T\) on \(n\) vertices.</p>
+<p id="p-254">Output: A \(2\times n-1\) table with entries in \(\{1,\dots,n\}\) that records the edges of \(T\) in a specified order.</p>
+<p id="p-255">Find the leaf \(v\) with the lowest label; it will have one edge \(e\text{,}\) connecting it to some vertex (its "parent") \(w\text{.}\)   Form a new tree \(T^\prime\) by deleting \(v\) and \(e\text{,}\) and record \(e\) in the output table, putting the deleted vertex \(v\) in the bottom row and its parent \(w\) above it in the top row.</p></article><p id="p-256">This method fixes the problem of the ordering of the edges not being unique, but as of now we are still recording more information than needed.  But note the following: since we delete a vertex when we put it in the bottom row, no number will appear twice on the bottom row.  The last column is the last two vertices existing, and if we look at the bottom row and the last entry on the top row, we see that every number from 1 to \(n\) will appear exactly once in these spots.</p>
 <article class="definition-like" id="definition-19"><h6 class="heading">
 <span class="type">Definition</span><span class="codenumber">3.4.4</span><span class="title">Prüfer code</span>
 </h6>
-<p id="p-246">If record the edges of a tree \(T\) as in the Pruning Algorithm, the first \(n-2\) number appear in the top row is the <em class="emphasis">Prüfer code of \(T\)</em></p></article><p id="p-247">To finish the proof of Cayley's Theorem, we need to show that the Prüfer code is a bijection.  The easiest way to do this is to show that it has an inverse; that is, given any sequence of \(n-2\) numbers between 1 and \(n\text{,}\) we can construct a tree \(T\) have that sequence as its Prüfer code.</p>
-<p id="p-248">This is most easily done by filling in the \(n\) numbers we deleted from the table of edges to get the Prüfer code.  We will in the numbers on the bottom row from left to right.  The first number on the bottom row will be the lowest number that does not appear in the Prüfer code.  Delete the first column, and then iterate -- the next number will be the lowest number we haven't used, and that doesn't appear in the remainder of the Prüfer code.</p>
-<p id="p-249">Another way to phrase the last line, is that the next number filled in is always the lowest number the doesn't appear as the bottom entry on one of the \(n-1\) columns.</p>
+<p id="p-257">If record the edges of a tree \(T\) as in the Pruning Algorithm, the first \(n-2\) number appear in the top row is the <em class="emphasis">Prüfer code of \(T\)</em></p></article><p id="p-258">To finish the proof of Cayley's Theorem, we need to show that the Prüfer code is a bijection.  The easiest way to do this is to show that it has an inverse; that is, given any sequence of \(n-2\) numbers between 1 and \(n\text{,}\) we can construct a tree \(T\) have that sequence as its Prüfer code.</p>
+<p id="p-259">This is most easily done by filling in the \(n\) numbers we deleted from the table of edges to get the Prüfer code.  We will in the numbers on the bottom row from left to right.  The first number on the bottom row will be the lowest number that does not appear in the Prüfer code.  Delete the first column, and then iterate -- the next number will be the lowest number we haven't used, and that doesn't appear in the remainder of the Prüfer code.</p>
+<p id="p-260">Another way to phrase the last line, is that the next number filled in is always the lowest number the doesn't appear as the bottom entry on one of the \(n-1\) columns.</p>
 <article class="example-like"><a knowl="" class="id-ref" refid="hk-example-12" id="example-12"><h6 class="heading">
 <span class="type">Example</span><span class="codenumber">3.4.5</span>
-</h6></a></article><div id="hk-example-12" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-250">Suppose \(T\) has Prüfer code 4,4,1,4,5,5. This code has length 6, so we looking to complete it by filling in numbers from 1 to 8. We illustrate the process step by step.</p>
-<div class="sidebyside" id="sidebyside-7"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-251">The lowest number that doesn't appear is 2, so we fill that in on the bottom of the first column. We no longer have to consider the 4 directly above this 2, as it is not the bottom element of its column.</p></div>
+</h6></a></article><div id="hk-example-12" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-261">Suppose \(T\) has Prüfer code 4,4,1,4,5,5. This code has length 6, so we looking to complete it by filling in numbers from 1 to 8. We illustrate the process step by step.</p>
+<div class="sidebyside" id="sidebyside-8"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-262">The lowest number that doesn't appear is 2, so we fill that in on the bottom of the first column. We no longer have to consider the 4 directly above this 2, as it is not the bottom element of its column.</p></div>
 <div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
 <tr>
 <td class="c m b2 r2 l0 t0 lines">4</td>
@@ -219,8 +219,8 @@ MathJax.Hub.Config({
 </tr>
 </table></div>
 </div></div>
-<div class="sidebyside" id="sidebyside-8"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-252">To fill in the next cell, we put the lowest number not occuring as the lowest element of a column, namely 3.</p></div>
+<div class="sidebyside" id="sidebyside-9"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-263">To fill in the next cell, we put the lowest number not occuring as the lowest element of a column, namely 3.</p></div>
 <div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
 <tr>
 <td class="c m b2 r2 l0 t0 lines">4</td>
@@ -242,8 +242,8 @@ MathJax.Hub.Config({
 </tr>
 </table></div>
 </div></div>
-<div class="sidebyside" id="sidebyside-9"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-253">And now the lowest term not on the bottom of its column is 6, so we add that:</p></div>
+<div class="sidebyside" id="sidebyside-10"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-264">And now the lowest term not on the bottom of its column is 6, so we add that:</p></div>
 <div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
 <tr>
 <td class="c m b2 r2 l0 t0 lines">4</td>
@@ -265,8 +265,8 @@ MathJax.Hub.Config({
 </tr>
 </table></div>
 </div></div>
-<div class="sidebyside" id="sidebyside-10"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-254">Now the only 1 appearing has an element beneath it, and so 1 gets added in the next column:</p></div>
+<div class="sidebyside" id="sidebyside-11"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-265">Now the only 1 appearing has an element beneath it, and so 1 gets added in the next column:</p></div>
 <div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
 <tr>
 <td class="c m b2 r2 l0 t0 lines">4</td>
@@ -288,8 +288,8 @@ MathJax.Hub.Config({
 </tr>
 </table></div>
 </div></div>
-<div class="sidebyside" id="sidebyside-11"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-255">And now all the 4s have been passed, so the next number is 4.  We jump ahead and fill in the two numbers under 5 as well:</p></div>
+<div class="sidebyside" id="sidebyside-12"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-266">And now all the 4s have been passed, so the next number is 4.  We jump ahead and fill in the two numbers under 5 as well:</p></div>
 <div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
 <tr>
 <td class="c m b2 r2 l0 t0 lines">4</td>
@@ -311,8 +311,8 @@ MathJax.Hub.Config({
 </tr>
 </table></div>
 </div></div>
-<div class="sidebyside" id="sidebyside-12"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-256">The two numbers we haven't used yet are 5 and 8, so they are the entries in the last column, giving us the completed table of edges</p></div>
+<div class="sidebyside" id="sidebyside-13"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-267">The two numbers we haven't used yet are 5 and 8, so they are the entries in the last column, giving us the completed table of edges</p></div>
 <div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
 <tr>
 <td class="c m b2 r2 l0 t0 lines">4</td>
@@ -334,8 +334,8 @@ MathJax.Hub.Config({
 </tr>
 </table></div>
 </div></div>
-<p id="p-257">Having constructed the table encoding all the edges, we can now draw the labelled tree with those edges</p>
-<figure class="figure-like" id="fig_pruferbackexample"><img src="images/image-29.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.4.12</span>The tree with Prüfer code 441455</figcaption></figure></article></div></section></div></main>
+<p id="p-268">Having constructed the table encoding all the edges, we can now draw the labelled tree with those edges</p>
+<figure class="figure-like" id="fig_pruferbackexample"><img src="images/image-33.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.4.12</span>The tree with Prüfer code 441455</figcaption></figure></article></div></section></div></main>
 </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-05-09T15:51:02+01:00    *-->
+<!--*    on 2019-02-14T13:28:37Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<dl class="description-list">
-<dt>Initialization.</dt>
-<dd><p>Set \(W=\{r\}\) and \(S=\emptyset\text{.}\)</p></dd>
-<dt>Inductive Step.</dt>
-<dd>
-<p>While \(|W| \lt n\text{,}\) let \(e\) be an edge of minimum weight among all edges with one endpoint in \(W\) and the other not in \(W\text{.}\)  If \(e=xy\text{,}\) \(x\in W\) and \(y\not\in W\text{,}\) update \(W\) and \(S\) by setting (using pseudo-code)</p>
-<div class="displaymath">
-\begin{equation*}
-W = W\cup\{y\}\quad\text{and} \quad S = S\cup\{e\}.
-\end{equation*}
-</div>
-</dd>
-</dl>
+<p>Let \(f=x_ix_{i+1}\text{.}\) The edge \(e\) has minimum weight among all edges with one endpoint in \(C\) and the other not in \(C\text{,}\) so \(w(e)\le w(f)\text{.}\) Now let \(\bfT_i\) be the tree obtained by exchanging the edge \(f\) for edge \(e\text{.}\) It follows that \(w(\bfT_i) = w(\bfT) - w(f) +w(e)\le w(\bfT)\text{.}\) Furthermore, \(\bfT_i\) contains the spanning forest \(\bfF\) as well as the edge \(e\text{.}\) It is therefore the minimum weight spanning tree we seek.</p>
 <span class="incontext"><a href="s_graphalgorithms_min-wt-span.html#p-189">in-context</a></span>
 </body>
 </html>

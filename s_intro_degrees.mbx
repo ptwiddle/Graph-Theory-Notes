@@ -13,8 +13,21 @@
 
 </example>
 <p>Note that in the definition we require <m>G</m> to be a simple graph.  The notion of degree has a few pitfalls to be careful of <m>G</m> has loops or multiple edges.  We still want to the degree <m>d(v)</m> to match the intuitive notion of the <q>number of edges coming out of <m>v</m></q> captured in the drawing with a small circle.  The trap to beware is that this notion no longer agrees with <q>the number of vertices adjacent to <m>v</m></q> or the <q>the number of edges incident to <m>v</m></q></p>
-<example></example>
+<example>
+<sbsgroup widths="50% 40%" margins="auto" valign="middle">
+<sidebyside><p>The graph <m>G</m> to the right has two vertices, <m>a</m> and <m>b</m>, and three edges, two between <m>a</m> and <m>b</m>, and a loop at <m>a</m>.  Vertex <m>a</m> has degree 4, and vertex <m>b</m> has degree 2.</p>
 
+<image width="90%"><latex-image><![CDATA[\begin{tikzpicture}[scale=2, every loop/.style={}, bend angle=10]
+
+\node[draw=black, circle] (a) at (1,0) {$a$};
+\node[draw=black, circle] (b) at (0,0) {$b$};
+
+\draw (a) edge[bend left] (b);
+\draw (a) edge[bend right] (b);
+\draw (a) edge[loop right] (a);
+
+\end{tikzpicture}]]></latex-image></image></sidebyside></sbsgroup>
+</example>
 </subsection>
 
 
@@ -71,20 +84,23 @@ print g.degree_sequence()
 <li>The Petersen graph is trivalent</li>
 </ol></p>
 
-<exercise><p>Show that a simple graph <m>\Gamma</m> with <m>n</m> is <m>d</m>-regular if and only if its complement <m>\Gamma^c</m> is <m>(n-1-k)</m>-regular.</p></exercise>
 
 </subsection>
 
 
 <subsection><title>Handshaking lemma and first applications</title>
+<p>To motivative the Handshaking Lemma, we consider the following question.  Suppose there seven people at a party.  Is it possible that everyone at the party knows exactly three other people?</p>
+<p>We can model the situation a graph, with vertices being people at the party, and an edge between two vertices if the corresponding people know each other.  The question is then asking for the existence of a graph with seven vertices so that every vertex has degree three.  It is then natural to attempt to solve the problem by trying to draw such a graph.  After a few foiled attempts, we begin to suspect that it's not possible, but doing a case-by-case elimination of all the possibilities is daunting.  It's easier to find a reason <i>why</i> we can't draw such a graph.</p>
+<p>We will do this as follows: suppose that everyone at the party who knows each other shakes hands.  How many handshakes will occur?  On the one hand, from the definitions this would just be the number of edges in the graph.  On the other hand, we can count the number of handshakes working person-by-person: each person knows three other people, and so is involved in three handshakes.  But each handshake involves two people, and so if we count <m>7*3</m> we've counted each handhsake twice, and so there should be <m>7*3/2=10.5</m> handshakes happening, which makes no sense, as we can't have half a handshake.  Thus, we have a contradiction, and we conclude such a party isn't possible.</p>
 
+<p>Euler's handshaking Lemma is a generalization of the argument we just made to an arbitrary graph.</p>
 
 <theorem><p>(Euler's handshaking Lemma)</p><me>\sum_{v\in V(G)}d(v)=2|E(G)|</me>
 </theorem>
 
 <proof><p>We count the <q>ends</q> of edges two different ways.  On the one hand, every end occurs at a vertex, and at vertex <m>v</m> there are <m>d(v)</m> ends, and so the total number of ends is the sum on the left hand side. On the other hand, every edge has exactly two ends, and so the number of ends is twice the number of edges, giving the right hand side.</p></proof>
-
-<p>Euler's handshaking lemma will be particularly useful in Section 3, when we study graphs on surfaces, but already it still has some amusing corollaries.</p>
+ 
+<p>We have seen already seen one use of Euler's handshaking Lemma, but it will be particularly useful in Chapter 3, when we study graphs on surfaces.</p>
 
 </subsection>
 

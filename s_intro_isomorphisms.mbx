@@ -2,16 +2,58 @@
 <title>Graph Isomorphisms</title>
 <introduction><p>Generally speaking in mathematics, we say that two objects are "isomorphic" if they are "the same" in terms of whatever structure we happen to be studying.  The symmetric group <m>S_3</m> and the symmetry group of an equilateral triangle <m>D_6</m> are isomorphic.  In this section we briefly briefly discuss isomorphisms of graphs.</p></introduction>
 <subsection><title>Isomorphic graphs</title>
-<p> It is possible to draw the same graph in the plane in many different ways – e.g., the pentagon <m>C_5</m>, and its complement the five sided star <m>C_5^c</m> are actually "the same", as indicated by the following labeling of the vertices:</p>
+<p>The "same" graph can be drawn in the plane in multiple different ways.  For instance, the two graphs below are each the "cube graph", with vertices the 8 corners of a cube, and an edge between two vertices if they're connected by an edge of the cube:</p>
+
+<figure><caption>Two drawings of the cube graph</caption><image width="90%"><latex-image><![CDATA[\tikzstyle{every node}=[circle, draw, fill=red, inner sep=0pt, minimum width=4pt]
+
+\begin{tikzpicture}[thick]
+  \node (a) at (0,0) {};
+  \node (b) at (0,3) {};
+  \node (c) at (3,3) {};
+  \node (d) at (3,0) {};
+  \node (e) at (1,1) {};
+  \node (f) at (1,2) {};
+  \node (g) at (2,2) {};
+  \node (h) at (2,1) {};
+
+  \draw (a)--(b)--(c)--(d)--(a)--(e)--(f)--(g)--(h)--(e);
+  \draw (b)--(f);
+  \draw (c)--(g);
+  \draw (d)--(h);
+
+  \begin{scope}[xshift=4cm, yshift=1.5cm, scale=1.5]
+  \node (a) at (0,0) {};
+  \node (b) at (1,1) {};
+  \node (c) at (2,0) {};
+  \node (d) at (1,-1) {};
+  \node (e) at (1,0) {};
+  \node (f) at (2,1) {};
+  \node (g) at (3,0) {};
+  \node (h) at (2,-1) {};
+
+  \draw (a)--(b)--(c)--(d)--(a)--(e)--(f)--(g)--(h)--(e);
+  \draw (b)--(f);
+  \draw (c)--(g);
+  \draw (d)--(h);
+
+
+
+    \end{scope}
+
+\end{tikzpicture}]]></latex-image></image></figure>
+
+
+
+<example><p>It is not hard to see that the two graphs above are both drawings of the cube, but for more complicated graphs it can be quite difficult at first glance to tell whether or not two graphs are the same.  For instance, there are many ways to draw the Petersen graph that aren't immediately obvious to be the same.</p>
+
+<p>This <url href="https://msollami.com/code/2014/12/24/graph-isomorphisms">animated gif</url> created by Michael Sollami for <url href="https://www.quantamagazine.org/algorithm-solves-graph-isomorphism-in-record-time-20151214/">this Quanta Magazine article</url> on the Graph Isomorphism problem illustrates many different such drawings in a way that makes the isomorphisms apparent.</p>
+</example>
+
+
 
 
 <definition><p> An isomorphism <m>\varphi:G\to H</m> of simple graphs is a biject <m>\varphi:V(G)\to V(H)</m> between their vertex sets that preserves the number of edges between vertices.  In other words, <m>\varphi(v)</m> and <m>\varphi(w)</m> are adjacent in <m>H</m> if and only if <m>v</m> and <m>w</m> are adjancent in <m>G</m>.</p></definition>
 
-<example><p>This animated gif shows several graphs isomorphic to the Petersen graph, and demonstrates that they are isomorphic.</p>
-<image source="images/PetersenIsomorphismAnimated.gif" />
-<p>Animated gif by <url href="https://msollami.com/code/2014/12/24/graph-isomorphisms">Michael Sollami</url> for <url href="https://www.quantamagazine.org/algorithm-solves-graph-isomorphism-in-record-time-20151214/">this Quanta Magazine article</url> on the Graph Isomorphism problem </p>
-
-</example>
 <example>
 <figure><caption><m>C_5</m> is isomorphic to its complement <m>C_5^c</m></caption><image width="90%" source="images/cycleandstar.jpg" /></figure>
 <p>The cycle graph on 5 vertices, <m>C_5</m> is isomorphic to its complement, <m>C_5^c</m>.  The cycle <m>C_5</m> is usually drawn as a pentagon, and if we were then going to naively draw <m>C_5^c</m> we would draw a 5-sided star.  However, we could draw <m>C_5^c</m> differently as shown, making it clear that it is isomorphic to <m>C_5</m>, with isomorphism <m>\varphi:C_5\to C_5^c</m> defined by <m>\varphi(a)=a, \varphi(b)=c, \varphi(c)=e, \varphi(d)=b, \varphi(e)=d</m>.

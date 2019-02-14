@@ -22,13 +22,145 @@
             </figure>
         </statement>
     </exercise>
+
+<exercise><statement><p>Let <m>\bfG</m> be a simple graph with <m>n</m> vertices and degree sequence <m>a_1,a_2,\dots,a_n</m>.  What's the degree sequence of its complement <m>\bfG^c</m>?</p></statement></exercise>
+
+<exercise><statement><p>Let <m>G</m> be the graph with graph with vertices consisting of the 10 three element subsets of <m>\{a,b,c,d,e\}</m>, and two vertices adjacent if they share exactly one element.  So, for example, the two vertices <m>v=\{a,c,e\}</m> and <m>w=\{b,c,d\}</m> are adjacent, but neither <m>v</m> or <m>w</m> is adjacent to <m>u=\{a,b,c\}</m>.</p>
+<p>Draw <m>G</m> in a way that shows it is isomorphic to the Petersen graph.</p>
+
+<p>Now let <m>H</m> be the graph with vertices consisting of the 10 <em>two</em> element subsets of <m>\{a,b,c,d,e\}</m>, and two vertices adjacent if they share <em>no</em> elements.  Without drawing <m>H</m>, write down an isomorphism between <m>G</m> and <m>H</m>.  Hint: There's a "natural" bijection between the two and three element subsets of <m>\{a,b,c,d,e\}</m></p>
+</statement></exercise>
+
 <exercise><statement><p>Recall that <m>G^c</m> denotes the complement of a graph <m>G</m>.  Prove that <m>f:G\to H</m> is an isomorphism of graphs if and only if <m>f:G^c\to H^c</m> is an isomorphism.</p></statement></exercise>
 
 <exercise><statement><p>Determine the number of non-isomorphic simple graphs with seven vertices such that each vertex has degree at least five.</p></statement><hint><p>Consider the previous exercise</p></hint>
 
 </exercise>
 
+<exercise><statement><p>Consider the standard Instant Insanity puzzle, with four cubes and four colours.  Explain why one would expect there to be 331,776 different cube configurations.  Further explain why there would be fewer configurations if any cubes are coloured with symmetries.</p>
+<p>In the text, we solve the puzzle by finding certain pairs of subgraphs.  Assuming that none of the cubes are coloured symmetrically, explain why each pair of subgraphs corresponds to at least 8 different cube configurations that are actually solutions, and why, depending on the isomorphism type of the subgraphs found, there may be more solutions.</p></statement></exercise>
+
+<exercise><statement><p>Variations of the Insant Insanity puzzle increase the number of cubes and the number of colours.  Explain how to modify our graph theoretic solution to solve the puzzle when we have <m>n</m> cubes, each face of which is coloured one of <m>n</m> colours, and we want to line up the cubes so that each of the top, bottom, front and rear strings of cubes displays each of the <m>n</m> colours exactly once.</p></statement></exercise>
+
+<exercise><statement><p>Use the method from the previous question to solve the following set of six cubes, marketed under the name "Drive ya crazy", where each face is coloured either blue, cyan, green, orange, red, or yellow.</p>
+<figure xml:id="Driva_ya_crazy_cubes"> <caption>The six cubes from "Drive Ya crazy"</caption><image width="90%">
+<latex-image><![CDATA[\begin{tikzpicture}[scale=.5]
+\fill[cyan!50!white] (1,0) rectangle (2,1);
+\fill[blue!50!white] (1,1) rectangle (2,2);
+\fill[green] (1,2) rectangle (2,3);
+\fill[yellow] (1,3) rectangle (2,4);
+\fill[orange] (0,2) rectangle (1,3);
+\fill[red!50!white] (2,2) rectangle (3,3);
+\draw (1.5, .5) node {C};
+\draw (2.5, 2.5) node {G};
+\draw (1.5, 1.5) node {B};
+\draw (1.5, 2.5) node {R};
+\draw (1.5, 3.5) node {Y};
+\draw (.5, 2.5) node {O};
+\draw (1.5, -.5) node {Cube 1};
 
 
+\draw (1,0) grid (2,4);
+\draw (0,2) grid (3,3);
+
+\begin{scope}[xshift=4cm]
+\fill[blue!50!white] (1,0) rectangle (2,1);
+\fill[green] (1,1) rectangle (2,2);
+\fill[yellow] (1,2) rectangle (2,3);
+\fill[orange] (1,3) rectangle (2,4);
+\fill[red!50!white] (0,2) rectangle (1,3);
+\fill[cyan!50!white] (2,2) rectangle (3,3);
+\draw (1.5, .5) node {B};
+\draw (1.5, 1.5) node {G};
+\draw (1.5, 2.5) node {Y};
+\draw (1.5, 3.5) node {O};
+\draw (.5, 2.5) node {R};
+\draw (2.5, 2.5) node {C};
+\draw (1.5, -.5) node {Cube 2};
+
+\draw (1,0) grid (2,4);
+\draw (0,2) grid (3,3);
+\end{scope}
+
+\begin{scope}[xshift=8cm]
+\fill[orange] (1,0) rectangle (2,1);
+\fill[red!50!white] (1,1) rectangle (2,2);
+\fill[cyan!50!white] (1,2) rectangle (2,3);
+\fill[blue!50!white] (1,3) rectangle (2,4);
+\fill[green] (0,2) rectangle (1,3);
+\fill[yellow] (2,2) rectangle (3,3);
+\draw (1.5, .5) node {O};
+\draw (1.5, 1.5) node {R};
+\draw (1.5, 2.5) node {C};
+\draw (1.5, 3.5) node {B};
+\draw (.5, 2.5) node {G};
+\draw (2.5, 2.5) node {Y};
+\draw (1.5, -.5) node {Cube 3};
+
+\draw (1,0) grid (2,4);
+\draw (0,2) grid (3,3);
+\end{scope}
+
+\begin{scope}[yshift=-6cm]
+\fill[red!50!white] (1,0) rectangle (2,1);
+\fill[cyan!50!white] (1,1) rectangle (2,2);
+\fill[blue!50!white] (1,2) rectangle (2,3);
+\fill[green] (1,3) rectangle (2,4);
+\fill[yellow] (0,2) rectangle (1,3);
+\fill[orange] (2,2) rectangle (3,3);
+\draw (1.5, .5) node {R};
+\draw (1.5, 1.5) node {C};
+\draw (1.5, 2.5) node {B};
+\draw (1.5, 3.5) node {G};
+\draw (.5, 2.5) node {Y};
+\draw (2.5, 2.5) node {O};
+\draw (1.5, -.5) node {Cube 4};
+
+\draw (1,0) grid (2,4);
+\draw (0,2) grid (3,3);
+\end{scope}
+
+\begin{scope}[yshift=-6cm, xshift=4cm]
+\fill[green] (1,0) rectangle (2,1);
+\fill[yellow] (1,1) rectangle (2,2);
+\fill[orange] (1,2) rectangle (2,3);
+\fill[red!50!white] (1,3) rectangle (2,4);
+\fill[cyan!50!white] (0,2) rectangle (1,3);
+\fill[blue!50!white] (2,2) rectangle (3,3);
+\draw (1.5, .5) node {G};
+\draw (1.5, 1.5) node {Y};
+\draw (1.5, 2.5) node {O};
+\draw (1.5, 3.5) node {R};
+\draw (.5, 2.5) node {C};
+\draw (2.5, 2.5) node {B};
+\draw (1.5, -.5) node {Cube 5};
+
+\draw (1,0) grid (2,4);
+\draw (0,2) grid (3,3);
+\end{scope}
+
+\begin{scope}[yshift=-6cm, xshift=8cm]
+\fill[yellow] (1,0) rectangle (2,1);
+\fill[orange] (1,1) rectangle (2,2);
+\fill[red!50!white] (1,2) rectangle (2,3);
+\fill[cyan!50!white] (1,3) rectangle (2,4);
+\fill[blue!50!white] (0,2) rectangle (1,3);
+\fill[green] (2,2) rectangle (3,3);
+\draw (1.5, .5) node {Y};
+\draw (1.5, 1.5) node {O};
+\draw (1.5, 2.5) node {R};
+\draw (1.5, 3.5) node {C};
+\draw (.5, 2.5) node {B};
+\draw (2.5, 2.5) node {G};
+\draw (1.5, -.5) node {Cube 6};
+
+\draw (1,0) grid (2,4);
+\draw (0,2) grid (3,3);
+\end{scope}
+
+\end{tikzpicture}]]></latex-image></image></figure></statement>
+
+
+</exercise>
 
 </exercises>

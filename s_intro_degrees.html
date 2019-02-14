@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-05-09T15:51:01+01:00    *-->
+<!--*    on 2019-02-14T13:28:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -140,7 +140,7 @@ MathJax.Hub.Config({
 <nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
 <h2 class="link active"><a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
 <ul>
-<li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook">A first look a graphs</a></li>
+<li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook">A first look at graphs</a></li>
 <li><a href="s_intro_degrees.html" data-scroll="s_intro_degrees" class="active">Degree and handshaking</a></li>
 <li><a href="s_intro_isomorphisms.html" data-scroll="s_intro_isomorphisms">Graph Isomorphisms</a></li>
 <li><a href="s_intro_instantinsanity.html" data-scroll="s_intro_instantinsanity">Instant Insanity</a></li>
@@ -172,7 +172,7 @@ MathJax.Hub.Config({
 <h2 class="link"><a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">5</span><span class="title">Colourings</span></a></h2>
 <ul>
 <li><a href="s_chromatic_number.html" data-scroll="s_chromatic_number">Chromatic number</a></li>
-<li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index</a></li>
+<li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index and applications</a></li>
 <li><a href="s_chromatic_polynomial.html" data-scroll="s_chromatic_polynomial">Chromatic polynomial</a></li>
 <li><a href="s_chromatic_big_theorems.html" data-scroll="s_chromatic_big_theorems">Big Theorems</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
@@ -192,63 +192,67 @@ MathJax.Hub.Config({
 <p id="p-21">Note that in the definition we require \(G\) to be a simple graph.  The notion of degree has a few pitfalls to be careful of \(G\) has loops or multiple edges.  We still want to the degree \(d(v)\) to match the intuitive notion of the “number of edges coming out of \(v\)” captured in the drawing with a small circle.  The trap to beware is that this notion no longer agrees with “the number of vertices adjacent to \(v\)” or the “the number of edges incident to \(v\)”</p>
 <article class="example-like"><a knowl="" class="id-ref" refid="hk-example-4" id="example-4"><h6 class="heading">
 <span class="type">Example</span><span class="codenumber">1.2.4</span>
-</h6></a></article><div id="hk-example-4" class="hidden-content tex2jax_ignore"><article class="example-like"></article></div></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type" alt="Subsection 1.2.2 Extended example: Chemistry">
+</h6></a></article><div id="hk-example-4" class="hidden-content tex2jax_ignore"><article class="example-like"><div class="sidebyside" id="sidebyside-1"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:52.6315789473684%;justify-content:center;"><p id="p-22">The graph \(G\) to the right has two vertices, \(a\) and \(b\text{,}\) and three edges, two between \(a\) and \(b\text{,}\) and a loop at \(a\text{.}\)  Vertex \(a\) has degree 4, and vertex \(b\) has degree 2.</p></div>
+<div class="sbspanel" style="width:42.1052631578947%;justify-content:center;"><img src="images/image-4.svg" width="100%" style="display: block; margin: 0 auto;" alt=""></div>
+</div></div></article></div></section><section class="subsection" id="subsection-5"><h3 class="heading hide-type" alt="Subsection 1.2.2 Extended example: Chemistry">
 <span class="type">Subsection</span><span class="codenumber">1.2.2</span><span class="title">Extended example: Chemistry</span>
 </h3>
-<p id="p-22">In organic chemistry, molecules are frequently drawn as graphs, with the vertices being atoms, and an edge betwen two vertices if and only if the corresponding atoms have a covalent bond between them (that is, they share a vertex).</p>
+<p id="p-23">In organic chemistry, molecules are frequently drawn as graphs, with the vertices being atoms, and an edge betwen two vertices if and only if the corresponding atoms have a covalent bond between them (that is, they share a vertex).</p>
 <article class="example-like"><a knowl="" class="id-ref" refid="hk-example-5" id="example-5"><h6 class="heading">
 <span class="type">Example</span><span class="codenumber">1.2.5</span><span class="title">Alkanes</span>
 </h6></a></article><div id="hk-example-5" class="hidden-content tex2jax_ignore"><article class="example-like"></article></div>
-<p id="p-23">The location of an element on the periodic table determines the valency of the element -- hence the degree that vertex has in any molecule containing that graph:</p>
+<p id="p-24">The location of an element on the periodic table determines the valency of the element -- hence the degree that vertex has in any molecule containing that graph:</p>
 <ul class="disc">
 <li id="li-4">Hydrogen (H) and Fluorine (F) have degree 1</li>
 <li id="li-5">Oxygen (O) and Sulfur (S) have degree 2</li>
 <li id="li-6">Nitrogen (N) and Phosphorous (P) have degree 3</li>
 <li id="li-7">Carbon (C) has degree 4</li>
 </ul>
-<p id="p-24">Usually, most of the atoms involved are carbon and hydrogen. Carbon atoms are not labelled with a C, but just left blank, while hydrogen atoms are left off completely. One can then complete the full structure of the molecule using the valency of each vertex.  On the exam, you may have to know that Carbon has degree 4 and Hydrogen has degree 1; the valency of any other atom would be provided to you</p>
-<p id="p-25">Graphs coming from organic chemistry do not have to be simple – sometimes there are double bonds, where a pair of carbon atoms have two edges between them.</p>
+<p id="p-25">Usually, most of the atoms involved are carbon and hydrogen. Carbon atoms are not labelled with a C, but just left blank, while hydrogen atoms are left off completely. One can then complete the full structure of the molecule using the valency of each vertex.  On the exam, you may have to know that Carbon has degree 4 and Hydrogen has degree 1; the valency of any other atom would be provided to you</p>
+<p id="p-26">Graphs coming from organic chemistry do not have to be simple – sometimes there are double bonds, where a pair of carbon atoms have two edges between them.</p>
 <article class="example-like"><a knowl="" class="id-ref" refid="hk-example-6" id="example-6"><h6 class="heading">
 <span class="type">Example</span><span class="codenumber">1.2.6</span>
 </h6></a></article><div id="hk-example-6" class="hidden-content tex2jax_ignore"><article class="example-like"></article></div>
-<p id="p-26">If we know the chemical formula of a molecule, then we know how many vertices of each degree it has.  For a general graph, this information is known as the degree sequence</p>
+<p id="p-27">If we know the chemical formula of a molecule, then we know how many vertices of each degree it has.  For a general graph, this information is known as the degree sequence</p>
 <article class="definition-like" id="definition-7"><h6 class="heading">
 <span class="type">Definition</span><span class="codenumber">1.2.7</span><span class="title">Degree sequence</span>
 </h6>
-<p id="p-27">The degree sequence of a graph is just the list (with multiplicity) of the degrees of all the vertices.</p></article><p id="p-28">The following sage code draws a random graph with 7 vertices and 10 edges, and then gives its degree sequence.  You can tweak the code to generate graphs with different number of vertices and edges, and run the code multiple times, and the degree sequence should become clear.</p>
+<p id="p-28">The degree sequence of a graph is just the list (with multiplicity) of the degrees of all the vertices.</p></article><p id="p-29">The following sage code draws a random graph with 7 vertices and 10 edges, and then gives its degree sequence.  You can tweak the code to generate graphs with different number of vertices and edges, and run the code multiple times, and the degree sequence should become clear.</p>
 <div class="sagecell-sage" id="sage-1"><script type="text/x-sage">vertices = 7
 edges = 10
 g = graphs.RandomGNM(vertices,edges)
 g.show()
 print g.degree_sequence()
 </script></div>
-<p id="p-29">Knowing the chemical composition of a molecule determines the degree sequence of its corresponding graph. However, it is possible that the same set of atoms may be put together into a molecule in more than one different ways. In chemistry, these are called <em class="emphasis">isomers</em>.  In terms of graphs, this corresponds to different graphs that have the same degree sequence.</p>
-<p id="p-30">An important special case is the constant degree sequence.</p>
+<p id="p-30">Knowing the chemical composition of a molecule determines the degree sequence of its corresponding graph. However, it is possible that the same set of atoms may be put together into a molecule in more than one different ways. In chemistry, these are called <em class="emphasis">isomers</em>.  In terms of graphs, this corresponds to different graphs that have the same degree sequence.</p>
+<p id="p-31">An important special case is the constant degree sequence.</p>
 <article class="definition-like" id="definition-8"><h6 class="heading">
 <span class="type">Definition</span><span class="codenumber">1.2.8</span><span class="title">Regular graphs</span>
 </h6>
-<p id="p-31">A graph \(\Gamma\) is \(d\)-<em class="emphasis">regular</em>, or <em class="emphasis">regular of degree</em> \(d\) if every vertex \(v\in\Gamma\) has the same degree \(d\text{,}\) i.e. \(d(v)=d\text{.}\)</p></article><p id="p-32">As a common special case, a regular graph where every vertex has degree three is called <em class="emphasis">trivalent</em>, or <em class="emphasis">cubic</em>.</p>
-<p id="p-33">Some quick examples: </p>
+<p id="p-32">A graph \(\Gamma\) is \(d\)-<em class="emphasis">regular</em>, or <em class="emphasis">regular of degree</em> \(d\) if every vertex \(v\in\Gamma\) has the same degree \(d\text{,}\) i.e. \(d(v)=d\text{.}\)</p></article><p id="p-33">As a common special case, a regular graph where every vertex has degree three is called <em class="emphasis">trivalent</em>, or <em class="emphasis">cubic</em>.</p>
+<p id="p-34">Some quick examples: </p>
 <ol class="decimal">
 <li id="li-8">The cycle graph \(C_n\) is two-regular</li>
 <li id="li-9">The complete graph \(K_n\) is \((n-1)\)-regular</li>
 <li id="li-10">The Petersen graph is trivalent</li>
-</ol>
-<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-exercise-1" id="exercise-1"><h6 class="heading">
-<span class="type">Exercise</span><span class="codenumber">1.2.9</span>
-</h6></a></article><div id="hk-exercise-1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-34">Show that a simple graph \(\Gamma\) with \(n\) is \(d\)-regular if and only if its complement \(\Gamma^c\) is \((n-1-k)\)-regular.</p></article></div></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type" alt="Subsection 1.2.3 Handshaking lemma and first applications">
+</ol></section><section class="subsection" id="subsection-6"><h3 class="heading hide-type" alt="Subsection 1.2.3 Handshaking lemma and first applications">
 <span class="type">Subsection</span><span class="codenumber">1.2.3</span><span class="title">Handshaking lemma and first applications</span>
 </h3>
+<p id="p-35">To motivative the Handshaking Lemma, we consider the following question.  Suppose there seven people at a party.  Is it possible that everyone at the party knows exactly three other people?</p>
+<p id="p-36">We can model the situation a graph, with vertices being people at the party, and an edge between two vertices if the corresponding people know each other.  The question is then asking for the existence of a graph with seven vertices so that every vertex has degree three.  It is then natural to attempt to solve the problem by trying to draw such a graph.  After a few foiled attempts, we begin to suspect that it's not possible, but doing a case-by-case elimination of all the possibilities is daunting.  It's easier to find a reason why we can't draw such a graph.</p>
+<p id="p-37">We will do this as follows: suppose that everyone at the party who knows each other shakes hands.  How many handshakes will occur?  On the one hand, from the definitions this would just be the number of edges in the graph.  On the other hand, we can count the number of handshakes working person-by-person: each person knows three other people, and so is involved in three handshakes.  But each handshake involves two people, and so if we count \(7*3\) we've counted each handhsake twice, and so there should be \(7*3/2=10.5\) handshakes happening, which makes no sense, as we can't have half a handshake.  Thus, we have a contradiction, and we conclude such a party isn't possible.</p>
+<p id="p-38">Euler's handshaking Lemma is a generalization of the argument we just made to an arbitrary graph.</p>
 <article class="theorem-like" id="theorem-1"><h6 class="heading">
-<span class="type">Theorem</span><span class="codenumber">1.2.10</span>
+<span class="type">Theorem</span><span class="codenumber">1.2.9</span>
 </h6>
-<p id="p-35">(Euler's handshaking Lemma)</p>
+<p id="p-39">(Euler's handshaking Lemma)</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{v\in V(G)}d(v)=2|E(G)|
 \end{equation*}
-</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-1" id="proof-1"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-1" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-36">We count the “ends” of edges two different ways.  On the one hand, every end occurs at a vertex, and at vertex \(v\) there are \(d(v)\) ends, and so the total number of ends is the sum on the left hand side. On the other hand, every edge has exactly two ends, and so the number of ends is twice the number of edges, giving the right hand side.</p></article></div>
-<p id="p-37">Euler's handshaking lemma will be particularly useful in Section 3, when we study graphs on surfaces, but already it still has some amusing corollaries.</p></section></section></div></main>
+</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-1" id="proof-1"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-1" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-40">We count the “ends” of edges two different ways.  On the one hand, every end occurs at a vertex, and at vertex \(v\) there are \(d(v)\) ends, and so the total number of ends is the sum on the left hand side. On the other hand, every edge has exactly two ends, and so the number of ends is twice the number of edges, giving the right hand side.</p></article></div>
+<p id="p-41">We have seen already seen one use of Euler's handshaking Lemma, but it will be particularly useful in Chapter 3, when we study graphs on surfaces.</p></section></section></div></main>
 </div>
 </body>
 </html>

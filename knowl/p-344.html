@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-05-09T15:51:02+01:00    *-->
+<!--*    on 2019-02-14T13:28:37Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,11 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Another useful observation about the examples we've seen is that, since the chromatic number \(\chi(\bfG)\) is the <em class="emphasis">least</em> number of colours needed to colour \(\chi(\bfG)\text{,}\) to show that \(\chi(\bfG)=s\) requires doing two things: </p>
-<ol class="decimal">
-<li>Showing that \(\bfG\) <em class="emphasis">can</em> be coloured with \(s\) colours, and hence \(\bfG\leq s\)</li>
-<li>Showing that \(\bfG\) <em class="emphasis">can't</em> be coloured with \(s-1\) colours, and hence \(\bfG\geq s\)</li>
-</ol>
-<span class="incontext"><a href="s_chromatic_number.html#p-344">in-context</a></span>
+<p>Similarly, there is a handshaking between faces and edges.  Let the <em class="emphasis">degree</em> of a face be the number of edges that occur around it -- so, a triangle would have degree three.  Then, if we sum up the degrees of all the faces, we're counting each edge twice again -- once from the face on its left, and once from the face on its right.  so we have</p>
+<div class="displaymath">
+\begin{equation*}
+sum_{f\in \text{faces}(G)}d(f)=2 |E(G)|
+\end{equation*}
+</div>
+<p>Note that this is just the usual vertex-edge handshaking for the dual graph.</p>
+<span class="incontext"><a href="s_graphs_on_surfaces_euler.html#p-344">in-context</a></span>
 </body>
 </html>

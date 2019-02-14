@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-05-09T15:51:02+01:00    *-->
+<!--*    on 2019-02-14T13:28:37Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,22 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Bob and Xing are considering this situation, and Bob suggests that a little modification to the algorithm should solve the problem. He says that if there are negative weights, they just have to find the smallest (i.e., most negative weight) and add the absolute value of that weight to every directed edge. For example, if \(w(x,y)\geq -10\) for every directed edge \((x,y)\text{,}\) Bob is suggesting that they add \(10\) to every edge weight. Xing is skeptical, and for good reason. Give an example to show why Bob's modification won't work.</p>
+<p>A new local bank is being created and will establish a headquarters \(h\text{,}\) two branches \(b_1\) and \(b_2\text{,}\) and four ATMs \(a_1\text{,}\) \(a_2\text{,}\) \(a_3\text{,}\) and \(a_4\text{.}\) They need to build a computer network such that the headquarters, branches, and ATMs can all intercommunicate. Furthermore, they will need to be networked with the Federal Reserve Bank of Atlanta, \(f\text{.}\) The costs of the feasible network connections (in units of $10,000) are listed below:</p>
+<div class="displaymath">
+\begin{align*}
+h f \amp  \quad 80 \amp 
+h b_1 \amp  \quad 10\amp  h b_2 \amp  \quad 20\amp 
+b_1 b_2 \amp  \quad 8\\
+f b_1 \amp  \quad 12\amp 
+f a_1 \amp  \quad 20\amp  b_1 a_1 \amp  \quad 3\amp 
+a_1 a_2 \amp  \quad 13\\
+h a_2 \amp  \quad 6\amp 
+b_2 a_2 \amp  \quad 9\amp  b_2 a_3 \amp  \quad 40\amp 
+a_1 a_4 \amp  \quad 3\\
+a_3 a_4 \amp \quad 6
+\end{align*}
+</div>
+<p>The bank wishes to minimize the cost of building its network (which must allow for connection, possibly routed through other nodes, from each node to each other node), however due to the need for high-speed communication, they <em class="alert">must</em> pay to build the connection from \(h\) to \(f\) as well as the connection from \(b_2\) to \(a_3\text{.}\) Give a list of the connections the bank should establish in order to minimize their total cost, subject to this constraint. Be sure to explain how you selected the connections and how you know the total cost is minimized.</p>
 <span class="incontext"><a href="s_graphalgorithms_exercises.html#p-275">in-context</a></span>
 </body>
 </html>

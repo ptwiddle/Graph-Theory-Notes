@@ -1,22 +1,43 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_intro_firstlook">
-<title>A first look a graphs</title>
+<title>A first look at graphs</title>
 <subsection>
 <title>The idea of a graph</title>
 <p>First and foremost, you should think of a graph as a certain type of picture, containing dots and lines connecting those dots, like so:</p>
+<figure xml:id="fig_firstgraph"> <caption>A graph</caption>
+<image width="80%">
+<latex-image><![CDATA[\begin{tikzpicture}[scale=.5]
+\begin{scope}[every node/.style={circle, thick, draw}]
+   \node (A) at (0,0) {A};
+   \node (B) at (2,-2) {B};
+   \node (C) at (2,2) {C};
+   \node (D) at (4,0) {D};
+   \node (E) at (6,1) {E};
+ \end{scope}
+ \draw (A)--(B)--(C)--(A);
+ \draw (C)--(D)--(B);
+ \draw (D)--(E);
+\end{tikzpicture}]]></latex-image></image></figure>
 
 <p>We will typically use the letters <m>G, H</m>, or <m>\Gamma</m> (capital Gamma) to denote a graph.  The <q>dots</q> or the graph are called <em>vertices</em> or <em>nodes</em>, and the lines between the dots are called <em>edges</em>. Graphs occur frequently in the <q>real world</q>, and typically how to show how something is connected, with the vertices representing the things and the edges showing connections.  <ul>
 <li><em>Transit networks:</em> The London tube map is a graph, with the vertices representing the stations, and an edge between two stations if the tube goes directly between them.  More generally, rail maps in general are graphs, with vertices stations and edges representing line, and road maps as well, with vertices being cities, and edges being roads.</li>
 <li><em>Social networks:</em> The typical example would be Facebook, with the vertices being people, and edge between two people if they are friends on Facebook. </li>
 <li><em>Molecules in Chemistry:</em> In organic chemistry, molecules are made up of different atoms, and are often represented as a graph, with the atoms being vertices, and edges representing covalent bonds between the vertices.</li>
 </ul></p>
+<figure xml:id="fig_caffeinegraph"><caption>A Caffeine Molecule, courtesey <url href="https://commons.wikimedia.org/wiki/File:Caffeine_molecule.png">Wikimedia Commons</url></caption><image width="90%" source="images/Caffeine_molecule.png" />
+</figure>
+
+
 <p>That is all rather informal, though, and to do mathematics we need very precise, formal definitions.  We now provide that. </p>
 </subsection>
 <subsection>
 <title>The formal definition of a graph</title>
 <p>The formal definition of a graph that we will use is the following:</p>
 <definition><p>A <em>graph</em> <m>G</m> consists of a set <m>V(G)</m>, called the <em>vertices</em> of <m>G</m>, and a set <m>E(G)</m>, called the <em>edges</em> of <m>G</m>, of the two element subsets of <m>V(G)</m></p></definition>
-<example><p>Consider the water molecule.  It has three vertices, and so <m>V(G)=\{O, H1, H2\}</m>, and two edges <m>E(G)=\big\{\{O, H1\},\{O,H2\}\big\}</m></p></example>
-<p>This formal definition has some perhaps unintended consequences about what a graph is.  Because we have identified edges with the two things they connect, and have a set of edges, we can't have more than one edge between any two vertices.  In many real world examples, this is not the case: for example, on the London Tube, the Circle, District and Picadilly lines all connect Gloucester Road with South Kensington, and so there should be multiple edges between those two vertices on the graph.</p>
+<example><p>Consider the water molecule, which consists of a single oxygen atom, connected to two hydrogen atoms.  It has three vertices, and so <m>V(G)=\{O, H1, H2\}</m>, and two edges <m>E(G)=\big\{\{O, H1\},\{O,H2\}\big\}</m></p></example>
+
+
+
+<p>This formal definition has some perhaps unintended consequences about what a graph is.  Because we have identified edges with the two things they connect, and have a set of edges, we can't have more than one edge between any two vertices.  In many real world examples, this is not the case: for example, on the London Tube, the Circle, District and Picadilly lines all connect Gloucester Road with South Kensington, and so there should be multiple edges between those two vertices on the graph.  As another example, in organic chemistry, there are often "double bonds", instead of just one.</p>
 <p>Another consequence is that we require each edge to be a two element subset of <m>V(G)</m>, and so we do not allow for the possibility of an edge between a vertex and itself, often called a <em>loop</em>.</p>
 <p>Graphs without multiple edges or loops are sometimes called <em>simple graphs</em>.  We will sometimes deal with graphs with multiple edges or loops, and will try to be explicit when we allow this.  Our default assumption is that our graphs are simple.</p>
 <p>Another consequence of the definition is that edges are symmetric, and work equally well in both directions.  This is not always the case: in road systems, there are often one-way streets.  If we were to model Twitter or Instragram as a graph, rather than the symmetric notion of friends we would have to work with <q>following</q>.  To capture these, we have the notion of a <em>directed graph</em>, where rather than just lines, we think of the edges as arrows, pointing from one vertex (the source) to another vertex (the target).  To model Twitter or Instagram, we would have an ege from vertex <m>a</m> to vertex <m>b</m> if <m>a</m> followed <m>b</m>.

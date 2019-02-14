@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-05-09T15:51:01+01:00    *-->
+<!--*    on 2019-02-14T13:28:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -132,7 +132,7 @@ MathJax.Hub.Config({
 <nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
 <h2 class="link active"><a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
 <ul>
-<li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook">A first look a graphs</a></li>
+<li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook">A first look at graphs</a></li>
 <li><a href="s_intro_degrees.html" data-scroll="s_intro_degrees">Degree and handshaking</a></li>
 <li><a href="s_intro_isomorphisms.html" data-scroll="s_intro_isomorphisms">Graph Isomorphisms</a></li>
 <li><a href="s_intro_instantinsanity.html" data-scroll="s_intro_instantinsanity">Instant Insanity</a></li>
@@ -164,29 +164,38 @@ MathJax.Hub.Config({
 <h2 class="link"><a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">5</span><span class="title">Colourings</span></a></h2>
 <ul>
 <li><a href="s_chromatic_number.html" data-scroll="s_chromatic_number">Chromatic number</a></li>
-<li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index</a></li>
+<li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index and applications</a></li>
 <li><a href="s_chromatic_polynomial.html" data-scroll="s_chromatic_polynomial">Chromatic polynomial</a></li>
 <li><a href="s_chromatic_big_theorems.html" data-scroll="s_chromatic_big_theorems">Big Theorems</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="exercises" id="s_intro_exercises"><h2 class="heading hide-type" alt="Exercises 1.5 Exercises">
 <span class="type">Section</span><span class="codenumber">1.5</span><span class="title">Exercises</span>
 </h2>
-<a href="s_intro_exercises.html" class="permalink">¶</a><article class="exercise-like" id="exercise-3"><h6 class="heading"><span class="codenumber">1</span></h6>
-<p id="p-74">For each of the following sequences, either give an example of such a graph, or explain why one does not exist.</p>
+<a href="s_intro_exercises.html" class="permalink">¶</a><article class="exercise-like" id="exercise-1"><h6 class="heading"><span class="codenumber">1</span></h6>
+<p id="p-77">For each of the following sequences, either give an example of such a graph, or explain why one does not exist.</p>
 <ol class="lower-alpha">
-<li id="li-20"><p id="p-75">A graph with six vertices whose degree sequence is \([5,5,4,3,2,2]\)</p></li>
-<li id="li-21"><p id="p-76">A graph with six vertices whose degree sequence is \([5,5,4,3,3,2]\)</p></li>
-<li id="li-22"><p id="p-77">A graph with six vertices whose degree sequence is \([5,5,5,5,3,3]\)</p></li>
-<li id="li-23"><p id="p-78">A simple graph with six vertices whose degree sequence is \([5,5,5,5,3,3]\)</p></li>
-</ol></article><article class="exercise-like" id="exercise-4"><h6 class="heading"><span class="codenumber">2</span></h6>
-<p id="p-79">For the next Olympic Winter Games, the organizers wish to expand the number of teams competing in curling. They wish to have \(14\) teams enter, divided into two pools of seven teams each. Right now, they're thinking of requiring that in preliminary play each team will play seven games against distinct opponents. Five of the opponents will come from their own pool and two of the opponents will come from the other pool. They're having trouble setting up such a schedule, so they've come to you. By using an appropriate graph-theoretic model, either argue that they cannot use their current plan or devise a way for them to do so.</p></article><article class="exercise-like" id="exercise-5"><h6 class="heading"><span class="codenumber">3</span></h6>
-<p id="p-80"><a knowl="./knowl/isomorphic_exercise.html" knowl-id="xref-isomorphic_exercise" alt="Figure 1.5.7 " title="Figure 1.5.7 ">Figure 1.5.7</a> contains four graphs on six vertices. Determine which (if any) pairs of graphs are isomorphic. For pairs that are isomorphic, give an isomorphism between the two graphs. For pairs that are not isomorphic, explain why.</p>
-<figure class="figure-like" id="isomorphic_exercise"><img src="images/isomorphic_ex.svg" width="55%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">1.5.7</span>Are these graphs isomorphic?</figcaption></figure></article><article class="exercise-like" id="exercise-6"><h6 class="heading"><span class="codenumber">4</span></h6>
-<p id="p-81">Recall that \(G^c\) denotes the complement of a graph \(G\text{.}\)  Prove that \(f:G\to H\) is an isomorphism of graphs if and only if \(f:G^c\to H^c\) is an isomorphism.</p></article><article class="exercise-like" id="exercise-7"><h6 class="heading"><span class="codenumber">5</span></h6>
-<p id="p-82">Determine the number of non-isomorphic simple graphs with seven vertices such that each vertex has degree at least five.</p>
+<li id="li-20"><p id="p-78">A graph with six vertices whose degree sequence is \([5,5,4,3,2,2]\)</p></li>
+<li id="li-21"><p id="p-79">A graph with six vertices whose degree sequence is \([5,5,4,3,3,2]\)</p></li>
+<li id="li-22"><p id="p-80">A graph with six vertices whose degree sequence is \([5,5,5,5,3,3]\)</p></li>
+<li id="li-23"><p id="p-81">A simple graph with six vertices whose degree sequence is \([5,5,5,5,3,3]\)</p></li>
+</ol></article><article class="exercise-like" id="exercise-2"><h6 class="heading"><span class="codenumber">2</span></h6>
+<p id="p-82">For the next Olympic Winter Games, the organizers wish to expand the number of teams competing in curling. They wish to have \(14\) teams enter, divided into two pools of seven teams each. Right now, they're thinking of requiring that in preliminary play each team will play seven games against distinct opponents. Five of the opponents will come from their own pool and two of the opponents will come from the other pool. They're having trouble setting up such a schedule, so they've come to you. By using an appropriate graph-theoretic model, either argue that they cannot use their current plan or devise a way for them to do so.</p></article><article class="exercise-like" id="exercise-3"><h6 class="heading"><span class="codenumber">3</span></h6>
+<p id="p-83"><a knowl="./knowl/isomorphic_exercise.html" knowl-id="xref-isomorphic_exercise" alt="Figure 1.5.6 " title="Figure 1.5.6 ">Figure 1.5.6</a> contains four graphs on six vertices. Determine which (if any) pairs of graphs are isomorphic. For pairs that are isomorphic, give an isomorphism between the two graphs. For pairs that are not isomorphic, explain why.</p>
+<figure class="figure-like" id="isomorphic_exercise"><img src="images/isomorphic_ex.svg" width="55%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">1.5.6</span>Are these graphs isomorphic?</figcaption></figure></article><article class="exercise-like" id="exercise-4"><h6 class="heading"><span class="codenumber">4</span></h6>
+<p id="p-84">Let \(\bfG\) be a simple graph with \(n\) vertices and degree sequence \(a_1,a_2,\dots,a_n\text{.}\)  What's the degree sequence of its complement \(\bfG^c\text{?}\)</p></article><article class="exercise-like" id="exercise-5"><h6 class="heading"><span class="codenumber">5</span></h6>
+<p id="p-85">Let \(G\) be the graph with graph with vertices consisting of the 10 three element subsets of \(\{a,b,c,d,e\}\text{,}\) and two vertices adjacent if they share exactly one element.  So, for example, the two vertices \(v=\{a,c,e\}\) and \(w=\{b,c,d\}\) are adjacent, but neither \(v\) or \(w\) is adjacent to \(u=\{a,b,c\}\text{.}\)</p>
+<p id="p-86">Draw \(G\) in a way that shows it is isomorphic to the Petersen graph.</p>
+<p id="p-87">Now let \(H\) be the graph with vertices consisting of the 10 <em class="emphasis">two</em> element subsets of \(\{a,b,c,d,e\}\text{,}\) and two vertices adjacent if they share <em class="emphasis">no</em> elements.  Without drawing \(H\text{,}\) write down an isomorphism between \(G\) and \(H\text{.}\)  Hint: There's a "natural" bijection between the two and three element subsets of \(\{a,b,c,d,e\}\)</p></article><article class="exercise-like" id="exercise-6"><h6 class="heading"><span class="codenumber">6</span></h6>
+<p id="p-88">Recall that \(G^c\) denotes the complement of a graph \(G\text{.}\)  Prove that \(f:G\to H\) is an isomorphism of graphs if and only if \(f:G^c\to H^c\) is an isomorphism.</p></article><article class="exercise-like" id="exercise-7"><h6 class="heading"><span class="codenumber">7</span></h6>
+<p id="p-89">Determine the number of non-isomorphic simple graphs with seven vertices such that each vertex has degree at least five.</p>
 <div class="solutions">
-<span class="solution"><a knowl="" class="id-ref" refid="hk-hint-1" id="hint-1"><span class="type">Hint</span></a></span><div id="hk-hint-1" class="hidden-content tex2jax_ignore"><span class="solution"><p id="p-83">Consider the previous exercise</p></span></div>
-</div></article></section></div></main>
+<span class="solution"><a knowl="" class="id-ref" refid="hk-hint-1" id="hint-1"><span class="type">Hint</span></a></span><div id="hk-hint-1" class="hidden-content tex2jax_ignore"><span class="solution"><p id="p-90">Consider the previous exercise</p></span></div>
+</div></article><article class="exercise-like" id="exercise-8"><h6 class="heading"><span class="codenumber">8</span></h6>
+<p id="p-91">Consider the standard Instant Insanity puzzle, with four cubes and four colours.  Explain why one would expect there to be 331,776 different cube configurations.  Further explain why there would be fewer configurations if any cubes are coloured with symmetries.</p>
+<p id="p-92">In the text, we solve the puzzle by finding certain pairs of subgraphs.  Assuming that none of the cubes are coloured symmetrically, explain why each pair of subgraphs corresponds to at least 8 different cube configurations that are actually solutions, and why, depending on the isomorphism type of the subgraphs found, there may be more solutions.</p></article><article class="exercise-like" id="exercise-9"><h6 class="heading"><span class="codenumber">9</span></h6>
+<p id="p-93">Variations of the Insant Insanity puzzle increase the number of cubes and the number of colours.  Explain how to modify our graph theoretic solution to solve the puzzle when we have \(n\) cubes, each face of which is coloured one of \(n\) colours, and we want to line up the cubes so that each of the top, bottom, front and rear strings of cubes displays each of the \(n\) colours exactly once.</p></article><article class="exercise-like" id="exercise-10"><h6 class="heading"><span class="codenumber">10</span></h6>
+<p id="p-94">Use the method from the previous question to solve the following set of six cubes, marketed under the name "Drive ya crazy", where each face is coloured either blue, cyan, green, orange, red, or yellow.</p>
+<figure class="figure-like" id="Driva_ya_crazy_cubes"><img src="images/image-14.svg" width="90%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">1.5.7</span>The six cubes from "Drive Ya crazy"</figcaption></figure></article></section></div></main>
 </div>
 </body>
 </html>

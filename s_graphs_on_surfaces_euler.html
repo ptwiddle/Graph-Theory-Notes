@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-05-09T15:51:01+01:00    *-->
+<!--*    on 2019-02-14T13:28:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -132,7 +132,7 @@ MathJax.Hub.Config({
 <nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
 <h2 class="link"><a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
 <ul>
-<li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook">A first look a graphs</a></li>
+<li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook">A first look at graphs</a></li>
 <li><a href="s_intro_degrees.html" data-scroll="s_intro_degrees">Degree and handshaking</a></li>
 <li><a href="s_intro_isomorphisms.html" data-scroll="s_intro_isomorphisms">Graph Isomorphisms</a></li>
 <li><a href="s_intro_instantinsanity.html" data-scroll="s_intro_instantinsanity">Instant Insanity</a></li>
@@ -164,37 +164,37 @@ MathJax.Hub.Config({
 <h2 class="link"><a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">5</span><span class="title">Colourings</span></a></h2>
 <ul>
 <li><a href="s_chromatic_number.html" data-scroll="s_chromatic_number">Chromatic number</a></li>
-<li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index</a></li>
+<li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index and applications</a></li>
 <li><a href="s_chromatic_polynomial.html" data-scroll="s_chromatic_polynomial">Chromatic polynomial</a></li>
 <li><a href="s_chromatic_big_theorems.html" data-scroll="s_chromatic_big_theorems">Big Theorems</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="s_graphs_on_surfaces_euler"><h2 class="heading hide-type" alt="Section 4.5 Euler's Theorem">
 <span class="type">Section</span><span class="codenumber">4.5</span><span class="title">Euler's Theorem</span>
 </h2>
-<a href="s_graphs_on_surfaces_euler.html" class="permalink">¶</a><section class="introduction" id="introduction-13"><p id="p-321">This section cover's Euler's theorem on planar graphs and its applications.  We give a proof by of Euler's theorem by induction, and gave several applications of the theorem itself: more proofs that \(K_{3,3}\) and \(K_5\) aren't planar, that footballs have five pentagons, and a proof that our video game designers couldn't have made their map into a sphere without doing something very strange.</p></section><section class="subsection" id="subsection-31"><h3 class="heading hide-type" alt="Subsection 4.5.1 counting Faces">
+<a href="s_graphs_on_surfaces_euler.html" class="permalink">¶</a><section class="introduction" id="introduction-13"><p id="p-332">This section cover's Euler's theorem on planar graphs and its applications.  We give a proof by of Euler's theorem by induction, and gave several applications of the theorem itself: more proofs that \(K_{3,3}\) and \(K_5\) aren't planar, that footballs have five pentagons, and a proof that our video game designers couldn't have made their map into a sphere without doing something very strange.</p></section><section class="subsection" id="subsection-31"><h3 class="heading hide-type" alt="Subsection 4.5.1 counting Faces">
 <span class="type">Subsection</span><span class="codenumber">4.5.1</span><span class="title">counting Faces</span>
 </h3>
-<p id="p-322">A <dfn class="terminology">face</dfn> of a planar drawing of a graph is a region bounded by edges and vertices and not containing any other vertices or edges.</p>
-<p id="p-323"><a knowl="./knowl/fig_planar.html" knowl-id="xref-fig_planar" alt="Figure 4.5.1 " title="Figure 4.5.1 ">Figure 4.5.1</a> shows a planar drawing of a graph with \(6\) vertices and \(9\) edges. Notice how one of the edges is drawn as a true polygonal arc rather than a straight line segment. This drawing determines \(5\) regions, since we also count the unbounded region that surrounds the drawing.</p>
-<figure class="figure-like" id="fig_planar"><img src="images/planar_graph.svg" width="35%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.5.1</span>A planar drawing of a graph</figcaption></figure><p id="p-324"><a knowl="./knowl/fig_k4-planar.html" knowl-id="xref-fig_k4-planar" alt="Figure 4.5.2 " title="Figure 4.5.2 ">Figure 4.5.2</a> shows a planar drawing of the complete graph \(\bfK_4\text{.}\) There are \(4\) vertices, \(6\) edges, and \(4\) faces in the drawing.</p>
-<figure class="figure-like" id="fig_k4-planar"><img src="images/k4_planar.svg" width="35%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.5.2</span>A planar drawing of \(\bfK_4\)</figcaption></figure><p id="p-325">What happens if we compute the number of vertices minus the number of edges plus the number of faces for these drawings? We have</p>
+<p id="p-333">A <dfn class="terminology">face</dfn> of a planar drawing of a graph is a region bounded by edges and vertices and not containing any other vertices or edges.</p>
+<p id="p-334"><a knowl="./knowl/fig_planar.html" knowl-id="xref-fig_planar" alt="Figure 4.5.1 " title="Figure 4.5.1 ">Figure 4.5.1</a> shows a planar drawing of a graph with \(6\) vertices and \(9\) edges. Notice how one of the edges is drawn as a true polygonal arc rather than a straight line segment. This drawing determines \(5\) regions, since we also count the unbounded region that surrounds the drawing.</p>
+<figure class="figure-like" id="fig_planar"><img src="images/planar_graph.svg" width="35%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.5.1</span>A planar drawing of a graph</figcaption></figure><p id="p-335"><a knowl="./knowl/fig_k4-planar.html" knowl-id="xref-fig_k4-planar" alt="Figure 4.5.2 " title="Figure 4.5.2 ">Figure 4.5.2</a> shows a planar drawing of the complete graph \(\bfK_4\text{.}\) There are \(4\) vertices, \(6\) edges, and \(4\) faces in the drawing.</p>
+<figure class="figure-like" id="fig_k4-planar"><img src="images/k4_planar.svg" width="35%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.5.2</span>A planar drawing of \(\bfK_4\)</figcaption></figure><p id="p-336">What happens if we compute the number of vertices minus the number of edges plus the number of faces for these drawings? We have</p>
 <div class="displaymath">
 \begin{align*}
 6-9+5 \amp = 2\\
 4-6+4 \amp =2
 \end{align*}
 </div>
-<p id="p-326">While it might seem like a coincidence that this computation results in \(2\) for these planar drawings, there's a more general principle at work here, and in fact it holds for <em class="emphasis">any</em> planar drawing of <em class="emphasis">any</em> planar graph.</p>
-<p id="p-327">In fact, the number \(2\) here actually results from a fundamental property of the plane, and there are a corresponding theorems for other surfaces. However, we only need the result as stated above.</p>
+<p id="p-337">While it might seem like a coincidence that this computation results in \(2\) for these planar drawings, there's a more general principle at work here, and in fact it holds for <em class="emphasis">any</em> planar drawing of <em class="emphasis">any</em> planar graph.</p>
+<p id="p-338">In fact, the number \(2\) here actually results from a fundamental property of the plane, and there are a corresponding theorems for other surfaces. However, we only need the result as stated above.</p>
 <article class="theorem-like" id="theorem-8"><h6 class="heading">
 <span class="type">Theorem</span><span class="codenumber">4.5.3</span><span class="title">Euler's Formula</span>
 </h6>
-<p id="p-328">Let \(\bfG\) be a connected planar graph with \(n\) vertices and \(m\) edges. Every planar drawing of \(\bfG\) has \(f\) faces, where \(f\) satisfies</p>
+<p id="p-339">Let \(\bfG\) be a connected planar graph with \(n\) vertices and \(m\) edges. Every planar drawing of \(\bfG\) has \(f\) faces, where \(f\) satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 n-m+f=2.
 \end{equation*}
-</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-11" id="proof-11"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-11" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-329">Our proof is by induction on the number \(m\) of edges. If \(m=0\text{,}\) then since \(\bfG\) is connected, our graph has a single vertex, and so there is one face. Thus \(n-m+f = 1-0+1=2\) as needed. Now suppose that we have proven Euler's formula for all graphs with less than \(m\) edges and let \(\bfG\) have \(m\) edges. Pick an edge \(e\) of \(\bfG\text{.}\) What happens if we form a new graph \(\bfG'\) by deleting \(e\) from \(\bfG\text{?}\) If \(\bfG'\) is connected, our inductive hypothesis applies. Say that \(\bfG'\) has \(n'\) vertices, \(m'\) edges, and \(f'\) faces. Then by induction, these numbers satisfy</p>
+</div></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-11" id="proof-11"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-11" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-340">Our proof is by induction on the number \(m\) of edges. If \(m=0\text{,}\) then since \(\bfG\) is connected, our graph has a single vertex, and so there is one face. Thus \(n-m+f = 1-0+1=2\) as needed. Now suppose that we have proven Euler's formula for all graphs with less than \(m\) edges and let \(\bfG\) have \(m\) edges. Pick an edge \(e\) of \(\bfG\text{.}\) What happens if we form a new graph \(\bfG'\) by deleting \(e\) from \(\bfG\text{?}\) If \(\bfG'\) is connected, our inductive hypothesis applies. Say that \(\bfG'\) has \(n'\) vertices, \(m'\) edges, and \(f'\) faces. Then by induction, these numbers satisfy</p>
 <div class="displaymath">
 \begin{equation*}
 n'-m'+f'=2.
@@ -228,25 +228,25 @@ n - (m-1) + (f'_1+f'_2) = 4 \iff n-m + (f'_1 + f'_2) = 3.
 <article class="remark-like" id="remark-3"><h6 class="heading">
 <span class="type">Remark</span><span class="codenumber">4.5.4</span><span class="title">Alternative method of dealing with the second case</span>
 </h6>
-<p id="p-330">In our proof of Euler's theorem, the most complicated part was dealing with the situation if the edge \(e\) disconnects our graph \(\bfG\) when we remove it. In this case, instead of deleting the edge \(e\) we can contract it -- that is, shrink it to a point.  This would have result in a graph that is still planar and still connected, but with one less edge (\(e\) is no longer around), and one less vertex (the two vertices \(e\) connects are now merged into one).  The number of faces remains unchanged.  So the number of edges and the number of faces each decreased by one, these two changes cancel out when we calculate \(n-m+f\text{,}\) and hence both are equal to two.</p></article></section><section class="subsection" id="subsection-32"><h3 class="heading hide-type" alt="Subsection 4.5.2 Applications of Euler's theorem">
+<p id="p-341">In our proof of Euler's theorem, the most complicated part was dealing with the situation if the edge \(e\) disconnects our graph \(\bfG\) when we remove it. In this case, instead of deleting the edge \(e\) we can contract it -- that is, shrink it to a point.  This would have result in a graph that is still planar and still connected, but with one less edge (\(e\) is no longer around), and one less vertex (the two vertices \(e\) connects are now merged into one).  The number of faces remains unchanged.  So the number of edges and the number of faces each decreased by one, these two changes cancel out when we calculate \(n-m+f\text{,}\) and hence both are equal to two.</p></article></section><section class="subsection" id="subsection-32"><h3 class="heading hide-type" alt="Subsection 4.5.2 Applications of Euler's theorem">
 <span class="type">Subsection</span><span class="codenumber">4.5.2</span><span class="title">Applications of Euler's theorem</span>
 </h3>
-<p id="p-331">By itself, Euler's theorem doesn't seem that useful: there are three variables (the numbers of edges, vertices, and faces) and only one equation between them, so there are still lots of degrees of freedom.  For it to be particularly useful, we want to have other relationships between these numbers.  In many applications, these relationships can come from handshaking.</p>
-<p id="p-332">Recall that Euler's handshaking lemma said that</p>
+<p id="p-342">By itself, Euler's theorem doesn't seem that useful: there are three variables (the numbers of edges, vertices, and faces) and only one equation between them, so there are still lots of degrees of freedom.  For it to be particularly useful, we want to have other relationships between these numbers.  In many applications, these relationships can come from handshaking.</p>
+<p id="p-343">Recall that Euler's handshaking lemma said that</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{v\in G} d(v)=2 |E(G),
 \end{equation*}
 </div>
 <p>the sum of the degrees of all the vertices is twice the number of edges.  If we had some knowledge about the degrees of these vertices, we could get another relationship between the number of vertices and the number of edges.  For example, if \(G\) is regular of degree \(k\text{,}\) then every vertex has degree \(k\text{,}\) and hence the sum of all the degrees is just \(kn\text{.}\)  Hence, handshaking would tell us that \(kn=2m\text{,}\) and we would have another relationship between the three variables \(m,n\) and \(f\text{.}\)</p>
-<p id="p-333">Similarly, there is a handshaking between faces and edges.  Let the <em class="emphasis">degree</em> of a face be the number of edges that occur around it -- so, a triangle would have degree three.  Then, if we sum up the degrees of all the faces, we're counting each edge twice again -- once from the face on its left, and once from the face on its right.  so we have</p>
+<p id="p-344">Similarly, there is a handshaking between faces and edges.  Let the <em class="emphasis">degree</em> of a face be the number of edges that occur around it -- so, a triangle would have degree three.  Then, if we sum up the degrees of all the faces, we're counting each edge twice again -- once from the face on its left, and once from the face on its right.  so we have</p>
 <div class="displaymath">
 \begin{equation*}
 sum_{f\in \text{faces}(G)}d(f)=2 |E(G)|
 \end{equation*}
 </div>
 <p>Note that this is just the usual vertex-edge handshaking for the dual graph.</p>
-<p id="p-334">Thus, vertex-edge and face-edge handshaking can potentially give us two other sources of relationships between the numbers of vertices, edges, and faces.  Most applications of Euler's theorem proceed by combining all three relationships, as we shall see.</p></section></section></div></main>
+<p id="p-345">Thus, vertex-edge and face-edge handshaking can potentially give us two other sources of relationships between the numbers of vertices, edges, and faces.  Most applications of Euler's theorem proceed by combining all three relationships, as we shall see.</p></section></section></div></main>
 </div>
 </body>
 </html>

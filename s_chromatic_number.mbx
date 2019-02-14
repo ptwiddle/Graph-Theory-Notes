@@ -1,10 +1,24 @@
 <section xml:id="s_chromatic_number">
 <title>Chromatic number</title>
+<p>The study of graph colourings began with the colouring of maps.  Usually on a map, different regions (countries, counties, states, etc.) are visually distinguished from each other by giving each one a different colour, with the idea that adjance regions should have different colours so that boundaries can be easily seen.  For instance, in this old road map of England and Wales, each county is coloured either red, yellow blue or green, and bordering counties have different colours.</p>
+<figure xml:id="fig_colouredmapexample"><caption>A historical example of a map colouring.  <url href="http://www.davidrumsey.com/maps4669.html">Image</url> courtesy Cartography Associates under a <url href="https://creativecommons.org/licenses/by-nc-sa/2.0/">creative commons license</url> </caption><image width="70%" source="images/EnglishCounties.jpg" />
+</figure>
+<p>Note that in the map above, only four colours are used.  In 1852 Francis Guthrie suggested that for any possible map drawn on a piece of a paper, four colours would be enough.  Guthrie's conjecture wasn't proven for more than a hundred years later.</p>
 
+<p>Let's make Guthrie's conjecture precise and connect it to graph theory.  Note that as in Example , it makes sense to work with essential the dual picture to the map; we make the regions of the map into vertices, and we put an edge between two regions if they share a vertex.  Then we are lead to the following definitions.</p>
 
-<definition><title>Chromatic number</title>
-<p>The <em>chromatic number</em> of a graph <m>\bfG</m> is the least number of colours needed to colour the vertices of <m>G</m> so that adjacent vertices are given different colours.
+<definition><title>Colourings and Chromatic number</title>
+<p>Let <m>\bfG</m> be a graph.  A <em><m>k</m>-colouring</em> (or sometimes <em>vertex colouring</em>) of <m>\bfG</m> with <m>k</m> colours is an assignment of one of <m>k</m> colours to each of the vertices of <m>\bfG</m> so that adjacent vertices have different colours.</p>
+
+<p>More formally, a <m>k</m>-colouring is a function <m>f:V(\bfG)\to\{1,\dots,k\}</m> so that if <m>v\sim w</m> than we have <m>f(v)\neq f(w)</m>.</p>
+
+<p>The <em>chromatic number</em> of a graph <m>\bfG</m>, written <m>\chi(\bfG)</m>, is the least number of colours needed to colour the vertices of <m>G</m> so that adjacent vertices are given different colours; that is, it's the least <m>k</m> so that there exists a <m>k</m>-colouring of <m>\bfG</m>.
 </p></definition>
+
+<p>The most basic problem you will have to complete about these is the following: given a graph <m>\bfG</m>, determine its chromatic number<m>\chi(\bfG)</m>.  Because the chromatic number is the <em>least</em> number of colours with which it is possible to colour <m>\bfG</m>, showing that <m>\chi(\bfG)=N</m> will always require two steps:</p>
+<ol><li>Show that <m>\bfG</m> admits a colouring with <m>\chi(\bfG)=N-1</m> colours </li>
+<li> Show that <m>\bfG</m> does not admit a colouring with fewer colours.</li></ol>
+
 
 <example><title>Complete graph</title> <p>What's the chromatic number <m>\chi(K_n)</m> of the complete graph?  Since every vertex is adjacent to every other vertex, any two vertices need to have different colours, and so <m>\chi(K_n)\geq n</m>.  But certainly if we colour every vertex a different colour, then two adjacent vertices have the same colour, and that's a valid colouring of <m>K_n</m>, so <m>\chi(K_n)\leq n</m>.   So <m>\chi(K_n)=n</m>.</p></example>
 

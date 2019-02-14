@@ -1,10 +1,77 @@
 <section xml:id="s_chromatic_index">
-<title>Chromatic index</title>
+<title>Chromatic index and applications</title>
 
+
+<p>It is a natural twist of the definition of chromatic number to try to colour the edges of a graph instead; the least number of colours needed is the called the <em>chromatic index</em>.  After introducing this concept and giving some examples, we give some story problem type questions that boil down to finding either the chromatic number or chromatic index.</p>
 
 <definition><title>Chromatic index</title>
-<p>The <em>chromatic number</em> <m>\chi^\prime(G)</m> of a graph G is the least number of colours needed to colour the edges of G so that edges that share a vertex have different colours.
+<p>The <em>chromatic index</em> <m>\chi^\prime(\bfG)</m> of a graph <m>\bfG</m> is the least number of colours needed to colour the edges of <m>\bfG</m> so that any two edges that share a vertex have different colours.
 </p></definition>
 
+<p>Not that as with the chromatic number, since the chromatic index <m>\chi^\prime(\bfG)</m> is the minimum number of colours such that the edges can be coloured with adjacent edges having different colours, to show <m>\chi^\prime(\bfG)=N</m> typically requires two steps:</p>
+<ol><li>Prove that the edges of <m>\bfG</m> can be coloured with <m>N</m> colours</li>
+<li>Prove that the edges of <m>\bfG</m> cannot be coloured with less than <m>N</m> colours</li>
+</ol>
 
+<example><title>The complete graph <m>K_4</m></title>
+<p>Let's find <m>\chi^\prime(K_4)</m>.  Picking any vertex <m>v</m>, there are three edges incident to <m>v</m>, and none of these edges can have the same colour (as they all meet at <m>v</m>).  Hence, we have <m>\chi^\prime(K_4)\geq 3</m>.</p>
+<p>On the other hand, it is easy to colour the edges of <m>K_4</m> with three colours, as seen below, and so <m>\chi^\prime(K_4)\leq 3</m>, and hence <m>\chi^\prime(K_4)=3</m>.</p>
+</example>
+
+<example><title>The complete graph <m>K_5</m></title>
+<p>Now, let's move on to <m>K_5</m>.  Again, looking at any vertex we see all the edges adjacent to that vertex must be different colours, and so we have <m>\chi^\prime(K_5)\geq 4</m>.   Let's try to colour the edges of <m>K_5</m> with 4 colours.</p>
+
+<sbsgroup widths="60% 30%" margins="auto" valign="middle">
+<sidebyside><p>Suppose we coloured the four edges adjacent to the top vertex blue, green, red and purple, from left to right, and now look at the bottom edge.  It is adjacent to edges coloured green and red, and so must be blue or purple.  By symmetry, it's equivalent to colour it either colour, so let's suppose it's blue, giving us the following picture:</p>
+
+<image width="80%" source="images/K5EdgeColouring1.png" /></sidebyside>
+<sidebyside><p>Now the edge on the right is adjacent to edges coloured red, blue and purple, and so must be green.  But now we have a problem -- consider the edges labeled <m>x</m> and <m>y</m> in the next drawing:</p>
+
+<image width="80%" source="images/K5EdgeColouring2.png" />
+</sidebyside>
+</sbsgroup>
+
+
+<p>Both edges share vertices with edges coloured green, blue, and purple, and hence each would need to be coloured red.  But they also share a vertex with each other, and so cannot both be coloured red.  So we see <m>\chi^\prime(K_5)\geq 5</m>.</p>  
+
+<sbsgroup widths="60% 30%" margins="auto" valign="middle"><sidebyside><p>On the other hand, it is easy to colour the edges of <m>K_5</m> with 5 colours:  colour each edge in the outside pentagon a different colour.  For each edge in the outside pentagon there will be a unique edge in the inside star that does meet that edge (the one "parallel" to it) -- draw that edge the same colour.  That results in the following colouring:</p>
+
+<image width="80%" source="images/K5EdgeColouring3.png" />
+</sidebyside></sbsgroup>
+</example>
+<p>In the examples above, we found lower bounds for <m>\chi^\prime(\bfG)</m> by considering the degrees of vertices; this argument easily adapts in general.</p>
+
+<theorem><statement><p>For any graph <m>\bfG</m> we have <m>\chi^\prime(\bfG)\geq\Delta(\bfG)</m></p></statement><proof><p>Let <m>v\in\bfG</m> be a vertex of maximal degree <m>d(v)=\Delta(\bfG)</m>.  Then none of the <m>\Delta(\bfG)</m> edges incident to <m>v</m> can be coloured the same colour, and so we have <m>\chi^\prime(\bfG)\geq \Delta(\bfG)</m></p></proof></theorem>
+<p>It turns out that this nearly determines the chromatic index <m>\chi^\prime(\bfG)</m> -- it can be at most one more than <m>\Delta(\bfG)</m>:</p>
+<theorem><title>Vizing's Theorem</title><statement><p>For any graph <m>\bfG</m> we have <m>\Delta(\bfG)\leq \chi^\prime(\bfG)\leq \Delta(\bfG)+1</m></p></statement><proof><p>The lower bound was just proved in the previous theorem.  The other direction is more difficult.</p> </proof></theorem>
+
+<p>We now show how determining the chromatic number and chromatic index can show up as part of story questions.</p>
+
+<p>Suppose there are six friends, Alice, Bob, Charlie, Dora, Elizabeth and Frank, and there is the following graph between then:</p>
+
+<sbsgroup widths="50% 40%" margins="auto" valign="middle">
+<sidebyside>
+    <tabular halign="center">
+        <row> <cell bottom="medium">A</cell></row>
+	<row> <cell bottom="medium" right="medium">X</cell><cell bottom="medium">B</cell></row>
+	<row> <cell bottom="medium" right="medium">X</cell><cell bottom="medium" right="medium"></cell><cell bottom="medium">C</cell></row>
+<row><cell bottom="medium" right="medium"></cell><cell bottom="medium" right="medium">X</cell><cell bottom="medium" right="medium">X</cell><cell bottom="medium"> D </cell></row>
+        <row><cell bottom="medium" right="medium">X</cell><cell bottom="medium" right="medium"></cell><cell bottom="medium" right="medium">X</cell><cell bottom="medium" right="medium"></cell><cell bottom="medium">E</cell></row>
+	<row><cell right="medium"></cell><cell right="medium">X</cell><cell right="medium"></cell><cell right="medium">X</cell><cell right="medium">X</cell><cell>F</cell></row>
+</tabular>
+<image width="80%" source="images/ChromaticNumberVsIndex.png" /> </sidebyside></sbsgroup>
+
+
+<p>Here are two word problems related to <m>\bfG</m>:</p>
+<ol><li>The friends want to divide into groups, but the edges indicate people who currently annoy each other.  What's the least number of groups the friends can divide into groups so that no group contains two people who annoy each other?</li>
+<li>The friends want to hold a snooker tournament, with everyone playing three matches; the edges indicate pairs of friends who will play against each other.  If multiple matches can be played each day, but each person can only be involved in one match a day, how many days are necessary to hold the tournament?</li>
+</ol>
+
+<p>The first case concerns the chromatic number -- each group of people will be the people who have the same colour, and we don't want vertices with an edge between them to have the same colour. </p>
+
+<p>The second case concerns the chromatic index -- the edges are the games that are being played, and all edges that are the same colour will be played on the same day.</p>
+
+<p>Let us quickly compute the chromatic number and chromatic index of the graph <m>\bfG</m> above.  To compute the chromatic number, we observe that the graph contains a triangle, and so the chromatic number is at least 3.  But it is easy to colour the vertices with three colours -- for instance, colour A and D red, colour C and F blue, and colur E and B green.  So <m>\chi(\bfG)=3</m>.</p>
+
+<p>To compute <m>\chi^\prime(G)</m>, since <m>A</m> has degree three we have <m>\chi^\prime(\bfG)\geq 3</m>.  On the other hand, it is easy to colour the edges with three colours -- for instance, colour AB, CE and DF red, colour AE, CD and BF blue, and colour AC, BD and EF green.  So <m>\chi^\prime(\bfG)=3</m> as well.</p>
 </section>

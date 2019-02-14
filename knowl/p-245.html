@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2018-05-09T15:51:02+01:00    *-->
+<!--*    on 2019-02-14T13:28:37Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,14 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>This method fixes the problem of the ordering of the edges not being unique, but as of now we are still recording more information than needed.  But note the following: since we delete a vertex when we put it in the bottom row, no number will appear twice on the bottom row.  The last column is the last two vertices existing, and if we look at the bottom row and the last entry on the top row, we see that every number from 1 to \(n\) will appear exactly once in these spots.</p>
-<span class="incontext"><a href="s_graphalgorithms_prufer.html#p-245">in-context</a></span>
+<p>Let \(i\) and \(j\) be the unique integers for which \(u_k=v_i\) and \(x=v_j\text{.}\) If \(j \lt i\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\delta(x)= \delta(v_j)\le \delta(v_i)= \delta(u_k)\le
+\delta(u_k)+w(u_k).
+\end{equation*}
+</div>
+<p>Therefore the algorithm has found a path \(P(x)\) from \(r\) to \(x\) having length \(\delta(x)\) which is at most the distance from \(r\) to \(x\text{.}\) Clearly, this implies that \(\delta(x)\) is the distance from \(r\) to \(x\) and that \(P(x)\) is a shortest path.</p>
+<span class="incontext"><a href="s_graphalgorithms_shortest-paths.html#p-245">in-context</a></span>
 </body>
 </html>

@@ -7,7 +7,7 @@
 
 <p>It is immediate from the definition of the chromatic polynomial that <m>\chi(\bfG)</m> is the least positive number <m>k</m> such that <m>\chi_{\bfG}(k)\neq 0</m>.</p>
 
-<p>It is <m>not</m> immediate from the definition of the chromatic polynomial that it is, in fact, a polynomial.  In fact, proving that will take a little bit of work.  First, we look at some examples of the chromatic polynomial.</p>
+<p>It is <m>not</m> immediate from the definition of the chromatic polynomial that it is, in fact, a polynomial.  In fact, proving that will take a little bit of work, and we postpone this until the end.  First, we look at some examples of the chromatic polynomial; in many cases it is possible to easily compute the chromatic polynomial by working "vertex by vertex".</p>
 
 <example><title>The empty graph <m>E_n</m></title><p>Recall that the empty graph <m>E_n</m> has <m>n</m> vertices and no edges.  To compute <m>\chi_{E_n}(k)</m> we need to count the number of ways to colour the vertices with <m>k</m> colours.  But since <m>E_n</m> has no edges, we can colour each of the <m>n</m> vertices any of the <m>k</m> colours; the choices are completely independent.  So <m>\chi_{E_n}(k)=k^n</m></p></example>
 
@@ -16,6 +16,28 @@
 <p>Continuing in this way, we see that since all the vertices are adjacent, they all most have different colours.  So when we go to colour <m>v_i</m>, we have already coloured <m>v_o,\dots, v_{i-1}</m> with <m>i</m> different colours, and we can't use any of these to colour <m>v_i</m>, and so we have <m>k-i</m> choices to colour <m>v_i</m>. </p>
 
 <p>Putting it all together, we see that: <me>\chi_{K_n}(k)=k\cdot (k-1)\cdot (k-2)\cdots k-n+1</me></p></example>
+<example><title><p>Two triangles joined at a vertex</p></title><sbsgroup widths="60% 30%">
+<sidebyside><p>Consider the graph <m>\bfG</m> consisting of two triangles joined at the right a vertex, shown at the right.  We can calulate <m>P_\bfG(k)</m> by working vertex by vertex: there are <m>k</m> ways to colour vertex 1, but then when we colour vertex 2 it can't be the same as vertex 1, and so there are <m>k-1</m> ways to colour it.  Vertex three is adjacent to both one and two, so there are <m>k-2</m> ways to colour it, and vertex 4 is adjacent to one coloured vertex, vertex 3, so there are again <m>k-1</m> ways to colour it, and finally vertex 5 is adjacent to vertices 3 and 4 and so we have <m>k-2</m> ways to colour it.</p>
+<latex-image><![CDATA[\begin{\begin{tikzpicture}[scale=2]
+\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+\node[vertex] (V1) at (0,0) {$1$};
+\node[vertex] (V2) at (0,2) {$2$};
+\node[vertex] (V3) at (1,1) {$3$};
+\node[vertex] (V4) at (2,0) {$4$};
+\node[vertex] (V5) at (2,2) {$5$};
+\path  (V1) edge (V2)
+(V4) edge (V5)
+(V3) edge (V1)
+     edge (V2)
+     edge (V4)
+     edge (V5);
+
+\end{tikzpicture}]]></latex-image></sidebyside>
+
+</sbsgroup></example>
+
+
+
 </subsection>
 
 <subsection><title>Deletion-Contraction and polynomiality</title>
@@ -55,14 +77,24 @@ It gets more interesting if <m>\bfG</m> is <em>almost</em> the disjoint union of
 
 <p>Now, <m>v</m> could be any of the <m>k</m> colours, but <m>u</m>, being adjacent to <m>v</m>, can't be the same colour, and so it has <m>k-1</m> possibilities given a choose of colour for <m>v</m>.  Thus, there are <m>k(k-1)</m> ways to colour <m>v</m> and <m>u</m>, and all possibilities will occur equally often within the colourings counted by <m>\chi_{\bfG_2}(k)</m>.  Hence, given a colouring of <m>\bfG_1</m>, there will be <m>\chi_{\bfG_2}(k)/[k(k-1)]</m> ways to extendthat colouring to one of all of <m>G</m>, giving us the result.</p></proof></proposition> 
 
-
-
-
 </subsection>
 
+<p>The methods of gluing and working vertex by vertex make many chromatic polynomials easy to calculate.  Other graphs, however, are not amenable to our gluing theorems, and require considering several cases when working vertex by vertex.</p>
 
+<example><title><p>The chromatic polynomial of the cycle <m>C_4</m></p></title>
+<sbsgroup widths="60% 30%"> <sidebyside>
+<p>Now consider the graph <m>C_4</m>, shown at right, and suppose we try to count the number of colourings of it with <m>k</m> colours.  Vertex 1 can be any of <m>k</m> colours, and vertex 2 has <m>k-1</m> possibilities -- any colour except the one used for vertex 1.  Moving to vertex 4, we see it is just adjacent to 1 as well, and so has <m>k-1</m> possibilities as well.</p><image size="80%" source="images/c4.png" /></sidebyside></sbsgroup>
 
+<p>It becomes more difficult when we try to colour vertex 3.  It is adjacent to vertices 2 and 4, and so cannot be the same colour as either of these.  However, vertices 2 and 4 are not adjacent, and so we don't know whether they have the same colour or not.  If vertices 2 and 4, have the same colour there are <m>k-1</m> possibilities for vertex 3, while if vertices 2 and 4 have different colours, there are only <m>k-2</m> possibilties.  Thus, we must count how many possibilities are in each of these cases.</p>
 
+<p>If we want vertices 2 and 4 to have the same colour, we can first colour vertex 1 in <m>k</m> different ways, and then pick any of the remaining <m>k-1</m> colours for vertices 2 and 4.  Then, to complete this to a colouring of <m>C_4</m>, we have to colour <m>v_3</m>, which can be any of the <m>k-1</m> colours that aren't the colour <m>v_2</m> and <m>v_4</m> are coloured.  Thus, the case where <m>v_2</m> and <m>v_4</m> have the same colour has <m>k(k-1)^2</m> possibilities.</p>
 
+<p>If we want vertices 2 and 4 to have different colours, then we can first colour <m>v_1</m> any of <m>k</m> colours, colour <m>v_2</m> any of <m>k-1</m> colours.  Now, when we go to colour vertex 4 it can't be the same colour as vertex 1 since they are adjacent, and it can't be the same colour as vertex 2 by our supposition.  Vertices <m>v_1</m> and <m>v_2</m> have different colours, and so this leaves <m>k-2</m> possibilities for <m>v_4</m>.  Thus there are <m>k(k-1)(k-2)</m> possibilities to colour vertices 1, 2 and 4 so that 2 and 4 have different colours, and then there are <m>k-2</m> possibilities left for vertex 3, giving <m>k(k-1)(k-2)^2</m> ways to colour <m>C_4</m> so that vertices 2 and 4 have different colours.</p>  
 
+<p>Adding the two cases together, this gives: </p>
+
+<md><mrow>P_{C_4}(k)\amp=k(k-1)^2+k(k-1)(k-2)^2</mrow>
+<mrow>\amp=k(k-1)[k-1+(k-2)^2]</mrow>
+<mrow>\amp=k(k-1)(k^2-3k+3)</mrow></md>
+</example>
 </section>

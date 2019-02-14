@@ -12,7 +12,6 @@
 
 <p>But trying to be systematic and logical about the search directly is quite difficult, perhaps because we have problems holding the picture of the cube in our mind.  In what follows, we will introduce a way to translate the instant insanity puzzle into a question in graph theory.  This is obviously in no way necessary to solve the puzzle, but does make it much easier.  It also demonstrates the real power of graph theory as a visualization and thought aid.</p>
 
-<exercise><p>Explain why there are essentially 331,776 different cube configurations from the point of view of the puzzle.  However, explain why each cube configuration comes in a family of 64 essentially equivalent configurations, giving 5,184 different configurations from the refined point of view.</p></exercise>
 
 <p>There are many variations on Instant Insanity, discussions of which can be found <url href="http://www.cs.brandeis.edu/~storer/JimPuzzles/ZPAGES/zzzInstantInsanity.html">here</url> and <url href="http://www.jaapsch.net/puzzles/insanity.htm">here</url>. There’s also a <url href="https://www.youtube.com/watch?v=CQ2gHSKZBEw">commercial</url> for the game.</p>
 </subsection>
