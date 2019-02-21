@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-14T13:28:37Z    *-->
+<!--*    on 2019-02-18T11:20:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,19 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>We now develop <dfn class="terminology">Prim's Algorithm</dfn> for finding a minimum weight spanning tree. This algorithm is also known by a more descriptive label: <em class="emphasis">Build Tree</em>. We begin by choosing a root vertex \(r\text{.}\) Again, the algorithm proceeds with an initialization step followed by a series of inductive steps.</p>
+<p>Let \(\bfT=(V,S)\) be spanning tree in a graph \(\bfG\text{,}\) and let \(e=xy\) be an edge of \(\bfG\) which does not belong to \(\bfT\text{.}\) Then </p>
+<ol class="decimal">
+<li><p>There is a <em class="emphasis">unique</em> path \(P=(x_0,x_1,x_2,\dots,x_t)\) with (a) \(x=x_0\text{;}\) (b) \(y=x_t\text{;}\) and (c) \(x_ix_{i+1}\in S\) for each \(i=0,1,2,\dots,t-1\text{.}\)</p></li>
+<li>
+<p>For each \(i=0,1,2,\dots,t-1\text{,}\) let \(f_i=x_ix_{i+1}\) and then set</p>
+<div class="displaymath">
+\begin{equation*}
+S_i = \{e\}\cup\{g\in S: g\neq f_i\},
+\end{equation*}
+</div>
+<p>i.e., we <dfn class="terminology">exchange</dfn> edge \(f_i\) for edge \(e\text{.}\) Then \(\bfT_i=(V,S_i)\) is a spanning tree of \(\bfG\text{.}\)</p>
+</li>
+</ol>
 <span class="incontext"><a href="s_graphalgorithms_min-wt-span.html#p-199">in-context</a></span>
 </body>
 </html>

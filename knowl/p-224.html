@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-14T13:28:37Z    *-->
+<!--*    on 2019-02-18T11:20:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,19 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<div class="displaymath">
-\begin{align*}
-\sigma\amp=(a,f)\amp\amp\\
-\delta(a)\amp=0; \amp P(a)\amp=(a)\\
-\delta(b)\amp=\infty; \amp P(b)\amp=(a,b)\\
-\delta(c)\amp=47; \amp P(c)\amp=(a,c)\\
-\delta(d)\amp=144 = 24 + 120 = \delta(f)+w(f,d); \amp P(d)\amp=(a,f,d)\quad\text{updated} \\
-\delta(e)\amp=70; \amp P(e)\amp=(a,e)\\
-\delta(f)\amp=24; \amp P(f)\amp=(a,f)\\
-\delta(g)\amp=\infty; \amp P(g)\amp=(a,f)\\
-\delta(h)\amp=\infty; \amp P(h)\amp=(a,h)
-\end{align*}
-</div>
-<span class="incontext"><a href="s_graphalgorithms_shortest-paths.html#p-224">in-context</a></span>
+<p>In this section, we introduce another useful variant of a graph. In a graph, the existence of an edge \(xy\) can be used to model a connection between \(x\) and \(y\) that goes in both ways. However, sometimes such a model is insufficient. For instance, perhaps it is possible to fly from Atlanta directly to Fargo but not possible to fly from Fargo directly to Atlanta. In a graph representing the airline network, an edge between Atlanta and Fargo would lose the information that the flights only operate in one direction. To deal with this problem, we introduce a new discrete structure. A <dfn class="terminology">digraph</dfn> \(\bfG\) is a pair \((V,E)\) where \(V\) is a vertex set and \(E\subset V\times V\) with \(x\neq y\) for every \((x,y)\in E\text{.}\) We consider the pair \((x,y)\) as a <dfn class="terminology">directed edge</dfn> from \(x\) to \(y\text{.}\) Note that for distinct vertices \(x\) and \(y\) from \(V\text{,}\) the ordered pairs \((x,y)\) and \((y,x)\) are distinct, so the digraph may have one, both or neither of the directed edges \((x,y)\) and \((y,x)\text{.}\) This is in contrast to graphs, where edges are sets, so \(\{x,y\}\) and \(\{y,x\}\) are the same.</p>
+<span class="incontext"><a href="s_graphalgorithms_digraphs.html#p-224">in-context</a></span>
 </body>
 </html>

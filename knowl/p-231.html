@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-14T13:28:37Z    *-->
+<!--*    on 2019-02-18T11:20:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,27 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Now vertex \(g\) is made permanent.</p>
+<p>Let \(n=|V|\text{.}\) At Step \(i\text{,}\) where \(1\le i\le n\text{,}\) we will have determined: </p>
+<ol class="decimal">
+<li><p>A sequence \(\sigma=(v_1,v_2,v_3,\dots,v_i)\) of distinct vertices from \(\bfG\) with \(r=v_1\text{.}\)  These vertices are called <dfn class="terminology">permanent vertices</dfn>, while the remaining vertices will be called <dfn class="terminology">temporary vertices</dfn>.</p></li>
+<li><p>For each vertex \(x\in V\text{,}\) we will have determined a number \(\delta(x)\) and a path \(P(x)\) from \(r\) to \(x\) of length \(\delta(x)\text{.}\)</p></li>
+</ol>
+<p> </p>
+<dl class="description-list">
+<dt>Initialization (Step 1)</dt>
+<dd><p>Set \(i=1\text{.}\) Set \(\delta(r)=0\) and let \(P(r)=(r)\) be the trivial one-point path. Also, set \(\sigma= (r)\text{.}\) For each \(x\neq r\text{,}\) set \(\delta(x)= w(r,x)\) and \(P(x)=(r,x)\text{.}\) Let \(x\) be a temporary vertex for which \(\delta(x)\) is minimum. Set \(v_2 = x\text{,}\) and update \(\sigma\) by appending \(v_2\) to the end of it. Increment \(i\text{.}\)</p></dd>
+<dt>Inductive Step (Step \(i\text{,}\) \(i&gt;1\))</dt>
+<dd>
+<p>If \(i\lt n\text{,}\) then for each temporary \(x\text{,}\) let</p>
+<div class="displaymath">
+\begin{equation*}
+\delta(x) = \min\{\delta(x), \delta(v_i)+w(v_i,x)\}.
+\end{equation*}
+</div>
+<p>If this assignment results in a reduction in the value of \(\delta(x)\text{,}\) let \(P(x)\) be the path obtained by adding \(x\) to the end of \(P(v_i)\text{.}\)</p>
+<p>Let \(x\) be a temporary vertex for which \(\delta(x)\) is minimum. Set \(v_{i+1}=x\text{,}\) and update \(\sigma\) by appending \(v_{i+1}\) to it. Increment \(i\text{.}\)</p>
+</dd>
+</dl>
 <span class="incontext"><a href="s_graphalgorithms_shortest-paths.html#p-231">in-context</a></span>
 </body>
 </html>

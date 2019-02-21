@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-14T13:28:37Z    *-->
+<!--*    on 2019-02-18T11:20:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,22 +11,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>The theorem holds trivially when \(x=r\text{.}\) So we consider the case where \(x\neq r\text{.}\) We argue that \(\delta(x)\) is the distance from \(r\) to \(x\) and that \(P(x)\) is a shortest path from \(r\) to \(x\) by induction on the minimum number \(k\) of edges in a shortest path from \(r\) to \(x\text{.}\) When \(k=1\text{,}\) the edge \((r,x)\) is a shortest path from \(r\) to \(x\text{.}\) Since \(v_1=r\text{,}\) we will set \(\delta(x)=w(r,x)\) and \(P(x)=(r,x)\) at Step 1.</p>
-<p>Now fix a positive integer \(k\text{.}\) Assume that if the minimum number of edges in a shortest path from \(r\) to \(x\) is at most \(k\text{,}\) then \(\delta(x)\) is the distance from \(r\) to \(x\) and \(P(x)\) is a shortest path from \(r\) to \(x\text{.}\) Let \(x\) be a vertex for which the minimum number of edges in a shortest path from \(r\) to \(x\) is \(k+1\text{.}\) Fix a shortest path \(P=(u_0,u_1,u_2,\dots,u_{k+1})\) from \(r=u_0\) to \(x=u_{k+1}\text{.}\) Then \(Q=(u_0,u_1,\dots,u_k)\) is a shortest path from \(r\) to \(u_k\text{.}\) (See <a knowl="./knowl/fig_graphalgorithms_dijkstra-proof.html" knowl-id="xref-fig_graphalgorithms_dijkstra-proof" alt="Figure 3.3.7 " title="Figure 3.3.7 ">Figure 3.3.7</a>.)</p>
-<figure class="figure-like"><img src="images/image-32.svg" width="75%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.3.7</span>Shortest paths</figcaption></figure><p>By the inductive hypothesis, \(\delta(u_k)\) is the distance from \(r\) to \(u_k\text{,}\) and \(P(u_k)\) is a shortest path from \(r\) to \(u_k\text{.}\) Note that \(P(u_k)\) need not be the same as path \(Q\text{,}\) as we suggest in <a knowl="./knowl/fig_graphalgorithms_dijkstra-proof.html" knowl-id="xref-fig_graphalgorithms_dijkstra-proof" alt="Figure 3.3.7 " title="Figure 3.3.7 ">Figure 3.3.7</a>. However, if distinct, the two paths will have the same length, namely \(\delta(u_k)\text{.}\)  Also, the distance from \(r\) to \(x\) is \(\delta(u_k)+w(u_k,x)\ge \delta(u_k)\) since \(P\) is a shortest path from \(r\) to \(x\) and \(w(u_k,x)\geq 0\text{.}\)</p>
-<p>Let \(i\) and \(j\) be the unique integers for which \(u_k=v_i\) and \(x=v_j\text{.}\) If \(j \lt i\text{,}\) then</p>
-<div class="displaymath">
-\begin{equation*}
-\delta(x)= \delta(v_j)\le \delta(v_i)= \delta(u_k)\le
-\delta(u_k)+w(u_k).
-\end{equation*}
-</div>
-<p>Therefore the algorithm has found a path \(P(x)\) from \(r\) to \(x\) having length \(\delta(x)\) which is at most the distance from \(r\) to \(x\text{.}\) Clearly, this implies that \(\delta(x)\) is the distance from \(r\) to \(x\) and that \(P(x)\) is a shortest path.</p>
-<p>On the other hand, if \(j&gt;i\text{,}\) then the inductive step at Step \(i\) results in</p>
-<div class="displaymath">
-\begin{equation*}
-\delta(x)\le \delta(v_i)+w(v_i,y)=\delta(u_k)+w(u_k,x).
-\end{equation*}
-</div>
-<p>As before, this implies that \(\delta(x)\) is the distance from \(r\) to \(x\) and that \(P(x)\) is a shortest path.</p></article></body>
+<body><article class="hiddenproof"><p>For the first fact, it suffices to note that if there were more than one distinct path from \(x\) to \(y\) in \(\bfT\text{,}\) we would be able to find a cycle in \(\bfT\text{.}\) This is impossible since it is a tree. For the second, we refer to <a knowl="./knowl/fig_graphalgorithms_exchange.html" knowl-id="xref-fig_graphalgorithms_exchange" alt="Figure 3.1.5 " title="Figure 3.1.5 ">Figure 3.1.5</a>. The black and green edges in the graph shown at the left represent the spanning tree \(\bfT\text{.}\) Thus, \(f\) lies on the unique path from \(x\) to \(y\) in \(\bfT\) and \(e=xy\) is an edge of \(\bfG\) <em class="emphasis">not</em> in \(\bfT\text{.}\) Adding \(e\) to \(\bfT\) creates a graph with a unique cycle, since \(\bfT\) had a unique path from \(x\) to \(y\text{.}\) Removing \(f\) (which could be any edge \(f_i\) of the path, as stated in the proposition) destroys this cycle. Thus \(\bfT_i\) is a connected acyclic subgraph of \(\bfG\) with \(n-1+1-1=n-1\) edges, so it is a spanning tree.</p>
+<figure class="figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
+<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><img src="images/exchange1.svg" width="100%" style="display: block; margin: 0 auto;" alt=""></div>
+<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><img src="images/exchange2.svg" width="100%" style="display: block; margin: 0 auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="codenumber">3.1.5</span>The exchange principle</figcaption></figure></article></body>
 </html>

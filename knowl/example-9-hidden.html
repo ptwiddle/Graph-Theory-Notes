@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-14T13:28:36Z    *-->
+<!--*    on 2019-02-18T11:20:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,10 +11,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>Let's see an example of how the process of finding an Eulerian path works for the graph \(\Gamma\) in Figure below.</p>
-<figure class="figure-like"><img src="images/image-18.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">2.2.7</span>A graph \(\Gamma\)</figcaption></figure><p>It probably isn't hard to immediately find an Eulerian cycle for \(\Gamma\) just by examination, but to illustrate the algorithm to begin with, we are going to deliberately choose a cycle that doesn't use every edge, the cycle aeijgba show in the next figure:</p>
-<figure class="figure-like"><img src="images/image-19.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">2.2.8</span>Initializing with a closed walk in \(\Gamma\)</figcaption></figure><p>To extend our cycle to an Eulerian cycle, we delete all the edges used in the graph, and study the remaining graph.  In our case, this graph has two connected components, a four cycle and a three cycle.  Both of these are cycles themselves, they're trivially Eulerian, -- in general, it might take some work to find an Eulerian cycle for the components, but won't be too hard as the graph will be smaller.</p>
-<figure class="figure-like"><img src="images/image-20.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">2.2.9</span>Parts of \(\Gamma\) missed by our walk</figcaption></figure><p>Finally, we stitch our Eulerian paths together.  We follow our initial cycle that wasn't an Eulerian cycle, and the first time we hit a vertex that's in one of the other cycles, we insert that cycle in before we continue along our original path.  In our example, our original cycle was aeijgba.  a is not eitehr of the other components, but e is in the four cycle, so before we continue on our original cycle to i, we insert the four cycle ehije, giving aehije.  We now continue along our original cycle, adding ei, ij, jg, until we reach a vertex g that's in one of the added cycles, which we then insert, giving aehijeijgcdg as our cycle so far.</p>
-<p>Continuing this process, we find aehijeijgcdgba as an Eulerian cycle.</p>
-<figure class="figure-like"><img src="images/image-21.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">2.2.10</span>The Eulerian cycle stitched together</figcaption></figure></article></body>
+<body><article class="example-like"><p>It is not hard to see that the two graphs above are both drawings of the cube, but for more complicated graphs it can be quite difficult at first glance to tell whether or not two graphs are the same.  For instance, there are many ways to draw the Petersen graph that aren't immediately obvious to be the same.</p>
+<p>This <a class="url" href="https://msollami.com/code/2014/12/24/graph-isomorphisms" target="_blank">animated gif</a> created by Michael Sollami for <a class="url" href="https://www.quantamagazine.org/algorithm-solves-graph-isomorphism-in-record-time-20151214/" target="_blank">this Quanta Magazine article</a> on the Graph Isomorphism problem illustrates many different such drawings in a way that makes the isomorphisms apparent.</p></article></body>
 </html>

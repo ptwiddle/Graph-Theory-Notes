@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-14T13:28:37Z    *-->
+<!--*    on 2019-02-18T11:20:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,8 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>We need to show that we can colour any graph \(\bfG\) with \(\Delta(G)+1\) colours.  But we can just colour the vertices of \(\bfG\) one by one in whatever order we want.  When we go to colour the \(i\)th vertex \(v_i\text{,}\) we look at the \(d(v_i)\) vertices adjacent to \(v_i\text{.}\)  Some of them may not be coloured yet, in which case they don't affect anything, but for each vertex adjacent to \(v_i\) that is coloured, we can't use that colour for \(v_i\text{.}\)</p>
-<p>So there are most \(d(v_i)\leq \Delta(\bfG)\) colours we have to avoid; if we have \(\Delta(\bfG)+1\) colours to choose from we can always find one that hasn't been used at a vertex adjacent to \(v_i\)</p></article><span class="incontext"><a href="s_chromatic_number.html#proof-12">in-context</a></span>
+<p>One way to visualize this is imagine the sphere as being made from very flexible clay.  If we poke a small hole in the top of the sphere, we could stick our fingers in and make the hole larger, and gradually stretch and bend and reform for the sphere to be a flat disk.</p>
+<p>Alternatively, one could use stereographic projection, as shown in Figure .  Draw \(S^2\) in \(\R^3\) as the unit sphere at the origin, and let \(N=(0,0,1)\) be the north pole of the sphere.  Stereographic projection gives a bijection between \(S^2\setminus\{N\}\) (the sphere minus the north pole) to the plane, as follows: for any point \(p\neq N\) the line through \(p\) and \(N\) must meet the \(xy\)-plane at one point.  On the other hand, any line through \(N\) and a point on the \(xy\)-plane must meet the sphere at one other point.</p>
+<p>Accepting that \(S^2\) is \(\reals^2\) minus one point, we see that we can draw a given graph \(G\) on \(S^\) if and only if we can draw \(G\) on \(\reals^2\text{:}\) if we draw it on \(\reals^2\text{,}\) we can view the \(\reals^2\) as a small patch of \(S^2\text{.}\) And if we have a drawing on \(S^2\text{,}\) there must be at least one point on \(S^2\) that isn't in the drawing of \(G\text{,}\) and doing stereographic projection from that point gives a drawing of \(G\) on the plane \(\reals^2\text{.}\)</p></article><span class="incontext"><a href="s_graphs_on_surfaces_planarity_algorithm.html#proof-12">in-context</a></span>
 </body>
 </html>

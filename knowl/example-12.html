@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-14T13:28:37Z    *-->
+<!--*    on 2019-02-18T11:20:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,148 +13,23 @@
 </head>
 <body>
 <article class="example-like"><h6 class="heading">
-<span class="type">Example</span><span class="codenumber">3.4.5</span>
+<span class="type">Example</span><span class="codenumber">3.1.9</span><span class="title">Kruskal's Algorithm</span>
 </h6>
-<p>Suppose \(T\) has Prüfer code 4,4,1,4,5,5. This code has length 6, so we looking to complete it by filling in numbers from 1 to 8. We illustrate the process step by step.</p>
-<div class="sidebyside" id="sidebyside-8"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-262">The lowest number that doesn't appear is 2, so we fill that in on the bottom of the first column. We no longer have to consider the 4 directly above this 2, as it is not the bottom element of its column.</p></div>
-<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
-<tr>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">1</td>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">5</td>
-<td class="c m b2 r2 l0 t0 lines">5</td>
-<td class="c m b2 r0 l0 t0 lines"></td>
-</tr>
-<tr>
-<td class="c m b0 r2 l0 t0 lines">2</td>
-<td class="c m b0 r2 l0 t0 lines"></td>
-<td class="c m b0 r2 l0 t0 lines"></td>
-<td class="c m b0 r2 l0 t0 lines"></td>
-<td class="c m b0 r2 l0 t0 lines"></td>
-<td class="c m b0 r2 l0 t0 lines"></td>
-<td class="c m b0 r0 l0 t0 lines"></td>
-</tr>
-</table></div>
-</div></div>
-<div class="sidebyside" id="sidebyside-9"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-263">To fill in the next cell, we put the lowest number not occuring as the lowest element of a column, namely 3.</p></div>
-<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
-<tr>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">1</td>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">5</td>
-<td class="c m b2 r2 l0 t0 lines">5</td>
-<td class="c m b2 r0 l0 t0 lines"></td>
-</tr>
-<tr>
-<td class="c m b0 r2 l0 t0 lines">2</td>
-<td class="c m b0 r2 l0 t0 lines">3</td>
-<td class="c m b0 r2 l0 t0 lines"></td>
-<td class="c m b0 r2 l0 t0 lines"></td>
-<td class="c m b0 r2 l0 t0 lines"></td>
-<td class="c m b0 r2 l0 t0 lines"></td>
-<td class="c m b0 r0 l0 t0 lines"></td>
-</tr>
-</table></div>
-</div></div>
-<div class="sidebyside" id="sidebyside-10"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-264">And now the lowest term not on the bottom of its column is 6, so we add that:</p></div>
-<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
-<tr>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">1</td>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">5</td>
-<td class="c m b2 r2 l0 t0 lines">5</td>
-<td class="c m b2 r0 l0 t0 lines"></td>
-</tr>
-<tr>
-<td class="c m b0 r2 l0 t0 lines">2</td>
-<td class="c m b0 r2 l0 t0 lines">3</td>
-<td class="c m b0 r2 l0 t0 lines">6</td>
-<td class="c m b0 r2 l0 t0 lines"></td>
-<td class="c m b0 r2 l0 t0 lines"></td>
-<td class="c m b0 r2 l0 t0 lines"></td>
-<td class="c m b0 r0 l0 t0 lines"></td>
-</tr>
-</table></div>
-</div></div>
-<div class="sidebyside" id="sidebyside-11"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-265">Now the only 1 appearing has an element beneath it, and so 1 gets added in the next column:</p></div>
-<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
-<tr>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">1</td>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">5</td>
-<td class="c m b2 r2 l0 t0 lines">5</td>
-<td class="c m b2 r0 l0 t0 lines"></td>
-</tr>
-<tr>
-<td class="c m b0 r2 l0 t0 lines">2</td>
-<td class="c m b0 r2 l0 t0 lines">3</td>
-<td class="c m b0 r2 l0 t0 lines">6</td>
-<td class="c m b0 r2 l0 t0 lines">1</td>
-<td class="c m b0 r2 l0 t0 lines"></td>
-<td class="c m b0 r2 l0 t0 lines"></td>
-<td class="c m b0 r0 l0 t0 lines"></td>
-</tr>
-</table></div>
-</div></div>
-<div class="sidebyside" id="sidebyside-12"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-266">And now all the 4s have been passed, so the next number is 4.  We jump ahead and fill in the two numbers under 5 as well:</p></div>
-<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
-<tr>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">1</td>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">5</td>
-<td class="c m b2 r2 l0 t0 lines">5</td>
-<td class="c m b2 r0 l0 t0 lines"></td>
-</tr>
-<tr>
-<td class="c m b0 r2 l0 t0 lines">2</td>
-<td class="c m b0 r2 l0 t0 lines">3</td>
-<td class="c m b0 r2 l0 t0 lines">6</td>
-<td class="c m b0 r2 l0 t0 lines">1</td>
-<td class="c m b0 r2 l0 t0 lines">4</td>
-<td class="c m b0 r2 l0 t0 lines">7</td>
-<td class="c m b0 r0 l0 t0 lines"></td>
-</tr>
-</table></div>
-</div></div>
-<div class="sidebyside" id="sidebyside-13"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-267">The two numbers we haven't used yet are 5 and 8, so they are the entries in the last column, giving us the completed table of edges</p></div>
-<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
-<tr>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">1</td>
-<td class="c m b2 r2 l0 t0 lines">4</td>
-<td class="c m b2 r2 l0 t0 lines">5</td>
-<td class="c m b2 r2 l0 t0 lines">5</td>
-<td class="c m b2 r0 l0 t0 lines">8</td>
-</tr>
-<tr>
-<td class="c m b0 r2 l0 t0 lines">2</td>
-<td class="c m b0 r2 l0 t0 lines">3</td>
-<td class="c m b0 r2 l0 t0 lines">6</td>
-<td class="c m b0 r2 l0 t0 lines">1</td>
-<td class="c m b0 r2 l0 t0 lines">4</td>
-<td class="c m b0 r2 l0 t0 lines">7</td>
-<td class="c m b0 r0 l0 t0 lines">5</td>
-</tr>
-</table></div>
-</div></div>
-<p>Having constructed the table encoding all the edges, we can now draw the labelled tree with those edges</p>
-<figure class="figure-like"><img src="images/image-33.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.4.12</span>The tree with Prüfer code 441455</figcaption></figure></article><span class="incontext"><a href="s_graphalgorithms_prufer.html#example-12">in-context</a></span>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div class="sbspanel" style="width:80%;justify-content:flex-start;"><p>Let's see what Kruskal's algorithm does on the weighted graph in <a knowl="./knowl/fig_graphalgorithms_spantreegraph.html" knowl-id="xref-fig_graphalgorithms_spantreegraph" alt="Figure 3.1.1 " title="Figure 3.1.1 ">Figure 3.1.1</a>.  It first sorts all of the edges by weight. We won't reproduce the list here, since we won't need all of it. The edge of least weight is \(ck\text{,}\) which has weight \(23\text{.}\) It continues adding the edge of least weight, adding \(ag\text{,}\) \(fg\text{,}\) \(fi\text{,}\) \(fj\text{,}\) and \(bj\text{.}\) However, after doing this, the edge of lowest weight is \(fb\text{,}\) which has weight \(38\text{.}\) This edge cannot be added, as doing so would make \(fjb\) a cycle. Thus, the algorithm bypasses it and adds \(bc\text{.}\) Edge \(ai\) is next inspected, but it, too, would create a cycle and is eliminated from consideration. Then \(em\) is added, followed by \(dl\text{.}\) There are now <em class="emphasis">two</em> edges of weight \(56\) to be considered: \(al\) and \(dj\text{.}\) Our sorting algorithm has somehow decided one of them should appear first, so let's say it's \(dj\text{.}\) After adding \(dj\text{,}\) we cannot add \(al\text{,}\) as \(agfjdl\) would form a cycle. Edge \(dk\) is next considered, but it would also form a cycle. However, \(ek\) can be added. Edges \(km\) and \(dm\) are then bypassed. Finally, edge \(ch\) is added as the twelfth and final edge for this \(13\)-vertex spanning tree. The full list of edges added (in order) is shown to the right. The total weight of this spanning tree is \(504\text{.}\)</p></div>
+<div class="sbspanel" style="width:17.4358974358974%;justify-content:flex-start;"><pre class="code-block tex2jax_ignore">c k 23
+a g 25
+f g 26
+f i 29
+f j 30
+b j 34
+b c 39
+e m 49
+d l 55
+d j 56
+e k 59
+c h 79
+</pre></div>
+</div></div></article><span class="incontext"><a href="s_graphalgorithms_min-wt-span.html#example-12">in-context</a></span>
 </body>
 </html>

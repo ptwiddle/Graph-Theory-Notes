@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-14T13:28:37Z    *-->
+<!--*    on 2019-02-18T11:20:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,5 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>What's the chromatic number \(\chi(K_n)\) of the complete graph?  Since every vertex is adjacent to every other vertex, any two vertices need to have different colours, and so \(\chi(K_n)\geq n\text{.}\)  But certainly if we colour every vertex a different colour, then two adjacent vertices have the same colour, and that's a valid colouring of \(K_n\text{,}\) so \(\chi(K_n)\leq n\text{.}\)   So \(\chi(K_n)=n\text{.}\)</p></article></body>
+<body><article class="example-like"><p>Let's apply the planarity algorithm to the complete graph \(K_5\text{.}\)  Let's label the vertices 1-5, and take our Hamiltonian cycle \(C\) to be 123451, which we've drawn as the outside pentagon in the following figure: <figure class="figure-like"><img src="images/image-50.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.6</span>The graph (\(K_5\))</figcaption></figure> Since \(K_5\) has \(\binom{5}{2}=10\) vertices, there are 5 edges that aren't used in \(C\text{,}\) namely 13,14, 24,25, and 35.  So Cross(\(K_5, 123451\)) will consist of these five vertices.  We see that 13 will be adjacent to 24 and 25, since these edges would cross if drawn inside, but 13 is not adjacent to 14 or 35, since these edges would cross 13 if drawn on the same side of the circle, as illustrated in the next figure</p>
+<figure class="figure-like"><img src="images/image-51.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.7</span>The edges 13 does and does not cross</figcaption></figure><p>Similar consideration with the other edges show that Cross(\(K_5, 123451\)) is the following graph, which is isomorphic to a five cycle:</p>
+<figure class="figure-like"><img src="images/image-52.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.8</span>The graph Cross(\(K_5, 123451\))</figcaption></figure><p>In particular, Cross(\(K_5, 123451\)) is not bipartite.  Hence, by the planarity algorithm for Hamiltonian graphs, we see that \(K_5\) is not planar.</p></article></body>
 </html>

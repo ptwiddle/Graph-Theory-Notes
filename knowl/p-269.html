@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-14T13:28:37Z    *-->
+<!--*    on 2019-02-18T11:20:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For the graph in <a knowl="./knowl/fig_span_tree_ex1.html" knowl-id="xref-fig_span_tree_ex1" alt="Figure 3.5.13 " title="Figure 3.5.13 ">Figure 3.5.13</a>, use Kruskal's algorithm (“avoid cycles”) to find a minimum weight spanning tree. Your answer should include a complete list of the edges, indicating which edges you take for your tree and which (if any) you reject in the course of running the algorithm.</p>
-<span class="incontext"><a href="s_graphalgorithms_exercises.html#p-269">in-context</a></span>
+<p>To fix this problem, we will write down the edges in a particular order.  Every tree has at least two leaves, and deleting a leaf gives a small tree.  We will use these facts to give a systematic ordering to the edges in a labelled tree, as follows: the first edge will be the edge connecting the leaf with the smallest label to the rest of the tree.  We will record that edge, with the leaf on the bottom row, and the "parent" vertex, i.e., the vertex the leaf is connected to, in the top row.  Deleting the leaf and the vertex gives a tree with one fewer vertex, and we iterate the process.</p>
+<span class="incontext"><a href="s_graphalgorithms_prufer.html#p-269">in-context</a></span>
 </body>
 </html>

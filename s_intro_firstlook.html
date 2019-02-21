@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-14T13:28:36Z    *-->
+<!--*    on 2019-02-18T11:20:35Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -197,8 +197,8 @@ MathJax.Hub.Config({
 <p id="p-8">This formal definition has some perhaps unintended consequences about what a graph is.  Because we have identified edges with the two things they connect, and have a set of edges, we can't have more than one edge between any two vertices.  In many real world examples, this is not the case: for example, on the London Tube, the Circle, District and Picadilly lines all connect Gloucester Road with South Kensington, and so there should be multiple edges between those two vertices on the graph.  As another example, in organic chemistry, there are often "double bonds", instead of just one.</p>
 <p id="p-9">Another consequence is that we require each edge to be a two element subset of \(V(G)\text{,}\) and so we do not allow for the possibility of an edge between a vertex and itself, often called a <em class="emphasis">loop</em>.</p>
 <p id="p-10">Graphs without multiple edges or loops are sometimes called <em class="emphasis">simple graphs</em>.  We will sometimes deal with graphs with multiple edges or loops, and will try to be explicit when we allow this.  Our default assumption is that our graphs are simple.</p>
-<p id="p-11">Another consequence of the definition is that edges are symmetric, and work equally well in both directions.  This is not always the case: in road systems, there are often one-way streets.  If we were to model Twitter or Instragram as a graph, rather than the symmetric notion of friends we would have to work with “following”.  To capture these, we have the notion of a <em class="emphasis">directed graph</em>, where rather than just lines, we think of the edges as arrows, pointing from one vertex (the source) to another vertex (the target).  To model Twitter or Instagram, we would have an ege from vertex \(a\) to vertex \(b\) if \(a\) followed \(b\text{.}\)</p></section><section class="subsection" id="subsection-3"><h3 class="heading hide-type" alt="Subsection 1.1.3 Named graphs, and basic examples and concepts">
-<span class="type">Subsection</span><span class="codenumber">1.1.3</span><span class="title">Named graphs, and basic examples and concepts</span>
+<p id="p-11">Another consequence of the definition is that edges are symmetric, and work equally well in both directions.  This is not always the case: in road systems, there are often one-way streets.  If we were to model Twitter or Instragram as a graph, rather than the symmetric notion of friends we would have to work with “following”.  To capture these, we have the notion of a <em class="emphasis">directed graph</em>, where rather than just lines, we think of the edges as arrows, pointing from one vertex (the source) to another vertex (the target).  To model Twitter or Instagram, we would have an ege from vertex \(a\) to vertex \(b\) if \(a\) followed \(b\text{.}\)</p></section><section class="subsection" id="subsection-3"><h3 class="heading hide-type" alt="Subsection 1.1.3 Basic examples and concepts">
+<span class="type">Subsection</span><span class="codenumber">1.1.3</span><span class="title">Basic examples and concepts</span>
 </h3>
 <p id="p-12">Several simple graphs that are frequently referenced have specific names.</p>
 <article class="definition-like" id="definition-2"><h6 class="heading">
@@ -210,12 +210,46 @@ MathJax.Hub.Config({
 <p id="p-14">The empty graph \(E_n\) is the graph on \(n\) vertices, with no edges.</p></article><article class="definition-like" id="definition-4"><h6 class="heading">
 <span class="type">Definition</span><span class="codenumber">1.1.7</span>
 </h6>
-<p id="p-15">The cycle graph \(C_n\) is the graph on \(n\) vertices \(\{v_1,\dots, v_n\}\) with edges \(\{ \{v_1, v_2\}, \{v_2,v_3\},\dots,\{v_{n-1},v_n\}, \{v_n, v_1\}\}\text{.}\)</p></article><article class="definition-like" id="definition-5"><h6 class="heading">
+<p id="p-15">The path graph \(P_n\) is the graph on \(n\) vertices \(\{v_1,\dots, v_n\}\) with edges \(\{ \{v_1, v_2\}, \{v_2,v_3\},\dots,\{v_{n-1},v_n\}\}\text{.}\)</p></article><article class="definition-like" id="definition-5"><h6 class="heading">
 <span class="type">Definition</span><span class="codenumber">1.1.8</span>
 </h6>
-<p id="p-16">The complelement of a simple graph \(G\text{,}\) which we will denote \(G^c\text{,}\) and is sometimes written \(\overline{G}\text{,}\) is the graph with the same vertex set as \(G\text{,}\) but \(\{v,w\}\in E(G^c)\) if and only if \(\{v,w\}\notin E(G)\text{;}\) that is, there is an edge between \(v\) and \(w\) in \(G^c\) if and only if there is not an edge between \(v\) and \(w\) in \(G\)</p></article><article class="example-like"><a knowl="" class="id-ref" refid="hk-example-2" id="example-2"><h6 class="heading">
-<span class="type">Example</span><span class="codenumber">1.1.9</span>
-</h6></a></article><div id="hk-example-2" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-17">The empty graph and complete graph are complements of each other; \(K_n^c=E_n\)</p></article></div></section></section></div></main>
+<p id="p-16">The cycle graph \(C_n\) is the graph on \(n\) vertices \(\{v_1,\dots, v_n\}\) with edges \(\{ \{v_1, v_2\}, \{v_2,v_3\},\dots,\{v_{n-1},v_n\}, \{v_n, v_1\}\}\text{.}\)</p></article><figure class="figure-like" id="fig_basic_graphs"><img src="images/image-3.svg" width="90%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">1.1.9</span>Basic graphs</figcaption></figure><article class="definition-like" id="definition-6"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.1.10</span>
+</h6>
+<p id="p-17">The complelement of a simple graph \(G\text{,}\) which we will denote \(G^c\text{,}\) and is sometimes written \(\overline{G}\text{,}\) is the graph with the same vertex set as \(G\text{,}\) but \(\{v,w\}\in E(G^c)\) if and only if \(\{v,w\}\notin E(G)\text{;}\) that is, there is an edge between \(v\) and \(w\) in \(G^c\) if and only if there is not an edge between \(v\) and \(w\) in \(G\)</p></article><article class="example-like"><a knowl="" class="id-ref" refid="hk-example-2" id="example-2"><h6 class="heading">
+<span class="type">Example</span><span class="codenumber">1.1.11</span>
+</h6></a></article><div id="hk-example-2" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-18">The empty graph and complete graph are complements of each other; \(K_n^c=E_n\)</p>
+<p id="p-19">The path graph \(P_4\) and its complement are shown below:</p>
+<img src="images/image-4.svg" width="90%" style="display: block; margin: 0 auto;" alt=""></article></div>
+<p id="p-20">It commonly occurs that there are two different types of vertices, and the edges only go between vertices of the two types.  For example, we may be modelling a company, and one type of vertices may represent the employees, and another type of vertices could represent the different jobs that need done, with an edge between a worker and a job if the worker is qualified to do that particular job.  We call these graphs <em class="emphasis">bipartite</em>.</p>
+<article class="definition-like" id="definition-7"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.1.12</span>
+</h6>
+<p id="p-21">A graph \(\bfG\) is <em class="emphasis">bipartite</em> if its vertices can be coloured red and blue so that every edge goes between a red vertex and a blue vertex.</p></article><article class="example-like"><a knowl="" class="id-ref" refid="hk-example-3" id="example-3"><h6 class="heading">
+<span class="type">Example</span><span class="codenumber">1.1.13</span>
+</h6></a></article><div id="hk-example-3" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-22">The graph below is bipartite.</p>
+<img src="images/image-5.svg" width="90%" style="display: block; margin: 0 auto;" alt=""></article></div>
+<p id="p-23">As another example, note that the cycle graph \(C_4\) is bipartite -- we can colour vertices 1 and 3 red, and vertices 2 and 4 blue.  But the cycle graph \(C_3\) is <em class="emphasis">not</em> bipartite: as the two colours are interchangable, we can assume we coloured vertex 1 red; then since it is adjacent to both 2 and 3, those vertices must both be blue, but they're adjacent to each other, which violates the definition of bipartite.  More generally, we have:</p>
+<article class="theorem-like" id="lemma-1"><h6 class="heading">
+<span class="type">Lemma</span><span class="codenumber">1.1.14</span>
+</h6>
+<p id="p-24">The cycle graph \(C_n\) is bipartite if and only if n is even.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-1" id="proof-1"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-1" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-25">Let's try to colour the vertices of \(C_n\) red and blue so that adjacent vertices have different colour.  Without loss of generality, we may assume that \(v_1\) is coloured blue.  Then since it is adjacent to \(v_1, v_2\) must be coloured red.  Continuing in this way, we see that \(v_k\) is blue for odd \(k\) and red for even \(k\text{.}\)  But \(v_n\) is adjacent to \(v_1\text{,}\) and so these will have different colours precisely when \(n\) is even.</p></article></div>
+<article class="theorem-like" id="lemma-2"><h6 class="heading">
+<span class="type">Lemma</span><span class="codenumber">1.1.15</span>
+</h6>
+<p id="p-26">A graph \(\bfG\) is bipartite if and only if \(\bfG\) has no subgraphs that are isomorphic to \(C_{2k+1}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-2" id="proof-2"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-2" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-27">First, note that if \(\bfG_2\) is a subgraph of \(\bfG_1\text{,}\) and \(bfG_1\) is bipartite, then so is \(\bfG_2\text{:}\) colouring the vertices of \(\bfG_1\) red and blue in particular colours the vertices of \(\bfG_2\) as well.  Hence, we see if that \(\bfG\) has a subgraph isomorphic to \(C_{2k_1}\text{,}\) which isn't bipartite by the previous lemma, then \(\bfG_\) can't be bipartite, either.</p>
+<p id="p-28">In the other direction, we assume that \(\bfG\) has no subgraphs isomorphic to \(C_{2k+1}\text{;}\) we need to prove that \(\bfG\) is bipartite.  Again, let's try to colour the vertices of \(\bfG\) red and blue so that adjancent vertices have different colours.  Choose a vertex \(v\) of \(\bfG\text{,}\) without loss of generality we may assume that \(v\) is coloured blue; then all vertices adjacent to \(v\) -- i.e., those vertices at distance 1 from \(v\) -- are coloured red.  The vertices adjacent to those must be blue, and the ones adjacent to those must be red, alternating out.  This suggests trying to colour all vertices at odd distance from \(v\) red, and those vertices at even distance from \(v\) blue.  We will show that if this colouring has two vertices of the same colour that are adjacent, then \(\bfG\) has an odd cycle.</p>
+<p id="p-29">Assume that \(u\) and \(w\) are two vertices coloured red that are adjacent.  Since \(u\) is red, the distance from \(v\) to \(u\) is odd -- there is a path \(v=v_0 - v_1 - \cdots - v_{2k+1}=u\text{.}\)  Similarly, there is an odd length path from \(v\) to \(w\text{:}\) \(v=w_0 - w_1 - \cdots - w_{2\ell+1}=w\text{.}\)  Taking the union of these two subgraphs and the edge connecting \(u\) and \(w\text{,}\) we get a closed walk consisting of \((2k+1)+(2\ell+1)+1=2k+2\ell+3\) edges, which is odd.  This walk may repeat some vertices and edges, but if it does we can split it into two smaller walks, one of which must have odd length, and eventually we must get a closed walk of odd length that doesn't repeat any vertices.</p>
+<p id="p-30">The case that \(u\) and \(w\) are both coloured blue is completely analogous, except we will be merging two paths with an even number of edges and one extra edge to get a path with odd length.</p></article></div>
+<p id="p-31">A special type of bipartite graph is the complete bipartite graphs \(K_{m,n}\text{,}\) which are the simple graphs that have as many edges as possible while still being bipartite.</p>
+<article class="definition-like" id="definition-8"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.1.16</span>
+</h6>
+<p id="p-32">The <em class="emphasis">complete bipartite graph</em> \(K_{m,n}\) is the graph with \(m\) red vertices and \(n\) blue vertices, and an edge between very red vertex and every blue vertex.</p></article><article class="example-like"><a knowl="" class="id-ref" refid="hk-example-4" id="example-4"><h6 class="heading">
+<span class="type">Example</span><span class="codenumber">1.1.17</span>
+</h6></a></article><div id="hk-example-4" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-33">The complete bipartite graph \(K_{2,2}\) is isomorphic to \(C_4\text{.}\)</p>
+<p id="p-34">The graphs \(K_{1,3}\) and \(K_{4,4}\) are drawn below.</p>
+<img src="images/image-6.svg" width="90%" style="display: block; margin: 0 auto;" alt=""></article></div></section></section></div></main>
 </div>
 </body>
 </html>

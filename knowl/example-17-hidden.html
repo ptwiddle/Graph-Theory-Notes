@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-14T13:28:37Z    *-->
+<!--*    on 2019-02-18T11:20:37Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,12 +11,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>As with trees, as long as \(n\geq 2\) the graph has at least one edge, and thus has \(\chi(C_n)\geq 2\text{.}\)  Can we colour \(C_n\) with two colours?</p>
-<p>If we could, the vertices would have to alternate red-blue-red-blue all the way around.  This works if \(n\) is even, but if \(n\) is odd then the vertex we started with would have the same colour as the vertex we ended with, but they're adjacent.  Thus, when \(n\) is odd we need at least three colours to colour the graph, but it's easy to do with three colours -- we can alternate red-blue-red-blue, but make the very last vertex green, for instance.</p>
-<p>Summarizing, we have:</p>
-<div class="displaymath">
-\begin{equation*}
-\chi(C_n)=\begin{cases} 2 &amp; n \text{ odd} \\ 3 &amp; n \text{ even} \end{cases}
-\end{equation*}
-</div></article></body>
+<body><article class="example-like"><p>What's the chromatic number \(\chi(K_n)\) of the complete graph?  Since every vertex is adjacent to every other vertex, any two vertices need to have different colours, and so \(\chi(K_n)\geq n\text{.}\)  But certainly if we colour every vertex a different colour, then two adjacent vertices have the same colour, and that's a valid colouring of \(K_n\text{,}\) so \(\chi(K_n)\leq n\text{.}\)   So \(\chi(K_n)=n\text{.}\)</p></article></body>
 </html>

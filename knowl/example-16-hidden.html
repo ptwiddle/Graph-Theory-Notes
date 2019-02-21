@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-14T13:28:37Z    *-->
+<!--*    on 2019-02-18T11:20:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,6 +11,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>Suppose that \(T_n\) is a tree on \(n\geq 2\) vertices.  Then \(T_n\) has an edge, and the two vertices on this edge must be different colours, and so \(\chi(T_n)\geq 2\text{.}\)  On the other hand, we can colour any tree with two colours as follows: pick any vertex, and colour it blue; then pick any vertex next to it and colour it red, then we can colour the vertices next to that blue, and colour the vertices next to those red, and continuing on outwards from our starting vertex.  Hence, \(\chi(T_n)\leq 2\) and so \(\chi(T_n)=2\text{.}\)</p>
-<p>Another way of phrasing this is that along any path we colour the vertices alternating red-blue-red-blue-red-blue.  This wouldn't work for a general graph, because there may be two paths of different lengths between a pair of vertices \(v\) and \(w\text{.}\)  But in trees because there is always exactly one path between any two vertices, and so once we colour one vertex, there's a unique way to colour all the others with two colours in this way.</p></article></body>
+<body><article class="example-like"><p>Let's use the planarity algorithm for Hamiltonian graphs to find a planar drawing of the graph shown in the next figure.</p>
+<figure class="figure-like"><img src="images/image-53.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.10</span>A graph \(H\)</figcaption></figure><p>We see that \(H\) is Hamiltonian and take as our Hamiltonian cycle the path around the outside, namely \(abcxyza\text{.}\)  There are then six edges not contained in the Hamiltonian cycle, and we find that Cross(\(H, abcxyz\)) is as follows:</p>
+<figure class="figure-like"><img src="images/image-54.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.11</span>The graph Cross(\(H, abcxyza)\)</figcaption></figure><p>For instance, in \(H\) the edge \(ax\) crosses the three edges \(cy, cz\) and \(bz\text{,}\) and so in Cross(\(H, abcxyza\)), the vertex \(ax\) is adjacent to these vertices.</p>
+<p>The graph Cross(\(H, abcxyza)\) has no odd cycles and hence is bipartite -- for instance, we may color \(ax, bx\) and \(ay\) red, and the other three vertices blue.  Then, to draw \(H\) in the plane without edges crossing, we draw the red edges inside the cycle, and the blue edges outside the cycle:</p>
+<figure class="figure-like"><img src="images/image-55.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.12</span>The graph \(H\) drawn without edges crossing</figcaption></figure></article></body>
 </html>

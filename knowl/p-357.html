@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-14T13:28:37Z    *-->
+<!--*    on 2019-02-18T11:20:37Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,7 +13,37 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>As with trees, as long as \(n\geq 2\) the graph has at least one edge, and thus has \(\chi(C_n)\geq 2\text{.}\)  Can we colour \(C_n\) with two colours?</p>
-<span class="incontext"><a href="s_chromatic_number.html#p-357">in-context</a></span>
+<p>Our proof is by induction on the number \(m\) of edges. If \(m=0\text{,}\) then since \(\bfG\) is connected, our graph has a single vertex, and so there is one face. Thus \(n-m+f = 1-0+1=2\) as needed. Now suppose that we have proven Euler's formula for all graphs with less than \(m\) edges and let \(\bfG\) have \(m\) edges. Pick an edge \(e\) of \(\bfG\text{.}\) What happens if we form a new graph \(\bfG'\) by deleting \(e\) from \(\bfG\text{?}\) If \(\bfG'\) is connected, our inductive hypothesis applies. Say that \(\bfG'\) has \(n'\) vertices, \(m'\) edges, and \(f'\) faces. Then by induction, these numbers satisfy</p>
+<div class="displaymath">
+\begin{equation*}
+n'-m'+f'=2.
+\end{equation*}
+</div>
+<p>Since we only deleted one edge, \(n'=n\) and \(m'=m-1\text{.}\) What did the removal of \(e\) do to the number of faces? In \(\bfG'\) there's a new face that was formerly two faces divided by \(e\) in \(\bfG\text{.}\) Thus, \(f'=f-1\text{.}\) Substituting these into \(n'-m'+f'=2\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+n-(m-1)+(f-1)=2 \iff n-m+f=2.
+\end{equation*}
+</div>
+<p>Thus, if \(\bfG'\) is connected, we are done. If \(\bfG'\) is disconnected, however, we cannot apply the inductive assumption to \(\bfG'\) directly. Fortunately, since we removed only one edge, \(\bfG'\) has two components, which we can view as two connected graphs \(\bfG'_1\) and \(\bfG'_2\text{.}\) Each of these has fewer than \(m\) edges, so we may apply the inductive hypothesis to them. For \(i=1,2\text{,}\) let \(n'_i\) be the number of vertices of \(\bfG'_i\text{,}\) \(m'_i\) the number of edges of \(\bfG'_i\text{,}\) and \(f'_i\) the number of faces of \(\bfG'_i\text{.}\) Then by induction we have</p>
+<div class="displaymath">
+\begin{equation*}
+n'_1 - m'_1 + f'_1 = 2 \quad \text{and} \quad n'_2-m'_2+f'_2 =2.
+\end{equation*}
+</div>
+<p>Adding these together, we have</p>
+<div class="displaymath">
+\begin{equation*}
+(n'_1 + n'_2) - (m'_1 + m'_2) + (f'_1 + f'_2) = 4.
+\end{equation*}
+</div>
+<p>But now \(n=n'_1 + n'_2\text{,}\) and \(m'_1 + m'_2 = m-1\text{,}\) so the equality becomes</p>
+<div class="displaymath">
+\begin{equation*}
+n - (m-1) + (f'_1+f'_2) = 4 \iff n-m + (f'_1 + f'_2) = 3.
+\end{equation*}
+</div>
+<p>The only thing we have yet to figure out is how \(f'_1+f'_2\) relates to \(f\text{,}\) and we have to hope that it will allow us to knock the \(3\) down to a \(2\text{.}\) Every face of \(\bfG'_1\) and \(\bfG'_2\) is a face of \(\bfG\text{,}\) since the fact that removing \(e\) disconnects \(\bfG\) means that \(e\) must be part of the boundary of the unbounded face. Further, the unbounded face is counted twice in the sum \(f'_1 + f'_2\text{,}\) so \(f=f'_1 + f'_2 -1\text{.}\) This gives exactly what we need to complete the proof.</p>
+<span class="incontext"><a href="s_graphs_on_surfaces_euler.html#p-357">in-context</a></span>
 </body>
 </html>

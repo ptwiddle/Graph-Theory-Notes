@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-14T13:28:37Z    *-->
+<!--*    on 2019-02-18T11:20:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -13,12 +13,148 @@
 </head>
 <body>
 <article class="example-like"><h6 class="heading">
-<span class="type">Example</span><span class="codenumber">4.2.9</span><span class="title">A planar graph</span>
+<span class="type">Example</span><span class="codenumber">3.4.5</span>
 </h6>
-<p>Let's use the planarity algorithm for Hamiltonian graphs to find a planar drawing of the graph shown in the next figure.</p>
-<figure class="figure-like"><img src="images/image-49.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.10</span>A graph \(H\)</figcaption></figure><p>We see that \(H\) is Hamiltonian and take as our Hamiltonian cycle the path around the outside, namely \(abcxyza\text{.}\)  There are then six edges not contained in the Hamiltonian cycle, and we find that Cross(\(H, abcxyz\)) is as follows:</p>
-<figure class="figure-like"><img src="images/image-50.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.11</span>The graph Cross(\(H, abcxyza)\)</figcaption></figure><p>For instance, in \(H\) the edge \(ax\) crosses the three edges \(cy, cz\) and \(bz\text{,}\) and so in Cross(\(H, abcxyza\)), the vertex \(ax\) is adjacent to these vertices.</p>
-<p>The graph Cross(\(H, abcxyza)\) has no odd cycles and hence is bipartite -- for instance, we may color \(ax, bx\) and \(ay\) red, and the other three vertices blue.  Then, to draw \(H\) in the plane without edges crossing, we draw the red edges inside the cycle, and the blue edges outside the cycle:</p>
-<figure class="figure-like"><img src="images/image-51.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.12</span>The graph \(H\) drawn without edges crossing</figcaption></figure></article><span class="incontext"><a href="s_graphs_on_surfaces_planarity_algorithm.html#example-14">in-context</a></span>
+<p>Suppose \(T\) has Prüfer code 4,4,1,4,5,5. This code has length 6, so we looking to complete it by filling in numbers from 1 to 8. We illustrate the process step by step.</p>
+<div class="sidebyside" id="sidebyside-8"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-279">The lowest number that doesn't appear is 2, so we fill that in on the bottom of the first column. We no longer have to consider the 4 directly above this 2, as it is not the bottom element of its column.</p></div>
+<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">1</td>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">5</td>
+<td class="c m b2 r2 l0 t0 lines">5</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">2</td>
+<td class="c m b0 r2 l0 t0 lines"></td>
+<td class="c m b0 r2 l0 t0 lines"></td>
+<td class="c m b0 r2 l0 t0 lines"></td>
+<td class="c m b0 r2 l0 t0 lines"></td>
+<td class="c m b0 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div>
+</div></div>
+<div class="sidebyside" id="sidebyside-9"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-280">To fill in the next cell, we put the lowest number not occuring as the lowest element of a column, namely 3.</p></div>
+<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">1</td>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">5</td>
+<td class="c m b2 r2 l0 t0 lines">5</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">2</td>
+<td class="c m b0 r2 l0 t0 lines">3</td>
+<td class="c m b0 r2 l0 t0 lines"></td>
+<td class="c m b0 r2 l0 t0 lines"></td>
+<td class="c m b0 r2 l0 t0 lines"></td>
+<td class="c m b0 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div>
+</div></div>
+<div class="sidebyside" id="sidebyside-10"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-281">And now the lowest term not on the bottom of its column is 6, so we add that:</p></div>
+<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">1</td>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">5</td>
+<td class="c m b2 r2 l0 t0 lines">5</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">2</td>
+<td class="c m b0 r2 l0 t0 lines">3</td>
+<td class="c m b0 r2 l0 t0 lines">6</td>
+<td class="c m b0 r2 l0 t0 lines"></td>
+<td class="c m b0 r2 l0 t0 lines"></td>
+<td class="c m b0 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div>
+</div></div>
+<div class="sidebyside" id="sidebyside-11"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-282">Now the only 1 appearing has an element beneath it, and so 1 gets added in the next column:</p></div>
+<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">1</td>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">5</td>
+<td class="c m b2 r2 l0 t0 lines">5</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">2</td>
+<td class="c m b0 r2 l0 t0 lines">3</td>
+<td class="c m b0 r2 l0 t0 lines">6</td>
+<td class="c m b0 r2 l0 t0 lines">1</td>
+<td class="c m b0 r2 l0 t0 lines"></td>
+<td class="c m b0 r2 l0 t0 lines"></td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div>
+</div></div>
+<div class="sidebyside" id="sidebyside-12"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-283">And now all the 4s have been passed, so the next number is 4.  We jump ahead and fill in the two numbers under 5 as well:</p></div>
+<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">1</td>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">5</td>
+<td class="c m b2 r2 l0 t0 lines">5</td>
+<td class="c m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">2</td>
+<td class="c m b0 r2 l0 t0 lines">3</td>
+<td class="c m b0 r2 l0 t0 lines">6</td>
+<td class="c m b0 r2 l0 t0 lines">1</td>
+<td class="c m b0 r2 l0 t0 lines">4</td>
+<td class="c m b0 r2 l0 t0 lines">7</td>
+<td class="c m b0 r0 l0 t0 lines"></td>
+</tr>
+</table></div>
+</div></div>
+<div class="sidebyside" id="sidebyside-13"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-284">The two numbers we haven't used yet are 5 and 8, so they are the entries in the last column, giving us the completed table of edges</p></div>
+<div class="sbspanel fixed-width" style="width:31.5789473684211%;justify-content:center;"><table>
+<tr>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">1</td>
+<td class="c m b2 r2 l0 t0 lines">4</td>
+<td class="c m b2 r2 l0 t0 lines">5</td>
+<td class="c m b2 r2 l0 t0 lines">5</td>
+<td class="c m b2 r0 l0 t0 lines">8</td>
+</tr>
+<tr>
+<td class="c m b0 r2 l0 t0 lines">2</td>
+<td class="c m b0 r2 l0 t0 lines">3</td>
+<td class="c m b0 r2 l0 t0 lines">6</td>
+<td class="c m b0 r2 l0 t0 lines">1</td>
+<td class="c m b0 r2 l0 t0 lines">4</td>
+<td class="c m b0 r2 l0 t0 lines">7</td>
+<td class="c m b0 r0 l0 t0 lines">5</td>
+</tr>
+</table></div>
+</div></div>
+<p>Having constructed the table encoding all the edges, we can now draw the labelled tree with those edges</p>
+<figure class="figure-like"><img src="images/image-37.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.4.12</span>The tree with Prüfer code 441455</figcaption></figure></article><span class="incontext"><a href="s_graphalgorithms_prufer.html#example-14">in-context</a></span>
 </body>
 </html>

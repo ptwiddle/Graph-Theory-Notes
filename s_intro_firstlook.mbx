@@ -44,18 +44,170 @@
 </p>
 </subsection>
 <subsection>
-<title>Named graphs, and basic examples and concepts </title>
+<title>Basic examples and concepts </title>
 <p>Several simple graphs that are frequently referenced have specific names.</p>
 
 <definition><p>The complete graph <m>K_n</m> is the graph on <m>n</m> vertices, with an edge between any two distinct vertices.</p></definition>
 
 <definition><p>The empty graph <m>E_n</m> is the graph on <m>n</m> vertices, with no edges.</p></definition>
 
+<definition><p>The path graph <m>P_n</m> is the graph on <m>n</m> vertices <m>\{v_1,\dots, v_n\}</m> with edges <m>\{ \{v_1, v_2\}, \{v_2,v_3\},\dots,\{v_{n-1},v_n\}\}</m>.</p></definition>
+
+
 <definition><p>The cycle graph <m>C_n</m> is the graph on <m>n</m> vertices <m>\{v_1,\dots, v_n\}</m> with edges <m>\{ \{v_1, v_2\}, \{v_2,v_3\},\dots,\{v_{n-1},v_n\}, \{v_n, v_1\}\}</m>.</p></definition>
+
+
+<figure xml:id="fig_basic_graphs"> <caption>Basic graphs</caption>
+<image width="90%">
+<latex-image><![CDATA[\begin{tikzpicture}[scale=.5]
+\node at (0,-3) {$K_5$};
+\node at (6,-3) {$E_5$};
+\node at (12, -3) {$P_5$};
+\node at (18,-3) {$C_5$};
+
+
+\begin{scope}[every node/.style={circle, draw, fill=red, inner sep=0pt, minimum width=4pt, thick}]
+\draw \foreach \x in {90, 162,...,378}
+{
+    (\x:2) node {} -- (\x+72:2)
+    (\x:2) -- (\x+144:2)
+}; 
+
+
+\begin{scope}[xshift=6cm]
+\draw \foreach \x in {90, 162,...,378}
+{
+    node at (\x:2) {}
+};    
+\end{scope}
+ 
+\begin{scope}[xshift=12cm]
+\draw \foreach \x in {90, 162,...,306}
+{
+    (\x:2) node {} -- (\x+72:2)
+}; 
+\node at (378:2) {};
+\end{scope}
+
+\begin{scope}[xshift=18cm]
+\draw \foreach \x in {90, 162,...,378}
+{
+    (\x:2) node {} -- (\x+72:2)
+}; 
+\end{scope}
+\end{scope}
+\end{tikzpicture}
+]]></latex-image></image></figure>
+
+
 
 <definition><p>The complelement of a simple graph <m>G</m>, which we will denote <m>G^c</m>, and is sometimes written <m>\overline{G}</m>, is the graph with the same vertex set as <m>G</m>, but <m>\{v,w\}\in E(G^c)</m> if and only if <m>\{v,w\}\notin E(G)</m>; that is, there is an edge between <m>v</m> and <m>w</m> in <m>G^c</m> if and only if there is not an edge between <m>v</m> and <m>w</m> in <m>G</m></p></definition>
 
-<example><p>The empty graph and complete graph are complements of each other; <m>K_n^c=E_n</m></p></example>
+<example><p>The empty graph and complete graph are complements of each other; <m>K_n^c=E_n</m></p>
+<p>The path graph <m>P_4</m> and its complement are shown below:</p>
+<image width="90%">
+<latex-image><![CDATA[\begin{tikzpicture}
+\node at (.5,1.5) {$P_4$};
+\node at (3.5,1.5) {$P_4^c$};
+
+
+\begin{scope}[every node/.style={circle, draw, fill=red, inner sep=0pt, minimum width=4pt, thick}]
+\node (a) at (0,0) {};
+\node (b) at (0,1) {};
+\node (c) at (1,1) {};
+\node (d) at (1,0) {};
+\draw (a)--(b)--(c)--(d);
+\end{scope}
+
+\begin{scope}[xshift=3cm, every node/.style={circle, draw, fill=red, inner sep=0pt, minimum width=4pt, thick}]
+\node (a) at (0,0) {};
+\node (b) at (0,1) {};
+\node (c) at (1,1) {};
+\node (d) at (1,0) {};
+\draw (c)--(a)--(d)--(b);
+\end{scope}
+\end{tikzpicture}
+]]></latex-image></image>
+
+</example>
+<p>It commonly occurs that there are two different types of vertices, and the edges only go between vertices of the two types.  For example, we may be modelling a company, and one type of vertices may represent the employees, and another type of vertices could represent the different jobs that need done, with an edge between a worker and a job if the worker is qualified to do that particular job.  We call these graphs <em>bipartite</em>.</p>
+
+<definition><p>A graph <m>\bfG</m> is <em>bipartite</em> if its vertices can be coloured red and blue so that every edge goes between a red vertex and a blue vertex.</p></definition>
+
+<example><p>The graph below is bipartite.</p>
+<image width="90%">
+<latex-image><![CDATA[\begin{tikzpicture}
+
+\begin{scope}[every node/.style={circle, draw, fill=red, inner sep=0pt, minimum width=4pt, thick}]
+\node (a) at (0,0) {};
+\node (b) at (2,0) {};
+\node (c) at (4,0) {};
+\node (x) at (1,-2) {};
+\node (y) at (3, -2) {};
+\draw (a)--(x)--(b)--(y)--(c)--(x);
+\end{scope}
+
+\end{tikzpicture}
+]]></latex-image></image>
+</example>
+
+
+<p>As another example, note that the cycle graph <m>C_4</m> is bipartite -- we can colour vertices 1 and 3 red, and vertices 2 and 4 blue.  But the cycle graph <m>C_3</m> is <em>not</em> bipartite: as the two colours are interchangable, we can assume we coloured vertex 1 red; then since it is adjacent to both 2 and 3, those vertices must both be blue, but they're adjacent to each other, which violates the definition of bipartite.  More generally, we have:</p>
+
+<lemma><statement><p> The cycle graph <m>C_n</m> is bipartite if and only if n is even.</p></statement>
+<proof><p>Let's try to colour the vertices of <m>C_n</m> red and blue so that adjacent vertices have different colour.  Without loss of generality, we may assume that <m>v_1</m> is coloured blue.  Then since it is adjacent to <m>v_1, v_2</m> must be coloured red.  Continuing in this way, we see that <m>v_k</m> is blue for odd <m>k</m> and red for even <m>k</m>.  But <m>v_n</m> is adjacent to <m>v_1</m>, and so these will have different colours precisely when <m>n</m> is even.</p>
+</proof>
+</lemma>
+
+<lemma><statement><p>A graph <m>\bfG</m> is bipartite if and only if <m>\bfG</m> has no subgraphs that are isomorphic to <m>C_{2k+1}</m></p></statement>
+<proof><p>First, note that if <m>\bfG_2</m> is a subgraph of <m>\bfG_1</m>, and <m>bfG_1</m> is bipartite, then so is <m>\bfG_2</m>: colouring the vertices of <m>\bfG_1</m> red and blue in particular colours the vertices of <m>\bfG_2</m> as well.  Hence, we see if that <m>\bfG</m> has a subgraph isomorphic to <m>C_{2k_1}</m>, which isn't bipartite by the previous lemma, then <m>\bfG_</m> can't be bipartite, either.</p>
+
+<p>In the other direction, we assume that <m>\bfG</m> has no subgraphs isomorphic to <m>C_{2k+1}</m>; we need to prove that <m>\bfG</m> is bipartite.  Again, let's try to colour the vertices of <m>\bfG</m> red and blue so that adjancent vertices have different colours.  Choose a vertex <m>v</m> of <m>\bfG</m>, without loss of generality we may assume that <m>v</m> is coloured blue; then all vertices adjacent to <m>v</m> -- i.e., those vertices at distance 1 from <m>v</m> -- are coloured red.  The vertices adjacent to those must be blue, and the ones adjacent to those must be red, alternating out.  This suggests trying to colour all vertices at odd distance from <m>v</m> red, and those vertices at even distance from <m>v</m> blue.  We will show that if this colouring has two vertices of the same colour that are adjacent, then <m>\bfG</m> has an odd cycle.</p>
+
+<p>Assume that <m>u</m> and <m>w</m> are two vertices coloured red that are adjacent.  Since <m>u</m> is red, the distance from <m>v</m> to <m>u</m> is odd -- there is a path <m>v=v_0 - v_1 - \cdots - v_{2k+1}=u</m>.  Similarly, there is an odd length path from <m>v</m> to <m>w</m>: <m>v=w_0 - w_1 - \cdots - w_{2\ell+1}=w</m>.  Taking the union of these two subgraphs and the edge connecting <m>u</m> and <m>w</m>, we get a closed walk consisting of <m>(2k+1)+(2\ell+1)+1=2k+2\ell+3</m> edges, which is odd.  This walk may repeat some vertices and edges, but if it does we can split it into two smaller walks, one of which must have odd length, and eventually we must get a closed walk of odd length that doesn't repeat any vertices.</p>
+
+<p>The case that <m>u</m> and <m>w</m> are both coloured blue is completely analogous, except we will be merging two paths with an even number of edges and one extra edge to get a path with odd length.</p>
+</proof>
+</lemma>
+
+<p>A special type of bipartite graph is the complete bipartite graphs <m>K_{m,n}</m>, which are the simple graphs that have as many edges as possible while still being bipartite.</p>
+
+<definition><p>The <em>complete bipartite graph</em> <m>K_{m,n}</m> is the graph with <m>m</m> red vertices and <m>n</m> blue vertices, and an edge between very red vertex and every blue vertex.</p> </definition>
+
+<example> <p>The complete bipartite graph <m>K_{2,2}</m> is isomorphic to <m>C_4</m>.</p>
+<p>The graphs <m>K_{1,3}</m> and <m>K_{4,4}</m> are drawn below.</p>
+
+<image width="90%">
+<latex-image><![CDATA[\begin{tikzpicture}[scale=.5]
+\node at (1,-1) {$K_{1,3}$};
+\node at (5,-1) {$K_{4,4}$};
+
+\begin{scope}[every node/.style={circle, draw, fill=red, inner sep=0pt, minimum width=4pt, thick}]
+
+\foreach \x in {0,1,2}
+{
+    \draw (0,1)--(2,\x);
+    \node at (2,\x) {};
+};
+\node at (0,1) {};
+
+\begin{scope}[xshift=4cm]
+\foreach \x in {0, 1,...,3}
+{
+
+
+    \foreach \y in {0,1,...,3}
+    {
+        \draw (0,\x) -- (2,\y);
+	}
+    \node at (0,\x) {};
+    \node at (2,\x) {};
+};
+\end{scope}
+\end{scope}
+\end{tikzpicture}]]></latex-image></image>
+
+</example>
 
 </subsection>
 

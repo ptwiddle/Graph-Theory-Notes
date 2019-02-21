@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-14T13:28:37Z    *-->
+<!--*    on 2019-02-18T11:20:36Z    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -11,7 +11,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><p>Let's apply the planarity algorithm to the complete graph \(K_5\text{.}\)  Let's label the vertices 1-5, and take our Hamiltonian cycle \(C\) to be 123451, which we've drawn as the outside pentagon in the following figure: <figure class="figure-like"><img src="images/image-46.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.6</span>The graph (\(K_5\))</figcaption></figure> Since \(K_5\) has \(\binom{5}{2}=10\) vertices, there are 5 edges that aren't used in \(C\text{,}\) namely 13,14, 24,25, and 35.  So Cross(\(K_5, 123451\)) will consist of these five vertices.  We see that 13 will be adjacent to 24 and 25, since these edges would cross if drawn inside, but 13 is not adjacent to 14 or 35, since these edges would cross 13 if drawn on the same side of the circle, as illustrated in the next figure</p>
-<figure class="figure-like"><img src="images/image-47.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.7</span>The edges 13 does and does not cross</figcaption></figure><p>Similar consideration with the other edges show that Cross(\(K_5, 123451\)) is the following graph, which is isomorphic to a five cycle:</p>
-<figure class="figure-like"><img src="images/image-48.svg" width="70%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">4.2.8</span>The graph Cross(\(K_5, 123451\))</figcaption></figure><p>In particular, Cross(\(K_5, 123451\)) is not bipartite.  Hence, by the planarity algorithm for Hamiltonian graphs, we see that \(K_5\) is not planar.</p></article></body>
+<body><article class="example-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
+<div class="sbspanel" style="width:80%;justify-content:flex-start;"><p>Let's see what Prim's algorithm does on the weighted graph in <a knowl="./knowl/fig_graphalgorithms_spantreegraph.html" knowl-id="xref-fig_graphalgorithms_spantreegraph" alt="Figure 3.1.1 " title="Figure 3.1.1 ">Figure 3.1.1</a>. We start with vertex \(a\) as the root vertex. The lightest edge connecting \(a\) (the only vertex in the tree so far) to the rest of the graph is \(ag\text{.}\) Next, \(fg\) is added. This is followed by \(fi\text{,}\) \(fj\text{,}\) \(bj\text{,}\) and \(bc\text{.}\) Next, the algorithm identifies \(ck\) as the lightest edge connecting \(\{a,g,i,f,j,b,c\}\) to the remaining vertices. Notice that this is considerably later than Kruskal's algorithm finds the same edge. The algorithm then determines that \(al\) and \(jd\text{,}\) both of weight \(56\) are the lightest edges connecting vertices in the tree to the other vertices. It picks arbitrarily, so let's say it takes \(al\text{.}\) It next finds \(dl\text{,}\) then \(ek\text{,}\) and then \(em\text{.}\) The final edge added is \(ch\text{.}\) The full list of edges added (in order) is shown to the right. The total weight of this spanning tree is \(504\text{.}\) This (not surprisingly) the same weight we obtained using Kruskal's algorithm. However, notice that the spanning tree found is different, as this one contains \(al\) instead of \(dj\text{.}\) This is not an issue, of course, since in both cases an arbitrary choice between two edges of equal weight was made.</p></div>
+<div class="sbspanel" style="width:17.4358974358974%;justify-content:flex-start;"><pre class="code-block tex2jax_ignore">a g 25
+f g 26
+f i 29
+f j 30
+b j 34
+b c 39
+c k 23
+a l 56
+d l 55
+e k 59
+e m 49
+c h 79
+</pre></div>
+</div></div></article></body>
 </html>
