@@ -1,0 +1,43 @@
+<section xml:id="s_chromatic_polynomial_more">
+<title>Chromatic Polynomial continued</title>
+
+
+<lemma><statement><p>Let <m>\bfG</m> be a simle graph, and let <m>e\in \bfG</m> be any edge.  Then we have:</p>
+<me> P_\bfG(k) \amp = P_{\bfG\setminus e}(k)-P_{\bfG/e}(k) </me>
+</statement></lemma>
+
+
+
+
+<theorem><statement><p>Let <m>\bfG</m> be a simple graph with <m>n</m> vertices and <m></m> edges.  Then <m>P_\bfG(k)</m> is a polynomial of degree <m>n</m> in <m>k</m>, and moreover:</p>
+
+<me>P_\bfG(k)=k^n-mk^{n-1}+\text{lower order terms}</me>
+</statement>
+<proof><p>The proof follows from induction on <m>m</m>, the number of edges, using deletion-contraction for the inductive step.</p>
+
+<p>As a base case, we take <m>m=0</m>.  Then if <m>\bfG</m> has <m>n</m> vertices it must be the empty graph <m>E_n</m>.  We have seen that <m>P_{E_n}(k)=k^n</m>, which indeed has the correct form needed for the theorem.</p>
+
+<p>Now, for the inductive step, we assume that for any graph <m>H</m> with <m>\ell\lt m</m> edges and <m>n</m> vertices, we have <m>P_{H}(k)=k^n-\ell k^{n-1}+\text{lower order terms}</m>.</p>
+
+<p>Now let <m>\bfG</m> be any graph with <m>m</m> edges.  We can assume <m>m\gt 0</m>, as the case where <m>m=0</m> is the base case; this means that <m>\bfG</m> has at least one edge <m>e</m>.  We apply deletion-contraction to the edge <m>e</m>.</p>
+
+<p>If we delete <m>e</m>, the resulting graph <m>\bfG\setminus e</m> still has <m>n</m> vertices, but it now has <m>m-1</m> edges.  Since this is less than <m>m</m>, we know by the inductive hypothesis that</p>
+<me>P_{\bfG\setminus e}(k)=k^n-(m-1)k^{n-1}+\text{lower order terms}</me>
+
+<p>If we contract <m>e</m>, the resulting graph <m>\bfG/e</m> has <m>n-1</m> vertices, and we don't know exactly how many edges it has (contracting it may create multiple edges that need to be deleted), but it has at most <m>m-1</m> edges, and so by the inductive hypothesis we know that</p>
+<me>P_{\bfG/e}(k)=k^{n-1}+\text{lower order terms}</me>
+
+<p>Thus, applying deletion-contraction we have:</p>
+<md>
+<mrow> P_\bfG(k) \amp = P_{\bfG\setminus e}(k)-P_{\bfG/e}(k) </mrow>
+<mrow> \amp = k^n-(m-1)k^{n-1}+\text{lower order terms} - \left(k^{n-1}+\text{lower order terms} \right)</mrow>
+<mrow>\amp = k^n-mk^{n-1}+\text{lower order terms}</mrow>
+</md>
+<p>which is what we needed to show to finish the inductive step.</p>  
+
+</proof>
+</theorem>
+
+
+
+</section>

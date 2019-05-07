@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-02-18T11:20:35Z    *-->
+<!--*    on 2019-05-07T16:16:26+01:00    *-->
 <!--*                                    *-->
 <!--*   http://mathbook.pugetsound.edu   *-->
 <!--*                                    *-->
@@ -165,8 +165,8 @@ MathJax.Hub.Config({
 <ul>
 <li><a href="s_chromatic_number.html" data-scroll="s_chromatic_number">Chromatic number</a></li>
 <li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index and applications</a></li>
-<li><a href="s_chromatic_polynomial.html" data-scroll="s_chromatic_polynomial">Chromatic polynomial</a></li>
-<li><a href="s_chromatic_big_theorems.html" data-scroll="s_chromatic_big_theorems">Big Theorems</a></li>
+<li><a href="s_chromatic_polynomial_intro.html" data-scroll="s_chromatic_polynomial_intro">Introduction to the chromatic polynomial</a></li>
+<li><a href="s_chromatic_polynomial_more.html" data-scroll="s_chromatic_polynomial_more">Chromatic Polynomial continued</a></li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
 </div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="s_intro_firstlook"><h2 class="heading hide-type" alt="Section 1.1 A first look at graphs">
 <span class="type">Section</span><span class="codenumber">1.1</span><span class="title">A first look at graphs</span>
@@ -237,7 +237,7 @@ MathJax.Hub.Config({
 <article class="theorem-like" id="lemma-2"><h6 class="heading">
 <span class="type">Lemma</span><span class="codenumber">1.1.15</span>
 </h6>
-<p id="p-26">A graph \(\bfG\) is bipartite if and only if \(\bfG\) has no subgraphs that are isomorphic to \(C_{2k+1}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-2" id="proof-2"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-2" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-27">First, note that if \(\bfG_2\) is a subgraph of \(\bfG_1\text{,}\) and \(bfG_1\) is bipartite, then so is \(\bfG_2\text{:}\) colouring the vertices of \(\bfG_1\) red and blue in particular colours the vertices of \(\bfG_2\) as well.  Hence, we see if that \(\bfG\) has a subgraph isomorphic to \(C_{2k_1}\text{,}\) which isn't bipartite by the previous lemma, then \(\bfG_\) can't be bipartite, either.</p>
+<p id="p-26">A graph \(\bfG\) is bipartite if and only if \(\bfG\) has no subgraphs that are isomorphic to \(C_{2k+1}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-2" id="proof-2"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-2" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-27">First, note that if \(\bfG_2\) is a subgraph of \(\bfG_1\text{,}\) and \(\bfG_1\) is bipartite, then so is \(\bfG_2\text{:}\) colouring the vertices of \(\bfG_1\) red and blue in particular colours the vertices of \(\bfG_2\) as well.  Hence, we see if that \(\bfG\) has a subgraph isomorphic to \(C_{2k_1}\text{,}\) which isn't bipartite by the previous lemma, then \(\bfG_1\) can't be bipartite, either.</p>
 <p id="p-28">In the other direction, we assume that \(\bfG\) has no subgraphs isomorphic to \(C_{2k+1}\text{;}\) we need to prove that \(\bfG\) is bipartite.  Again, let's try to colour the vertices of \(\bfG\) red and blue so that adjancent vertices have different colours.  Choose a vertex \(v\) of \(\bfG\text{,}\) without loss of generality we may assume that \(v\) is coloured blue; then all vertices adjacent to \(v\) -- i.e., those vertices at distance 1 from \(v\) -- are coloured red.  The vertices adjacent to those must be blue, and the ones adjacent to those must be red, alternating out.  This suggests trying to colour all vertices at odd distance from \(v\) red, and those vertices at even distance from \(v\) blue.  We will show that if this colouring has two vertices of the same colour that are adjacent, then \(\bfG\) has an odd cycle.</p>
 <p id="p-29">Assume that \(u\) and \(w\) are two vertices coloured red that are adjacent.  Since \(u\) is red, the distance from \(v\) to \(u\) is odd -- there is a path \(v=v_0 - v_1 - \cdots - v_{2k+1}=u\text{.}\)  Similarly, there is an odd length path from \(v\) to \(w\text{:}\) \(v=w_0 - w_1 - \cdots - w_{2\ell+1}=w\text{.}\)  Taking the union of these two subgraphs and the edge connecting \(u\) and \(w\text{,}\) we get a closed walk consisting of \((2k+1)+(2\ell+1)+1=2k+2\ell+3\) edges, which is odd.  This walk may repeat some vertices and edges, but if it does we can split it into two smaller walks, one of which must have odd length, and eventually we must get a closed walk of odd length that doesn't repeat any vertices.</p>
 <p id="p-30">The case that \(u\) and \(w\) are both coloured blue is completely analogous, except we will be merging two paths with an even number of edges and one extra edge to get a path with odd length.</p></article></div>

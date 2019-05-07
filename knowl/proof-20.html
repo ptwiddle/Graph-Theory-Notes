@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2019-05-07T16:16:28+01:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>The proof follows from induction on \(m\text{,}\) the number of edges, using deletion-contraction for the inductive step.</p>
+<p>As a base case, we take \(m=0\text{.}\)  Then if \(\bfG\) has \(n\) vertices it must be the empty graph \(E_n\text{.}\)  We have seen that \(P_{E_n}(k)=k^n\text{,}\) which indeed has the correct form needed for the theorem.</p>
+<p>Now, for the inductive step, we assume that for any graph \(H\) with \(\ell\lt m\) edges and \(n\) vertices, we have \(P_{H}(k)=k^n-\ell k^{n-1}+\text{lower order terms}\text{.}\)</p>
+<p>Now let \(\bfG\) be any graph with \(m\) edges.  We can assume \(m\gt 0\text{,}\) as the case where \(m=0\) is the base case; this means that \(\bfG\) has at least one edge \(e\text{.}\)  We apply deletion-contraction to the edge \(e\text{.}\)</p>
+<p>If we delete \(e\text{,}\) the resulting graph \(\bfG\setminus e\) still has \(n\) vertices, but it now has \(m-1\) edges.  Since this is less than \(m\text{,}\) we know by the inductive hypothesis that</p>
+<div class="displaymath">
+\begin{equation*}
+P_{\bfG\setminus e}(k)=k^n-(m-1)k^{n-1}+\text{lower order terms}
+\end{equation*}
+</div>
+<p>If we contract \(e\text{,}\) the resulting graph \(\bfG/e\) has \(n-1\) vertices, and we don't know exactly how many edges it has (contracting it may create multiple edges that need to be deleted), but it has at most \(m-1\) edges, and so by the inductive hypothesis we know that</p>
+<div class="displaymath">
+\begin{equation*}
+P_{\bfG/e}(k)=k^{n-1}+\text{lower order terms}
+\end{equation*}
+</div>
+<p>Thus, applying deletion-contraction we have:</p>
+<div class="displaymath">
+\begin{align*}
+P_\bfG(k) \amp = P_{\bfG\setminus e}(k)-P_{\bfG/e}(k) \\
+\amp = k^n-(m-1)k^{n-1}+\text{lower order terms} - \left(k^{n-1}+\text{lower order terms} \right)\\
+\amp = k^n-mk^{n-1}+\text{lower order terms}
+\end{align*}
+</div>
+<p>which is what we needed to show to finish the inductive step.</p></article><span class="incontext"><a href="s_chromatic_polynomial_more.html#proof-20">in-context</a></span>
+</body>
+</html>

@@ -1,24 +1,24 @@
-<section xml:id="s_chromatic_polynomial">
-<title>Chromatic polynomial</title>
+<section xml:id="s_chromatic_polynomial_intro">
+<title>Introduction to the chromatic polynomial</title>
 <introduction><p>For the chromatic number, we were asking whether or not it was possible to colour the vertices of <m>\bfG</m> with a given number of colours.  The chromatic polynomial enlarges this question, and asks the following.  Suppose we have <m>k</m> colours.  How many different ways can we colour the vertices of <m>\bfG</m>?</p></introduction>
-
 <subsection><title>Definition and examples</title>
-<definition><title>The chromatic polynomial <m>\chi_{\bfG}</m></title> <statement><p>The chromatic polynomial <m>\chi_{\bfG}</m> of a graph <m>\bfG</m> is the function that takes in a non-negative integer <m>k</m> and returns the number of ways to colour the vertices of <m>\bfG</m> with <m>k</m> colours so that adjacent vertices have different colours.</p></statement></definition>
+<definition><title>The chromatic polynomial <m>P_{\bfG}</m></title> <statement><p>The chromatic polynomial <m>P_{\bfG}</m> of a graph <m>\bfG</m> is the function that takes in a non-negative integer <m>k</m> and returns the number of ways to colour the vertices of <m>\bfG</m> with <m>k</m> colours so that adjacent vertices have different colours.</p></statement></definition>
 
 <p>It is immediate from the definition of the chromatic polynomial that <m>\chi(\bfG)</m> is the least positive number <m>k</m> such that <m>\chi_{\bfG}(k)\neq 0</m>.</p>
 
 <p>It is <m>not</m> immediate from the definition of the chromatic polynomial that it is, in fact, a polynomial.  In fact, proving that will take a little bit of work, and we postpone this until the end.  First, we look at some examples of the chromatic polynomial; in many cases it is possible to easily compute the chromatic polynomial by working "vertex by vertex".</p>
 
-<example><title>The empty graph <m>E_n</m></title><p>Recall that the empty graph <m>E_n</m> has <m>n</m> vertices and no edges.  To compute <m>\chi_{E_n}(k)</m> we need to count the number of ways to colour the vertices with <m>k</m> colours.  But since <m>E_n</m> has no edges, we can colour each of the <m>n</m> vertices any of the <m>k</m> colours; the choices are completely independent.  So <m>\chi_{E_n}(k)=k^n</m></p></example>
+<example><title>The empty graph <m>E_n</m></title><p>Recall that the empty graph <m>E_n</m> has <m>n</m> vertices and no edges.  To compute <m>P_{E_n}(k)</m> we need to count the number of ways to colour the vertices with <m>k</m> colours.  But since <m>E_n</m> has no edges, we can colour each of the <m>n</m> vertices any of the <m>k</m> colours; the choices are completely independent.  So <m>P_{E_n}(k)=k^n</m></p></example>
 
 <example><title>The complete graph <m>K_n</m></title><p>Let's label the vertices <m>v_0,\dots, v_{n-1}</m>, and colour them one by one in the given order.  When we colour the first vertex <m>v_0</m>, no other vertices have been coloured, and we can use whichever of the <m>k</m> vertice we like.  However, when we go to colour <m>v_1</m> we note that it is adjacent to <m>v_0</m>, and so whatever colour we used for <m>v_0</m> we can't for <m>v_1</m>, and so we have <m>k-1</m> colours to choose for <m>v_1</m></p>
 
 <p>Continuing in this way, we see that since all the vertices are adjacent, they all most have different colours.  So when we go to colour <m>v_i</m>, we have already coloured <m>v_o,\dots, v_{i-1}</m> with <m>i</m> different colours, and we can't use any of these to colour <m>v_i</m>, and so we have <m>k-i</m> choices to colour <m>v_i</m>. </p>
 
-<p>Putting it all together, we see that: <me>\chi_{K_n}(k)=k\cdot (k-1)\cdot (k-2)\cdots k-n+1</me></p></example>
-<example><title><p>Two triangles joined at a vertex</p></title><sbsgroup widths="60% 30%">
-<sidebyside><p>Consider the graph <m>\bfG</m> consisting of two triangles joined at the right a vertex, shown at the right.  We can calulate <m>P_\bfG(k)</m> by working vertex by vertex: there are <m>k</m> ways to colour vertex 1, but then when we colour vertex 2 it can't be the same as vertex 1, and so there are <m>k-1</m> ways to colour it.  Vertex three is adjacent to both one and two, so there are <m>k-2</m> ways to colour it, and vertex 4 is adjacent to one coloured vertex, vertex 3, so there are again <m>k-1</m> ways to colour it, and finally vertex 5 is adjacent to vertices 3 and 4 and so we have <m>k-2</m> ways to colour it.</p>
-<latex-image><![CDATA[\begin{\begin{tikzpicture}[scale=2]
+<p>Putting it all together, we see that: <me>P_{K_n}(k)=k\cdot (k-1)\cdot (k-2)\cdots k-n+1</me></p></example>
+<example xml:id="example_bowtie_chromatic_polynomial"><title>Two triangles joined at a vertex</title><sbsgroup widths="60% 30%">
+<sidebyside><p>Consider the graph <m>\bfG</m> consisting of two triangles joined at the right a vertex, shown at the right.  We can calulate <m>P_\bfG(k)</m> by working vertex by vertex: there are <m>k</m> ways to colour vertex 1, but then when we colour vertex 2 it can't be the same as vertex 1, and so there are <m>k-1</m> ways to colour it.  Vertex three is adjacent to both one and two, so there are <m>k-2</m> ways to colour it, and vertex 4 is adjacent to one coloured vertex, vertex 3, so there are again <m>k-1</m> ways to colour it, and finally vertex 5 is adjacent to vertices 3 and 4 and so we have <m>k-2</m> ways to colour it.Putting it together, we see <m>P_\bfG(k)=k(k-1)^2(k-2)^2</m>.</p>
+<image width="90%">
+<latex-image><![CDATA[\begin{tikzpicture}[scale=2]
 \tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
 \node[vertex] (V1) at (0,0) {$1$};
 \node[vertex] (V2) at (0,2) {$2$};
@@ -32,7 +32,27 @@
      edge (V4)
      edge (V5);
 
-\end{tikzpicture}]]></latex-image></sidebyside>
+\end{tikzpicture}]]></latex-image></image></sidebyside>
+
+</sbsgroup></example>
+
+<example><title>Two triangles joined along an edge</title><sbsgroup widths="60% 30%">
+<sidebyside><p>Consider the graph <m>H</m> consisting of two triangles joined along an edge. shown at the right.  We can calulate <m>P_H(k)</m> by working vertex by vertex: there are <m>k</m> ways to colour vertex 1, but then when we colour vertex 2 it can't be the same as vertex 1, and so there are <m>k-1</m> ways to colour it.  Vertex three is adjacent to both one and two, so there are <m>k-2</m> ways to colour it, and vertex 4 is adjacent to vertices 2 and 3, which have different colours as they are adjacent to each other, so there are <m>k-2</m> ways to colour it.  Putting it together, we see <m>P_H(k)=k(k-1)(k-2)^2</m> </p>
+
+<image width="90%">
+<latex-image><![CDATA[\begin{tikzpicture}[scale=2]
+\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt, rotate=90]
+\node[vertex] (V1) at (0,1) {$1$};
+\node[vertex] (V2) at (2,0) {$2$};
+\node[vertex] (V3) at (2,2) {$3$};
+\node[vertex] (V4) at (4,1) {$4$};
+\path  (V1) edge (V2)
+            edge (V3)
+       (V2) edge (V3)
+            edge (V4)
+       (V3) edge (V4);
+
+\end{tikzpicture}]]></latex-image></image></sidebyside>
 
 </sbsgroup></example>
 
@@ -49,7 +69,7 @@
 
 <p>We already covered the extreme case where <m>\bfG=E_n</m> is just a disjoint union of vertices; we could colour each vertex independently of the others, as there were no edges between them at all. A similar argument works in general to give the following.</p>
 
-<proposition><statement><p>Let <m>\bfG=\bfG_1\sqcup \bfG_2</m> be a disconnected graph.  Then <m>\chi_{\bfG}(k)=\chi_{\bfG_1}(k)\chi_{\bfG_2}(k)</m></p></statement><proof><p>A colouring of <m>\bfG</m> with <m>k</m> colours gives a colouring of <m>\bfG_1</m> with <m>k</m> colours and a colouring of <m>\bfG_2</m> with <m>k</m> colourings.  
+<proposition><statement><p>Let <m>\bfG=\bfG_1\sqcup \bfG_2</m> be a disconnected graph.  Then <m>P_{\bfG}(k)=P_{\bfG_1}(k)P_{\bfG_2}(k)</m></p></statement><proof><p>A colouring of <m>\bfG</m> with <m>k</m> colours gives a colouring of <m>\bfG_1</m> with <m>k</m> colours and a colouring of <m>\bfG_2</m> with <m>k</m> colourings.  
 
 Similarly, since <m>\bfG_1, \bfG_2</m> are disconnected, how we colour one will have no effect on what colourings are possible for the other.  Hence, colouring <m>\bfG</m> is exactly the same as colouring <m>\bfG_1</m> and <m>\bfG_2</m></p></proof></proposition>
 
@@ -57,31 +77,41 @@ It gets more interesting if <m>\bfG</m> is <em>almost</em> the disjoint union of
 
 <proposition><statement><p>Suppose <m>\bfG</m> has two subgraphs <m>\bfG_1</m> and <m>\bfG_2</m>, so that their union is all of <m>\bfG</m>, but their intersection is a single vertex <m>v</m>, i.e. <m>\bfG_1\cup\bfG_2=\bfG</m> and <m>\bfG_1\cap\bfG_2=\{v\}</m>.  Then we have the following relation between their chromatic polynomials:</p>
 
-<me>\chi_{\bfG}(k)=\frac{1}{k}\chi_{\bfG_1}(k)\chi_{\bfG_2}(k)</me></statement>
+<me>P_{\bfG}(k)=\frac{1}{k}P_{\bfG_1}(k)P_{\bfG_2}(k)</me></statement>
 <proof>
 <p>As in the proof of colourings of disjoint unions, a colouring of <m>\bfG</m> gives a colouring of both <m>\bfG_1</m> and <m>\bfG_2</m> by restriction, but we don't get any two colourings: both <m>\bfG_1</m> and <m>\bfG_2</m> contain <m>v</m>, and our two colourings must both make <m>v</m> the same colouring.</p>
 
 <p>In the other direction, if we have colourings of <m>\bfG_1</m> and <m>\bfG_2</m> that have the same colour at <m>v</m>, it is clear that we can glue them together to get a colouring of <m>\bfG</m>.  So the question reduces to the following: given that we want vertex <m>v</m> to have a fixed colour, how many colourings of <m>\bfG_2</m> are there that colour <m>v</m> this colour?</p>
 
-<p>The <m>k</m> colours are completely interchangeable, however; we could just change the names of each one.  Thus, it is clear that there are as many colourings of <m>\bfG_2</m> where <m>v</m> is red as there are where <m>v</m> is blue as there are where <m>v</m> is any given colour.  Hence, if we have <m>k</m> colours to use, exactly <m>1/k</m> of all colourings of <m>\bfG_2</m> will ahve <m>v</m> any given colour, namely <m>\chi_{\bfG_2}(k)/k</m></p>
+<p>The <m>k</m> colours are completely interchangeable, however; we could just change the names of each one.  Thus, it is clear that there are as many colourings of <m>\bfG_2</m> where <m>v</m> is red as there are where <m>v</m> is blue as there are where <m>v</m> is any given colour.  Hence, if we have <m>k</m> colours to use, exactly <m>1/k</m> of all colourings of <m>\bfG_2</m> will ahve <m>v</m> any given colour, namely <m>P_{\bfG_2}(k)/k</m></p>
 
-<p>Thus, to colour <m>\bfG</m> with <m>k</m> colours, we first could first colour <m>\bfG_1</m> in one of the <m>\chi_{\bfG_1}(k)</m> ways.  This will give us a some fixed colour of <m>v</m>, and we saw above that there are <m>\chi_{\bfG_2}(k)/k</m> colourings of <m>\bfG_2</m> where <m>v</m> has this colour, and so we have the result.</p>
+<p>Thus, to colour <m>\bfG</m> with <m>k</m> colours, we first could first colour <m>\bfG_1</m> in one of the <m>P_{\bfG_1}(k)</m> ways.  This will give us a some fixed colour of <m>v</m>, and we saw above that there are <m>P_{\bfG_2}(k)/k</m> colourings of <m>\bfG_2</m> where <m>v</m> has this colour, and so we have the result.</p>
 
 </proof></proposition>
 
+<example><title>Two triangles joined at a vertex, again</title><p>As an example, we revisit our previous example.  For <m>\bfG</m>, two triangles joined at a vertex, we have <m>\bfG_1\cong \bfG_2\cong C_3</m>.  Since <m>C_3\cong K_3</m>, we know <m>P_{C_3}(k)=k(k-1)(k-2)</m>.  Thus, we have:</p>
+<me>P_\bfG(k)=\frac{P_{C_3}(k)P_{C_3}(k)}{k}=\frac{k^2(k-1)^2(k-2)^2}{k}=k(k-1)^2(k-2)^2</me>
+</example>
+
 <proposition><statement><p>Suppose <m>\bfG</m> has two subgraphs <m>\bfG_1</m> and <m>\bfG_2</m>, so that their union is all of <m>\bfG</m>, but their intersection is a single vertex edge <m>e</m> connecting two vertices <m>v</m> and <m>u</m>, i.e. <m>\bfG_1\cup\bfG_2=\bfG</m> and <m>\bfG_1\cap\bfG_2=\{e\}</m>.  Then we have the following relation between their chromatic polynomials:</p>
 
-<me>\chi_{\bfG}(k)=\frac{1}{k(k-1)}\chi_{\bfG_1}(k)\chi_{\bfG_2}(k)</me></statement>
+<me>P_{\bfG}(k)=\frac{1}{k(k-1)}P_{\bfG_1}(k)P_{\bfG_2}(k)</me></statement>
 <proof>
 <p>The proof is extremely similar to that of the previous proposition.  A colouring of <m>\bfG</m> gives us colourings of <m>\bfG_1</m> and <m>\bfG_2</m>, but not any two colourings: they need to match at both <m>v</m> and at <m>u</m>.</p>
 
-<p>Now, <m>v</m> could be any of the <m>k</m> colours, but <m>u</m>, being adjacent to <m>v</m>, can't be the same colour, and so it has <m>k-1</m> possibilities given a choose of colour for <m>v</m>.  Thus, there are <m>k(k-1)</m> ways to colour <m>v</m> and <m>u</m>, and all possibilities will occur equally often within the colourings counted by <m>\chi_{\bfG_2}(k)</m>.  Hence, given a colouring of <m>\bfG_1</m>, there will be <m>\chi_{\bfG_2}(k)/[k(k-1)]</m> ways to extendthat colouring to one of all of <m>G</m>, giving us the result.</p></proof></proposition> 
+<p>Now, <m>v</m> could be any of the <m>k</m> colours, but <m>u</m>, being adjacent to <m>v</m>, can't be the same colour, and so it has <m>k-1</m> possibilities given a choose of colour for <m>v</m>.  Thus, there are <m>k(k-1)</m> ways to colour <m>v</m> and <m>u</m>, and all possibilities will occur equally often within the colourings counted by <m>P_{\bfG_2}(k)</m>.  Hence, given a colouring of <m>\bfG_1</m>, there will be <m>P_{\bfG_2}(k)/[k(k-1)]</m> ways to extendthat colouring to one of all of <m>G</m>, giving us the result.</p></proof></proposition> 
+
+<example><title>Two triangles joined along an edge, again</title><p>As an example, we revisit our previous example.  For <m>H</m>, two triangles joined along an edge, we can apply the theorm with <m>\bfG_1\cong \bfG_2\cong C_3</m>.  Thus, we have:</p>
+<me>P_H(k)=\frac{P_{C_3}(k)P_{C_3}(k)}{k(k-1)}=\frac{k^2(k-1)^2(k-2)^2}{k}=k(k-1)(k-2)^2</me>
+</example>
+
+
 
 </subsection>
 
 <p>The methods of gluing and working vertex by vertex make many chromatic polynomials easy to calculate.  Other graphs, however, are not amenable to our gluing theorems, and require considering several cases when working vertex by vertex.</p>
 
-<example><title><p>The chromatic polynomial of the cycle <m>C_4</m></p></title>
+<example><title>The chromatic polynomial of the cycle <m>C_4</m></title>
 <sbsgroup widths="60% 30%"> <sidebyside>
 <p>Now consider the graph <m>C_4</m>, shown at right, and suppose we try to count the number of colourings of it with <m>k</m> colours.  Vertex 1 can be any of <m>k</m> colours, and vertex 2 has <m>k-1</m> possibilities -- any colour except the one used for vertex 1.  Moving to vertex 4, we see it is just adjacent to 1 as well, and so has <m>k-1</m> possibilities as well.</p><image size="80%" source="images/c4.png" /></sidebyside></sbsgroup>
 
@@ -97,4 +127,30 @@ It gets more interesting if <m>\bfG</m> is <em>almost</em> the disjoint union of
 <mrow>\amp=k(k-1)[k-1+(k-2)^2]</mrow>
 <mrow>\amp=k(k-1)(k^2-3k+3)</mrow></md>
 </example>
+
+<example><title>The chromatic polynomial of <m>C_5</m></title>
+<sbsgroup widths="60% 30%">
+<sidebyside><p>A similar case-by-case argument that we made for <m>C_4</m> works for <m>C_5</m>, except now we have a further case to deal with.  Using the vertex labellings as shown to the right, note that Vertices 3 and 4 must have different colours.  We will consider three cases: Vertices 1, 3 and 4 all have different colours, Vertex 1 has the same colour as Vertex 3, and Vertex 1 has the same colour as Vertex 4.</p>
+<image width="90%">
+<latex-image><![CDATA[\begin{tikzpicture}[scale=2]
+\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+\node[vertex] (1) at (90:2cm) {$1$};
+\node[vertex] (2) at (18:2cm) {$2$};
+\node[vertex] (3) at (-54:2cm) {$3$};
+\node[vertex] (4) at (234:2cm) {$4$};
+\node[vertex] (5) at (162:2cm) {$5$};
+\draw (1)--(2)--(3)--(4)--(5)--(1);
+\end{tikzpicture}]]></latex-image></image></sidebyside>
+
+</sbsgroup>
+<p>Case 1: 1, 3 and 4 have different colours.  Then there are <m>k(k-1)(k-2)</m> ways to colour vertices 1, 3, and 4, since they must all be different colours.  When we go to colour vertices 2 and 5, we see that they are each adjacent to two vertices known to have different colours, and so there are <m>k-2</m> ways to colour each of them.  Thus in total, Case 1 contains <m>k(k-1)(k-2)^3</m> colourings.</p>
+<p>Case 2: 1 and 3 have the same colour. Then there are <m>k</m> ways to choose this colour, and <m>k-1</m> ways to choose a colour for vertex 2 (since 1 and 3 have the same colour), and <m>k-1</m> ways to choose a colour for vertex 4.  When we colour vertex 5, we know that 1 and 4 must have different colours, and so we have <m>k-2</m> ways to colour vertex 5.  Thus in total, Case 2 contains <m>k(k-1)^2(k-2)</m> colourings.</p>
+<p>By symmetry, we see that Case 3, where 1 and 4 have the same colour, is identical to Case 2.  Thus, putting the three cases together, we see that:</p>
+<md><mrow>P_{C_5}(k)\amp=k(k-1)(k-2)^3+2k(k-1)^2(k-2)</mrow>
+<mrow>\amp=k(k-1)(k-2)[(k-2)^2+2(k-1)]</mrow>
+<mrow>\amp=k(k-1)(k-2)(k^2-2k+2)</mrow></md>
+</example>
+
+
+
 </section>

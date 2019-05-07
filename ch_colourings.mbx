@@ -8,6 +8,6 @@
 </introduction>
 <xi:include href="./s_chromatic_number.mbx" />
 <xi:include href="./s_chromatic_index.mbx" />
-<xi:include href="./s_chromatic_polynomial.mbx" />
-<xi:include href="./s_chromatic_big_theorems.mbx" />
+<xi:include href="./s_chromatic_polynomial_intro.mbx" />
+<xi:include href="./s_chromatic_polynomial_more.mbx" />
 </chapter>
