@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mathbook xmlns:xi="http://www.w3.org/2001/XInclude">
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
 <docinfo>
 <latex-image-preamble>  
       \usepackage{overpic,pict2e}
   \usepackage{tikz}
-  \usetikzlibrary{arrows.meta}
+  \usetikzlibrary{arrows, arrows.meta, decorations.markings}
     </latex-image-preamble>
 
   <macros>
@@ -85,7 +85,7 @@
   </frontmatter>
   <xi:include href="./ch_intro.mbx" />
    <xi:include href="./ch_walks.mbx" />
-  <xi:include href="./ch_algorithms.mbx" />
+<!--  <xi:include href="./ch_algorithms.mbx" /> -->
   <xi:include href="./ch_graphs_on_surfaces.mbx" />
     <xi:include href="./ch_colourings.mbx" />
 
@@ -97,4 +97,4 @@
 
 
 
-</mathbook>
+</pretext>

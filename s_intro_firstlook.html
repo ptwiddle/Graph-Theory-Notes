@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:26+01:00    *-->
+<!--*    on 2020-04-13T16:05:43+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <html lang="en-US">
@@ -12,13 +12,19 @@
 <title>A first look at graphs</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
-        inlineMath: [['\\(','\\)']],
+        inlineMath: [['\\(','\\)']]
     },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
     TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
         // scrolling to fragment identifiers is controlled by other Javascript
         positionToHash: false,
         equationNumbers: { autoNumber: "none", useLabelIds: true, },
@@ -35,13 +41,20 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
     \newcommand{\ints}{\mathbb{Z}}
     \newcommand{\posints}{\mathbb{N}}
     \newcommand{\rats}{\mathbb{Q}}
@@ -121,61 +134,62 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch_intro.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_intro.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_intro_degrees.html" title="Next" alt="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch_intro.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_intro.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_intro_degrees.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch_intro.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_intro.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="s_intro_degrees.html" title="Next" alt="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch_intro.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_intro.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_intro_degrees.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link active"><a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
-<ul>
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
 <li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook" class="active">A first look at graphs</a></li>
 <li><a href="s_intro_degrees.html" data-scroll="s_intro_degrees">Degree and handshaking</a></li>
 <li><a href="s_intro_isomorphisms.html" data-scroll="s_intro_isomorphisms">Graph Isomorphisms</a></li>
 <li><a href="s_intro_instantinsanity.html" data-scroll="s_intro_instantinsanity">Instant Insanity</a></li>
+<li><a href="s_intro_trees.html" data-scroll="s_intro_trees">Trees</a></li>
 <li><a href="s_intro_exercises.html" data-scroll="s_intro_exercises">Exercises</a></li>
 </ul>
-<h2 class="link"><a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span><span class="title">Walks</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span> <span class="title">Walks</span></a><ul>
 <li><a href="s_walks_basics.html" data-scroll="s_walks_basics">Walks: the basics</a></li>
 <li><a href="s_walks_eulerian.html" data-scroll="s_walks_eulerian">Eulerian Walks</a></li>
 <li><a href="s_walks_hamiltonian.html" data-scroll="s_walks_hamiltonian">Hamiltonian cycles</a></li>
 <li><a href="s_walks_exercises.html" data-scroll="s_walks_exercises">Exercises</a></li>
 </ul>
-<h2 class="link"><a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span><span class="title">Algorithms</span></a></h2>
-<ul>
-<li><a href="s_graphalgorithms_min-wt-span.html" data-scroll="s_graphalgorithms_min-wt-span">Minimum Weight Spanning Trees</a></li>
-<li><a href="s_graphalgorithms_digraphs.html" data-scroll="s_graphalgorithms_digraphs">Digraphs</a></li>
-<li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
-<li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
-<li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises">Exercises</a></li>
-</ul>
-<h2 class="link"><a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">4</span><span class="title">Graphs on Surfaces</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">3</span> <span class="title">Graphs on Surfaces</span></a><ul>
 <li><a href="s_graphs_on_surfaces_intro.html" data-scroll="s_graphs_on_surfaces_intro">Introduction to Graphs on Surfaces</a></li>
 <li><a href="s_graphs_on_surfaces_planarity_algorithm.html" data-scroll="s_graphs_on_surfaces_planarity_algorithm">The planarity algorithm for Hamiltonian graphs</a></li>
 <li><a href="s_graphs_on_surfaces_Kuratowski.html" data-scroll="s_graphs_on_surfaces_Kuratowski">Kuratowski's Theorem</a></li>
 <li><a href="s_graphs_on_surfaces_other_surfaces.html" data-scroll="s_graphs_on_surfaces_other_surfaces">Drawing Graphs on Other surfaces</a></li>
 <li><a href="s_graphs_on_surfaces_euler.html" data-scroll="s_graphs_on_surfaces_euler">Euler's Theorem</a></li>
+<li><a href="s_graphs_on_surfaces_exercises.html" data-scroll="s_graphs_on_surfaces_exercises">Exercises</a></li>
 </ul>
-<h2 class="link"><a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">5</span><span class="title">Colourings</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">4</span> <span class="title">Colourings</span></a><ul>
 <li><a href="s_chromatic_number.html" data-scroll="s_chromatic_number">Chromatic number</a></li>
 <li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index and applications</a></li>
 <li><a href="s_chromatic_polynomial_intro.html" data-scroll="s_chromatic_polynomial_intro">Introduction to the chromatic polynomial</a></li>
 <li><a href="s_chromatic_polynomial_more.html" data-scroll="s_chromatic_polynomial_more">Chromatic Polynomial continued</a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
-</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="s_intro_firstlook"><h2 class="heading hide-type" alt="Section 1.1 A first look at graphs">
-<span class="type">Section</span><span class="codenumber">1.1</span><span class="title">A first look at graphs</span>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="s_intro_firstlook"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">A first look at graphs</span>
 </h2>
-<a href="s_intro_firstlook.html" class="permalink">¶</a><section class="subsection" id="subsection-1"><h3 class="heading hide-type" alt="Subsection 1.1.1 The idea of a graph">
-<span class="type">Subsection</span><span class="codenumber">1.1.1</span><span class="title">The idea of a graph</span>
+<a href="s_intro_firstlook.html" class="permalink">¶</a><section class="subsection" id="subsection-1"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.1</span> <span class="title">The idea of a graph</span>
 </h3>
 <p id="p-2">First and foremost, you should think of a graph as a certain type of picture, containing dots and lines connecting those dots, like so:</p>
-<figure class="figure-like" id="fig_firstgraph"><img src="images/image-1.svg" width="80%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">1.1.1</span>A graph</figcaption></figure><p id="p-3">We will typically use the letters \(G, H\text{,}\) or \(\Gamma\) (capital Gamma) to denote a graph.  The “dots” or the graph are called <em class="emphasis">vertices</em> or <em class="emphasis">nodes</em>, and the lines between the dots are called <em class="emphasis">edges</em>. Graphs occur frequently in the “real world”, and typically how to show how something is connected, with the vertices representing the things and the edges showing connections.  </p>
+<figure class="figure figure-like" id="fig_firstgraph"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/image-1.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.1<span class="period">.</span></span><span class="space"> </span>A graph</figcaption></figure><p id="p-3">We will typically use the letters \(G, H\text{,}\) or \(\Gamma\) (capital Gamma) to denote a graph.  The “dots” or the graph are called <em class="emphasis">vertices</em> or <em class="emphasis">nodes</em>, and the lines between the dots are called <em class="emphasis">edges</em>. Graphs occur frequently in the “real world”, and typically how to show how something is connected, with the vertices representing the things and the edges showing connections.</p>
 <ul class="disc">
 <li id="li-1">
 <em class="emphasis">Transit networks:</em> The London tube map is a graph, with the vertices representing the stations, and an edge between two stations if the tube goes directly between them.  More generally, rail maps in general are graphs, with vertices stations and edges representing line, and road maps as well, with vertices being cities, and edges being roads.</li>
@@ -184,72 +198,74 @@ MathJax.Hub.Config({
 <li id="li-3">
 <em class="emphasis">Molecules in Chemistry:</em> In organic chemistry, molecules are made up of different atoms, and are often represented as a graph, with the atoms being vertices, and edges representing covalent bonds between the vertices.</li>
 </ul>
-<figure class="figure-like" id="fig_caffeinegraph"><img width="90%" src="images/Caffeine_molecule.png" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">1.1.2</span>A Caffeine Molecule, courtesey <a class="url" href="https://commons.wikimedia.org/wiki/File:Caffeine_molecule.png" target="_blank">Wikimedia Commons</a></figcaption></figure><p id="p-4">That is all rather informal, though, and to do mathematics we need very precise, formal definitions.  We now provide that.</p></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type" alt="Subsection 1.1.2 The formal definition of a graph">
-<span class="type">Subsection</span><span class="codenumber">1.1.2</span><span class="title">The formal definition of a graph</span>
+<figure class="figure figure-like" id="fig_caffeinegraph"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/Caffeine_molecule.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.2<span class="period">.</span></span><span class="space"> </span>A Caffeine Molecule, courtesey <a class="external" href="https://commons.wikimedia.org/wiki/File:Caffeine_molecule.png" target="_blank">Wikimedia Commons</a></figcaption></figure><p id="p-4">That is all rather informal, though, and to do mathematics we need very precise, formal definitions.  We now provide that.</p></section><section class="subsection" id="subsection-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.2</span> <span class="title">The formal definition of a graph</span>
 </h3>
 <p id="p-5">The formal definition of a graph that we will use is the following:</p>
-<article class="definition-like" id="definition-1"><h6 class="heading">
-<span class="type">Definition</span><span class="codenumber">1.1.3</span>
+<article class="definition definition-like" id="definition-1"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
 </h6>
-<p id="p-6">A <em class="emphasis">graph</em> \(G\) consists of a set \(V(G)\text{,}\) called the <em class="emphasis">vertices</em> of \(G\text{,}\) and a set \(E(G)\text{,}\) called the <em class="emphasis">edges</em> of \(G\text{,}\) of the two element subsets of \(V(G)\)</p></article><article class="example-like"><a knowl="" class="id-ref" refid="hk-example-1" id="example-1"><h6 class="heading">
-<span class="type">Example</span><span class="codenumber">1.1.4</span>
-</h6></a></article><div id="hk-example-1" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-7">Consider the water molecule, which consists of a single oxygen atom, connected to two hydrogen atoms.  It has three vertices, and so \(V(G)=\{O, H1, H2\}\text{,}\) and two edges \(E(G)=\big\{\{O, H1\},\{O,H2\}\big\}\)</p></article></div>
+<p id="p-6">A <em class="emphasis">graph</em> \(G\) consists of a set \(V(G)\text{,}\) called the <em class="emphasis">vertices</em> of \(G\text{,}\) and a set \(E(G)\text{,}\) called the <em class="emphasis">edges</em> of \(G\text{,}\) of the two element subsets of \(V(G)\)</p></article><article class="example example-like" id="example-1"><a data-knowl="" class="id-ref original" data-refid="hk-example-1"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-1"><article class="example example-like"><p id="p-7">Consider the water molecule, which consists of a single oxygen atom, connected to two hydrogen atoms.  It has three vertices, and so \(V(G)=\{O, H1, H2\}\text{,}\) and two edges \(E(G)=\big\{\{O, H1\},\{O,H2\}\big\}\)</p></article></div>
 <p id="p-8">This formal definition has some perhaps unintended consequences about what a graph is.  Because we have identified edges with the two things they connect, and have a set of edges, we can't have more than one edge between any two vertices.  In many real world examples, this is not the case: for example, on the London Tube, the Circle, District and Picadilly lines all connect Gloucester Road with South Kensington, and so there should be multiple edges between those two vertices on the graph.  As another example, in organic chemistry, there are often "double bonds", instead of just one.</p>
 <p id="p-9">Another consequence is that we require each edge to be a two element subset of \(V(G)\text{,}\) and so we do not allow for the possibility of an edge between a vertex and itself, often called a <em class="emphasis">loop</em>.</p>
 <p id="p-10">Graphs without multiple edges or loops are sometimes called <em class="emphasis">simple graphs</em>.  We will sometimes deal with graphs with multiple edges or loops, and will try to be explicit when we allow this.  Our default assumption is that our graphs are simple.</p>
-<p id="p-11">Another consequence of the definition is that edges are symmetric, and work equally well in both directions.  This is not always the case: in road systems, there are often one-way streets.  If we were to model Twitter or Instragram as a graph, rather than the symmetric notion of friends we would have to work with “following”.  To capture these, we have the notion of a <em class="emphasis">directed graph</em>, where rather than just lines, we think of the edges as arrows, pointing from one vertex (the source) to another vertex (the target).  To model Twitter or Instagram, we would have an ege from vertex \(a\) to vertex \(b\) if \(a\) followed \(b\text{.}\)</p></section><section class="subsection" id="subsection-3"><h3 class="heading hide-type" alt="Subsection 1.1.3 Basic examples and concepts">
-<span class="type">Subsection</span><span class="codenumber">1.1.3</span><span class="title">Basic examples and concepts</span>
+<p id="p-11">Another consequence of the definition is that edges are symmetric, and work equally well in both directions.  This is not always the case: in road systems, there are often one-way streets.  If we were to model Twitter or Instragram as a graph, rather than the symmetric notion of friends we would have to work with “following”.  To capture these, we have the notion of a <em class="emphasis">directed graph</em>, where rather than just lines, we think of the edges as arrows, pointing from one vertex (the source) to another vertex (the target).  To model Twitter or Instagram, we would have an ege from vertex \(a\) to vertex \(b\) if \(a\) followed \(b\text{.}\)</p></section><section class="subsection" id="subsection-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.1.3</span> <span class="title">Basic examples and concepts</span>
 </h3>
 <p id="p-12">Several simple graphs that are frequently referenced have specific names.</p>
-<article class="definition-like" id="definition-2"><h6 class="heading">
-<span class="type">Definition</span><span class="codenumber">1.1.5</span>
+<article class="definition definition-like" id="definition-2"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span>
 </h6>
-<p id="p-13">The complete graph \(K_n\) is the graph on \(n\) vertices, with an edge between any two distinct vertices.</p></article><article class="definition-like" id="definition-3"><h6 class="heading">
-<span class="type">Definition</span><span class="codenumber">1.1.6</span>
+<p id="p-13">The complete graph \(K_n\) is the graph on \(n\) vertices, with an edge between any two distinct vertices.</p></article><article class="definition definition-like" id="definition-3"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span>
 </h6>
-<p id="p-14">The empty graph \(E_n\) is the graph on \(n\) vertices, with no edges.</p></article><article class="definition-like" id="definition-4"><h6 class="heading">
-<span class="type">Definition</span><span class="codenumber">1.1.7</span>
+<p id="p-14">The empty graph \(E_n\) is the graph on \(n\) vertices, with no edges.</p></article><article class="definition definition-like" id="definition-4"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span>
 </h6>
-<p id="p-15">The path graph \(P_n\) is the graph on \(n\) vertices \(\{v_1,\dots, v_n\}\) with edges \(\{ \{v_1, v_2\}, \{v_2,v_3\},\dots,\{v_{n-1},v_n\}\}\text{.}\)</p></article><article class="definition-like" id="definition-5"><h6 class="heading">
-<span class="type">Definition</span><span class="codenumber">1.1.8</span>
+<p id="p-15">The path graph \(P_n\) is the graph on \(n\) vertices \(\{v_1,\dots, v_n\}\) with edges \(\{ \{v_1, v_2\}, \{v_2,v_3\},\dots,\{v_{n-1},v_n\}\}\text{.}\)</p></article><article class="definition definition-like" id="definition-5"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span>
 </h6>
-<p id="p-16">The cycle graph \(C_n\) is the graph on \(n\) vertices \(\{v_1,\dots, v_n\}\) with edges \(\{ \{v_1, v_2\}, \{v_2,v_3\},\dots,\{v_{n-1},v_n\}, \{v_n, v_1\}\}\text{.}\)</p></article><figure class="figure-like" id="fig_basic_graphs"><img src="images/image-3.svg" width="90%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">1.1.9</span>Basic graphs</figcaption></figure><article class="definition-like" id="definition-6"><h6 class="heading">
-<span class="type">Definition</span><span class="codenumber">1.1.10</span>
+<p id="p-16">The cycle graph \(C_n\) is the graph on \(n\) vertices \(\{v_1,\dots, v_n\}\) with edges \(\{ \{v_1, v_2\}, \{v_2,v_3\},\dots,\{v_{n-1},v_n\}, \{v_n, v_1\}\}\text{.}\)</p></article><figure class="figure figure-like" id="fig_basic_graphs"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/image-3.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.1.9<span class="period">.</span></span><span class="space"> </span>Basic graphs</figcaption></figure><article class="definition definition-like" id="definition-6"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.10</span><span class="period">.</span>
 </h6>
-<p id="p-17">The complelement of a simple graph \(G\text{,}\) which we will denote \(G^c\text{,}\) and is sometimes written \(\overline{G}\text{,}\) is the graph with the same vertex set as \(G\text{,}\) but \(\{v,w\}\in E(G^c)\) if and only if \(\{v,w\}\notin E(G)\text{;}\) that is, there is an edge between \(v\) and \(w\) in \(G^c\) if and only if there is not an edge between \(v\) and \(w\) in \(G\)</p></article><article class="example-like"><a knowl="" class="id-ref" refid="hk-example-2" id="example-2"><h6 class="heading">
-<span class="type">Example</span><span class="codenumber">1.1.11</span>
-</h6></a></article><div id="hk-example-2" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-18">The empty graph and complete graph are complements of each other; \(K_n^c=E_n\)</p>
+<p id="p-17">The complelement of a simple graph \(G\text{,}\) which we will denote \(G^c\text{,}\) and is sometimes written \(\overline{G}\text{,}\) is the graph with the same vertex set as \(G\text{,}\) but \(\{v,w\}\in E(G^c)\) if and only if \(\{v,w\}\notin E(G)\text{;}\) that is, there is an edge between \(v\) and \(w\) in \(G^c\) if and only if there is not an edge between \(v\) and \(w\) in \(G\)</p></article><article class="example example-like" id="example-2"><a data-knowl="" class="id-ref original" data-refid="hk-example-2"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.11</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-2"><article class="example example-like"><p id="p-18">The empty graph and complete graph are complements of each other; \(K_n^c=E_n\)</p>
 <p id="p-19">The path graph \(P_4\) and its complement are shown below:</p>
-<img src="images/image-4.svg" width="90%" style="display: block; margin: 0 auto;" alt=""></article></div>
+<div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/image-4.svg" style="width: 100%; height: auto;" alt=""></div></article></div>
 <p id="p-20">It commonly occurs that there are two different types of vertices, and the edges only go between vertices of the two types.  For example, we may be modelling a company, and one type of vertices may represent the employees, and another type of vertices could represent the different jobs that need done, with an edge between a worker and a job if the worker is qualified to do that particular job.  We call these graphs <em class="emphasis">bipartite</em>.</p>
-<article class="definition-like" id="definition-7"><h6 class="heading">
-<span class="type">Definition</span><span class="codenumber">1.1.12</span>
+<article class="definition definition-like" id="definition-7"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.12</span><span class="period">.</span>
 </h6>
-<p id="p-21">A graph \(\bfG\) is <em class="emphasis">bipartite</em> if its vertices can be coloured red and blue so that every edge goes between a red vertex and a blue vertex.</p></article><article class="example-like"><a knowl="" class="id-ref" refid="hk-example-3" id="example-3"><h6 class="heading">
-<span class="type">Example</span><span class="codenumber">1.1.13</span>
-</h6></a></article><div id="hk-example-3" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-22">The graph below is bipartite.</p>
-<img src="images/image-5.svg" width="90%" style="display: block; margin: 0 auto;" alt=""></article></div>
+<p id="p-21">A graph \(\bfG\) is <em class="emphasis">bipartite</em> if its vertices can be coloured red and blue so that every edge goes between a red vertex and a blue vertex.</p></article><article class="example example-like" id="example-3"><a data-knowl="" class="id-ref original" data-refid="hk-example-3"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.13</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-3"><article class="example example-like"><p id="p-22">The graph below is bipartite.</p>
+<div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/image-5.svg" style="width: 100%; height: auto;" alt=""></div></article></div>
 <p id="p-23">As another example, note that the cycle graph \(C_4\) is bipartite -- we can colour vertices 1 and 3 red, and vertices 2 and 4 blue.  But the cycle graph \(C_3\) is <em class="emphasis">not</em> bipartite: as the two colours are interchangable, we can assume we coloured vertex 1 red; then since it is adjacent to both 2 and 3, those vertices must both be blue, but they're adjacent to each other, which violates the definition of bipartite.  More generally, we have:</p>
-<article class="theorem-like" id="lemma-1"><h6 class="heading">
-<span class="type">Lemma</span><span class="codenumber">1.1.14</span>
+<article class="lemma theorem-like" id="lemma-1"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.1.14</span><span class="period">.</span>
 </h6>
-<p id="p-24">The cycle graph \(C_n\) is bipartite if and only if n is even.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-1" id="proof-1"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-1" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-25">Let's try to colour the vertices of \(C_n\) red and blue so that adjacent vertices have different colour.  Without loss of generality, we may assume that \(v_1\) is coloured blue.  Then since it is adjacent to \(v_1, v_2\) must be coloured red.  Continuing in this way, we see that \(v_k\) is blue for odd \(k\) and red for even \(k\text{.}\)  But \(v_n\) is adjacent to \(v_1\text{,}\) and so these will have different colours precisely when \(n\) is even.</p></article></div>
-<article class="theorem-like" id="lemma-2"><h6 class="heading">
-<span class="type">Lemma</span><span class="codenumber">1.1.15</span>
+<p id="p-24">The cycle graph \(C_n\) is bipartite if and only if n is even.</p></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref original" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-25">Let's try to colour the vertices of \(C_n\) red and blue so that adjacent vertices have different colour.  Without loss of generality, we may assume that \(v_1\) is coloured blue.  Then since it is adjacent to \(v_1, v_2\) must be coloured red.  Continuing in this way, we see that \(v_k\) is blue for odd \(k\) and red for even \(k\text{.}\)  But \(v_n\) is adjacent to \(v_1\text{,}\) and so these will have different colours precisely when \(n\) is even.</p></article></div>
+<article class="lemma theorem-like" id="lemma-2"><h6 class="heading">
+<span class="type">Lemma</span><span class="space"> </span><span class="codenumber">1.1.15</span><span class="period">.</span>
 </h6>
-<p id="p-26">A graph \(\bfG\) is bipartite if and only if \(\bfG\) has no subgraphs that are isomorphic to \(C_{2k+1}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-2" id="proof-2"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-2" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-27">First, note that if \(\bfG_2\) is a subgraph of \(\bfG_1\text{,}\) and \(\bfG_1\) is bipartite, then so is \(\bfG_2\text{:}\) colouring the vertices of \(\bfG_1\) red and blue in particular colours the vertices of \(\bfG_2\) as well.  Hence, we see if that \(\bfG\) has a subgraph isomorphic to \(C_{2k_1}\text{,}\) which isn't bipartite by the previous lemma, then \(\bfG_1\) can't be bipartite, either.</p>
+<p id="p-26">A graph \(\bfG\) is bipartite if and only if \(\bfG\) has no subgraphs that are isomorphic to \(C_{2k+1}\)</p></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref original" data-refid="hk-proof-2"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><p id="p-27">First, note that if \(\bfG_2\) is a subgraph of \(\bfG_1\text{,}\) and \(\bfG_1\) is bipartite, then so is \(\bfG_2\text{:}\) colouring the vertices of \(\bfG_1\) red and blue in particular colours the vertices of \(\bfG_2\) as well.  Hence, we see if that \(\bfG\) has a subgraph isomorphic to \(C_{2k_1}\text{,}\) which isn't bipartite by the previous lemma, then \(\bfG_1\) can't be bipartite, either.</p>
 <p id="p-28">In the other direction, we assume that \(\bfG\) has no subgraphs isomorphic to \(C_{2k+1}\text{;}\) we need to prove that \(\bfG\) is bipartite.  Again, let's try to colour the vertices of \(\bfG\) red and blue so that adjancent vertices have different colours.  Choose a vertex \(v\) of \(\bfG\text{,}\) without loss of generality we may assume that \(v\) is coloured blue; then all vertices adjacent to \(v\) -- i.e., those vertices at distance 1 from \(v\) -- are coloured red.  The vertices adjacent to those must be blue, and the ones adjacent to those must be red, alternating out.  This suggests trying to colour all vertices at odd distance from \(v\) red, and those vertices at even distance from \(v\) blue.  We will show that if this colouring has two vertices of the same colour that are adjacent, then \(\bfG\) has an odd cycle.</p>
 <p id="p-29">Assume that \(u\) and \(w\) are two vertices coloured red that are adjacent.  Since \(u\) is red, the distance from \(v\) to \(u\) is odd -- there is a path \(v=v_0 - v_1 - \cdots - v_{2k+1}=u\text{.}\)  Similarly, there is an odd length path from \(v\) to \(w\text{:}\) \(v=w_0 - w_1 - \cdots - w_{2\ell+1}=w\text{.}\)  Taking the union of these two subgraphs and the edge connecting \(u\) and \(w\text{,}\) we get a closed walk consisting of \((2k+1)+(2\ell+1)+1=2k+2\ell+3\) edges, which is odd.  This walk may repeat some vertices and edges, but if it does we can split it into two smaller walks, one of which must have odd length, and eventually we must get a closed walk of odd length that doesn't repeat any vertices.</p>
 <p id="p-30">The case that \(u\) and \(w\) are both coloured blue is completely analogous, except we will be merging two paths with an even number of edges and one extra edge to get a path with odd length.</p></article></div>
 <p id="p-31">A special type of bipartite graph is the complete bipartite graphs \(K_{m,n}\text{,}\) which are the simple graphs that have as many edges as possible while still being bipartite.</p>
-<article class="definition-like" id="definition-8"><h6 class="heading">
-<span class="type">Definition</span><span class="codenumber">1.1.16</span>
+<article class="definition definition-like" id="definition-8"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.16</span><span class="period">.</span>
 </h6>
-<p id="p-32">The <em class="emphasis">complete bipartite graph</em> \(K_{m,n}\) is the graph with \(m\) red vertices and \(n\) blue vertices, and an edge between very red vertex and every blue vertex.</p></article><article class="example-like"><a knowl="" class="id-ref" refid="hk-example-4" id="example-4"><h6 class="heading">
-<span class="type">Example</span><span class="codenumber">1.1.17</span>
-</h6></a></article><div id="hk-example-4" class="hidden-content tex2jax_ignore"><article class="example-like"><p id="p-33">The complete bipartite graph \(K_{2,2}\) is isomorphic to \(C_4\text{.}\)</p>
+<p id="p-32">The <em class="emphasis">complete bipartite graph</em> \(K_{m,n}\) is the graph with \(m\) red vertices and \(n\) blue vertices, and an edge between very red vertex and every blue vertex.</p></article><article class="example example-like" id="example-4"><a data-knowl="" class="id-ref original" data-refid="hk-example-4"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.17</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-4"><article class="example example-like"><p id="p-33">The complete bipartite graph \(K_{2,2}\) is isomorphic to \(C_4\text{.}\)</p>
 <p id="p-34">The graphs \(K_{1,3}\) and \(K_{4,4}\) are drawn below.</p>
-<img src="images/image-6.svg" width="90%" style="display: block; margin: 0 auto;" alt=""></article></div></section></section></div></main>
+<div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/image-6.svg" style="width: 100%; height: auto;" alt=""></div></article></div></section></section></div></main>
 </div>
 </body>
 </html>

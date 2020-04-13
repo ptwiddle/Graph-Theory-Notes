@@ -2,9 +2,9 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:27+01:00    *-->
+<!--*    on 2020-04-13T16:05:53+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <head>
@@ -13,13 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>For each \(i=0,1,2,\dots,t-1\text{,}\) let \(f_i=x_ix_{i+1}\) and then set</p>
-<div class="displaymath">
-\begin{equation*}
-S_i = \{e\}\cup\{g\in S: g\neq f_i\},
-\end{equation*}
-</div>
-<p>i.e., we <dfn class="terminology">exchange</dfn> edge \(f_i\) for edge \(e\text{.}\) Then \(\bfT_i=(V,S_i)\) is a spanning tree of \(\bfG\text{.}\)</p>
-<span class="incontext"><a href="s_graphalgorithms_min-wt-span.html#p-201">in-context</a></span>
+<p>Finally, we stitch our Eulerian paths together.  We follow our initial cycle that wasn't an Eulerian cycle, and the first time we hit a vertex that's in one of the other cycles, we insert that cycle in before we continue along our original path.  In our example, our original cycle was aeijgba.  a is not eitehr of the other components, but e is in the four cycle, so before we continue on our original cycle to i, we insert the four cycle ehije, giving aehije.  We now continue along our original cycle, adding ei, ij, jg, until we reach a vertex g that's in one of the added cycles, which we then insert, giving aehijeijgcdg as our cycle so far.</p>
+<span class="incontext"><a href="s_walks_eulerian.html#p-201">in-context</a></span>
 </body>
 </html>

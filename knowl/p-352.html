@@ -2,9 +2,9 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:28+01:00    *-->
+<!--*    on 2020-04-13T16:05:56+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <head>
@@ -13,7 +13,13 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p><a knowl="./knowl/fig_k4-planar.html" knowl-id="xref-fig_k4-planar" alt="Figure 4.5.2 " title="Figure 4.5.2 ">Figure 4.5.2</a> shows a planar drawing of the complete graph \(\bfK_4\text{.}\) There are \(4\) vertices, \(6\) edges, and \(4\) faces in the drawing.</p>
+<p>Similarly, there is a handshaking between faces and edges.  Let the <em class="emphasis">degree</em> of a face be the number of edges that occur around it -- so, a triangle would have degree three.  Then, if we sum up the degrees of all the faces, we're counting each edge twice again -- once from the face on its left, and once from the face on its right.  so we have</p>
+<div class="displaymath">
+\begin{equation*}
+\sum_{f\in \text{faces}(G)}d(f)=2 |E(G)|
+\end{equation*}
+</div>
+<p data-braille="continuation">Note that this is just the usual vertex-edge handshaking for the dual graph.</p>
 <span class="incontext"><a href="s_graphs_on_surfaces_euler.html#p-352">in-context</a></span>
 </body>
 </html>

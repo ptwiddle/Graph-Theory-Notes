@@ -11,17 +11,83 @@
 <li>The path graph <m>P_n</m> is <em>not</em> Hamiltonian.</li>
 </ol>
 
-<figure><caption>The Icosian game (from <url href="https://www.puzzlemuseum.com/month/picm02/200207icosian.htm">Puzzle Musuem</url>) and its solution (from <url href="https://en.wikipedia.org/wiki/Icosian_game">
+<figure xml:id="fig-icosian">><caption>The Icosian game (from <url href="https://www.puzzlemuseum.com/month/picm02/200207icosian.htm">Puzzle Musuem</url>) and its solution (from <url href="https://en.wikipedia.org/wiki/Icosian_game">
 Wikipedia</url>)</caption><sidebyside valigns="middle middle" widths="40% 40%">
 <image source="images/icosiangame.jpg" />
 <image source="images/icosiansolved.png" />
 </sidebyside>
 </figure>
 
-<p>The term Hamiltonian comes from William Hamiltonian, who invented (a not very successful) board game he termed the "icosian game", which was about finding Hamiltonian cycles on the dodecahedron graph (and possibly its subgraphs)</p>
+<p>The term Hamiltonian comes from William Hamiltonian, who invented (a not very successful) board game he termed the "icosian game", which was about finding Hamiltonian cycles on the dodecahedron graph (and possibly its subgraphs).</p>
 
+<p>The main thing you'll need to be able to do with Hamiltonian graphs is decide whether a given graph is Hamiltonian or not.  Although the definition of Hamiltonian graph is very similar to that of Eulerian graph, it turns out the two concepts behave very differently.  While Euler's Theorem gave us a very easy criterion to check to see whether or not a graph Eulerian, there is no such criterion to see if a graph is Hamiltonian or not.  It turns out that deciding whether or not a graph is Hamiltonian is NP-complete, meaning that if we could solve that problem efficiently, then you could solve a host of other difficult problems efficiently as well.</p>
 
+<p>It may seem unfair, then, to ask whether a graph is Hamiltonian or not.  But it's only in a very theoretical way that the problem is extremely difficult -- as the number of vertices get very large, the problem gets harder and harderquickly.  For any given graph with a low number of vertices, there aren't that many possibilities to check.</p>
 
+<p>If a graph <em>is</em> Hamiltonian, then by far the best way to show it is to exhibit a Hamiltonian cycle, as in <xref ref="fig-icosian" />.  When the graph isn't Hamiltonian, things become more interesting.</p>
 
+<p>The most natural way to prove a graph isn't Hamiltonian is to do a case by case analysis of possible paths, showing it doesn't work.  For instance, in lecture we outlined the proof that if you remove a vertex from the Icosian graph, than the result isn't Hamiltonian.  A natural way to do this is to pick a vertex, and consider the possible pairs of edges the path might take through that vertex.  For each possibility, we know some edges won't be used, and can go further along that way. </p>
+
+<p>In general, brute-force case-by-case analyses are proofs we want to avoid when possible, because it can be difficult to make sure we have actually found all the cases, and the proofs aren't always enlightening.  It's much better when we can find a "reason" why the graph isn't Hamiltonian.</p>
+
+<example>
+<figure xml:id="figure-hamiltonian-obstruction"><caption>A local configuration that can't exist in a Hamiltonian graph</caption>
+<image width="70%">
+<latex-image><![CDATA[\begin{tikzpicture}
+
+\begin{scope}[every node/.style={circle,thick,draw}]
+    \node (X) at (0,0) {X};
+    \node (Y) at (2,0) {Y};
+    \node (A) at (1,1) {A};
+    \node (B) at (1, -1) {B};
+\end{scope}
+
+\draw (-1,,5)--(X)--(A)--(Y)--(3,.5);
+\draw (-1,0)--(X)--(B)--(Y)--(3, -.5);
+\draw (-1,-.5)--(X);
+
+\end{tikzpicture}]]></latex-image></image>
+</figure>
+
+<p><xref ref="figure-hamiltonian-obstruction" /> shows a portion of a larger graph <m>\bfG</m>.  The exact number of other vertices in the graph that <m>X</m> and <m>Y</m> are adjacent to is not important; what matters is that <m>A</m> and <m>B</m> are each adjacent to two vertices, <m>X</m> and <m>Y</m>.  Any path through <m>A</m> would have to use <m>X</m> and <m>Y</m>, but so would any path through <m>B</m>.  But then we have a small four cycle <m>XAYBX</m> which doesn't use any other vertices in the graph, and so <m>\bfG</m> cannot be HAmiltonian.
+
+</p>
+
+</example>
+
+<lemma xml:id="lemma-bipartite-hamiltonian"><statement><p>Suppose that <m>\bfG</m> is bipartite and Hamiltonian, with <m>n</m> red vertices and <m>m</m> blue vertices.</p></statement> <proof><p>Consider a Hamiltonian path in <m>\bfG</m>.  Since every edge is between a red and blue vertex, the vertices in the path must alternate between red and blue.  Considering every other edge of the cycle pairs each red vertex with a blue vertex, and hence <m>n=m</m>.</p></proof></lemma>
+
+<p>The contrapositive of <xref ref="lemma-bipartite-hamiltonian" /> can be used to show graphs <em>aren't</em> Hamiltonian: if <m>\bfG</m> is bipartite but doesn't have the same number of red vertices and blue vertices, then it can't be Hamiltonian.</p>
+
+<lemma><statement><p>The Petersen Graph is not Hamiltonian</p></statement><proof><p>Of course, a case-by-case analysis of possibile Hamiltonian cycles is possible.  The number of cases can be reduced by using symmetries of the Petersen graph. Instead, for variation and to illustrate a different proof technique, we will use another method.</p>
+<p>Assume for contradiction that the Petersen graph is Hamiltonian, and draw the ten vertices <m>v_1,v_2,\dots,v_{10}</m> around the cycle.  The Hamiltonian cycle uses 10 of the 15 edges in the Petersen graph, and so there must be 5 more edges, with each vertex incident to one of them, as in the Petersen graph every vertex has degree 3. </p>
+<p>Let's analyse where else the edge adjacent to <m>v_1</m> could go.  It can't go to <m>v_1</m> itself, as the Petersen graph has no loops, and it can't go to <m>v_2</m> or <m>v_{10}</m> as the Petersen graph has no multiple edges.  If it went to <m>v_3</m> or <m>v_9</m> it would make a three cycle, which the Petersen graph doesn't have, and if it went to <m>v_4</m> or <m>v_7</m>, there'd be a four cycle.  Hence, the only options are <m>v_1</m> is adjacent to <m>v_5, v_6</m> or <m>v_7</m>.  By reversing the direction of the Hamiltonian path, <m>v_5</m> and <m>v_7</m> are equivalent, and there are only two cases.</p>
+
+<p>But the same analysis holds for every vertex: the extra edge at any vertex can either go to the opposite side of the circle, or be "off by one" and skip three vertices to either direction.</p>
+
+<p>We now claim that not all the extra edges can go "directly across" -- there must be at least one edge that's off by one.  If all the extra edges went directly across, then <m>v_1</m> would go to <m>v_6</m>, and <m>v_2</m> would go to <m>v_7</m>, and <m>v_1-v_6-v_7-v_2-v_1</m> would be a 4 cycle.</p>
+
+<p>Hence, without loss of generality we may assume that the extra edge at <m>v_1</m> is <m>v_1-v_5</m>.  Let us then consider the extra edge at <m>v_6</m>.  It can't go directly across, as that is <m>v_1</m> which already has its extra edge.  Hence it must be off by one, and go to either <m>v_2</m> or <m>v_{10}</m>.  But either way we get a four cycle: either <m>v_1-v_2-v_6-v_5-v_1</m>, or <m>v_1-v_{10}-v_6-v_5-v_1</m>.  Hence, we have a contradiction, and the Petersen graph cannot be Hamiltonian.</p>
+
+</proof></lemma>
+
+<p>Finally, Ore's Theorem, a positive result, giving conditions which guarantee that a graph has a Hamiltonian cycle.  First, a little bit of intuition.  If we take an edge to a Hamiltonian graph the result is still Hamiltonian, and the complete graphs <m>K_n</m> are Hamiltonian.  Thus, one might expect that a graph with "enough" edges is Hamiltonian.</p>
+
+<p>The trick is in finding an interesting meaning of the word "enough".  Simply counting the number of edges does not give very interesting bounds on what "enough" means, however -- the complete graph has <m>n(n-1)/2</m> edges, but we can make it non-Hamiltonian by removing only <m>n-2</m> edges: simply pick a vertex <m>v</m> and remove all but one of the <m>n-1</m> edges coming out of <m>v</m>; then <m>v</m> will now have degree 1, and hence the resulting graph cannot be Hamiltonian.</p>  
+
+<theorem><title>Ore's Theorem</title> <statement><p>Let <m>\bfG</m> be a simple graph with <m>n</m> vertices, and assume that whenever two distinct vertices <m>v,w</m> are not adjacent, we have <m>d(v)+d(w)\geq n</m>.  Then <m>\bfG</m> is Hamiltonian.</p></statement><proof>
+<p>We will argue by contradiction, and begin by passing to a maximal counterexample.  Note that if <m>\bfG</m> satisfies the hypotheses, and we add an edge <m>e</m> to <m>\bfG</m> between two non-adjacent vertices <m>v</m> and <m>w</m>, then the result will still satisfy the hypothesis.  Indeed, we've only increased the degree of some vertices.  So, we had a counterexample <m>\bfG</m> to Ore's Theorem, we could iteratively add edges to <m>\bfG</m> that didn't create Hamiltonian cycles, until we got a graph <m>\bfG</m> that satisfies the hypotheses of Ore's theorem, desn't have any Hamiltonian cycles, but if we add any edge <m>e</m> to <m>\bfG</m> the result <em>is</em> Hamiltonian.</p>
+
+<p>We now observe that such a <m>\bfG</m> must have a Hamiltonian <em>path</em>: indeed, pick any edge <m>e</m> not in <m>\bfG</m> and add it to <m>\bfG</m>.  THe resulting graph is by assumption Hamiltonian, and since <m>\bfG</m> wasn't Hamiltonian, the Hamiltonian cycle must contain the edge <m>e</m>.  Deleting the edge <m>e</m> from the Hamiltonian cycle gives a Hamiltonian path in <m>\bfG</m>.</p>
+<p>Thus, let <m>v_1-v_2-\cdots v_n</m> be a Hamiltonian path in <m>\bfG</m>.  We know <m>v_1</m> and <m>v_n</m> are not adjacent, as otherwise <m>\bfG</m> would be Hamiltonian.  Thus, since <m>\bfG</m> satisfies the hypothesis of Ore's theorem,  we know <m>d(v_1)+d(v_n)\geq n</m>.  We already have one edge adjacent to <m>v_1</m>, and one edge adjacent to <m>v_n</m>, and so there must be at least <m>n-2</m> other edges adjacent to one or other of these vertices.  We will see that no matter how we add <m>n-2</m> edges to these two vertices, we will create a Hamiltonian cycle.</p>
+
+<p>To see this, note there is ever an <m>i</m> with <m>v_1</m> adjacent to <m>v_i</m> and <m>v_{i-1}</m> adjacent to <m>v_n</m>, then <m>\bfG</m> would have a Hamiltonian cycle: namely <m>v_1-v_2-\cdots-v_{i-1}-v_n-v_{n-1}-\vdots v_i-v_1</m>.  Now, there are <m>n-3</m> different vertices we can add edges to <m>v_1</m> to, namely <m>v_3-v_{n-1}</m>, and similarly there are <m>n-3</m> vertices we can add edges connecting <m>v_n</m> to, namely <m>v_2, \dots v_{n-2}</m>.  We arrange these <m>2(n-3)</m> edges into a a grid with 2 rows and <m>n-3</m> columns, so that the two edges in each column are <m>v_1-v_i</m> and <m>v_n-v_{i-1}</m>, a pair of edges that can form a Hamiltonian cycle as in the last paragraph.</p>
+
+<p>As we need to add at least <m>n-2</m> edges, but we only have <m>n-3</m> columns, there must be at least one column that contains two edges by the pigeonhole principle, but then we can create a Hamiltonian cycle using those two edges and the edges in our Hamiltonian path.</p>
+
+</proof>
+</theorem>
+<p>Note that Ore's Theorem is <em>not</em> an if and only if, and so Ore's Theorem cannot be used to prove that graphs <em>aren't</em> Hamiltonian.  Indeed, there are plenty of graphs that are Hamiltonian but do not satisfy the hypotheses of Ore's Theorem.  For instance, the cycle graph <m>C_n</m> is Hamiltonian, but every vertex has degree 2, so if <m>n\geq 5</m> the hypotheses of Ore's Theorem are not satisfied.</p>
+<p>We also highlight that the proof began by considering a maximal counterexample to Ore's Theorem, and considering maximal/minimal counterexamples is often a useful proof technique, as you the maximality/minimality gives you some extra structure to work with.</p>
 
 </section>

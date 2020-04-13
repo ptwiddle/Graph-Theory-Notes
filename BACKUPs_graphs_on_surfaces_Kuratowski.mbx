@@ -1,0 +1,99 @@
+<section xml:id="s_graphs_on_surfaces_Kuratowski">
+    <title>Kuratowski's Theorem</title>
+
+<introduction> <p>The planrity Algorithm for Hamiltonian graphs gives a very convenient and systematic way to determine whether a Hamiltonian graph is planar or not, and we saw that with some work it can be hacked to work for graphs that are "almost" Hamiltonian -- that have a cycle that go through all but one or two vertices, say.</p>
+
+<p>Stretching these ideas further, the general logic of considering cycles and applying the Jordan Curve theorem to them would provide a way to prove whether an abritrary graph is planar or not, but as we have more or more vertices that aren't on our cycle to consider the arguments would get more and more complicated, and it's clear that a better method is desirable.  In this section we will present, (but not completely prove) Kuratowski's theorem, which gives a method to determine whether or not an arbitrary graph is planar.</p>
+
+</introduction>
+<subsection> <title>Planarity, subgraphs, and subdivisions</title>
+<p>The idea behind Kuratowski's theorem rests on two small observations, which we illustrate in a simple example before discussing more formally.</p>
+
+<figure xml:id="fig-K33-subs"> <caption>Two nonplanar graphs</caption>
+<image width="90%">
+<latex-image><![CDATA[\begin{tikzpicture}[scale=.5]
+  \draw node at (1,3) {$\mathbf{G}_1$};
+   \draw node at (6,3) {$\mathbf{G}_2$};
+  
+
+\begin{scope}[every node/.style={circle, draw, fill=red, inner sep=0pt, minimum width=4pt, thick}]
+  \draw node (a) at (0,0) {};
+  \draw node (b) at (0,1) {};
+  \draw node (c) at (0,2) {};
+  \draw node (x) at (2,0) {};
+  \draw node (y) at (2,1) {};
+  \draw node (z) at (2,2) {};
+  \draw node (extra) at (-1,1) {};
+  \draw (a)--(x)--(b)--(y)--(c)--(z)--(a)--(y);
+  \draw (b)--(z);
+  \draw (c)--(x);
+  \draw (extra)--(c)--(b); 
+
+
+  \begin{scope}[xshift=5cm]
+  \draw node (a) at (0,0) {};
+  \draw node (b) at (0,1) {};
+  \draw node (c) at (0,2) {};
+  \draw node (x) at (2,0) {};
+  \draw node (y) at (2,1) {};
+  \draw node (z) at (2,2) {};
+  \draw node (extra) at (1,0) {};
+  \draw (a)--(extra)--(x)--(b)--(y)--(c)--(z)--(a)--(y);
+  \draw (b)--(z);
+  \draw (c)--(x);
+
+
+    \end{scope}
+
+
+\end{scope}  
+\end{tikzpicture}
+]]></latex-image></image></figure>
+<p>The graphs <m>\bfG_1</m> and <m>\bfG_2</m> in <xref ref="fig-K33-subs"/> both <em>look</em> a lot like <m>K_{3,3}</m>, and since <m>K_{3,3}</m> is nonplanar, we might expect them to be nonplanar as well, but we need to be careful and precise in checking this.  We work this out in the next example.</p>  
+<example><title>Two nonplanar graphs</title>
+<p>The graph <m>\bfG_1</m> in <xref ref="fig-K33-subs"/> is <m>K_{3,3}</m> with a vertex and two edges added to it; put another way, <m>K_{3,3}</m> is a subgraph of <m>\bfG_1</m>.  If we could draw <m>\bfG_1</m> in the plane, we could just ignore this extra vertex and these two edges, and we'd have a drawing of <m>K_{3,3}</m> in the plane, but we know <m>K_{3,3}</m> isn't planar.  So to avoid contradictions we are forced to conclude that <m>\bfG_1</m> isn't planar.</p>
+<p>The graph <m>\bfG_2</m> looks just like <m>K_{3,3}</m>, but we have added an extra vertex of degree two in the middle of one of the edges.  Note that <m>K_{3,3}</m> is <em>not</em> a subgraph of <m>\bfG_2</m>, and so we need to use slightly different reasoning than we did for showing <m>\bfG</m> isn't planar.  But drawing <m>\bfG_2</m> is just like drawing <m>K_{3,3}</m> and then adding an extra dot for the new vertex of degree two.  If we could draw <m>\bfG_2</m> in the plane, we could just skip adding this extra dot, and we'd have a drawing of <m>K_{3,3}</m> in the plane.  Again, since we know <m>K_{3,3}</m> isn't planar, we see that <m>\bfG_2</m> isn't planar, either.</p>
+
+</example>
+
+
+<p>We will now generalize the methods we used to show <m>\bfG</m> and <m>\bfH</m> are nonplanar and summarize them as lemmas.  The reasoning we used to prove that <m>\bfG</m> was nonplanar doesn't need to be changed at all to prove:</p>  
+<lemma xml:id="lemma-nonplanar-subgraph"><statement>If <m>\bfH</m> is nonplanar, and <m>\bfH</m> is a subgraph of <m>\bfG</m>, then <m>\bfG</m> isn't planar.</statement>
+
+<proof><p>We've essentially already proved it, but we'll restate the reasoning in a different way for completeness.</p>  
+
+<p>When we draw a graph <m>\bfG</m> in the plane, we also draw all the subgraphs of <m>\bfG</m> in the plane.  Thus, if <m>\bfG</m> is planar, then all of its subgraphs are planar.  Our lemma is the contrapositive of this statement.</p> </proof>
+</lemma>
+
+
+
+
+<p><xref ref="lemma-nonplanar-subgraph" /> is logically equivalent to the discussion above, but it's worth restating the logic in this direction as well: if we can't draw <m>\bfG</m> in the plane, then we certainly can't draw <m>\bfH</m> in the plane without edges crossing, as if we could then we'd have a drawing of <m>\bfH</m> as part of our big drawing.</p>
+
+<example><title>Complete graphs</title><p>If <m>n\gt 5</m>, then <m>K_n</m> is not planar by <xref ref="lemma-nonplanar-subgraph" />, because <m>K_5</m> is a subgraph of <m>K_n</m>, and we know that <m>K_5</m> isn't planar.</p>
+<p>We could also have used the fact that <m>K_{3,3}</m> is a subgraph of <m>K_n</m>, and <m>K_{3,3}</m> is also nonplanar.</p>
+</example>
+
+<p>To generalize the method we used to prove <m>\bfG_2</m> is non-planar, we first make a form definition that encapsulates the idea of "adding dots" to the middle of edges: </p>
+<definition><title>Subdivision</title><statement><p>We say that <m>\bfG</m> is a <em>subdivision</em> of <m>\bfH</m> if <m>\bfG</m> is obtained from <m>\bfH</m> by adding some vertices of degree two in the middle of some of the edges of <m>\bfH</m>.</p></statement></definition>
+
+<example><title>Cycles and Paths</title><p>Any path graph <m>P_n, n\geq 2</m> is a subdivision of the graph <m>P_2</m> consisting of two vertices with an edge between them.  Any cycle graph <m>C_m, m\geq 3</m> is a subdivision of the triangle <m>C_3</m></p></example>
+
+<lemma xml:id="lemma-nonplanar-subdivision"><statement><p>If <m>\bfG</m> is a subdivision of a nonplanar graph <m>\bfH</m>, then <m>\bfG</m> is nonplanar.</p></statement><proof><p>Suppose that <m>\bfG</m> was planar, and draw it in the graph.  Then erase the, vertices of degree we added when we subdivided <m>\bfH</m>, merging the edges on either side to one.  We obtain a planar drawing of <m>\bfH</m>, a contradiction, and so <m>\bfG</m> must not have been planar.</p></proof></lemma>
+
+
+<theorem><title>Kuratowski's Theorem</title> <statement><p>A graph <m>\bfG</m> is nonplanar if and only if <m>\bfG</m> has a subgraph that's a subdivision of <m>K_{3,3}</m> or <m>K_5</m>.</p> </statement>
+<proof><p>We will only prove one direction: that if <m>\bfG</m> has such a subgraph, then <m>\bfG</m> is nonplanar; the other direction is more difficult.</p>
+
+<p>Suppose that <m>\bfH</m> is a subgraph of <m>\bfG</m> that is subdivision of <m>K_{3,3}</m> or <m>K_5</m>.  Since we've proven <m>K_{3,3}</m> and <m>K_5</m> are nonplanar, we know <m>\bfH</m> is nonplanar by <xref ref="lemma-nonplanar-subdivision" />.  Now since we <m>\bfH</m> is a subgraph of <m>\bfG</m> and we know <m>\bfH</m> is nonplanar, we know <m>\bfG</m> is nonplanar by <xref ref="lemma-nonplanar-subgraph" />. </p>
+
+</proof></theorem>
+
+<p>Although we've only proven one direction of Kuratowski's theorem, it's the important direction -- the one that lets us prove graphs are nonplanar.  The other direction would tell us information about subgraphs of a graph that we already knew was nonplanar for some other reason.  Or, taking the contrapositive, it would let us prove a graph <em>was</em> planar by looking at all subgraphs of it and showing none of them looked like <m>K_5</m> or <m>K_{3,3}</m>.  But this would be a lot of work and there's a much easier way to show a graph is planar: draw it in the plane! If you're asked to prove a graph is planar, you will almost always also be asked to draw it in the plane.</p>
+
+<p>However, we will <em>implicitly</em> use the hard direction in the following way: if a graph <m>\bfG</m> is nonplanar, you can <em>always</em> use Kuratowski's theorem to prove that it's nonplanar.  This is reassuring because it means our tool will always work to prove it's nonplanar, and that you aren't wasting your time looking for subgraphs that don't exist.</p>
+
+</subsection>
+
+
+</section>

@@ -2,9 +2,9 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:28+01:00    *-->
+<!--*    on 2020-04-13T16:05:57+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <head>
@@ -12,22 +12,10 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="example-like"><h6 class="heading">
-<span class="type">Example</span><span class="codenumber">5.2.3</span><span class="title">The complete graph \(K_5\)</span>
+<article class="example example-like"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Trees.</span>
 </h6>
-<p>Now, let's move on to \(K_5\text{.}\)  Again, looking at any vertex we see all the edges adjacent to that vertex must be different colours, and so we have \(\chi^\prime(K_5)\geq 4\text{.}\)   Let's try to colour the edges of \(K_5\) with 4 colours.</p>
-<div class="sidebyside" id="sidebyside-14"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-391">Suppose we coloured the four edges adjacent to the top vertex blue, green, red and purple, from left to right, and now look at the bottom edge.  It is adjacent to edges coloured green and red, and so must be blue or purple.  By symmetry, it's equivalent to colour it either colour, so let's suppose it's blue, giving us the following picture:</p></div>
-<div class="sbspanel" style="width:31.5789473684211%;justify-content:center;"><img width="100%" src="images/K5EdgeColouring1.png" alt=""></div>
-</div></div>
-<div class="sidebyside" id="sidebyside-15"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-392">Now the edge on the right is adjacent to edges coloured red, blue and purple, and so must be green.  But now we have a problem -- consider the edges labeled \(x\) and \(y\) in the next drawing:</p></div>
-<div class="sbspanel" style="width:31.5789473684211%;justify-content:center;"><img width="100%" src="images/K5EdgeColouring2.png" alt=""></div>
-</div></div>
-<p>Both edges share vertices with edges coloured green, blue, and purple, and hence each would need to be coloured red.  But they also share a vertex with each other, and so cannot both be coloured red.  So we see \(\chi^\prime(K_5)\geq 5\text{.}\)</p>
-<div class="sidebyside" id="sidebyside-16"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p id="p-394">On the other hand, it is easy to colour the edges of \(K_5\) with 5 colours:  colour each edge in the outside pentagon a different colour.  For each edge in the outside pentagon there will be a unique edge in the inside star that does meet that edge (the one "parallel" to it) -- draw that edge the same colour.  That results in the following colouring:</p></div>
-<div class="sbspanel" style="width:31.5789473684211%;justify-content:center;"><img width="100%" src="images/K5EdgeColouring3.png" alt=""></div>
-</div></div></article><span class="incontext"><a href="s_chromatic_index.html#example-22">in-context</a></span>
+<p>Suppose that \(T_n\) is a tree on \(n\geq 2\) vertices.  Then \(T_n\) has an edge, and the two vertices on this edge must be different colours, and so \(\chi(T_n)\geq 2\text{.}\)  On the other hand, we can colour any tree with two colours as follows: pick any vertex, and colour it blue; then pick any vertex next to it and colour it red, then we can colour the vertices next to that blue, and colour the vertices next to those red, and continuing on outwards from our starting vertex.  Hence, \(\chi(T_n)\leq 2\) and so \(\chi(T_n)=2\text{.}\)</p>
+<p>Another way of phrasing this is that along any path we colour the vertices alternating red-blue-red-blue-red-blue.  This wouldn't work for a general graph, because there may be two paths of different lengths between a pair of vertices \(v\) and \(w\text{.}\)  But in trees because there is always exactly one path between any two vertices, and so once we colour one vertex, there's a unique way to colour all the others with two colours in this way.</p></article><span class="incontext"><a href="s_chromatic_number.html#example-22">in-context</a></span>
 </body>
 </html>

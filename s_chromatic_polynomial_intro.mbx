@@ -1,6 +1,6 @@
 <section xml:id="s_chromatic_polynomial_intro">
 <title>Introduction to the chromatic polynomial</title>
-<introduction><p>For the chromatic number, we were asking whether or not it was possible to colour the vertices of <m>\bfG</m> with a given number of colours.  The chromatic polynomial enlarges this question, and asks the following.  Suppose we have <m>k</m> colours.  How many different ways can we colour the vertices of <m>\bfG</m>?</p></introduction>
+<introduction><p>For the chromatic number, we were asking whether or not it was possible to colour the vertices of <m>\bfG</m> with a given number of colours.  The chromatic polynomial extends this question, and asks the following.  Suppose we have <m>k</m> colours.  How many different ways can we colour the vertices of <m>\bfG</m>?  It is <em>not</em> clear that this should be a polynomial in <m>k</m>, and proving that it is in fact a polynomial in <m>k</m> is the highlight of the section.</p></introduction>
 <subsection><title>Definition and examples</title>
 <definition><title>The chromatic polynomial <m>P_{\bfG}</m></title> <statement><p>The chromatic polynomial <m>P_{\bfG}</m> of a graph <m>\bfG</m> is the function that takes in a non-negative integer <m>k</m> and returns the number of ways to colour the vertices of <m>\bfG</m> with <m>k</m> colours so that adjacent vertices have different colours.</p></statement></definition>
 
@@ -60,10 +60,6 @@
 
 </subsection>
 
-<subsection><title>Deletion-Contraction and polynomiality</title>
-
-</subsection>
-
 <subsection><title>Gluing</title>
 <p>What can we say about the chromatic polynomial of a graph <m>\bfG</m> that's the disjoint union of two smaller graphs: <m>\bfG=\bfG_1\sqcup \bfG_2</m>?</p>
 
@@ -109,7 +105,9 @@ It gets more interesting if <m>\bfG</m> is <em>almost</em> the disjoint union of
 
 </subsection>
 
-<p>The methods of gluing and working vertex by vertex make many chromatic polynomials easy to calculate.  Other graphs, however, are not amenable to our gluing theorems, and require considering several cases when working vertex by vertex.</p>
+
+<subsection><title>Case by case analysis</title>
+<p>The meethods of gluing and working vertex by vertex make many chromatic polynomials easy to calculate.  Other graphs, however, are not amenable to our gluing theorems, and require considering several cases when working vertex by vertex.</p>
 
 <example><title>The chromatic polynomial of the cycle <m>C_4</m></title>
 <sbsgroup widths="60% 30%"> <sidebyside>
@@ -151,6 +149,6 @@ It gets more interesting if <m>\bfG</m> is <em>almost</em> the disjoint union of
 <mrow>\amp=k(k-1)(k-2)(k^2-2k+2)</mrow></md>
 </example>
 
-
+</subsection>
 
 </section>

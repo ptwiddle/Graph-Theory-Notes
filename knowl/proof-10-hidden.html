@@ -2,31 +2,16 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:27+01:00    *-->
+<!--*    on 2020-04-13T16:05:53+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>The theorem holds trivially when \(x=r\text{.}\) So we consider the case where \(x\neq r\text{.}\) We argue that \(\delta(x)\) is the distance from \(r\) to \(x\) and that \(P(x)\) is a shortest path from \(r\) to \(x\) by induction on the minimum number \(k\) of edges in a shortest path from \(r\) to \(x\text{.}\) When \(k=1\text{,}\) the edge \((r,x)\) is a shortest path from \(r\) to \(x\text{.}\) Since \(v_1=r\text{,}\) we will set \(\delta(x)=w(r,x)\) and \(P(x)=(r,x)\) at Step 1.</p>
-<p>Now fix a positive integer \(k\text{.}\) Assume that if the minimum number of edges in a shortest path from \(r\) to \(x\) is at most \(k\text{,}\) then \(\delta(x)\) is the distance from \(r\) to \(x\) and \(P(x)\) is a shortest path from \(r\) to \(x\text{.}\) Let \(x\) be a vertex for which the minimum number of edges in a shortest path from \(r\) to \(x\) is \(k+1\text{.}\) Fix a shortest path \(P=(u_0,u_1,u_2,\dots,u_{k+1})\) from \(r=u_0\) to \(x=u_{k+1}\text{.}\) Then \(Q=(u_0,u_1,\dots,u_k)\) is a shortest path from \(r\) to \(u_k\text{.}\) (See <a knowl="./knowl/fig_graphalgorithms_dijkstra-proof.html" knowl-id="xref-fig_graphalgorithms_dijkstra-proof" alt="Figure 3.3.7 " title="Figure 3.3.7 ">Figure 3.3.7</a>.)</p>
-<figure class="figure-like"><img src="images/image-36.svg" width="75%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.3.7</span>Shortest paths</figcaption></figure><p>By the inductive hypothesis, \(\delta(u_k)\) is the distance from \(r\) to \(u_k\text{,}\) and \(P(u_k)\) is a shortest path from \(r\) to \(u_k\text{.}\) Note that \(P(u_k)\) need not be the same as path \(Q\text{,}\) as we suggest in <a knowl="./knowl/fig_graphalgorithms_dijkstra-proof.html" knowl-id="xref-fig_graphalgorithms_dijkstra-proof" alt="Figure 3.3.7 " title="Figure 3.3.7 ">Figure 3.3.7</a>. However, if distinct, the two paths will have the same length, namely \(\delta(u_k)\text{.}\)  Also, the distance from \(r\) to \(x\) is \(\delta(u_k)+w(u_k,x)\ge \delta(u_k)\) since \(P\) is a shortest path from \(r\) to \(x\) and \(w(u_k,x)\geq 0\text{.}\)</p>
-<p>Let \(i\) and \(j\) be the unique integers for which \(u_k=v_i\) and \(x=v_j\text{.}\) If \(j \lt i\text{,}\) then</p>
-<div class="displaymath">
-\begin{equation*}
-\delta(x)= \delta(v_j)\le \delta(v_i)= \delta(u_k)\le
-\delta(u_k)+w(u_k).
-\end{equation*}
-</div>
-<p>Therefore the algorithm has found a path \(P(x)\) from \(r\) to \(x\) having length \(\delta(x)\) which is at most the distance from \(r\) to \(x\text{.}\) Clearly, this implies that \(\delta(x)\) is the distance from \(r\) to \(x\) and that \(P(x)\) is a shortest path.</p>
-<p>On the other hand, if \(j&gt;i\text{,}\) then the inductive step at Step \(i\) results in</p>
-<div class="displaymath">
-\begin{equation*}
-\delta(x)\le \delta(v_i)+w(v_i,y)=\delta(u_k)+w(u_k,x).
-\end{equation*}
-</div>
-<p>As before, this implies that \(\delta(x)\) is the distance from \(r\) to \(x\) and that \(P(x)\) is a shortest path.</p></article></body>
+<body><article class="hiddenproof"><p>A minor modification of our argument for Eulerian graphs shows that the condition is necessary.  Suppose that \(\Gamma\) is semi-Eulerian, with Eulerian path \(v_0, e_1, v_1,e_2,v_3,\dots,e_n,v_n\text{.}\)  Then at any vertex other than the starting or ending vertices, we can pair the entering and leaving edges up to get an even number of edges.</p>
+<p>However, at the first vertex \(v_0\) the path leaves along \(e_1\) the first time but never enters it accordingly, so that \(v_0\) has an odd degree; similarly, at \(v_n\) the path enters one final time along \(e_n\) without leaving, and so \(v_n\) also has an odd degree.</p>
+<p>To see the condition is sufficient we could also modify the argument for the Eulerian case slightly, but it is slicker instead to <em class="emphasis">reduce</em> to the Eulerian case.  Suppose that \(\Gamma\) is connected, and that vertices \(v\) and \(w\) have odd degree and all other vertices of \(\Gamma\) have even degree.  Then we can construct a new graph \(\Gamma^\prime\) by adding an extra edge \(e=vw\) to \(\Gamma\text{.}\)  Then \(\Gamma^\prime\) is connected and every vertex has even degree, and so it has an Eulerian cycle.  Deleting the edge \(e\) that we added from this cycle gives an Eulerian path from \(v\) to \(w\) in \(\Gamma\text{.}\)</p></article></body>
 </html>

@@ -1,0 +1,235 @@
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s_intro_trees">
+<title>Trees</title>
+<introduction><p>A very important class of graphs are trees -- they are connected, but just barely: removing any edge causes them not to be connected.  
+</p></introduction>
+
+<subsection><title>Basics on trees</title>
+
+<figure>
+  <caption>A forest consisting of three trees</caption>
+<image width="80%" source="images/forest.png" />
+</figure>
+
+<p>The figure above shows some examples of the trees.  Meanwhile, the cycle graph <m>\bfC_n</m> or the complete graph <m>\bfK_n</m> with <m>n\geq 3</m> are not trees: we can remove an edge from these graphs and they'd still be connected.
+The formal definition of a tree is as follows:</p>
+
+<definition><title>Trees and Forests</title>
+<p> A graph <m>\bfG</m> is a <em>tree</em> if:</p>
+<ol>
+<li> <m>\bfG</m> is connected </li>
+<li> <m>\bfG</m> has no cycles </li>
+</ol>
+<p>A not necessarily connected graph with no cycles is called a <em>forest</em>, so that a forest is a union of trees.</p>
+</definition>
+<p>Informally, the condition that <m>\bfG</m> is connected is asking that <m>\bfG</m> have enough edges, while the condition that <m>\bfG</m> has no cycles is asking for <m>\bfG</m> not to have too many edges.  Thus, trees are sort of "goldilocks" graphs -- they have enough edges, but not too many -- they're connected, but just barely.</p>
+<p>The following Theorem gives many alternate characterisations of trees, and makes more precise the intuition of trees as "goldilocks graphs"</p>.
+
+
+
+<theorem><statement><p>Let <m>\bfG</m> be a graph with <m>n</m> vertices.  The following are equivalent:</p>
+<ol>
+<li> <m>\bfG</m> is a tree. </li>
+<li> Between any two vertices <m>a,b\in V(\bfG)</m>, there is a unique path. </li>
+<li> <m>\bfG</m> is connected, but removing any edge makes <m>\bfG</m> disconnected. </li>
+<li> <m>\bfG</m> has no cycles, but adding any edges to <m>\bfG</m> creates a cycle. </li>
+<li> <m>\bfG</m> is connected and has <m>n-1</m> edges </li>
+<li> <m>\bfG</m> has no cycles and has <m>n-1</m> edges </li>
+</ol>
+</statement></theorem>
+
+<p>We will not use most of , and will not prove that all options are equivalence.  We briefly proof that 1 is equivalent to 2 now, and in the next section we will carefully prove that 1 is equivalent to 5, as we will use this fact a few times.  The rest make a good exercise to check your basic understanding.</p>
+
+<p>To see that 1 and 2 are equivalent, note that being connected by definition means there is a path between every two vertices.  As a tree is a connected graph without any cycles, to finish seeing 1 and 2 are equivalent is exactly <xref ref="lemma-unique-cycle" />, whose main idea is contained in <xref ref="fig-unique-cycle" /> </p>
+<figure xml:id="fig-unique-cycle"> <caption>Two different paths create a cycle</caption>
+<image width="90%">
+<latex-image><![CDATA[\begin{tikzpicture}[scale=.5]
+\begin{scope}[every node/.style={circle, draw, fill=red, inner sep=0pt, minimum width=4pt, thick}]
+
+\draw node (a) at (0,0) {$v$};
+  \draw node (b) at (2.1,.9) {};
+  \draw node (c) at (4,1.3) {};
+  \draw node (d) at (6,0) {$w$};
+  \draw node (e) at (5.1,-1) {};
+  \draw node (f) at (3.4, -1.4) {};
+  \draw node (g) at (.5, -.8) {};
+  \draw[red, dashed] (a)--(b)--(c)--(d);
+  \draw[blue, dotted] (d)--(e)--(f)--(g)--(a);
+  \end{scope}
+
+\begin{scope}[xshift=8cm, every node/.style={circle, draw, fill=red, inner sep=0pt, minimum width=4pt, thick}]
+  \draw node (a) at (0,0) {$v$};
+  \draw node (b) at (.5,.5) {};
+  \draw node (c) at (2.5, 1) {};
+  \draw node (d) at (4.4,.3) {};
+    \draw node (e) at (5.5,.8) {};
+    \draw node (f) at (6, 0) {$w$};
+    
+    \draw node (g) at (2, -.3) {};
+    \draw node (h) at (2.4, -1) {};
+    \draw node (i) at (1.7, -.8) {};
+    \draw node (j) at (5.8, -.7) {};
+    
+
+    
+  \draw[red, dashed] (a)--(b)--(c)--(d)--(e)--(f);
+  \draw[blue, dotted] (a)--(b)--(g)--(h)--(i)--(g)--(d)--(j)--(f);
+  \end{scope}
+
+\end{tikzpicture}
+]]></latex-image></image></figure>
+
+
+
+
+
+<lemma xml:id="lemma-unique-cycle"><statement><p>A graph <m>\bfG</m> has no cycles if and only if there is at most one path between any two vertices of <m>\bfG</m>.</p></statement>
+<proof><p>If <m>\bfG</m> has a cycle, the there are at least two paths between any vertex on that cycle -- the paths going each way around the cycle.  Thus, we just have to show that if there there are two paths between between <m>v</m> and <m>w</m>, then <m>\bfG</m> has a cycle.</p>
+
+<p>In the easy case, the two paths will contain no vertices in common except for <m>v</m> and <m>w</m>, and so the union of the two paths will be a cycle.  In general, the paths will share other vertices and edges -- they may well repeat vertices and edges themselves.  But in any case, by considering some subset of these two paths will be a cycle.</p> 
+</proof> 
+</lemma>
+</subsection>
+
+<subsection><title>Leaves</title>
+<p>To prove Theorem , we first need to introduce the concept of leaves.</p>
+
+<definition><title>Leaf</title>
+<p>A vertex <m>v\in\bfG</m> is called a <em>leaf</em> if it has degree one, i.e. if <m>d(v)=1</m></p>
+</definition>
+<p>When looked at a drawn graph, this definition is fairly intuitive: real life trees branch out and split in leaves, just like mathematical trees.</p>
+
+<lemma><title>Trees have leaves</title>
+<statement>Let <m>\bfT</m> be a finite tree with at least two vertices.  Then <m>\bfT</m> has at least two leaves.</statement>
+<proof><p>By assumption, <m>\bfT</m> has at least two vertices, say <m>v_0</m> and <m>w_0</m>.  Since <m>\bfT</m> is a tree it is connected, and so in particular there must be a path between <m>v_0</m> and <m>w_0</m>; let <m>v_i</m> be the vertices in this path, and let <m>e_i</m> be the edge in the path joining <m>v_{i-1}</m> to <m>v_i</m>.   </p>
+<p>Since <m>v_m</m> is adjacent to <m>e_m</m> it has degree at least one; if it has degree 1 it is a leaf, and we've found a leaf.  If <m>v_m</m> is not a leaf, then there must be another edge coming out of it, say <m>e_{m+1}</m> going to <m>v_{m+1}</m>.  Note that <m>v_{m+1}</m> cannot be any of the vertices we've already found, as then we'd have more than one path between two vertices and hence a loop, but <m>\bfT</m> was a tree.  Thus we can make the path a bit longer.</p>
+
+<p>We can now continue this argument inductively as long as the vertex at the of the path has degree higher than 1.  But since <m>\bfT</m> is finite, and we never return to a vertex we've already visited, we this process must eventually terminate, but the only way this can happen is if the end vertex of the path has degree 1, that is, if it's a leaf.</p>
+
+<p>A similar argument extending from <m>v_0</m>, the other end of the path, shows that we must eventually reach a different leaf from that end, and so <m>\bfT</m> must have at least two leaves, as desired.</p>
+
+</proof>
+</lemma>
+
+Now that we have a basic understanding of leaves, we are ready to prove the following:
+
+<lemma><statement><p>A simple graph <m>\bfG</m> with <m>n</m> vertices is a tree if and only if is connected and has <m>n-1</m> edges.</p></statement>
+<proof><p>Since being connected is half of the requirement of being a tree, we need to show that a connected graph on <m>n</m> vertices is a tree if and only if it has <m>n-1</m> edges.</p>
+
+<p>Let us first prove that a tree on <m>n</m> vertices has <m>n-1</m> edges.  We will use induction on <m>n</m>.  As bases, there is only one tree with 1 vertex, and it does in fact have 0 edges, and there is only one tree with two vertices, and it does in fact have 1 edge.  So for the inductive step, let us suppose that we know that all trees with <m>k\lt n</m> vertices have <m>k-1</m> edges, and let <m>\bfT</m> be a tree with <m>n</m> vertices.  By Lemma, we know that <m>\bfT</m> has a leaf <m>v</m>, which by the definition of leaves is connected to the rest of <m>\bfT</m> by a single edge <m>e</m>.  If we delete <m>v</m> and <m>e</m> from <m>\bfT</m>, we get a smaller graph <m>\bfT^\prime</m> ince which has one less vertex and one less edge than <m>\bfT</m> did. </p>
+
+<p>Since <m>\bfT</m> was a tree, it follows that <m>\bfT^\prime</m> is a tree, too -- check this yourself, using the definition of a tree!  Then, since <m>\bfT^\prime</m> is a tree with <m>n-1</m> vertices, byt the inductive hypothesis it follows that it has one less edge <m>n-2</m> edges, and so <m>\bfT</m> must have <m>n-1</m> edges, which is what we were trying to show. </p>
+
+<p>Now we show the other direction: that if <m>\bfG</m> is a simple connected graph with <m>n</m> vertices and <m>n-1</m> edges,  then <m>\bfG</m> is a tree.  The basic structure of the proof is the same as the other direction: find a vertex <m>v</m> adjacent to a single edge <m>e</m>, and delete <m>v</m> and <m>e</m> to get a smaller tree, where we can assume the proposition holds, and then use induction.</p>
+
+<p>To play the role of the lemma that every tree has a leaf, we will establish the following statement:  if <m>\bfG</m> is a connected graph with <m>n</m> vertices and <m>n-1</m> edges, then /p><m>\bfG</m> has a vertex of degree 1.  Note that since <m>\bfG</m> is connected, it can't have any vertices of degree 0, and so to prove it has a vertex of degree 1 it is enough to show that it has a vertex of degree strictly less than 2.  Thus, for contradiction assume that every vertex <m>v</m> of <m>\bfG</m> has degree <m>d(v)\geq 2</m>.  But then the handshaking lemma would say:
+<me>2(n-1)=2e=\sum d(v)\geq \sum 2=2n</me>
+a contradiction, and hence <m>\bfG</m> must have a vertex of degree 1, as desired.</p>
+</proof>
+</lemma>
+
+</subsection>
+<subsection><title>Trees in Chemistry</title>
+<p>Our brief study of trees has the following consequence for chemistry: whether or not a molecule is a tree is determined just by its chemical formula, and not how it's put together.  Equivalently, if one isomer of a molecule is a tree, then all isomers of the molecule are.</p>
+
+<p>The argument runs as follows.   Knowing the chemical formula of a molecule means we know the degree sequence of the corresonding graphs.  Molecules are by definition connected graphs, so to be a tree it is enough to show that the graph has one less edge than the number of vertices.  But we can compute the number of edges from the degree sequence by using the Handshaking Lemma.</p>
+
+<example><title>Alkanes are trees</title><p>Any molecule with formula <m>C_nH_{2n+2}</m> is an <em>alkane</em>.  Although in general alkanes can have multiple isomers, every isomer of an Alkane will always be a tree, as we now show.</p>
+
+<p>To show a graph is a tree, it suffices to show that it is connected and that the number of edges is one less than the number of vertices.  Since Alkanes are molecules, we know that the graph is connected.  Furthermore, <m>C_nH_{2n+2}</m> has <m>n</m> carbons adn <m>2n+2</m> hydrogens, and hence has <m>3n+2</m> vertices.  Thus, it is enough to show that any molecule with formula <m>C_nH_{2n+2}</m> has <m>3n+1</m> edges.</p>
+
+<p>To do this, we use the handshaking lemma: <m>2e=\sum d(v)</m>.  Each of the <m>n</m> carbons has degree 4, so the carbons contribute <m>4n</m> to the total degree, and each hydrogen of the <m>2n+2</m> has degree 1 and so only contributes 1 to the sum of degrees.  Hence, twice the number of edges is equal to <m>4n+(2n+2)=6n+2</m>, and so there are <m>3n+1</m> edges, as desired.</p>
+</example> 
+<p>As an early application of graph theory, Cayley used these ideas to count the number of isomers of Alkanes (with some mistakes).  In general, you can count isomers of any molecule by counting isomorphism classes of graphs with given degree sequences, but it can help organize the search to know, e.g., that they're all trees.  To make sure we don't miss or double count any, it's useful to organize the enumeration according to some principle; for Alkanes one way is to organize according to the longest path of carbons, another is to restrict degree sequences to just how the carbons have connected to other carbons.</p>
+
+<example><title>Counting isomers of <m>C_6H_{14}</m></title>
+<p>We illustrate these both of these methods.  We first illustrate by length of the longest path of carbons.</p>
+<ul><li><b>Chain length six:</b> Since we've used all carbons then there are no more choices, and there is only one such isomer.</li>
+<li><b>Chain length five:</b> We need to add one more carbon.  We can't add it to either of the end carbons, because then we'd have a path of length 6.  We can add it to the central of the two chains, or alternatively to one either side of central -- the last two trees are isomorphic, giving us two possibilities</li>
+<li><b>Chain length four:</b> We need to add two more carbons.  Again, they can't be added to either of the end carbons, or we'd have a longer chain length.  Therefore, they most be added to the two central carbons.  One case is that we add one carbon to each of the two central carbons.  Alternatively, we could add both the carbons to the same "central" carbon reversing the order of the chain is a symmetry that interchanges the two central atoms.  We could add each carbon directly to the existing carbon in the chain, or we could add them one after the other making a chain of length two.  However, the resulting graph would have a chain of length 5 and already be counted.   Thus, there are two possibilities here.</li>
+<li><b>Chain length three:</b> We need at add three more carbons, and there's only one central carbon to attach them to.  We can't add them all directly to this central carbon, as that would create a carbon of degree 5.  On the other hand, once we add a chain of length longer than one to this central carbon we'd have a path of length 4 or greater.
+</li></ul>
+<p>Thus, we see there are five isomers of <m>C_6H_{14}</m>.  Alternatively, we could organize our search by deleting the hydrogens, and then considering the degrees of the resulting carbon-carbon graph.</p> 
+<ul>
+<li>Degree at most two: If the resulting tree only had carbons of degree at most two, then it would have to be the path graph <m>P_6</m>, and so we only have one possibility here.</li>
+<li>One vertex of degree three: If the resulting graph had exactly one carbon of degree three, that vertex and its three neighbours would account for 4 of our 6 carbons, and so we'd have to add two more.  We couldn't add them directly to the same vertex, as that would create a second vertex of degree three.  So, they could either be added as a chain of length two to one of the leaves of the existing graph, or they could be added to two separate leaves.  Drawing these graphs we see they're not isomorphic, and so we have two possibilities here.</li>
+<li>Two vertices of degree three: If we have two vertices of degree three, one sees they'd have to be adjacent to each other, resulting in one possibity.</li>
+<li>Vertex of degree four: A vertex of degree 4 and its four neighbours would account for all but one of the carbons.  We could add that carbon to any of the leaves, and get one more possiblity.</li>
+</ul>
+
+<figure xml:id="fig-isomers-c6h12"> <caption>Isomers of <m>C_6H_{12}</m></caption>
+<image width="90%">
+<latex-image><![CDATA[\begin{tikzpicture}[scale=.5]
+
+
+  \begin{scope}[xshift=3cm]
+  \draw node (a) at (0,0) {C};
+  \draw node (b) at (1,0) {C};
+  \draw node (c) at (2,0) {C};
+  \draw node (d) at (3,0) {C};
+  \draw node (e) at (4,0) {C};
+  \draw node (f) at (5,0) {C};
+  \draw (a)--(b)--(c)--(d)--(e)--(f);
+  \end{scope}
+  
+  \begin{scope}[yshift=-2.5cm]
+    \draw node (a) at (0,0) {C};
+  \draw node (b) at (1,0) {C};
+  \draw node (c) at (2,0) {C};
+  \draw node (d) at (3,0) {C};
+  \draw node (e) at (4,0) {C};
+  \draw node (f) at (1,1) {C};
+\draw (a)--(b)--(c)--(d)--(e);  
+\draw (b)--(f);
+\end{scope}
+
+\begin{scope}[xshift=7cm, yshift=-2.5cm]
+    \draw node (a) at (0,0) {C};
+  \draw node (b) at (1,0) {C};
+  \draw node (c) at (2,0) {C};
+  \draw node (d) at (3,0) {C};
+  \draw node (e) at (4,0) {C};
+  \draw node (f) at (2,1) {C};
+\draw (a)--(b)--(c)--(d)--(e);  
+\draw (c)--(f);
+\end{scope}
+
+\begin{scope}[yshift=-5cm]
+    \draw node (a) at (0,0) {C};
+  \draw node (b) at (1,0) {C};
+  \draw node (c) at (2,0) {C};
+  \draw node (d) at (3,0) {C};
+  \draw node (e) at (1,1) {C};
+  \draw node (f) at (2,1) {C};
+\draw (a)--(b)--(c)--(d);  
+\draw (b)--(e);
+\draw (c)--(f);
+
+\end{scope}
+
+\begin{scope}[yshift=-5cm, xshift=7cm]
+    \draw node (a) at (0,0) {C};
+  \draw node (b) at (1,0) {C};
+  \draw node (c) at (2,0) {C};
+  \draw node (d) at (3,0) {C};
+  \draw node (e) at (1,1) {C};
+  \draw node (f) at (1,-1) {C};
+\draw (a)--(b)--(c)--(d);  
+\draw (f)--(b)--(e);
+
+\end{scope}
+
+
+\end{tikzpicture}
+]]></latex-image></image></figure>
+
+
+<p>Since carbons only have degree 4, the tree with six vertices where all are connected to a central vertex isn't allowed, and we have found all the isomers.</p>
+
+
+</example>
+
+</subsection>
+
+
+
+</section> 

@@ -8,6 +8,7 @@
 <xi:include href="./s_intro_degrees.mbx" />
 <xi:include href="./s_intro_isomorphisms.mbx" />
 <xi:include href="./s_intro_instantinsanity.mbx" />
+<xi:include href="./s_intro_trees.mbx" />
 <xi:include href="./s_intro_exercises.mbx" />
 
 

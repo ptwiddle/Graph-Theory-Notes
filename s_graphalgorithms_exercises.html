@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:26+01:00    *-->
+<!--*    on 2020-04-03T11:41:45+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <html lang="en-US">
@@ -12,13 +12,19 @@
 <title>Exercises</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
-        inlineMath: [['\\(','\\)']],
+        inlineMath: [['\\(','\\)']]
     },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
     TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
         // scrolling to fragment identifiers is controlled by other Javascript
         positionToHash: false,
         equationNumbers: { autoNumber: "none", useLabelIds: true, },
@@ -35,13 +41,20 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
     \newcommand{\ints}{\mathbb{Z}}
     \newcommand{\posints}{\mathbb{N}}
     \newcommand{\rats}{\mathbb{Q}}
@@ -121,67 +134,78 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_graphalgorithms_prufer.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_algorithms.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ch_graphs_on_surfaces.html" title="Next" alt="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_graphalgorithms_prufer.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_algorithms.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ch_graphs_on_surfaces.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_graphalgorithms_prufer.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_algorithms.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="ch_graphs_on_surfaces.html" title="Next" alt="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_graphalgorithms_prufer.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_algorithms.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ch_graphs_on_surfaces.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link"><a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
-<ul>
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
 <li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook">A first look at graphs</a></li>
 <li><a href="s_intro_degrees.html" data-scroll="s_intro_degrees">Degree and handshaking</a></li>
 <li><a href="s_intro_isomorphisms.html" data-scroll="s_intro_isomorphisms">Graph Isomorphisms</a></li>
 <li><a href="s_intro_instantinsanity.html" data-scroll="s_intro_instantinsanity">Instant Insanity</a></li>
+<li><a href="s_intro_trees.html" data-scroll="s_intro_trees">Trees</a></li>
 <li><a href="s_intro_exercises.html" data-scroll="s_intro_exercises">Exercises</a></li>
 </ul>
-<h2 class="link"><a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span><span class="title">Walks</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span> <span class="title">Walks</span></a><ul>
 <li><a href="s_walks_basics.html" data-scroll="s_walks_basics">Walks: the basics</a></li>
 <li><a href="s_walks_eulerian.html" data-scroll="s_walks_eulerian">Eulerian Walks</a></li>
 <li><a href="s_walks_hamiltonian.html" data-scroll="s_walks_hamiltonian">Hamiltonian cycles</a></li>
 <li><a href="s_walks_exercises.html" data-scroll="s_walks_exercises">Exercises</a></li>
 </ul>
-<h2 class="link active"><a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span><span class="title">Algorithms</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span> <span class="title">Algorithms</span></a><ul>
 <li><a href="s_graphalgorithms_min-wt-span.html" data-scroll="s_graphalgorithms_min-wt-span">Minimum Weight Spanning Trees</a></li>
 <li><a href="s_graphalgorithms_digraphs.html" data-scroll="s_graphalgorithms_digraphs">Digraphs</a></li>
 <li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
 <li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
 <li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises" class="active">Exercises</a></li>
 </ul>
-<h2 class="link"><a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">4</span><span class="title">Graphs on Surfaces</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">4</span> <span class="title">Graphs on Surfaces</span></a><ul>
 <li><a href="s_graphs_on_surfaces_intro.html" data-scroll="s_graphs_on_surfaces_intro">Introduction to Graphs on Surfaces</a></li>
 <li><a href="s_graphs_on_surfaces_planarity_algorithm.html" data-scroll="s_graphs_on_surfaces_planarity_algorithm">The planarity algorithm for Hamiltonian graphs</a></li>
 <li><a href="s_graphs_on_surfaces_Kuratowski.html" data-scroll="s_graphs_on_surfaces_Kuratowski">Kuratowski's Theorem</a></li>
 <li><a href="s_graphs_on_surfaces_other_surfaces.html" data-scroll="s_graphs_on_surfaces_other_surfaces">Drawing Graphs on Other surfaces</a></li>
 <li><a href="s_graphs_on_surfaces_euler.html" data-scroll="s_graphs_on_surfaces_euler">Euler's Theorem</a></li>
 </ul>
-<h2 class="link"><a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">5</span><span class="title">Colourings</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">5</span> <span class="title">Colourings</span></a><ul>
 <li><a href="s_chromatic_number.html" data-scroll="s_chromatic_number">Chromatic number</a></li>
 <li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index and applications</a></li>
 <li><a href="s_chromatic_polynomial_intro.html" data-scroll="s_chromatic_polynomial_intro">Introduction to the chromatic polynomial</a></li>
 <li><a href="s_chromatic_polynomial_more.html" data-scroll="s_chromatic_polynomial_more">Chromatic Polynomial continued</a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
-</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="exercises" id="s_graphalgorithms_exercises"><h2 class="heading hide-type" alt="Exercises 3.5 Exercises">
-<span class="type">Section</span><span class="codenumber">3.5</span><span class="title">Exercises</span>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="exercises" id="s_graphalgorithms_exercises"><h2 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">3.5</span> <span class="title">Exercises</span>
 </h2>
-<a href="s_graphalgorithms_exercises.html" class="permalink">¶</a><article class="exercise-like" id="exercise-16"><h6 class="heading"><span class="codenumber">1</span></h6>
-<p id="p-286">For the graph in <a knowl="./knowl/fig_span_tree_ex1.html" knowl-id="xref-fig_span_tree_ex1" alt="Figure 3.5.13 " title="Figure 3.5.13 ">Figure 3.5.13</a>, use Kruskal's algorithm (“avoid cycles”) to find a minimum weight spanning tree. Your answer should include a complete list of the edges, indicating which edges you take for your tree and which (if any) you reject in the course of running the algorithm.</p>
-<figure class="figure-like" id="fig_span_tree_ex1"><img src="images/span_tree_ex1.svg" width="65%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.5.13</span>Find a minimum weight spanning tree</figcaption></figure></article><article class="exercise-like" id="exercise-17"><h6 class="heading"><span class="codenumber">2</span></h6>
-<p id="p-287">For the graph in <a knowl="./knowl/fig_span_tree_ex1.html" knowl-id="xref-fig_span_tree_ex1" alt="Figure 3.5.13 " title="Figure 3.5.13 ">Figure 3.5.13</a>, use Prim's algorithm (“build tree”) to find a minimum weight spanning tree. Your answer should list the edges selected by the algorithm in the order they were selected.</p></article><article class="exercise-like" id="exercise-18"><h6 class="heading"><span class="codenumber">3</span></h6>
-<p id="p-288">For the graph in <a knowl="./knowl/fig_span_tree_ex2.html" knowl-id="xref-fig_span_tree_ex2" alt="Figure 3.5.14 " title="Figure 3.5.14 ">Figure 3.5.14</a>, use Kruskal's algorithm (“avoid cycles”) to find a minimum weight spanning tree. Your answer should include a complete list of the edges, indicating which edges you take for your tree and which (if any) you reject in the course of running the algorithm.</p>
-<figure class="figure-like" id="fig_span_tree_ex2"><img src="images/span_tree_ex2.svg" width="65%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.5.14</span>Find a minimum weight spanning tree</figcaption></figure></article><article class="exercise-like" id="exercise-19"><h6 class="heading"><span class="codenumber">4</span></h6>
-<p id="p-289">For the graph in <a knowl="./knowl/fig_span_tree_ex2.html" knowl-id="xref-fig_span_tree_ex2" alt="Figure 3.5.14 " title="Figure 3.5.14 ">Figure 3.5.14</a>, use Prim's algorithm (“build tree”) to find a minimum weight spanning tree. Your answer should list the edges selected by the algorithm in the order they were selected.</p></article><article class="exercise-like" id="exercise-20"><h6 class="heading"><span class="codenumber">5</span></h6>
-<p id="p-290">For the graph in <a knowl="./knowl/fig_span_tree_ex3.html" knowl-id="xref-fig_span_tree_ex3" alt="Figure 3.5.15 " title="Figure 3.5.15 ">Figure 3.5.15</a>, use Kruskal's algorithm (“avoid cycles”) to find a minimum weight spanning tree. Your answer should include a complete list of the edges, indicating which edges you take for your tree and which (if any) you reject in the course of running the algorithm.</p>
-<figure class="figure-like" id="fig_span_tree_ex3"><img src="images/span_tree_ex3.svg" width="45%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.5.15</span>Find a minimum weight spanning tree</figcaption></figure></article><article class="exercise-like" id="exercise-21"><h6 class="heading"><span class="codenumber">6</span></h6>
-<p id="p-291">For the graph in <a knowl="./knowl/fig_span_tree_ex3.html" knowl-id="xref-fig_span_tree_ex3" alt="Figure 3.5.15 " title="Figure 3.5.15 ">Figure 3.5.15</a>, use Prim's algorithm (“build tree”) to find a minimum weight spanning tree. Your answer should list the edges selected by the algorithm in the order they were selected.</p></article><article class="exercise-like" id="exercise-22"><h6 class="heading"><span class="codenumber">7</span></h6>
-<p id="p-292">A new local bank is being created and will establish a headquarters \(h\text{,}\) two branches \(b_1\) and \(b_2\text{,}\) and four ATMs \(a_1\text{,}\) \(a_2\text{,}\) \(a_3\text{,}\) and \(a_4\text{.}\) They need to build a computer network such that the headquarters, branches, and ATMs can all intercommunicate. Furthermore, they will need to be networked with the Federal Reserve Bank of Atlanta, \(f\text{.}\) The costs of the feasible network connections (in units of $10,000) are listed below:</p>
+<a href="s_graphalgorithms_exercises.html" class="permalink">¶</a><article class="exercise exercise-like" id="exercise-16"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-306">For the graph in <a class="xref" data-knowl="./knowl/fig_span_tree_ex1.html" title="Figure 3.5.1">Figure 3.5.1</a>, use Kruskal's algorithm (“avoid cycles”) to find a minimum weight spanning tree. Your answer should include a complete list of the edges, indicating which edges you take for your tree and which (if any) you reject in the course of running the algorithm.</p>
+<figure class="figure figure-like" id="fig_span_tree_ex1"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="images/span_tree_ex1.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.1<span class="period">.</span></span><span class="space"> </span>Find a minimum weight spanning tree</figcaption></figure></article><article class="exercise exercise-like" id="exercise-17"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-307">For the graph in <a class="xref" data-knowl="./knowl/fig_span_tree_ex1.html" title="Figure 3.5.1">Figure 3.5.1</a>, use Prim's algorithm (“build tree”) to find a minimum weight spanning tree. Your answer should list the edges selected by the algorithm in the order they were selected.</p></article><article class="exercise exercise-like" id="exercise-18"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-308">For the graph in <a class="xref" data-knowl="./knowl/fig_span_tree_ex2.html" title="Figure 3.5.2">Figure 3.5.2</a>, use Kruskal's algorithm (“avoid cycles”) to find a minimum weight spanning tree. Your answer should include a complete list of the edges, indicating which edges you take for your tree and which (if any) you reject in the course of running the algorithm.</p>
+<figure class="figure figure-like" id="fig_span_tree_ex2"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="images/span_tree_ex2.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.2<span class="period">.</span></span><span class="space"> </span>Find a minimum weight spanning tree</figcaption></figure></article><article class="exercise exercise-like" id="exercise-19"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-309">For the graph in <a class="xref" data-knowl="./knowl/fig_span_tree_ex2.html" title="Figure 3.5.2">Figure 3.5.2</a>, use Prim's algorithm (“build tree”) to find a minimum weight spanning tree. Your answer should list the edges selected by the algorithm in the order they were selected.</p></article><article class="exercise exercise-like" id="exercise-20"><h6 class="heading"><span class="codenumber">5<span class="period">.</span></span></h6>
+<p id="p-310">For the graph in <a class="xref" data-knowl="./knowl/fig_span_tree_ex3.html" title="Figure 3.5.3">Figure 3.5.3</a>, use Kruskal's algorithm (“avoid cycles”) to find a minimum weight spanning tree. Your answer should include a complete list of the edges, indicating which edges you take for your tree and which (if any) you reject in the course of running the algorithm.</p>
+<figure class="figure figure-like" id="fig_span_tree_ex3"><div class="image-box" style="width: 45%; margin-left: 27.5%; margin-right: 27.5%;"><img src="images/span_tree_ex3.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.3<span class="period">.</span></span><span class="space"> </span>Find a minimum weight spanning tree</figcaption></figure></article><article class="exercise exercise-like" id="exercise-21"><h6 class="heading"><span class="codenumber">6<span class="period">.</span></span></h6>
+<p id="p-311">For the graph in <a class="xref" data-knowl="./knowl/fig_span_tree_ex3.html" title="Figure 3.5.3">Figure 3.5.3</a>, use Prim's algorithm (“build tree”) to find a minimum weight spanning tree. Your answer should list the edges selected by the algorithm in the order they were selected.</p></article><article class="exercise exercise-like" id="exercise-22"><h6 class="heading"><span class="codenumber">7<span class="period">.</span></span></h6>
+<p id="p-312">A new local bank is being created and will establish a headquarters \(h\text{,}\) two branches \(b_1\) and \(b_2\text{,}\) and four ATMs \(a_1\text{,}\) \(a_2\text{,}\) \(a_3\text{,}\) and \(a_4\text{.}\) They need to build a computer network such that the headquarters, branches, and ATMs can all intercommunicate. Furthermore, they will need to be networked with the Federal Reserve Bank of Atlanta, \(f\text{.}\) The costs of the feasible network connections (in units of $10,000) are listed below:</p>
 <div class="displaymath">
 \begin{align*}
 h f \amp  \quad 80 \amp 
@@ -196,14 +220,15 @@ a_1 a_4 \amp  \quad 3\\
 a_3 a_4 \amp \quad 6
 \end{align*}
 </div>
-<p>The bank wishes to minimize the cost of building its network (which must allow for connection, possibly routed through other nodes, from each node to each other node), however due to the need for high-speed communication, they <em class="alert">must</em> pay to build the connection from \(h\) to \(f\) as well as the connection from \(b_2\) to \(a_3\text{.}\) Give a list of the connections the bank should establish in order to minimize their total cost, subject to this constraint. Be sure to explain how you selected the connections and how you know the total cost is minimized.</p></article><article class="exercise-like" id="exercise-23"><h6 class="heading"><span class="codenumber">8</span></h6>
-<p id="p-293">A disconnected weighted graph obviously has no spanning trees. However, it is possible to find a spanning forest of minimum weight in such a graph. Explain how to modify both Kruskal's algorithm and Prim's algorithm to do this.</p></article><article class="exercise-like" id="exercise-24"><h6 class="heading"><span class="codenumber">9</span></h6>
-<p id="p-294">Prove <a knowl="./knowl/prop_graphalgorithms_spanforest.html" knowl-id="xref-prop_graphalgorithms_spanforest" alt="Proposition 3.1.3 " title="Proposition 3.1.3 ">Proposition 3.1.3</a>.</p></article><article class="exercise-like" id="exercise-25"><h6 class="heading"><span class="codenumber">10</span></h6>
-<p id="p-295">In the paper where Kruskal's algorithm first appeared, he considered the algorithm a route to a nicer proof that in a connected weighted graph with no two edges having the same weight, there is a <em class="emphasis">unique</em> minimum weight spanning tree. Prove this fact using Kruskal's algorithm.</p></article><article class="exercise-like" id="exercise-26"><h6 class="heading"><span class="codenumber">11</span></h6>
-<p id="p-296">Use Dijkstra's algorithm to find the distance from \(a\) to each other vertex in the digraph shown in <a knowl="./knowl/fig_graphalgorithms_dijkstra_ex1.html" knowl-id="xref-fig_graphalgorithms_dijkstra_ex1" alt="Figure 3.5.16 " title="Figure 3.5.16 ">Figure 3.5.16</a> and a directed path of that length.</p>
-<figure class="figure-like" id="fig_graphalgorithms_dijkstra_ex1"><img src="images/dijkstra_ex1.svg" width="65%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.5.16</span>A directed graph</figcaption></figure></article><article class="exercise-like" id="exercise-27"><h6 class="heading"><span class="codenumber">12</span></h6>
-<p id="p-297"><a knowl="./knowl/tab_digraph1.html" knowl-id="xref-tab_digraph1" alt="Table 3.5.17 " title="Table 3.5.17 ">Table 3.5.17</a> contains the length of the directed edge \((x,y)\) in the intersection of <em class="emphasis">row</em> \(x\) and <em class="emphasis">column</em> \(y\) in a digraph with vertex set \(\{a,b,c,d,e,f\}\text{.}\) For example, \(w(b,d)=21\text{.}\) (On the other hand, \(w(d,b)=10\text{.}\)) Use this data and Dijkstra's algorithm to find the distance from \(a\) to each of the other vertices and a directed path of that length from \(a\text{.}\)</p>
-<figure class="figure-like" id="tab_digraph1"><table>
+<p data-braille="continuation">The bank wishes to minimize the cost of building its network (which must allow for connection, possibly routed through other nodes, from each node to each other node), however due to the need for high-speed communication, they <em class="alert">must</em> pay to build the connection from \(h\) to \(f\) as well as the connection from \(b_2\) to \(a_3\text{.}\) Give a list of the connections the bank should establish in order to minimize their total cost, subject to this constraint. Be sure to explain how you selected the connections and how you know the total cost is minimized.</p></article><article class="exercise exercise-like" id="exercise-23"><h6 class="heading"><span class="codenumber">8<span class="period">.</span></span></h6>
+<p id="p-313">A disconnected weighted graph obviously has no spanning trees. However, it is possible to find a spanning forest of minimum weight in such a graph. Explain how to modify both Kruskal's algorithm and Prim's algorithm to do this.</p></article><article class="exercise exercise-like" id="exercise-24"><h6 class="heading"><span class="codenumber">9<span class="period">.</span></span></h6>
+<p id="p-314">Prove <a class="xref" data-knowl="./knowl/prop_graphalgorithms_spanforest.html" title="Proposition 3.1.3">Proposition 3.1.3</a>.</p></article><article class="exercise exercise-like" id="exercise-25"><h6 class="heading"><span class="codenumber">10<span class="period">.</span></span></h6>
+<p id="p-315">In the paper where Kruskal's algorithm first appeared, he considered the algorithm a route to a nicer proof that in a connected weighted graph with no two edges having the same weight, there is a <em class="emphasis">unique</em> minimum weight spanning tree. Prove this fact using Kruskal's algorithm.</p></article><article class="exercise exercise-like" id="exercise-26"><h6 class="heading"><span class="codenumber">11<span class="period">.</span></span></h6>
+<p id="p-316">Use Dijkstra's algorithm to find the distance from \(a\) to each other vertex in the digraph shown in <a class="xref" data-knowl="./knowl/fig_graphalgorithms_dijkstra_ex1.html" title="Figure 3.5.4">Figure 3.5.4</a> and a directed path of that length.</p>
+<figure class="figure figure-like" id="fig_graphalgorithms_dijkstra_ex1"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="images/dijkstra_ex1.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.4<span class="period">.</span></span><span class="space"> </span>A directed graph</figcaption></figure></article><article class="exercise exercise-like" id="exercise-27"><h6 class="heading"><span class="codenumber">12<span class="period">.</span></span></h6>
+<p id="p-317"><a class="xref" data-knowl="./knowl/tab_digraph1.html" title="Table 3.5.5">Table 3.5.5</a> contains the length of the directed edge \((x,y)\) in the intersection of <em class="emphasis">row</em> \(x\) and <em class="emphasis">column</em> \(y\) in a digraph with vertex set \(\{a,b,c,d,e,f\}\text{.}\) For example, \(w(b,d)=21\text{.}\) (On the other hand, \(w(d,b)=10\text{.}\)) Use this data and Dijkstra's algorithm to find the distance from \(a\) to each of the other vertices and a directed path of that length from \(a\text{.}\)</p>
+<figure class="table figure-like" id="tab_digraph1"><table>
 <tr>
 <td class="l m b1 r1 l0 t0 lines">\(w\)</td>
 <td class="l m b1 r0 l0 t0 lines">\(a\)</td>
@@ -211,7 +236,7 @@ a_3 a_4 \amp \quad 6
 <td class="l m b1 r0 l0 t0 lines">\(c\)</td>
 <td class="l m b1 r0 l0 t0 lines">\(d\)</td>
 <td class="l m b1 r0 l0 t0 lines">\(e\)</td>
-<td class="l m b1 r0 l0 t0 lines">\(f\)</td>
+<td class="l m b1 r0 l0 t0 lines" data-braille="last-cell">\(f\)</td>
 </tr>
 <tr>
 <td class="l m b0 r1 l0 t0 lines">\(a\)</td>
@@ -220,7 +245,7 @@ a_3 a_4 \amp \quad 6
 <td class="l m b0 r0 l0 t0 lines">8</td>
 <td class="l m b0 r0 l0 t0 lines">43</td>
 <td class="l m b0 r0 l0 t0 lines">79</td>
-<td class="l m b0 r0 l0 t0 lines">35</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">35</td>
 </tr>
 <tr>
 <td class="l m b0 r1 l0 t0 lines">\(b\)</td>
@@ -229,7 +254,7 @@ a_3 a_4 \amp \quad 6
 <td class="l m b0 r0 l0 t0 lines">18</td>
 <td class="l m b0 r0 l0 t0 lines">21</td>
 <td class="l m b0 r0 l0 t0 lines">60</td>
-<td class="l m b0 r0 l0 t0 lines">33</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">33</td>
 </tr>
 <tr>
 <td class="l m b0 r1 l0 t0 lines">\(c\)</td>
@@ -238,7 +263,7 @@ a_3 a_4 \amp \quad 6
 <td class="l m b0 r0 l0 t0 lines">0</td>
 <td class="l m b0 r0 l0 t0 lines">37</td>
 <td class="l m b0 r0 l0 t0 lines">50</td>
-<td class="l m b0 r0 l0 t0 lines">30</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">30</td>
 </tr>
 <tr>
 <td class="l m b0 r1 l0 t0 lines">\(d\)</td>
@@ -247,7 +272,7 @@ a_3 a_4 \amp \quad 6
 <td class="l m b0 r0 l0 t0 lines">91</td>
 <td class="l m b0 r0 l0 t0 lines">0</td>
 <td class="l m b0 r0 l0 t0 lines">17</td>
-<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">7</td>
 </tr>
 <tr>
 <td class="l m b0 r1 l0 t0 lines">\(e\)</td>
@@ -256,7 +281,7 @@ a_3 a_4 \amp \quad 6
 <td class="l m b0 r0 l0 t0 lines">39</td>
 <td class="l m b0 r0 l0 t0 lines">14</td>
 <td class="l m b0 r0 l0 t0 lines">0</td>
-<td class="l m b0 r0 l0 t0 lines">108</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">108</td>
 </tr>
 <tr>
 <td class="l m b0 r1 l0 t0 lines">\(f\)</td>
@@ -265,14 +290,15 @@ a_3 a_4 \amp \quad 6
 <td class="l m b0 r0 l0 t0 lines">29</td>
 <td class="l m b0 r0 l0 t0 lines">73</td>
 <td class="l m b0 r0 l0 t0 lines">20</td>
-<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">0</td>
 </tr>
 </table>
-<figcaption><span class="type">Table</span><span class="codenumber">3.5.17</span>A digraph represented as a table of data</figcaption></figure></article><article class="exercise-like" id="exercise-28"><h6 class="heading"><span class="codenumber">13</span></h6>
-<p id="p-298">Use Dijkstra's algorithm to find the distance from \(a\) to each other vertex in the digraph shown in <a knowl="./knowl/fig_graphalgorithms_dijkstra_ex2.html" knowl-id="xref-fig_graphalgorithms_dijkstra_ex2" alt="Figure 3.5.18 " title="Figure 3.5.18 ">Figure 3.5.18</a> and a directed path of that length.</p>
-<figure class="figure-like" id="fig_graphalgorithms_dijkstra_ex2"><img src="images/dijkstra_ex2.svg" width="65%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.5.18</span>A directed graph</figcaption></figure></article><article class="exercise-like" id="exercise-29"><h6 class="heading"><span class="codenumber">14</span></h6>
-<p id="p-299"><a knowl="./knowl/tab_digraph2.html" knowl-id="xref-tab_digraph2" alt="Table 3.5.19 " title="Table 3.5.19 ">Table 3.5.19</a> contains the length of the directed edge \((x,y)\) in the intersection of <em class="emphasis">row</em> \(x\) and <em class="emphasis">column</em> \(y\) in a digraph with vertex set \(\{a,b,c,d,e,f\}\text{.}\) For example, \(w(b,d)=47\text{.}\) (On the other hand, \(w(d,b)=6\text{.}\)) Use this data and Dijkstra's algorithm to find the distance from \(a\) to each of the other vertices and a directed path of that length from \(a\text{.}\)</p>
-<figure class="figure-like" id="tab_digraph2"><table>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.5.5<span class="period">.</span></span><span class="space"> </span>A digraph represented as a table of data</figcaption></figure></article><article class="exercise exercise-like" id="exercise-28"><h6 class="heading"><span class="codenumber">13<span class="period">.</span></span></h6>
+<p id="p-318">Use Dijkstra's algorithm to find the distance from \(a\) to each other vertex in the digraph shown in <a class="xref" data-knowl="./knowl/fig_graphalgorithms_dijkstra_ex2.html" title="Figure 3.5.6">Figure 3.5.6</a> and a directed path of that length.</p>
+<figure class="figure figure-like" id="fig_graphalgorithms_dijkstra_ex2"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="images/dijkstra_ex2.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.5.6<span class="period">.</span></span><span class="space"> </span>A directed graph</figcaption></figure></article><article class="exercise exercise-like" id="exercise-29"><h6 class="heading"><span class="codenumber">14<span class="period">.</span></span></h6>
+<p id="p-319"><a class="xref" data-knowl="./knowl/tab_digraph2.html" title="Table 3.5.7">Table 3.5.7</a> contains the length of the directed edge \((x,y)\) in the intersection of <em class="emphasis">row</em> \(x\) and <em class="emphasis">column</em> \(y\) in a digraph with vertex set \(\{a,b,c,d,e,f\}\text{.}\) For example, \(w(b,d)=47\text{.}\) (On the other hand, \(w(d,b)=6\text{.}\)) Use this data and Dijkstra's algorithm to find the distance from \(a\) to each of the other vertices and a directed path of that length from \(a\text{.}\)</p>
+<figure class="table figure-like" id="tab_digraph2"><table>
 <tr>
 <td class="l m b1 r1 l0 t0 lines">\(w\)</td>
 <td class="l m b1 r0 l0 t0 lines">\(a\)</td>
@@ -280,7 +306,7 @@ a_3 a_4 \amp \quad 6
 <td class="l m b1 r0 l0 t0 lines">\(c\)</td>
 <td class="l m b1 r0 l0 t0 lines">\(d\)</td>
 <td class="l m b1 r0 l0 t0 lines">\(e\)</td>
-<td class="l m b1 r0 l0 t0 lines">\(f\)</td>
+<td class="l m b1 r0 l0 t0 lines" data-braille="last-cell">\(f\)</td>
 </tr>
 <tr>
 <td class="l m b0 r1 l0 t0 lines">\(a\)</td>
@@ -289,7 +315,7 @@ a_3 a_4 \amp \quad 6
 <td class="l m b0 r0 l0 t0 lines">17</td>
 <td class="l m b0 r0 l0 t0 lines">55</td>
 <td class="l m b0 r0 l0 t0 lines">83</td>
-<td class="l m b0 r0 l0 t0 lines">42</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">42</td>
 </tr>
 <tr>
 <td class="l m b0 r1 l0 t0 lines">\(b\)</td>
@@ -298,7 +324,7 @@ a_3 a_4 \amp \quad 6
 <td class="l m b0 r0 l0 t0 lines">13</td>
 <td class="l m b0 r0 l0 t0 lines">47</td>
 <td class="l m b0 r0 l0 t0 lines">27</td>
-<td class="l m b0 r0 l0 t0 lines">17</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">17</td>
 </tr>
 <tr>
 <td class="l m b0 r1 l0 t0 lines">\(c\)</td>
@@ -307,7 +333,7 @@ a_3 a_4 \amp \quad 6
 <td class="l m b0 r0 l0 t0 lines">0</td>
 <td class="l m b0 r0 l0 t0 lines">16</td>
 <td class="l m b0 r0 l0 t0 lines">93</td>
-<td class="l m b0 r0 l0 t0 lines">28</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">28</td>
 </tr>
 <tr>
 <td class="l m b0 r1 l0 t0 lines">\(d\)</td>
@@ -316,7 +342,7 @@ a_3 a_4 \amp \quad 6
 <td class="l m b0 r0 l0 t0 lines">8</td>
 <td class="l m b0 r0 l0 t0 lines">0</td>
 <td class="l m b0 r0 l0 t0 lines">4</td>
-<td class="l m b0 r0 l0 t0 lines">32</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">32</td>
 </tr>
 <tr>
 <td class="l m b0 r1 l0 t0 lines">\(e\)</td>
@@ -325,7 +351,7 @@ a_3 a_4 \amp \quad 6
 <td class="l m b0 r0 l0 t0 lines">42</td>
 <td class="l m b0 r0 l0 t0 lines">8</td>
 <td class="l m b0 r0 l0 t0 lines">0</td>
-<td class="l m b0 r0 l0 t0 lines">45</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">45</td>
 </tr>
 <tr>
 <td class="l m b0 r1 l0 t0 lines">\(f\)</td>
@@ -334,15 +360,15 @@ a_3 a_4 \amp \quad 6
 <td class="l m b0 r0 l0 t0 lines">76</td>
 <td class="l m b0 r0 l0 t0 lines">5</td>
 <td class="l m b0 r0 l0 t0 lines">17</td>
-<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">0</td>
 </tr>
 </table>
-<figcaption><span class="type">Table</span><span class="codenumber">3.5.19</span>A digraph represented as a table of data</figcaption></figure></article><article class="exercise-like" id="exercise-30"><h6 class="heading"><span class="codenumber">15</span></h6>
-<p id="p-300">Give an example of a digraph having an <em class="emphasis">undirected</em> path between each pair of vertices, but having a root vertex \(r\) so that Dijkstra's algorithm cannot find a path of finite length from \(r\) to some vertex \(x\text{.}\)</p></article><article class="exercise-like" id="exercise-31"><h6 class="heading"><span class="codenumber">16</span></h6>
-<p id="p-301">Notice that in our discussion of Dijkstra's algorithm, we required that the edge weights be nonnegative. If the edge weights are lengths and meant to model distance, this makes perfect sense. However, in some cases, it might be reasonable to allow negative edge weights. For example, suppose that a positive weight means there is a cost to travel along the directed edge while a negative edge weight means that you make money for traveling along the directed edge. In this case, a directed path with positive total weight results in paying out to travel it, while one with negative total weight results in a profit. </p>
+<figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">3.5.7<span class="period">.</span></span><span class="space"> </span>A digraph represented as a table of data</figcaption></figure></article><article class="exercise exercise-like" id="exercise-30"><h6 class="heading"><span class="codenumber">15<span class="period">.</span></span></h6>
+<p id="p-320">Give an example of a digraph having an <em class="emphasis">undirected</em> path between each pair of vertices, but having a root vertex \(r\) so that Dijkstra's algorithm cannot find a path of finite length from \(r\) to some vertex \(x\text{.}\)</p></article><article class="exercise exercise-like" id="exercise-31"><h6 class="heading"><span class="codenumber">16<span class="period">.</span></span></h6>
+<p id="p-321">Notice that in our discussion of Dijkstra's algorithm, we required that the edge weights be nonnegative. If the edge weights are lengths and meant to model distance, this makes perfect sense. However, in some cases, it might be reasonable to allow negative edge weights. For example, suppose that a positive weight means there is a cost to travel along the directed edge while a negative edge weight means that you make money for traveling along the directed edge. In this case, a directed path with positive total weight results in paying out to travel it, while one with negative total weight results in a profit.</p>
 <ol class="lower-alpha">
-<li id="li-51"><p id="p-302">Give an example to show that Dijkstra's algorithm does not always find the path of minimum total weight when negative edge weights are allowed.</p></li>
-<li id="li-52"><p id="p-303">Bob and Xing are considering this situation, and Bob suggests that a little modification to the algorithm should solve the problem. He says that if there are negative weights, they just have to find the smallest (i.e., most negative weight) and add the absolute value of that weight to every directed edge. For example, if \(w(x,y)\geq -10\) for every directed edge \((x,y)\text{,}\) Bob is suggesting that they add \(10\) to every edge weight. Xing is skeptical, and for good reason. Give an example to show why Bob's modification won't work.</p></li>
+<li id="li-59"><p id="p-322">Give an example to show that Dijkstra's algorithm does not always find the path of minimum total weight when negative edge weights are allowed.</p></li>
+<li id="li-60"><p id="p-323">Bob and Xing are considering this situation, and Bob suggests that a little modification to the algorithm should solve the problem. He says that if there are negative weights, they just have to find the smallest (i.e., most negative weight) and add the absolute value of that weight to every directed edge. For example, if \(w(x,y)\geq -10\) for every directed edge \((x,y)\text{,}\) Bob is suggesting that they add \(10\) to every edge weight. Xing is skeptical, and for good reason. Give an example to show why Bob's modification won't work.</p></li>
 </ol></article></section></div></main>
 </div>
 </body>

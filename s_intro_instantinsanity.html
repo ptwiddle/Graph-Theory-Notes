@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:26+01:00    *-->
+<!--*    on 2020-04-13T16:05:44+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <html lang="en-US">
@@ -12,13 +12,19 @@
 <title>Instant Insanity</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
-        inlineMath: [['\\(','\\)']],
+        inlineMath: [['\\(','\\)']]
     },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
     TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
         // scrolling to fragment identifiers is controlled by other Javascript
         positionToHash: false,
         equationNumbers: { autoNumber: "none", useLabelIds: true, },
@@ -35,13 +41,20 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
     \newcommand{\ints}{\mathbb{Z}}
     \newcommand{\posints}{\mathbb{N}}
     \newcommand{\rats}{\mathbb{Q}}
@@ -121,82 +134,85 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_intro_isomorphisms.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_intro.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_intro_exercises.html" title="Next" alt="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_intro_isomorphisms.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_intro.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_intro_trees.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_intro_isomorphisms.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_intro.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="s_intro_exercises.html" title="Next" alt="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_intro_isomorphisms.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_intro.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_intro_trees.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link active"><a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
-<ul>
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
 <li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook">A first look at graphs</a></li>
 <li><a href="s_intro_degrees.html" data-scroll="s_intro_degrees">Degree and handshaking</a></li>
 <li><a href="s_intro_isomorphisms.html" data-scroll="s_intro_isomorphisms">Graph Isomorphisms</a></li>
 <li><a href="s_intro_instantinsanity.html" data-scroll="s_intro_instantinsanity" class="active">Instant Insanity</a></li>
+<li><a href="s_intro_trees.html" data-scroll="s_intro_trees">Trees</a></li>
 <li><a href="s_intro_exercises.html" data-scroll="s_intro_exercises">Exercises</a></li>
 </ul>
-<h2 class="link"><a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span><span class="title">Walks</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span> <span class="title">Walks</span></a><ul>
 <li><a href="s_walks_basics.html" data-scroll="s_walks_basics">Walks: the basics</a></li>
 <li><a href="s_walks_eulerian.html" data-scroll="s_walks_eulerian">Eulerian Walks</a></li>
 <li><a href="s_walks_hamiltonian.html" data-scroll="s_walks_hamiltonian">Hamiltonian cycles</a></li>
 <li><a href="s_walks_exercises.html" data-scroll="s_walks_exercises">Exercises</a></li>
 </ul>
-<h2 class="link"><a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span><span class="title">Algorithms</span></a></h2>
-<ul>
-<li><a href="s_graphalgorithms_min-wt-span.html" data-scroll="s_graphalgorithms_min-wt-span">Minimum Weight Spanning Trees</a></li>
-<li><a href="s_graphalgorithms_digraphs.html" data-scroll="s_graphalgorithms_digraphs">Digraphs</a></li>
-<li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
-<li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
-<li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises">Exercises</a></li>
-</ul>
-<h2 class="link"><a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">4</span><span class="title">Graphs on Surfaces</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">3</span> <span class="title">Graphs on Surfaces</span></a><ul>
 <li><a href="s_graphs_on_surfaces_intro.html" data-scroll="s_graphs_on_surfaces_intro">Introduction to Graphs on Surfaces</a></li>
 <li><a href="s_graphs_on_surfaces_planarity_algorithm.html" data-scroll="s_graphs_on_surfaces_planarity_algorithm">The planarity algorithm for Hamiltonian graphs</a></li>
 <li><a href="s_graphs_on_surfaces_Kuratowski.html" data-scroll="s_graphs_on_surfaces_Kuratowski">Kuratowski's Theorem</a></li>
 <li><a href="s_graphs_on_surfaces_other_surfaces.html" data-scroll="s_graphs_on_surfaces_other_surfaces">Drawing Graphs on Other surfaces</a></li>
 <li><a href="s_graphs_on_surfaces_euler.html" data-scroll="s_graphs_on_surfaces_euler">Euler's Theorem</a></li>
+<li><a href="s_graphs_on_surfaces_exercises.html" data-scroll="s_graphs_on_surfaces_exercises">Exercises</a></li>
 </ul>
-<h2 class="link"><a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">5</span><span class="title">Colourings</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">4</span> <span class="title">Colourings</span></a><ul>
 <li><a href="s_chromatic_number.html" data-scroll="s_chromatic_number">Chromatic number</a></li>
 <li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index and applications</a></li>
 <li><a href="s_chromatic_polynomial_intro.html" data-scroll="s_chromatic_polynomial_intro">Introduction to the chromatic polynomial</a></li>
 <li><a href="s_chromatic_polynomial_more.html" data-scroll="s_chromatic_polynomial_more">Chromatic Polynomial continued</a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
-</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="s_intro_instantinsanity"><h2 class="heading hide-type" alt="Section 1.4 Instant Insanity">
-<span class="type">Section</span><span class="codenumber">1.4</span><span class="title">Instant Insanity</span>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="s_intro_instantinsanity"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.4</span> <span class="title">Instant Insanity</span>
 </h2>
-<a href="s_intro_instantinsanity.html" class="permalink">¶</a><section class="introduction" id="introduction-3"><p id="p-75">So far, our motivation for studying graph theory has largely been one of philosophy and language.  Before we get too much deeper, however, it may be useful to present a nontrivial and perhaps unexpected application of graph theory; an example where graph theory helps us to do something that would be difficult or impossible to do without it.</p></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type" alt="Subsection 1.4.1 A puzzle">
-<span class="type">Subsection</span><span class="codenumber">1.4.1</span><span class="title">A puzzle</span>
+<a href="s_intro_instantinsanity.html" class="permalink">¶</a><section class="introduction" id="introduction-3"><p id="p-75">So far, our motivation for studying graph theory has largely been one of philosophy and language.  Before we get too much deeper, however, it may be useful to present a nontrivial and perhaps unexpected application of graph theory; an example where graph theory helps us to do something that would be difficult or impossible to do without it.</p></section><section class="subsection" id="subsection-10"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.1</span> <span class="title">A puzzle</span>
 </h3>
-<figure class="figure-like" id="figure-7"><img width="80%" src="images/InstantInsanityPackage.JPG" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">1.4.1</span>Instant Insanity Package</figcaption></figure><p id="p-76">There is a puazzle marketed under the name "Instant Insanity", one version of which is shown above.  The puzzle is sometimes called "the four cubes problem", as it consists of four different cubes.   Each face of each cube is painted one of four different colours: blue, green, red or yellow. The goal of the puzzle is to line the four cubes up in a row, so that along the four long edges (front, top, back, bottom) each of the four colours appears eactly once.</p>
+<figure class="figure figure-like" id="figure-7"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/InstantInsanityPackage.JPG" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.1<span class="period">.</span></span><span class="space"> </span>Instant Insanity Package</figcaption></figure><p id="p-76">There is a puazzle marketed under the name "Instant Insanity", one version of which is shown above.  The puzzle is sometimes called "the four cubes problem", as it consists of four different cubes.   Each face of each cube is painted one of four different colours: blue, green, red or yellow. The goal of the puzzle is to line the four cubes up in a row, so that along the four long edges (front, top, back, bottom) each of the four colours appears eactly once.</p>
 <p id="p-77">Depending on how the cubes are coloured, this may be not be possible, or there may be many such possibilities. In the original instant insanity, there is exactly one solution (up to certain equivalences of cube positions).  The point of the cubes is that there are a large number of possible cube configurations, and so if you just look for a solution without being extremely systematic, it is highly unlikely you will find it.</p>
 <p id="p-78">But trying to be systematic and logical about the search directly is quite difficult, perhaps because we have problems holding the picture of the cube in our mind.  In what follows, we will introduce a way to translate the instant insanity puzzle into a question in graph theory.  This is obviously in no way necessary to solve the puzzle, but does make it much easier.  It also demonstrates the real power of graph theory as a visualization and thought aid.</p>
-<p id="p-79">There are many variations on Instant Insanity, discussions of which can be found <a class="url" href="http://www.cs.brandeis.edu/~storer/JimPuzzles/ZPAGES/zzzInstantInsanity.html" target="_blank">here</a> and <a class="url" href="http://www.jaapsch.net/puzzles/insanity.htm" target="_blank">here</a>. There’s also a <a class="url" href="https://www.youtube.com/watch?v=CQ2gHSKZBEw" target="_blank">commercial</a> for the game.</p></section><section class="subsection" id="subsection-11"><h3 class="heading hide-type" alt="Subsection 1.4.2 Enter graph theory">
-<span class="type">Subsection</span><span class="codenumber">1.4.2</span><span class="title">Enter graph theory</span>
+<p id="p-79">There are many variations on Instant Insanity, discussions of which can be found <a class="external" href="http://www.cs.brandeis.edu/~storer/JimPuzzles/ZPAGES/zzzInstantInsanity.html" target="_blank">here</a> and <a class="external" href="http://www.jaapsch.net/puzzles/insanity.htm" target="_blank">here</a>. There’s also a <a class="external" href="https://www.youtube.com/watch?v=CQ2gHSKZBEw" target="_blank">commercial</a> for the game.</p></section><section class="subsection" id="subsection-11"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.2</span> <span class="title">Enter graph theory</span>
 </h3>
 <p id="p-80">It turns out that the important factor of the cubes is what color is on the opposite side of each face.  Suppose we want face one facing forward.  Then we have four different ways to rotate the cube to keep this the same.  The same face will always appear on the opposite side, but we can get any of the remaining four faces to be on top, say.</p>
-<figure class="figure-like" id="fig_impossible_cubes"><img width="100%" src="images/ImpossibleCubes.png" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">1.4.2</span>An impossible set of cubes</figcaption></figure><p id="p-81">Let us encode this information in a graph.   The vertices of the graph will be the four colors, B, G, R and Y. We will put an edge between two colors each time they appear as opposite faces on a cube, and we will label that edge with a number 1-4 denoting which cube the two opposite faces appear. Thus, in the end the graph will have twelve edges, three with each label 1-4. For from the first cube, there will be a loop at B, and edge between G and R, and an edge between Y and R.  The graph corresponding to the four cubes above is the following:</p>
-<figure class="figure-like" id="fig_graph_from_cubes"><img width="90%" src="images/InstantInsanityImpossibleGraph.png" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">1.4.3</span>The graph constructed from the cubes in <a knowl="./knowl/fig_impossible_cubes.html" knowl-id="xref-fig_impossible_cubes" alt="Figure 1.4.2 " title="Figure 1.4.2 ">Figure 1.4.2</a></figcaption></figure></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type" alt="Subsection 1.4.3 Proving that our cubes were impossible">
-<span class="type">Subsection</span><span class="codenumber">1.4.3</span><span class="title">Proving that our cubes were impossible</span>
+<figure class="figure figure-like" id="fig_impossible_cubes"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/ImpossibleCubes.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.2<span class="period">.</span></span><span class="space"> </span>An impossible set of cubes</figcaption></figure><p id="p-81">Let us encode this information in a graph.   The vertices of the graph will be the four colors, B, G, R and Y. We will put an edge between two colors each time they appear as opposite faces on a cube, and we will label that edge with a number 1-4 denoting which cube the two opposite faces appear. Thus, in the end the graph will have twelve edges, three with each label 1-4. For from the first cube, there will be a loop at B, and edge between G and R, and an edge between Y and R.  The graph corresponding to the four cubes above is the following:</p>
+<figure class="figure figure-like" id="fig_graph_from_cubes"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/InstantInsanityImpossibleGraph.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.3<span class="period">.</span></span><span class="space"> </span>The graph constructed from the cubes in <a class="xref" data-knowl="./knowl/fig_impossible_cubes.html" title="Figure 1.4.2">Figure 1.4.2</a></figcaption></figure></section><section class="subsection" id="subsection-12"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.3</span> <span class="title">Proving that our cubes were impossible</span>
 </h3>
 <p id="p-82">We now analyze the graph to prove that this set of cubes is not possible.</p>
 <p id="p-83">Suppose we had an arrangement of the cubes that was a solution. Then, from each cube, pick the edge representing the colors facing front and back on that cube. These four edges are a subgraph of our original graph, with one edge of each label, since we picked one edge from each cube. Furthermore, since we assumed the arrangement of cubes was a solution of instant insanity, each color appears once on the front face and once on the back. In terms of our subgraph, this translates into asking that each vertex has degree two.</p>
 <p id="p-84">We can get another subgraph satisfying these two properties by looking at the faces on the top and bottom for each cube and taking the corresponding edges. Furthermore, these two subgraphs do not have any edges in common.</p>
-<p id="p-85">Thus, given a solution to the instant insanity problem, we found a pair of subgraphs \(S_1, S_2\) satisfying: </p>
+<p id="p-85">Thus, given a solution to the instant insanity problem, we found a pair of subgraphs \(S_1, S_2\) satisfying:</p>
 <ol class="decimal">
 <li id="li-11">Each subgraph \(S_i\) has one edge with each label 1,2,3,4</li>
 <li id="li-12">Every vertex of \(S_i\) has degree 2</li>
 <li id="li-13">No edge of the original graph is used in both \(S_1\) and \(S_2\)</li>
 </ol>
-<p> As an exercise, one can check that given a pair of subgraphs satisfying 1-3, one can produce a solution to the instant insanity puzzle.</p>
+<p data-braille="continuation">As an exercise, one can check that given a pair of subgraphs satisfying 1-3, one can produce a solution to the instant insanity puzzle.</p>
 <p id="p-86">Thus, to show the set of cubes we are currently examining does not have a solution, we need to show that the graph does not have two subgraphs satisfying properties 1-3.</p>
-<p id="p-87">To do, this, we catalog all graphs satisfying properties 1-2. If every vertex has degree 2, either: </p>
+<p id="p-87">To do, this, we catalog all graphs satisfying properties 1-2. If every vertex has degree 2, either:</p>
 <ol class="decimal">
 <li id="li-14">Every vertex has a loop</li>
 <li id="li-15">There is one vertex with a loop, and the rest are in a triangle</li>
@@ -206,18 +222,19 @@ MathJax.Hub.Config({
 <li id="li-19">A subgraphs of type 1 is not possible, because G and R do not have loops.</li>
 </ol>
 <p id="p-88">For subgraphs of type 2, the only triangle is G-R-Y, and B does have loops. The edge between Y-G must be labeled 3, which means the loop at B must be labeled 1. This means the edge between G and R must be labeled 4 and the edge between Y and R must be 2, giving the following subgraph:</p>
-<figure class="figure-like" id="fig_impossible_first"><img width="40%" src="images/InstantInsanityImpossibleFirst.png" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">1.4.4</span>A subgraph for a solution for one pair of faces</figcaption></figure><p id="p-89">For type 3, the only option is to have loops at B and Y and a double edge between G and R. We see the loop at Y must be labeled 2, one of the edges between G and R must be 4, and the loop at B and the other edge between G and R can switch between 1 and 3, giving two possibilities:</p>
-<figure class="figure-like" id="fig_impossible_twoandthree"><div class="sidebyside" id="sidebyside-2"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:center;"><img width="100%" src="images/InstantInsanityImpossibleSecond.png" alt=""></div>
-<div class="sbspanel" style="width:44.4444444444444%;justify-content:center;"><img width="100%" src="images/InstantInsanityImpossibleThird.png" alt=""></div>
+<figure class="figure figure-like" id="fig_impossible_first"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/InstantInsanityImpossibleFirst.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.4<span class="period">.</span></span><span class="space"> </span>A subgraph for a solution for one pair of faces</figcaption></figure><p id="p-89">For type 3, the only option is to have loops at B and Y and a double edge between G and R. We see the loop at Y must be labeled 2, one of the edges between G and R must be 4, and the loop at B and the other edge between G and R can switch between 1 and 3, giving two possibilities:</p>
+<figure class="figure figure-like" id="fig_impossible_twoandthree"><div class="sidebyside"><div class="sbsrow" style="margin-left:5%;margin-right:5%;">
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:center;"><img src="images/InstantInsanityImpossibleSecond.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:44.4444444444444%;justify-content:center;"><img src="images/InstantInsanityImpossibleThird.png" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<figcaption><span class="type">Figure</span><span class="codenumber">1.4.5</span>Two more subgraphs for a partial solutions</figcaption></figure><p id="p-90">For subgraphs of type 4, the only option would be to have a double edge between B and G and another between Y and R; however, none of these edges are labeled 3 and this option is not possible.</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.4.5<span class="period">.</span></span><span class="space"> </span>Two more subgraphs for a partial solutions</figcaption></figure><p id="p-90">For subgraphs of type 4, the only option would be to have a double edge between B and G and another between Y and R; however, none of these edges are labeled 3 and this option is not possible.</p>
 <p id="p-91">Finally, subgraphs of type 5 cannot happen because B is only adjacent to G and to itself; to be in a four cycle it would have two be adjacent to two vertices that aren’t itself.</p>
-<p id="p-92">This gives three different possibilities for the subgraphs SiSi that satisfy properties 1 and 2. However, all three possibilities contain the the edge labeled 4 between G and R; hence we cannot choice two of them with disjoint edges, and the instant insanity puzzle with these cubes does not have a solution.</p></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type" alt="Subsection 1.4.4 Other cube sets">
-<span class="type">Subsection</span><span class="codenumber">1.4.4</span><span class="title">Other cube sets</span>
+<p id="p-92">This gives three different possibilities for the subgraphs SiSi that satisfy properties 1 and 2. However, all three possibilities contain the the edge labeled 4 between G and R; hence we cannot choice two of them with disjoint edges, and the instant insanity puzzle with these cubes does not have a solution.</p></section><section class="subsection" id="subsection-13"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">1.4.4</span> <span class="title">Other cube sets</span>
 </h3>
 <p id="p-93">The methods above also give a way to find the solution to a set of instant insanity cubes should one exist.  I illustrate this in the following Youtube video:</p>
-<iframe id="video-1" type="text/html" width="600" height="337.5" frameborder="0" allowfullscreen="" src="https://www.youtube.com/embed/GsbhRfjaaN8?disablekd=1&amp;modestbranding=1&amp;rel=0"></iframe></section></section></div></main>
+<iframe id="video-1" width="600" height="337" allowfullscreen="" src="https://www.youtube.com/embed/GsbhRfjaaN8?&amp;modestbranding=1&amp;rel=0"></iframe></section></section></div></main>
 </div>
 </body>
 </html>

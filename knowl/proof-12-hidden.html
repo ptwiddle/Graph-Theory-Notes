@@ -2,16 +2,19 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:28+01:00    *-->
+<!--*    on 2020-04-13T16:05:53+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>One way to visualize this is imagine the sphere as being made from very flexible clay.  If we poke a small hole in the top of the sphere, we could stick our fingers in and make the hole larger, and gradually stretch and bend and reform for the sphere to be a flat disk.</p>
-<p>Alternatively, one could use stereographic projection, as shown in Figure .  Draw \(S^2\) in \(\R^3\) as the unit sphere at the origin, and let \(N=(0,0,1)\) be the north pole of the sphere.  Stereographic projection gives a bijection between \(S^2\setminus\{N\}\) (the sphere minus the north pole) to the plane, as follows: for any point \(p\neq N\) the line through \(p\) and \(N\) must meet the \(xy\)-plane at one point.  On the other hand, any line through \(N\) and a point on the \(xy\)-plane must meet the sphere at one other point.</p>
-<p>Accepting that \(S^2\) is \(\reals^2\) minus one point, we see that we can draw a given graph \(G\) on \(S^\) if and only if we can draw \(G\) on \(\reals^2\text{:}\) if we draw it on \(\reals^2\text{,}\) we can view the \(\reals^2\) as a small patch of \(S^2\text{.}\) And if we have a drawing on \(S^2\text{,}\) there must be at least one point on \(S^2\) that isn't in the drawing of \(G\text{,}\) and doing stereographic projection from that point gives a drawing of \(G\) on the plane \(\reals^2\text{.}\)</p></article></body>
+<body><article class="hiddenproof"><p>Of course, a case-by-case analysis of possibile Hamiltonian cycles is possible.  The number of cases can be reduced by using symmetries of the Petersen graph. Instead, for variation and to illustrate a different proof technique, we will use another method.</p>
+<p>Assume for contradiction that the Petersen graph is Hamiltonian, and draw the ten vertices \(v_1,v_2,\dots,v_{10}\) around the cycle.  The Hamiltonian cycle uses 10 of the 15 edges in the Petersen graph, and so there must be 5 more edges, with each vertex incident to one of them, as in the Petersen graph every vertex has degree 3.</p>
+<p>Let's analyse where else the edge adjacent to \(v_1\) could go.  It can't go to \(v_1\) itself, as the Petersen graph has no loops, and it can't go to \(v_2\) or \(v_{10}\) as the Petersen graph has no multiple edges.  If it went to \(v_3\) or \(v_9\) it would make a three cycle, which the Petersen graph doesn't have, and if it went to \(v_4\) or \(v_7\text{,}\) there'd be a four cycle.  Hence, the only options are \(v_1\) is adjacent to \(v_5, v_6\) or \(v_7\text{.}\)  By reversing the direction of the Hamiltonian path, \(v_5\) and \(v_7\) are equivalent, and there are only two cases.</p>
+<p>But the same analysis holds for every vertex: the extra edge at any vertex can either go to the opposite side of the circle, or be "off by one" and skip three vertices to either direction.</p>
+<p>We now claim that not all the extra edges can go "directly across" -- there must be at least one edge that's off by one.  If all the extra edges went directly across, then \(v_1\) would go to \(v_6\text{,}\) and \(v_2\) would go to \(v_7\text{,}\) and \(v_1-v_6-v_7-v_2-v_1\) would be a 4 cycle.</p>
+<p>Hence, without loss of generality we may assume that the extra edge at \(v_1\) is \(v_1-v_5\text{.}\)  Let us then consider the extra edge at \(v_6\text{.}\)  It can't go directly across, as that is \(v_1\) which already has its extra edge.  Hence it must be off by one, and go to either \(v_2\) or \(v_{10}\text{.}\)  But either way we get a four cycle: either \(v_1-v_2-v_6-v_5-v_1\text{,}\) or \(v_1-v_{10}-v_6-v_5-v_1\text{.}\)  Hence, we have a contradiction, and the Petersen graph cannot be Hamiltonian.</p></article></body>
 </html>

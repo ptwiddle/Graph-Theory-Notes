@@ -2,14 +2,24 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:27+01:00    *-->
+<!--*    on 2020-04-13T16:05:52+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"></article></body>
+<body><article class="hiddenproof"><p>Since being connected is half of the requirement of being a tree, we need to show that a connected graph on \(n\) vertices is a tree if and only if it has \(n-1\) edges.</p>
+<p>Let us first prove that a tree on \(n\) vertices has \(n-1\) edges.  We will use induction on \(n\text{.}\)  As bases, there is only one tree with 1 vertex, and it does in fact have 0 edges, and there is only one tree with two vertices, and it does in fact have 1 edge.  So for the inductive step, let us suppose that we know that all trees with \(k\lt n\) vertices have \(k-1\) edges, and let \(\bfT\) be a tree with \(n\) vertices.  By Lemma, we know that \(\bfT\) has a leaf \(v\text{,}\) which by the definition of leaves is connected to the rest of \(\bfT\) by a single edge \(e\text{.}\)  If we delete \(v\) and \(e\) from \(\bfT\text{,}\) we get a smaller graph \(\bfT^\prime\) ince which has one less vertex and one less edge than \(\bfT\) did.</p>
+<p>Since \(\bfT\) was a tree, it follows that \(\bfT^\prime\) is a tree, too -- check this yourself, using the definition of a tree!  Then, since \(\bfT^\prime\) is a tree with \(n-1\) vertices, byt the inductive hypothesis it follows that it has one less edge \(n-2\) edges, and so \(\bfT\) must have \(n-1\) edges, which is what we were trying to show.</p>
+<p>Now we show the other direction: that if \(\bfG\) is a simple connected graph with \(n\) vertices and \(n-1\) edges,  then \(\bfG\) is a tree.  The basic structure of the proof is the same as the other direction: find a vertex \(v\) adjacent to a single edge \(e\text{,}\) and delete \(v\) and \(e\) to get a smaller tree, where we can assume the proposition holds, and then use induction.</p>
+<p>To play the role of the lemma that every tree has a leaf, we will establish the following statement:  if \(\bfG\) is a connected graph with \(n\) vertices and \(n-1\) edges, then /p&gt;\(\bfG\) has a vertex of degree 1.  Note that since \(\bfG\) is connected, it can't have any vertices of degree 0, and so to prove it has a vertex of degree 1 it is enough to show that it has a vertex of degree strictly less than 2.  Thus, for contradiction assume that every vertex \(v\) of \(\bfG\) has degree \(d(v)\geq 2\text{.}\)  But then the handshaking lemma would say:</p>
+<div class="displaymath">
+\begin{equation*}
+2(n-1)=2e=\sum d(v)\geq \sum 2=2n
+\end{equation*}
+</div>
+<p data-braille="continuation">a contradiction, and hence \(\bfG\) must have a vertex of degree 1, as desired.</p></article></body>
 </html>

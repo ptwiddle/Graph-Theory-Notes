@@ -2,17 +2,15 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-04-25T12:55:57+01:00    *-->
+<!--*    on 2020-04-13T16:05:57+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example-like"><div class="sidebyside" id="sidebyside-18"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:flex-start;"><p id="p-416">Consider the graph \(\bfG\) consisting of two triangles joined at the right a vertex, shown at the right.  We can calulate \(P_\bfG(k)\) by working vertex by vertex: there are \(k\) ways to colour vertex 1, but then when we colour vertex 2 it can't be the same as vertex 1, and so there are \(k-1\) ways to colour it.  Vertex three is adjacent to both one and two, so there are \(k-2\) ways to colour it, and vertex 4 is adjacent to one coloured vertex, vertex 3, so there are again \(k-1\) ways to colour it, and finally vertex 5 is adjacent to vertices 3 and 4 and so we have \(k-2\) ways to colour it.Putting it together, we see \(P_\bfG(k)=k(k-1)^2(k-2)^2\text{.}\)</p></div>
-<div class="sbspanel" style="width:31.5789473684211%;justify-content:flex-start;"><img src="images/image-64.svg" width="100%" style="display: block; margin: 0 auto;" alt=""></div>
-</div></div></article></body>
+<body><article class="example example-like"><p>Let's find \(\chi^\prime(K_4)\text{.}\)  Picking any vertex \(v\text{,}\) there are three edges incident to \(v\text{,}\) and none of these edges can have the same colour (as they all meet at \(v\)).  Hence, we have \(\chi^\prime(K_4)\geq 3\text{.}\)</p>
+<p>On the other hand, it is easy to colour the edges of \(K_4\) with three colours, as seen below, and so \(\chi^\prime(K_4)\leq 3\text{,}\) and hence \(\chi^\prime(K_4)=3\text{.}\)</p></article></body>
 </html>

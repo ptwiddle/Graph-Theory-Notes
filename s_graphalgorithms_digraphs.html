@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:26+01:00    *-->
+<!--*    on 2020-04-03T11:41:44+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <html lang="en-US">
@@ -12,13 +12,19 @@
 <title>Digraphs</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/javascript" src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
-        inlineMath: [['\\(','\\)']],
+        inlineMath: [['\\(','\\)']]
     },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
     TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
         // scrolling to fragment identifiers is controlled by other Javascript
         positionToHash: false,
         equationNumbers: { autoNumber: "none", useLabelIds: true, },
@@ -35,13 +41,20 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/stylesheets/mathbook-3.css" rel="stylesheet" type="text/css">
-<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
     \newcommand{\ints}{\mathbb{Z}}
     \newcommand{\posints}{\mathbb{N}}
     \newcommand{\rats}{\mathbb{Q}}
@@ -121,59 +134,68 @@ MathJax.Hub.Config({
 </div></div>
 <nav id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_graphalgorithms_min-wt-span.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_algorithms.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_graphalgorithms_shortest-paths.html" title="Next" alt="Next">Next</a></span></div>
-<button class="sidebar-right-toggle-button button active">Annotations</button>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_graphalgorithms_min-wt-span.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_algorithms.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_graphalgorithms_shortest-paths.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_graphalgorithms_min-wt-span.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_algorithms.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="s_graphalgorithms_shortest-paths.html" title="Next" alt="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_graphalgorithms_min-wt-span.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_algorithms.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_graphalgorithms_shortest-paths.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
-<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
-<h2 class="link"><a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
-<ul>
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
 <li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook">A first look at graphs</a></li>
 <li><a href="s_intro_degrees.html" data-scroll="s_intro_degrees">Degree and handshaking</a></li>
 <li><a href="s_intro_isomorphisms.html" data-scroll="s_intro_isomorphisms">Graph Isomorphisms</a></li>
 <li><a href="s_intro_instantinsanity.html" data-scroll="s_intro_instantinsanity">Instant Insanity</a></li>
+<li><a href="s_intro_trees.html" data-scroll="s_intro_trees">Trees</a></li>
 <li><a href="s_intro_exercises.html" data-scroll="s_intro_exercises">Exercises</a></li>
 </ul>
-<h2 class="link"><a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span><span class="title">Walks</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span> <span class="title">Walks</span></a><ul>
 <li><a href="s_walks_basics.html" data-scroll="s_walks_basics">Walks: the basics</a></li>
 <li><a href="s_walks_eulerian.html" data-scroll="s_walks_eulerian">Eulerian Walks</a></li>
 <li><a href="s_walks_hamiltonian.html" data-scroll="s_walks_hamiltonian">Hamiltonian cycles</a></li>
 <li><a href="s_walks_exercises.html" data-scroll="s_walks_exercises">Exercises</a></li>
 </ul>
-<h2 class="link active"><a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span><span class="title">Algorithms</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span> <span class="title">Algorithms</span></a><ul>
 <li><a href="s_graphalgorithms_min-wt-span.html" data-scroll="s_graphalgorithms_min-wt-span">Minimum Weight Spanning Trees</a></li>
 <li><a href="s_graphalgorithms_digraphs.html" data-scroll="s_graphalgorithms_digraphs" class="active">Digraphs</a></li>
 <li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
 <li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
 <li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises">Exercises</a></li>
 </ul>
-<h2 class="link"><a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">4</span><span class="title">Graphs on Surfaces</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">4</span> <span class="title">Graphs on Surfaces</span></a><ul>
 <li><a href="s_graphs_on_surfaces_intro.html" data-scroll="s_graphs_on_surfaces_intro">Introduction to Graphs on Surfaces</a></li>
 <li><a href="s_graphs_on_surfaces_planarity_algorithm.html" data-scroll="s_graphs_on_surfaces_planarity_algorithm">The planarity algorithm for Hamiltonian graphs</a></li>
 <li><a href="s_graphs_on_surfaces_Kuratowski.html" data-scroll="s_graphs_on_surfaces_Kuratowski">Kuratowski's Theorem</a></li>
 <li><a href="s_graphs_on_surfaces_other_surfaces.html" data-scroll="s_graphs_on_surfaces_other_surfaces">Drawing Graphs on Other surfaces</a></li>
 <li><a href="s_graphs_on_surfaces_euler.html" data-scroll="s_graphs_on_surfaces_euler">Euler's Theorem</a></li>
 </ul>
-<h2 class="link"><a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">5</span><span class="title">Colourings</span></a></h2>
-<ul>
+</li>
+<li class="link">
+<a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">5</span> <span class="title">Colourings</span></a><ul>
 <li><a href="s_chromatic_number.html" data-scroll="s_chromatic_number">Chromatic number</a></li>
 <li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index and applications</a></li>
 <li><a href="s_chromatic_polynomial_intro.html" data-scroll="s_chromatic_polynomial_intro">Introduction to the chromatic polynomial</a></li>
 <li><a href="s_chromatic_polynomial_more.html" data-scroll="s_chromatic_polynomial_more">Chromatic Polynomial continued</a></li>
-</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
-</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="s_graphalgorithms_digraphs"><h2 class="heading hide-type" alt="Section 3.2 Digraphs">
-<span class="type">Section</span><span class="codenumber">3.2</span><span class="title">Digraphs</span>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="s_graphalgorithms_digraphs"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.2</span> <span class="title">Digraphs</span>
 </h2>
-<a href="s_graphalgorithms_digraphs.html" class="permalink">¶</a><p id="p-224">In this section, we introduce another useful variant of a graph. In a graph, the existence of an edge \(xy\) can be used to model a connection between \(x\) and \(y\) that goes in both ways. However, sometimes such a model is insufficient. For instance, perhaps it is possible to fly from Atlanta directly to Fargo but not possible to fly from Fargo directly to Atlanta. In a graph representing the airline network, an edge between Atlanta and Fargo would lose the information that the flights only operate in one direction. To deal with this problem, we introduce a new discrete structure. A <dfn class="terminology">digraph</dfn> \(\bfG\) is a pair \((V,E)\) where \(V\) is a vertex set and \(E\subset V\times V\) with \(x\neq y\) for every \((x,y)\in E\text{.}\) We consider the pair \((x,y)\) as a <dfn class="terminology">directed edge</dfn> from \(x\) to \(y\text{.}\) Note that for distinct vertices \(x\) and \(y\) from \(V\text{,}\) the ordered pairs \((x,y)\) and \((y,x)\) are distinct, so the digraph may have one, both or neither of the directed edges \((x,y)\) and \((y,x)\text{.}\) This is in contrast to graphs, where edges are sets, so \(\{x,y\}\) and \(\{y,x\}\) are the same.</p>
-<p id="p-225">Diagrams of digraphs use arrowheads on the edges to indicate direction.  This is illustrated in <a knowl="./knowl/fig_graphalgorithms_digraph.html" knowl-id="xref-fig_graphalgorithms_digraph" alt="Figure 3.2.1 " title="Figure 3.2.1 ">Figure 3.2.1</a>. For example, the digraph illustrated there contains the edge \((a,f)\) but not the edge \((f,a)\text{.}\) It does contain both edges \((c,d)\) and \((d,c)\text{,}\) however.</p>
-<figure class="figure-like" id="fig_graphalgorithms_digraph"><img src="images/digraph.svg" width="85%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">3.2.1</span>A Digraph</figcaption></figure><p id="p-226">When \(\bfG\) is a digraph, a sequence \(P=(r=u_0,u_1,\dots,u_t=x)\) of distinct vertices is called a <dfn class="terminology">directed path</dfn> from \(r\) to \(x\) when \((u_iu_{i+1})\) is a directed edge in \(\bfG\) for every \(i=0,1,\dots,t-1\text{.}\) A directed path \(C=(r=u_0,u_1,\dots,u_t=x)\) is called a <dfn class="terminology">directed cycle</dfn> when \((u_t,u_0)\) is a directed edge of \(\bfG\text{.}\)</p></section></div></main>
+<a href="s_graphalgorithms_digraphs.html" class="permalink">¶</a><p id="p-244">In this section, we introduce another useful variant of a graph. In a graph, the existence of an edge \(xy\) can be used to model a connection between \(x\) and \(y\) that goes in both ways. However, sometimes such a model is insufficient. For instance, perhaps it is possible to fly from Atlanta directly to Fargo but not possible to fly from Fargo directly to Atlanta. In a graph representing the airline network, an edge between Atlanta and Fargo would lose the information that the flights only operate in one direction. To deal with this problem, we introduce a new discrete structure. A <dfn class="terminology">digraph</dfn> \(\bfG\) is a pair \((V,E)\) where \(V\) is a vertex set and \(E\subset V\times V\) with \(x\neq y\) for every \((x,y)\in E\text{.}\) We consider the pair \((x,y)\) as a <dfn class="terminology">directed edge</dfn> from \(x\) to \(y\text{.}\) Note that for distinct vertices \(x\) and \(y\) from \(V\text{,}\) the ordered pairs \((x,y)\) and \((y,x)\) are distinct, so the digraph may have one, both or neither of the directed edges \((x,y)\) and \((y,x)\text{.}\) This is in contrast to graphs, where edges are sets, so \(\{x,y\}\) and \(\{y,x\}\) are the same.</p>
+<p id="p-245">Diagrams of digraphs use arrowheads on the edges to indicate direction.  This is illustrated in <a class="xref" data-knowl="./knowl/fig_graphalgorithms_digraph.html" title="Figure 3.2.1">Figure 3.2.1</a>. For example, the digraph illustrated there contains the edge \((a,f)\) but not the edge \((f,a)\text{.}\) It does contain both edges \((c,d)\) and \((d,c)\text{,}\) however.</p>
+<figure class="figure figure-like" id="fig_graphalgorithms_digraph"><div class="image-box" style="width: 85%; margin-left: 7.5%; margin-right: 7.5%;"><img src="images/digraph.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.2.1<span class="period">.</span></span><span class="space"> </span>A Digraph</figcaption></figure><p id="p-246">When \(\bfG\) is a digraph, a sequence \(P=(r=u_0,u_1,\dots,u_t=x)\) of distinct vertices is called a <dfn class="terminology">directed path</dfn> from \(r\) to \(x\) when \((u_iu_{i+1})\) is a directed edge in \(\bfG\) for every \(i=0,1,\dots,t-1\text{.}\) A directed path \(C=(r=u_0,u_1,\dots,u_t=x)\) is called a <dfn class="terminology">directed cycle</dfn> when \((u_t,u_0)\) is a directed edge of \(\bfG\text{.}\)</p></section></div></main>
 </div>
 </body>
 </html>

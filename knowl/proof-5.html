@@ -2,9 +2,9 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:27+01:00    *-->
+<!--*    on 2020-04-13T16:05:51+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <head>
@@ -13,14 +13,9 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>It is immediate from the definitions that 3 implies 2 which implies 1, as any path is a trail, and any trail is a walk.</p>
-<p>That 1 implies 3 is intuitively obvious: if you repeat a vertex, then you've visited someplace twice, and weren't taking the shortest route.  Let's make this argument mathematically precise.</p>
-<p>Suppose we have a walk \(v=v_0,e_1,\dots, e_m, v_m=w\) that is not a path.  Then, we must repeat some vertex, say \(v_i=v_k\text{,}\) with \(i\lt k\text{.}\)  Then we can cut out all the vertices and edges between \(v_i\) and \(v_k\) to obtain a new walk</p>
-<div class="displaymath">
-\begin{equation*}
-v=v_0,e_1, v_1,\dots, e_i, v_i=v_k, e_{k+1}, v_{k+1}, e_{k+2}, v_{k+2}, \dots, v_m
-\end{equation*}
-</div>
-<p>Since \(i \lt k \text{,}\) the new walk is strictly shorter than our original walk.  Since the length of a walk is finite, if we iterate this process the result must eventually terminate.  That means all our vertices are distinct, and hence is a path.</p></article><span class="incontext"><a href="s_walks_basics.html#proof-5">in-context</a></span>
+<p>By assumption, \(\bfT\) has at least two vertices, say \(v_0\) and \(w_0\text{.}\)  Since \(\bfT\) is a tree it is connected, and so in particular there must be a path between \(v_0\) and \(w_0\text{;}\) let \(v_i\) be the vertices in this path, and let \(e_i\) be the edge in the path joining \(v_{i-1}\) to \(v_i\text{.}\)</p>
+<p>Since \(v_m\) is adjacent to \(e_m\) it has degree at least one; if it has degree 1 it is a leaf, and we've found a leaf.  If \(v_m\) is not a leaf, then there must be another edge coming out of it, say \(e_{m+1}\) going to \(v_{m+1}\text{.}\)  Note that \(v_{m+1}\) cannot be any of the vertices we've already found, as then we'd have more than one path between two vertices and hence a loop, but \(\bfT\) was a tree.  Thus we can make the path a bit longer.</p>
+<p>We can now continue this argument inductively as long as the vertex at the of the path has degree higher than 1.  But since \(\bfT\) is finite, and we never return to a vertex we've already visited, we this process must eventually terminate, but the only way this can happen is if the end vertex of the path has degree 1, that is, if it's a leaf.</p>
+<p>A similar argument extending from \(v_0\text{,}\) the other end of the path, shows that we must eventually reach a different leaf from that end, and so \(\bfT\) must have at least two leaves, as desired.</p></article><span class="incontext"><a href="s_intro_trees.html#proof-5">in-context</a></span>
 </body>
 </html>

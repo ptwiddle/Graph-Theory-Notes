@@ -1,13 +1,41 @@
 <section xml:id="s_chromatic_polynomial_more">
 <title>Chromatic Polynomial continued</title>
+<introduction><p>It may seem plausible that, if we consider enough cases, the case-by-case method of computing the chromatic polynomial would work for any graph, no matter how complicated.  Assuming this, it would follow that the chromatic polynomial <m>P_\bfG(k)</m> is in fact a polynomial.  However, plausibility does not make a proof.  In this section we complete the proof elegantly using induction, but first need to introduce the notion of deletion and contraction.</p>
+ 
+</introduction>
+<subsection><title>Deletion-Contraction</title>
+
+<definition><title>Deletion</title> <p>Let <m>\bfG</m> be a graph, and let <m>e\in\bfG</m> be a graph.  Then we use <m>\bfG\setminus e</m> to denote the graph with the same vertex set as <m>\bfG</m>, and with all the same edges, except the edge <m>e</m> deleted.</p></definition>
+
+<definition xml:id="def-contract"><title>Contraction</title> <p> Let <m>\bfG</m> be a simple graph, and let <m>e\in \bfG</m> be an edge between vertices <m>v</m> and <m>w</m>.  Then <m>\bfG/e</m>, the graph with <m>e</m> contracted.  More precisely, <m>\bfG/e</m> is the simple graph with vertices <m>V(\bfG/e)=V(\bfG)\setminus \{v,w\}\cup {e}</m>.  Two non-<m>e</m> vertices are adjacent in <m>\bfG/e</m> if and only if they were adjacent in <m>\bfG</m>, and a vertex <m>y</m> is adjacent to <m>e</m> in <m>\bfG</m> if and only if it was adjacent to <m>v</m> or <m>w</m> in <m>\bfG</m>. </p></definition>  
+
+<p>Formally, <xref ref="def-contract" /> seems formidable, but intuitively it is not as bad as the definition looks: we are changing <m>\bfG</m> by making the whole edge <m>e</m> into one vertex.  This may create multiple edges if a vertex was adjacent to both <m>v</m> and <m>w</m>, and if so we simply remove any duplicate edges.</p>
+
+<lemma xml:id="lem-deletion-contraction"><title>Deletion-Contraction</title><statement><p>Let <m>\bfG</m> be a simle graph, and let <m>e\in \bfG</m> be any edge.  Then we have:</p>
+<me>P_\bfG(k)=P_{\bfG\setminus e}(k)-P_{\bfG/e}(k)</me>
+</statement>
+<proof>
+<p>Since <m>\bfG</m> and <m>\bfG\setminus e</m> have the same vertex, it is not too difficult to compare their colourings.  Any valid colouring of <m>\bfG</m> will give a colouring of <m>\bfG\setminus e</m>, but not every colouring of <m>\bfG\setminus e</m> arises this way -- in <m>\bfG</m>, colourings require that <m>v</m> and <m>w</m>, the two endpoints of <m>e</m>, have different colours, but there is no such requirement for <m>\bfG\setminus e</m>.  So, we want to count the colourings of <m>\bfG\setminus e</m> where <m>v,w</m> have the same colour.  But these are just the colourings of <m>\bfG/e</m>: given a colouring of <m>\bfG/e</m>m we can get a colouring of <m>\bfG</m> by giving most vertices the same colour, and giving both <m>v,w</m> whatever colour <m>e</m> was.  By definition, we see that <m>v</m> and <m>w</m> will have the same colour in this colouring; and given any colouring of <m>\bfG\setminus e</m> where <m>v,w</m> have the same colour we can get a colouring of <m>\bfG/e</m> by colouring <m>e</m> the colour that <m>v,w</m> were.</p>
+</proof></lemma>
+
+<example><title>Chromatic polynomial of <m>C_4</m>, again</title>
+<p>Let us compute <m>P_{C_4}(k)</m> a different way as an illustration of how deletion-contraction works.  No matter which edge of <m>C_4</m> we pick, <m>C_4\setminus e</m> will be the path graph <m>P_4</m>, which is a tree, and hence we know has chromatic polynomial <m>k(k-1)^3</m>.  Similarly, we have that <m>C_4/e=C_3</m>, and we know <m>P_{C_3}(k)=k(k-1)(k-2)</m>.  Hence we have:</p>
+
+<md>
+<mrow> P_{C_4}(k) \amp = P_{C_4\setminus e}(k)-P_{C_4/e}(k) </mrow>
+<mrow>  \amp = P_{P_4}(k)-P_{C_3}(k) </mrow>
+<mrow> \amp = k(k-1)^3 - k(k-1)(k-2) </mrow>
+<mrow>\amp = k(k-1)\left( (k-1)^2-(k-2)\right) = k(k-1)(k^2-3k3+3)</mrow>
+</md>
+</example>
 
 
-<lemma><statement><p>Let <m>\bfG</m> be a simle graph, and let <m>e\in \bfG</m> be any edge.  Then we have:</p>
-<me> P_\bfG(k) \amp = P_{\bfG\setminus e}(k)-P_{\bfG/e}(k) </me>
-</statement></lemma>
+<p>Since <m>\bfG\setminus e</m> and <m>\bfG/e</m> both have fewer edges than <m>\bfG</m>, it follows that we can repeatedly apply Deletion-Contraction to <m>\bfG</m> until we have no edges left at all, and hence that Deletion-Contraction can compute the chromatic polynomial of any graph.  In practice, this can be quite a complicated and formidable way to compute, but in the next section we show that this method can elegantly prove the chromatic polynomial is always a polynomial, and in some cases give nice formulas for this polynomial.</p>
+</subsection>
 
+<subsection><title>Chromatic polynomial is a polynomial</title> 
 
-
+<p>We first prove that the chromatic polynomial is actually a polynomial, but iterative use of deletion-contraction.</p>
 
 <theorem><statement><p>Let <m>\bfG</m> be a simple graph with <m>n</m> vertices and <m></m> edges.  Then <m>P_\bfG(k)</m> is a polynomial of degree <m>n</m> in <m>k</m>, and moreover:</p>
 
@@ -34,9 +62,38 @@
 <mrow>\amp = k^n-mk^{n-1}+\text{lower order terms}</mrow>
 </md>
 <p>which is what we needed to show to finish the inductive step.</p>  
-
 </proof>
+
 </theorem>
+
+<p>We end by showing that sometimes the inductive method of iteratively using deletion-contraction can compute explicit formulas for the chromatic polynomials of an infinite family of graphs.</p>
+
+<lemma><title>Chromatic polynomial of <m>C_n</m></title>
+<statement><p>Let <m>C_n</m> be the cycle graph on <m>n</m> vertices.  Then:</p>
+<me>P_{C_n}(k) = (k-1)^n+(-1)^n(k-1)</me> </statement>
+<proof><p>We will induct on <m>n</m>.  As a base case, when <m>n=3</m>, we have:</p>
+<md>
+<mrow>(k-1)^3+(-1)^3(k-1)\amp =k^3-3k^2+3k-1-(k-1)</mrow>
+<mrow> \amp=k^3-3k^2+2k</mrow>
+<mrow>\amp =k(k-1)(k-2) </mrow>
+<mrow>\amp=P_{C_3}(k)</mrow></md>
+<p>For the inductive step, we assume that the proposition holds for <m>n-1</m> and want to prove that it holds for <m>n</m>.  We will compute <m>P_{C_n}(k)</m> by deletion-contraction.  If we delete any edge of <m>C_n</m>, we get the path graph <m>P_n</m>, and we know</p>
+<md>P_{P_n}(k)=k(k-1)^{n-1}</md>.
+<p>If we contract any edge of <m>C_n</m>, we get <m>C_{n-1}</m>, and we know by the inductive hypothesis that</p>
+<md>P_{C_{n-1}}(k)=(k-1)^{n-1}+(-1)^{n-1}(k-1)</md>
+<p>Plugging these into deletion-contraction gives:</p>
+<md>
+<mrow> P_{C_n}(k) \amp = P_{C_n \setminus e}(k)-P_{C_n/e}(k) </mrow>
+<mrow> \amp = P_{P_n}(k)-P_{C_{n-1}}(k) </mrow>
+<mrow> \amp = k(k-1)^{n-1} - \left((k-1)^{n-1}+(-1)^{n-1}(k-1) \right)</mrow>
+<mrow>\amp = (k-1)^{n-1}(k-1) - (-1)^{n-1}(k-1) </mrow>
+<mrow>\amp = (k-1)^n+(-1)^n(k-1) </mrow>
+</md>
+<p>as was desired.</p>
+</proof>
+</lemma>
+</subsection>
+
 
 
 

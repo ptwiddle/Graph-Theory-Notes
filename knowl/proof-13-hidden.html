@@ -2,44 +2,18 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:28+01:00    *-->
+<!--*    on 2020-04-13T16:05:54+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>Our proof is by induction on the number \(m\) of edges. If \(m=0\text{,}\) then since \(\bfG\) is connected, our graph has a single vertex, and so there is one face. Thus \(n-m+f = 1-0+1=2\) as needed. Now suppose that we have proven Euler's formula for all graphs with less than \(m\) edges and let \(\bfG\) have \(m\) edges. Pick an edge \(e\) of \(\bfG\text{.}\) What happens if we form a new graph \(\bfG'\) by deleting \(e\) from \(\bfG\text{?}\) If \(\bfG'\) is connected, our inductive hypothesis applies. Say that \(\bfG'\) has \(n'\) vertices, \(m'\) edges, and \(f'\) faces. Then by induction, these numbers satisfy</p>
-<div class="displaymath">
-\begin{equation*}
-n'-m'+f'=2.
-\end{equation*}
-</div>
-<p>Since we only deleted one edge, \(n'=n\) and \(m'=m-1\text{.}\) What did the removal of \(e\) do to the number of faces? In \(\bfG'\) there's a new face that was formerly two faces divided by \(e\) in \(\bfG\text{.}\) Thus, \(f'=f-1\text{.}\) Substituting these into \(n'-m'+f'=2\text{,}\) we have</p>
-<div class="displaymath">
-\begin{equation*}
-n-(m-1)+(f-1)=2 \iff n-m+f=2.
-\end{equation*}
-</div>
-<p>Thus, if \(\bfG'\) is connected, we are done. If \(\bfG'\) is disconnected, however, we cannot apply the inductive assumption to \(\bfG'\) directly. Fortunately, since we removed only one edge, \(\bfG'\) has two components, which we can view as two connected graphs \(\bfG'_1\) and \(\bfG'_2\text{.}\) Each of these has fewer than \(m\) edges, so we may apply the inductive hypothesis to them. For \(i=1,2\text{,}\) let \(n'_i\) be the number of vertices of \(\bfG'_i\text{,}\) \(m'_i\) the number of edges of \(\bfG'_i\text{,}\) and \(f'_i\) the number of faces of \(\bfG'_i\text{.}\) Then by induction we have</p>
-<div class="displaymath">
-\begin{equation*}
-n'_1 - m'_1 + f'_1 = 2 \quad \text{and} \quad n'_2-m'_2+f'_2 =2.
-\end{equation*}
-</div>
-<p>Adding these together, we have</p>
-<div class="displaymath">
-\begin{equation*}
-(n'_1 + n'_2) - (m'_1 + m'_2) + (f'_1 + f'_2) = 4.
-\end{equation*}
-</div>
-<p>But now \(n=n'_1 + n'_2\text{,}\) and \(m'_1 + m'_2 = m-1\text{,}\) so the equality becomes</p>
-<div class="displaymath">
-\begin{equation*}
-n - (m-1) + (f'_1+f'_2) = 4 \iff n-m + (f'_1 + f'_2) = 3.
-\end{equation*}
-</div>
-<p>The only thing we have yet to figure out is how \(f'_1+f'_2\) relates to \(f\text{,}\) and we have to hope that it will allow us to knock the \(3\) down to a \(2\text{.}\) Every face of \(\bfG'_1\) and \(\bfG'_2\) is a face of \(\bfG\text{,}\) since the fact that removing \(e\) disconnects \(\bfG\) means that \(e\) must be part of the boundary of the unbounded face. Further, the unbounded face is counted twice in the sum \(f'_1 + f'_2\text{,}\) so \(f=f'_1 + f'_2 -1\text{.}\) This gives exactly what we need to complete the proof.</p></article></body>
+<body><article class="hiddenproof"><p>We will argue by contradiction, and begin by passing to a maximal counterexample.  Note that if \(\bfG\) satisfies the hypotheses, and we add an edge \(e\) to \(\bfG\) between two non-adjacent vertices \(v\) and \(w\text{,}\) then the result will still satisfy the hypothesis.  Indeed, we've only increased the degree of some vertices.  So, we had a counterexample \(\bfG\) to Ore's Theorem, we could iteratively add edges to \(\bfG\) that didn't create Hamiltonian cycles, until we got a graph \(\bfG\) that satisfies the hypotheses of Ore's theorem, desn't have any Hamiltonian cycles, but if we add any edge \(e\) to \(\bfG\) the result <em class="emphasis">is</em> Hamiltonian.</p>
+<p>We now observe that such a \(\bfG\) must have a Hamiltonian <em class="emphasis">path</em>: indeed, pick any edge \(e\) not in \(\bfG\) and add it to \(\bfG\text{.}\)  THe resulting graph is by assumption Hamiltonian, and since \(\bfG\) wasn't Hamiltonian, the Hamiltonian cycle must contain the edge \(e\text{.}\)  Deleting the edge \(e\) from the Hamiltonian cycle gives a Hamiltonian path in \(\bfG\text{.}\)</p>
+<p>Thus, let \(v_1-v_2-\cdots v_n\) be a Hamiltonian path in \(\bfG\text{.}\)  We know \(v_1\) and \(v_n\) are not adjacent, as otherwise \(\bfG\) would be Hamiltonian.  Thus, since \(\bfG\) satisfies the hypothesis of Ore's theorem,  we know \(d(v_1)+d(v_n)\geq n\text{.}\)  We already have one edge adjacent to \(v_1\text{,}\) and one edge adjacent to \(v_n\text{,}\) and so there must be at least \(n-2\) other edges adjacent to one or other of these vertices.  We will see that no matter how we add \(n-2\) edges to these two vertices, we will create a Hamiltonian cycle.</p>
+<p>To see this, note there is ever an \(i\) with \(v_1\) adjacent to \(v_i\) and \(v_{i-1}\) adjacent to \(v_n\text{,}\) then \(\bfG\) would have a Hamiltonian cycle: namely \(v_1-v_2-\cdots-v_{i-1}-v_n-v_{n-1}-\vdots v_i-v_1\text{.}\)  Now, there are \(n-3\) different vertices we can add edges to \(v_1\) to, namely \(v_3-v_{n-1}\text{,}\) and similarly there are \(n-3\) vertices we can add edges connecting \(v_n\) to, namely \(v_2, \dots v_{n-2}\text{.}\)  We arrange these \(2(n-3)\) edges into a a grid with 2 rows and \(n-3\) columns, so that the two edges in each column are \(v_1-v_i\) and \(v_n-v_{i-1}\text{,}\) a pair of edges that can form a Hamiltonian cycle as in the last paragraph.</p>
+<p>As we need to add at least \(n-2\) edges, but we only have \(n-3\) columns, there must be at least one column that contains two edges by the pigeonhole principle, but then we can create a Hamiltonian cycle using those two edges and the edges in our Hamiltonian path.</p></article></body>
 </html>

@@ -14,4 +14,6 @@
 <xi:include href="./s_graphs_on_surfaces_Kuratowski.mbx" />
 <xi:include href="./s_graphs_on_surfaces_other_surfaces.mbx" />
 <xi:include href="./s_graphs_on_surfaces_Euler.mbx" />
+<xi:include href="./s_graphs_on_surfaces_exercises.mbx" />
+
 </chapter>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<exercises xml:id="s_graphs_on_surfaces_exercises">
+
+<exercise><statement>Show that the Petersen graph has a cycle that uses all the vertices but one.  Give another proof that the Petersen graph is not planar by modifying the planarity algorithm for Hamiltonian graphs to deal with this extra vertex.</statement></exercise>
+
+
+<exercise><statement>Draw <m>K_{4,4}</m> and <m>K_7</m> on the torus.</statement></exercise>
+
+
+<exercise><statement>Use the planarity algorithm to show that the given graph <m>\bfG</m> is planar, and draw a plane graph isomorphic to it.  Explain how you might obtain a non-planar graph by adding one extra edge, and for your non-planar graph, find a subgraph that's a subdivision of <m>K_5</m> or <m>K_{3,3}</m>.
+
+<figure xml:id="fig-nonplanar-exercise-planarity">
+<caption>A Hamiltonian graph <m>\bfG</m></caption>
+<image width="70%">
+<latex-image><![CDATA[\begin{tikzpicture}[scale=.7]
+\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+
+
+\foreach \x in {1,2,...,9}
+   \node (\x) at (40*\x:3) {\x};
+
+\draw (8)--(1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(1)--(3)--(6)--(4)--(2)--(5)--(7)--(9)--(3);
+\draw (5)--(8)--(2);
+\draw (6)--(9);
+
+
+
+
+\end{tikzpicture}
+]]>
+</latex-image></image></figure>
+</statement> 
+</exercise>
+
+<exercise><statement>
+<figure xml:id="fig-nonplanar-exercise-planarity2">
+<caption>A Hamiltonian graph <m>\bfH</m></caption>
+<image width="70%">
+<latex-image><![CDATA[\begin{tikzpicture}[scale=.7]
+\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+
+
+\foreach \x in {1,2,...,7}
+   \node (\x) at (360/7*\x:3) {\x};
+
+\draw (1)--(2)--(3)--(4)--(5)--(6)--(7)--(1)--(4)--(6)--(1);
+\draw (3)--(7);
+\draw (2)--(5);
+\end{tikzpicture}
+]]>
+</latex-image></image></figure>
+
+<p>Let <m>\bfH</m> be the graph shown in <xref ref="fig-nonplanar-exercise-planarity2" />.  Show that <m>\bfH</m> is not planar in two ways: using the planarity algorithm, and using Kuratowski's theorem. </p>
+
+<p>Draw <m>\bfH</m> on the Möbius strip and on a torus without the edges crossing.</p>
+</statement></exercise>
+
+
+<exercise><statement><p>A connected plane graph has faces of degrees 3 and 10 only, and every vertex has degree at least 3.  Prove that it must have fewer faces of degree 10 than of degree 3.  If every vertex has degree 3, prove that the number of faces of degree 10 must be a multiple of 3 and the number of faces of degree 3 must be a multiple of 4.</p>
+
+<p>As an example, how many faces of degree 3 and degree 10 does the truncated dodecahedron possess?  (A truncated dodecahedron is obtained by sliving off each vertex of a dodecahedron to give a triangle.)</p>
+
+</statement>
+</exercise>
+
+</exercises>
+

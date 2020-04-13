@@ -2,9 +2,9 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:27+01:00    *-->
+<!--*    on 2020-04-13T16:05:56+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <head>
@@ -12,9 +12,9 @@
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="remark-like"><h6 class="heading">
-<span class="type">Remark</span><span class="codenumber">3.1.7</span>
+<article class="remark remark-like"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Alternative method of dealing with the second case.</span>
 </h6>
-<p>Although Bob's combinatorial intuition has improved over the course he doesn't quite understand why we need special algorithms to find minimum weight spanning trees. He figures there can't be that many spanning trees, so he wants to just write them down. Alice groans as she senses that Bob must have been absent when the material from <span>&lt;&lt;Unresolved xref, reference "s_graphs_counting-trees"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a> was discussed. In that section, we learned that a graph on \(n\) vertices can have as many as \(n^{n-2}\) spanning trees (or horrors, the instructor may have left it off the syllabus). Regardless, this exhaustive approach is already unusable when \(n = 20\text{.}\) Dave mumbles something about being greedy and just adding the lightest edges one-by-one while never adding an edge that would make a cycle. Zori remembers a strategy like this working for finding the height of a poset, but she's worried about the nightmare situation that we learned about with using FirstFit to color graphs. Alice agrees that greedy algorithms have an inconsistent track record but suggests that <a knowl="./knowl/lem_graphalgorithms_tech.html" knowl-id="xref-lem_graphalgorithms_tech" alt="Lemma 3.1.6 " title="Lemma 3.1.6 ">Lemma 3.1.6</a> may be enough to get one to succeed here.</p></article><span class="incontext"><a href="s_graphalgorithms_min-wt-span.html#remark-2">in-context</a></span>
+<p>In our proof of Euler's theorem, the most complicated part was dealing with the situation if the edge \(e\) disconnects our graph \(\bfG\) when we remove it. In this case, instead of deleting the edge \(e\) we can contract it -- that is, shrink it to a point.  This would have result in a graph that is still planar and still connected, but with one less edge (\(e\) is no longer around), and one less vertex (the two vertices \(e\) connects are now merged into one).  The number of faces remains unchanged.  So the number of edges and the number of faces each decreased by one, these two changes cancel out when we calculate \(n-m+f\text{,}\) and hence both are equal to two.</p></article><span class="incontext"><a href="s_graphs_on_surfaces_euler.html#remark-2">in-context</a></span>
 </body>
 </html>

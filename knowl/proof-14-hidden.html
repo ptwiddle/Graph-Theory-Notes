@@ -2,15 +2,25 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:28+01:00    *-->
+<!--*    on 2020-04-13T16:05:54+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>We need to show that we can colour any graph \(\bfG\) with \(\Delta(G)+1\) colours.  But we can just colour the vertices of \(\bfG\) one by one in whatever order we want.  When we go to colour the \(i\)th vertex \(v_i\text{,}\) we look at the \(d(v_i)\) vertices adjacent to \(v_i\text{.}\)  Some of them may not be coloured yet, in which case they don't affect anything, but for each vertex adjacent to \(v_i\) that is coloured, we can't use that colour for \(v_i\text{.}\)</p>
-<p>So there are most \(d(v_i)\leq \Delta(\bfG)\) colours we have to avoid; if we have \(\Delta(\bfG)+1\) colours to choose from we can always find one that hasn't been used at a vertex adjacent to \(v_i\)</p></article></body>
+<body><article class="hiddenproof"><p>First let's name the vertices of \(K_{3,3}\text{:}\) let the vertices \(a,b,c\) be the blue circle vertices, and \(x,y,z\) be the red rectangle vertices.  Then the path \(a-x-b-y-c-z-a\) is a Hamiltonian cycle, and so if \(K_{3,3}\) were planar it would be drawn as a circle in the plane, as shown below:</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-36.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.5<span class="period">.</span></span><span class="space"> </span>The Hamiltonian cycle in \(K_{3,3}\)</figcaption></figure><p>This contains 6 of the 9 edges of \(K_{3,3}\text{;}\) we need to add the edges \(a-y, b-z\) and \(c-x\text{.}\)  The edge \(a-y\) could be drawn inside the circle or outside, suppose we draw it inside, as shown below, with the added edge dashed.</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-37.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.6<span class="period">.</span></span><span class="space"> </span>Adding \(a-y\) inside</figcaption></figure><p>Then on the inside of the circle, \(x\) and \(c\) are on different sides of the line \(a-y\text{,}\) and so the edge connecting them must go outside the circle.  The added edge could go around the right of the circle, as shown below here:</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-38.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.7<span class="period">.</span></span><span class="space"> </span>Adding \(a-y\) inside</figcaption></figure><p>or around the left, as shown here:</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-39.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.8<span class="period">.</span></span><span class="space"> </span>Adding \(a-y\) inside</figcaption></figure><p>But now \(b\) and \(z\) are different sides of \(a-y\) inside the circle, and on different sides of \(c-x\) outside the circle, and so cannot be connected without making two edges cross.</p>
+<p>If we had began by drawing \(a-y\) outside the circle, then we would have had to draw \(c-x\) inside the circle, and had the same problem with being able to draw the last line; as shown here:</p>
+<figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-40.svg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.9<span class="period">.</span></span><span class="space"> </span>Adding \(a-y\) inside</figcaption></figure></article></body>
 </html>

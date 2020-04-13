@@ -1,24 +1,52 @@
 <section xml:id="s_graphs_on_surfaces_euler">
     <title>Euler's Theorem</title>
 
-<introduction> <p>This section cover's Euler's theorem on planar graphs and its applications.  We give a proof by of Euler's theorem by induction, and gave several applications of the theorem itself: more proofs that <m>K_{3,3}</m> and <m>K_5</m> aren't planar, that footballs have five pentagons, and a proof that our video game designers couldn't have made their map into a sphere without doing something very strange.</p>
+<introduction> <p>This section cover's Euler's theorem on planar graphs and its applications. After defining faces, we state Euler's Theorem by induction, and gave several applications of the theorem itself: more proofs that <m>K_{3,3}</m> and <m>K_5</m> aren't planar, that footballs have five pentagons, and a proof that our video game designers couldn't have made their map into a sphere without doing something very strange.</p>
 </introduction>
-<subsection> <title>counting Faces</title><p>
+<subsection> <title>Counting faces</title><p>
 A <term>face</term><idx><h>face</h></idx> of a planar drawing of a graph is a region bounded by edges and vertices and not containing any other vertices or edges.
     </p>
 
-    <p><xref ref="fig_planar"  /> shows a planar drawing of a graph with <m>6</m> vertices and <m>9</m> edges. Notice how one of the edges is drawn as a true polygonal arc rather than a straight line segment. This drawing determines <m>5</m> regions, since we also count the unbounded region that surrounds the drawing.
+    <p><xref ref="fig_planar"  /> shows a planar drawing of a two graphs. The left graph has determines <m>5</m> regions, since we also count the unbounded region that surrounds the drawing.
     </p>
-    <figure xml:id="fig_planar" >
-        <caption>A planar drawing of a graph</caption>
-        <image width="35%" source="images/planar_graph" />
-    </figure>
-    <p><xref ref="fig_k4-planar"  /> shows a planar drawing of the complete graph <m>\bfK_4</m>. There are <m>4</m> vertices, <m>6</m> edges, and <m>4</m> faces in the drawing.
-    </p>
-    <figure xml:id="fig_k4-planar" >
-        <caption>A planar drawing of <m>\bfK_4</m></caption>
-        <image width="35%" source="images/k4_planar" />
-    </figure>
+
+
+
+<figure xml:id="fig_planar" >
+        <caption>Two planar graphs</caption>
+  <image><latex-image><![CDATA[\begin{tikzpicture}
+
+
+\begin{scope}[every node/.style={circle, draw, fill=red, inner sep=0pt, minimum width=4pt, thick}]
+
+\node (a) at (0,1) {};
+\node (b) at (0,2) {};
+\node (c) at (1,3) {};
+\node (d) at (2,2) {};
+\node (e) at (2,1) {};
+\node (f) at (1,0) {};
+
+
+
+\draw (a)--(b)--(c)--(d)--(e)--(f)--(a)--(e)--(b)--(d);
+\end{scope}
+
+\begin{scope}[xshift=5cm, yshift=1.5cm, every node/.style={circle, draw, fill=red, inner sep=0pt, minimum width=4pt, thick}]
+
+\node (a) at (0,0) {};
+\node (b) at (0:2) {};
+\node (c) at (120:2) {};
+\node (d) at (240:2) {};
+
+\draw (a)--(b)--(c)--(d)--(a)--(c);
+\draw (b)--(d);
+\end{scope}
+\end{tikzpicture} 
+
+
+\end{tikzpicture} 
+]]></latex-image></image></figure>
+
     <p>What happens if we compute the number of vertices minus the number of edges plus the number of faces for these drawings? We have
     <md>
         <mrow>  6-9+5 \amp = 2</mrow>
@@ -77,13 +105,49 @@ A <term>face</term><idx><h>face</h></idx> of a planar drawing of a graph is a re
 
 <p>By itself, Euler's theorem doesn't seem that useful: there are three variables (the numbers of edges, vertices, and faces) and only one equation between them, so there are still lots of degrees of freedom.  For it to be particularly useful, we want to have other relationships between these numbers.  In many applications, these relationships can come from handshaking.</p>
 
-<p>Recall that Euler's handshaking lemma said that <me>\sum_{v\in G} d(v)=2 |E(G),</me>
+<p>Recall that Euler's handshaking lemma said that <me>\sum_{v\in G} d(v)=2 |E(G)|,</me>
 the sum of the degrees of all the vertices is twice the number of edges.  If we had some knowledge about the degrees of these vertices, we could get another relationship between the number of vertices and the number of edges.  For example, if <m>G</m> is regular of degree <m>k</m>, then every vertex has degree <m>k</m>, and hence the sum of all the degrees is just <m>kn</m>.  Hence, handshaking would tell us that <m>kn=2m</m>, and we would have another relationship between the three variables <m>m,n</m> and <m>f</m>.</p>
 
 <p>Similarly, there is a handshaking between faces and edges.  Let the <em>degree</em> of a face be the number of edges that occur around it -- so, a triangle would have degree three.  Then, if we sum up the degrees of all the faces, we're counting each edge twice again -- once from the face on its left, and once from the face on its right.  so we have
-<me>sum_{f\in \text{faces}(G)}d(f)=2 |E(G)|</me>
+<me>\sum_{f\in \text{faces}(G)}d(f)=2 |E(G)|</me>
 Note that this is just the usual vertex-edge handshaking for the dual graph.</p>
 
 <p>Thus, vertex-edge and face-edge handshaking can potentially give us two other sources of relationships between the numbers of vertices, edges, and faces.  Most applications of Euler's theorem proceed by combining all three relationships, as we shall see.</p> 
+<lemma><statement><m>K_5</m> isn't planar</statement>
+<proof><p>We give a proof by contradiction.  Suppose <m>K_5</m> was planar, and draw it on the plane.  We know that <m>K_5</m> has 5 vertices and <m>\binom{5}{2}=10</m> edges, and so by Euler theorem we know that any drawing of it must have 7 faces. We now use edge-face handshaking to get a contradiction.</p>
+
+<p>What could the degrees of the faces be?  We don't know for sure, but we know that none of the faces could have degree one or two, as then the edges would form a loop or multiple edges between two vertices, but <m>K_5</m> is simple.  Hence, every face must have <m>d(f)\geq 3</m>.  But then handshaking gives:</p>
+<me>20=2e=\sum d(f)\geq \sum 3=3\cdot 7=21</me>
+<p>which is the desired contradiction, and so we conclude that <m>K_5</m> is not, in fact, planar.</p>
+</proof></lemma>
+<p>It is a good exercise to adapt this proof to prove that <m>K_{3,3}</m> isn't planar; one needs to use the extra fact that <m>K_{3,3}</m> doesn't have any three cycles (why not?)</p>
+ 
+<p>We now prove that footballs have 12 pentagons.  More precisely, use the shorthand <em>football graph</em> to mean any trivalent graph drawn on the plane so that every face is a pentagon or hexagon. Then we have:</p>
+
+<theorem><title>The football theorem</title><statement><p>Let <m>\bfG</m> be a football grpah drawn on the plane, with <m>P</m> pentagonal faces, and <m>H</m> hexagonal faces.  Then <m>P=12</m>.</p></statement>
+<proof><p>Let <m>V, E, F</m> denote the number of vertices, edges, and faces of <m>\bfG</m>.  Since every face is a hexagon or pentagon, we have <m>E=P+H</m>, and substituting this into Euler's theorem gives:</p>
+<men xml:id="footeu">V-E+P+H=2</men>
+<p>Now we turn handshaking.  Since <m>\bfG</m> is trivalent, every vertex has degree three, and so vertex-edge handshaking becomes:</p>
+<men xml:id="footve">2E=3V</men>
+<p>Finally, since there are <m>P</m> pentagonal faces and <m>H</m> hexagonal faces, face-edge handshaking becomes:</p>
+<men xml:id="footfe">2E=5P+6H</men>
+<p>Multiplying <xref ref="footeu" /> by six gives:</p>
+<me>6V-6E+6P+6H=12</me>
+<p>Multiplying <xref ref="footve" /> by two gives <m>6V-4E=0</m>, which we can use to eliminate <m>V</m>, giving</p>
+<me>-2E+5P+6H=12</me>
+<p>Finally, using <xref ref="footfe" /> we can eliminate both <m>E</m> and <m>H</m> in one go, being left with <m>P=12</m> as desired.</p>
+</proof></theorem>
+
+<p>Finally, we prove that given some sensible restraints, video game designers cannot make a world map that's a sphere.  A videogame world locally looks like a square grid -- with every vertex and face having degree four.</p>
+<theorem><title>The videogame theorem</title><statement><p>It is impossible to draw for a graph to be drawn on the sphere so that every vertex and every face has degree 4.</p></statement><proof>
+<p>Since every vertex has degree 4, vertex-edge handshaking gives <m>2E=4V</m>, and since every face has degree 4, face-edge handshaking gives <m>2E=4F</m>.  Thus, we see <m>V=F=E/2</m>, and plugging this in gives:</p>
+<me>V-E+F=E/2-E+E/2=0</me>
+<p>which contradicts Euler's Theorem.  Hence, such a graph on a sphere is not possible.</p>
+
+</proof></theorem>
+
 </subsection>
+
+
+
 </section>

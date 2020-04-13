@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2020-04-13T16:05:56+01:00    *-->
+<!--*                                    *-->
+<!--*      https://pretextbook.org       *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>Let \(V, E, F\) denote the number of vertices, edges, and faces of \(\bfG\text{.}\)  Since every face is a hexagon or pentagon, we have \(E=P+H\text{,}\) and substituting this into Euler's theorem gives:</p>
+<div class="displaymath">
+\begin{equation}
+V-E+P+H=2\tag{3.5.1}
+\end{equation}
+</div>
+<p>Now we turn handshaking.  Since \(\bfG\) is trivalent, every vertex has degree three, and so vertex-edge handshaking becomes:</p>
+<div class="displaymath">
+\begin{equation}
+2E=3V\tag{3.5.2}
+\end{equation}
+</div>
+<p>Finally, since there are \(P\) pentagonal faces and \(H\) hexagonal faces, face-edge handshaking becomes:</p>
+<div class="displaymath">
+\begin{equation}
+2E=5P+6H\tag{3.5.3}
+\end{equation}
+</div>
+<p>Multiplying <a class="xref" data-knowl="./knowl/footeu.html" title="Equation 3.5.1">(3.5.1)</a> by six gives:</p>
+<div class="displaymath">
+\begin{equation*}
+6V-6E+6P+6H=12
+\end{equation*}
+</div>
+<p>Multiplying <a class="xref" data-knowl="./knowl/footve.html" title="Equation 3.5.2">(3.5.2)</a> by two gives \(6V-4E=0\text{,}\) which we can use to eliminate \(V\text{,}\) giving</p>
+<div class="displaymath">
+\begin{equation*}
+-2E+5P+6H=12
+\end{equation*}
+</div>
+<p>Finally, using <a class="xref" data-knowl="./knowl/footfe.html" title="Equation 3.5.3">(3.5.3)</a> we can eliminate both \(E\) and \(H\) in one go, being left with \(P=12\) as desired.</p></article></body>
+</html>

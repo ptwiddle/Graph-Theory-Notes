@@ -82,16 +82,21 @@
 <proposition><statement>Let <m>p\in S^2</m> be any point.  Then <m>S^2\setminus\{p\}\cong\reals^2</m>.</statement>
 <proof>
 <p>
-  One way to visualize this is imagine the sphere as being made from very flexible clay.  If we poke a small hole in the top of the sphere, we could stick our fingers in and make the hole larger, and gradually stretch and bend and reform for the sphere to be a flat disk. </p>
+  One way to visualize this is imagine the sphere as being made from very flexible clay.  If we poke a small hole in the top of the sphere, we could stick our fingers in and make the hole larger, and gradually stretch and bend and reform for the sphere to be a flat disk, which could be stretched to be the whole plane, in the same way the tangent function maps the interval <m>(-\pi/2, pi/2)</m> to the whole real line <m>\reals</m> </p>
 
-<p>Alternatively, one could use <a href="https://en.wikipedia.org/wiki/Stereographic_projection">stereographic projection</a>, as shown in Figure .  Draw <m>S^2</m> in <m>\R^3</m> as the unit sphere at the origin, and let <m>N=(0,0,1)</m> be the north pole of the sphere.  Stereographic projection gives a bijection between <m>S^2\setminus\{N\}</m> (the sphere minus the north pole) to the plane, as follows: for any point <m>p\neq N</m> the line through <m>p</m> and <m>N</m> must meet the <m>xy</m>-plane at one point.  On the other hand, any line through <m>N</m> and a point on the <m>xy</m>-plane must meet the sphere at one other point.</p>
+<p>Alternatively, one could use <a href="https://en.wikipedia.org/wiki/Stereographic_projection">stereographic projection</a>, as shown in Figure .  Draw <m>S^2</m> in <m>\reals^3</m> as the unit sphere at the origin, and let <m>N=(0,0,1)</m> be the north pole of the sphere.  Stereographic projection gives a bijection between <m>S^2\setminus\{N\}</m> (the sphere minus the north pole) to the plane, as follows: for any point <m>p\neq N</m> the line through <m>p</m> and <m>N</m> must meet the <m>xy</m>-plane at one point.  On the other hand, any line through <m>N</m> and a point on the <m>xy</m>-plane must meet the sphere at one other point.</p>
 
-<p>Accepting that <m>S^2</m> is <m>\reals^2</m> minus one point, we see that we can draw a given graph <m>G</m> on <m>S^</m> if and only if we can draw <m>G</m> on <m>\reals^2</m>: if we draw it on <m>\reals^2</m>, we can view the <m>\reals^2</m> as a small patch of <m>S^2</m>. And if we have a drawing on <m>S^2</m>, there must be at least one point on <m>S^2</m> that isn't in the drawing of <m>G</m>, and doing stereographic projection from that point gives a drawing of <m>G</m> on the plane <m>\reals^2</m>.</p>
+<figure xml:id="img-stereographic">  <caption>Stereographic Projection</caption> <image width="90%" source="images/stereographic.jpg" />
+
+</figure>
+
+
+<p>Accepting that <m>S^2</m> is <m>\reals^2</m> minus one point, we see that we can draw a given graph <m>\bfG</m> on <m>S^2</m> if and only if we can draw <m>\bfG</m> on <m>\reals^2</m>: if we draw it on <m>\reals^2</m>, we can view the <m>\reals^2</m> as a small patch of <m>S^2</m>. And if we have a drawing on <m>S^2</m>, there must be at least one point on <m>S^2</m> that isn't in the drawing of <m>G</m>, and doing stereographic projection from that point gives a drawing of <m>G</m> on the plane <m>\reals^2</m>.</p>
 </proof>
 </proposition>
 </subsection>
 
-<subsection><title>The planarity algorith</title>
+<subsection><title>The planarity algorithm</title>
 <p>The preceeding discussion may have felt heavy going, but the upshot is that the cases that seemed "the same" in our analysis of <m>K_{3,3}</m> actually are the same, and similar cases will be the same for any graph. This will make it much easier to extend our reasoning to more complicated graphs.</p>
 
 <p>Suppose that <m>G</m> is Hamiltonian, and choose a Hamiltonian cycle; if <m>G</m> were planar than this cycle must be drawn as a circle, and every other edge must either lie entirely inside or entirely outside the graph.  Now consider two edges <m>e=ab</m> and <m>f=xy</m> that are not part of the cycle.  Depending on the order that <m>a,b,x</m> and <m>y</m> appear as you go around the Hamiltonian cycle, one of two things will happen:

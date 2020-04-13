@@ -2,9 +2,9 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:27+01:00    *-->
+<!--*    on 2020-04-13T16:05:53+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <head>
@@ -13,19 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<dl class="description-list">
-<dt>Initialization.</dt>
-<dd><p>Set \(W=\{r\}\) and \(S=\emptyset\text{.}\)</p></dd>
-<dt>Inductive Step.</dt>
-<dd>
-<p>While \(|W| \lt n\text{,}\) let \(e\) be an edge of minimum weight among all edges with one endpoint in \(W\) and the other not in \(W\text{.}\)  If \(e=xy\text{,}\) \(x\in W\) and \(y\not\in W\text{,}\) update \(W\) and \(S\) by setting (using pseudo-code)</p>
-<div class="displaymath">
-\begin{equation*}
-W = W\cup\{y\}\quad\text{and} \quad S = S\cup\{e\}.
-\end{equation*}
-</div>
-</dd>
-</dl>
-<span class="incontext"><a href="s_graphalgorithms_min-wt-span.html#p-217">in-context</a></span>
+<p><a class="xref" data-knowl="./knowl/figure-hamiltonian-obstruction.html" title="Figure 2.3.4">Figure 2.3.4</a> shows a portion of a larger graph \(\bfG\text{.}\)  The exact number of other vertices in the graph that \(X\) and \(Y\) are adjacent to is not important; what matters is that \(A\) and \(B\) are each adjacent to two vertices, \(X\) and \(Y\text{.}\)  Any path through \(A\) would have to use \(X\) and \(Y\text{,}\) but so would any path through \(B\text{.}\)  But then we have a small four cycle \(XAYBX\) which doesn't use any other vertices in the graph, and so \(\bfG\) cannot be HAmiltonian.</p>
+<span class="incontext"><a href="s_walks_hamiltonian.html#p-217">in-context</a></span>
 </body>
 </html>

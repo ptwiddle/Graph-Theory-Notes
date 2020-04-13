@@ -2,9 +2,9 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:28+01:00    *-->
+<!--*    on 2020-04-13T16:05:55+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <head>
@@ -13,9 +13,7 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>As in the proof of colourings of disjoint unions, a colouring of \(\bfG\) gives a colouring of both \(\bfG_1\) and \(\bfG_2\) by restriction, but we don't get any two colourings: both \(\bfG_1\) and \(\bfG_2\) contain \(v\text{,}\) and our two colourings must both make \(v\) the same colouring.</p>
-<p>In the other direction, if we have colourings of \(\bfG_1\) and \(\bfG_2\) that have the same colour at \(v\text{,}\) it is clear that we can glue them together to get a colouring of \(\bfG\text{.}\)  So the question reduces to the following: given that we want vertex \(v\) to have a fixed colour, how many colourings of \(\bfG_2\) are there that colour \(v\) this colour?</p>
-<p>The \(k\) colours are completely interchangeable, however; we could just change the names of each one.  Thus, it is clear that there are as many colourings of \(\bfG_2\) where \(v\) is red as there are where \(v\) is blue as there are where \(v\) is any given colour.  Hence, if we have \(k\) colours to use, exactly \(1/k\) of all colourings of \(\bfG_2\) will ahve \(v\) any given colour, namely \(P_{\bfG_2}(k)/k\)</p>
-<p>Thus, to colour \(\bfG\) with \(k\) colours, we first could first colour \(\bfG_1\) in one of the \(P_{\bfG_1}(k)\) ways.  This will give us a some fixed colour of \(v\text{,}\) and we saw above that there are \(P_{\bfG_2}(k)/k\) colourings of \(\bfG_2\) where \(v\) has this colour, and so we have the result.</p></article><span class="incontext"><a href="s_chromatic_polynomial_intro.html#proof-18">in-context</a></span>
+<p>We will only prove one direction: that if \(\bfG\) has such a subgraph, then \(\bfG\) is nonplanar; the other direction is more difficult.</p>
+<p>Suppose that \(\bfH\) is a subgraph of \(\bfG\) that is subdivision of \(K_{3,3}\) or \(K_5\text{.}\)  Since we've proven \(K_{3,3}\) and \(K_5\) are nonplanar, we know \(\bfH\) is nonplanar by <a class="xref" data-knowl="./knowl/lemma-nonplanar-subdivision.html" title="Lemma 3.3.7">Lemma 3.3.7</a>.  Now since we \(\bfH\) is a subgraph of \(\bfG\) and we know \(\bfH\) is nonplanar, we know \(\bfG\) is nonplanar by <a class="xref" data-knowl="./knowl/lemma-nonplanar-subgraph.html" title="Lemma 3.3.3">Lemma 3.3.3</a>.</p></article><span class="incontext"><a href="s_graphs_on_surfaces_Kuratowski.html#proof-18">in-context</a></span>
 </body>
 </html>

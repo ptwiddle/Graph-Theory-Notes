@@ -32,18 +32,18 @@
 
 <theorem><statement><m>K_{3,3}</m> isn't planar</statement> <proof>
 
-<p>First let's name the vertices of <m>K_{3,3}</m>: let the vertices <m>a,b,c</m> be the red and vertices and <m>x,y,z</m> be the blue vertices.  Then the path <m>a-x-b-y-c-z-a</m> is a Hamiltonian cycle, and so if <m>K_{3,3}</m> were planar it would be drawn as a circle in the plane, as shown below:</p>
+<p>First let's name the vertices of <m>K_{3,3}</m>: let the vertices <m>a,b,c</m> be the blue circle vertices, and <m>x,y,z</m> be the red rectangle vertices.  Then the path <m>a-x-b-y-c-z-a</m> is a Hamiltonian cycle, and so if <m>K_{3,3}</m> were planar it would be drawn as a circle in the plane, as shown below:</p>
 
 <figure xml:id="fig_proof_k33_planar1"><caption>The Hamiltonian cycle in <m>K_{3,3}</m></caption>
 <image width="70%">
 <latex-image><![CDATA[\begin{tikzpicture}[scale=.7]
-\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
-\node[vertex, blue] (a) at (0,1) {$a$};
-\node[vertex, red] (x) at (1,2) {$x$};
-\node[vertex, blue] (b) at (3,2) {$b$};
-\node[vertex, red] (y) at (4,1) {$y$};
-\node[vertex, blue] (c) at (3,0) {$c$};
-\node[vertex,red] (z) at (1,0) {$z$};
+\tikzstyle{vertex}=[draw, minimum size=17pt, inner sep=0pt]
+\node[circle, vertex, blue] (a) at (0,1) {$a$};
+\node[rectangle, vertex, red] (x) at (1,2) {$x$};
+\node[circle, vertex, blue] (b) at (3,2) {$b$};
+\node[rectangle, vertex, red] (y) at (4,1) {$y$};
+\node[circle, vertex, blue] (c) at (3,0) {$c$};
+\node[rectangle, vertex,red] (z) at (1,0) {$z$};
 
 \path 
 (a) edge (x)
@@ -60,13 +60,13 @@
 
 <figure xml:id="fig_proof_k33_planar2"><caption>Adding <m>a-y</m> inside</caption>
 <image width="70%"><latex-image><![CDATA[\begin{tikzpicture}[scale=.7]
-\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
-\node[vertex, blue] (a) at (0,1) {$a$};
-\node[vertex, red] (x) at (1,2) {$x$};
-\node[vertex, blue] (b) at (3,2) {$b$};
-\node[vertex, red] (y) at (4,1) {$y$};
-\node[vertex, blue] (c) at (3,0) {$c$};
-\node[vertex,red] (z) at (1,0) {$z$};
+\tikzstyle{vertex}=[draw, minimum size=17pt, inner sep=0pt]
+\node[vertex, circle, blue] (a) at (0,1) {$a$};
+\node[vertex, rectangle, red] (x) at (1,2) {$x$};
+\node[vertex, circle, blue] (b) at (3,2) {$b$};
+\node[vertex, rectangle, red] (y) at (4,1) {$y$};
+\node[vertex, circle, blue] (c) at (3,0) {$c$};
+\node[vertex, rectangle, red] (z) at (1,0) {$z$};
 
 \path 
 (a) edge (x)
@@ -87,15 +87,15 @@
 <figure xml:id="fig_proof_k33_planar3"><caption>Adding <m>a-y</m> inside</caption>
 <image width="70%"><latex-image><![CDATA[
 \begin{tikzpicture}[scale=.7]
-\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+\tikzstyle{vertex}=[draw, minimum size=17pt, inner sep=0pt]
 \clip (-1,-1)--(-1,4)--(5,4)--(5,-1)--cycle;
 
-\node[vertex, blue] (a) at (0,1) {$a$};
-\node[vertex, red] (x) at (1,2) {$x$};
-\node[vertex, blue] (b) at (3,2) {$b$};
-\node[vertex, red] (y) at (4,1) {$y$};
-\node[vertex, blue] (c) at (3,0) {$c$};
-\node[vertex,red] (z) at (1,0) {$z$};
+\node[vertex, circle, blue] (a) at (0,1) {$a$};
+\node[vertex, rectangle, red] (x) at (1,2) {$x$};
+\node[vertex, circle, blue] (b) at (3,2) {$b$};
+\node[vertex, rectangle, red] (y) at (4,1) {$y$};
+\node[vertex, circle, blue] (c) at (3,0) {$c$};
+\node[vertex, rectangle, red] (z) at (1,0) {$z$};
 
 \path 
 (a) edge (x)
@@ -116,15 +116,15 @@
 
 <figure xml:id="fig_proof_k33_planar4"><caption>Adding <m>a-y</m> inside</caption>
 <image width="70%"><latex-image><![CDATA[\begin{tikzpicture}[scale=.7]
-\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+\tikzstyle{vertex}=[draw, minimum size=17pt, inner sep=0pt]
 \clip (-1,-2)--(-1,3)--(5,3)--(5,-2)--cycle;
 
-\node[vertex, blue] (a) at (0,1) {$a$};
-\node[vertex, red] (x) at (1,2) {$x$};
-\node[vertex, blue] (b) at (3,2) {$b$};
-\node[vertex, red] (y) at (4,1) {$y$};
-\node[vertex, blue] (c) at (3,0) {$c$};
-\node[vertex,red] (z) at (1,0) {$z$};
+\node[vertex, circle, blue] (a) at (0,1) {$a$};
+\node[vertex, rectangle, red] (x) at (1,2) {$x$};
+\node[vertex, circle, blue] (b) at (3,2) {$b$};
+\node[vertex, rectangle, red] (y) at (4,1) {$y$};
+\node[vertex, circle, blue] (c) at (3,0) {$c$};
+\node[vertex, rectangle, red] (z) at (1,0) {$z$};
 
 \path 
 (a) edge (x)
@@ -149,15 +149,15 @@
 
 <figure xml:id="fig_proof_k33_planar5"><caption>Adding <m>a-y</m> inside</caption>
 <image width="70%"><latex-image><![CDATA[\begin{tikzpicture}[scale=.7]
-\tikzstyle{vertex}=[circle, draw, minimum size=17pt, inner sep=0pt]
+\tikzstyle{vertex}=[draw, minimum size=17pt, inner sep=0pt]
 \clip (-1,-1)--(-1,4)--(5,4)--(5,-1)--cycle;
 
-\node[vertex, blue] (a) at (0,1) {$a$};
-\node[vertex, red] (x) at (1,2) {$x$};
-\node[vertex, blue] (b) at (3,2) {$b$};
-\node[vertex, red] (y) at (4,1) {$y$};
-\node[vertex, blue] (c) at (3,0) {$c$};
-\node[vertex,red] (z) at (1,0) {$z$};
+\node[vertex, circle, blue] (a) at (0,1) {$a$};
+\node[vertex, rectangle, red] (x) at (1,2) {$x$};
+\node[vertex, circle, blue] (b) at (3,2) {$b$};
+\node[vertex, rectangle, red] (y) at (4,1) {$y$};
+\node[vertex, circle, blue] (c) at (3,0) {$c$};
+\node[vertex, rectangle, red] (z) at (1,0) {$z$};
 
 \path 
 (a) edge (x)

@@ -2,9 +2,9 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2019-05-07T16:16:27+01:00    *-->
+<!--*    on 2020-04-13T16:05:54+01:00    *-->
 <!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
 <!--**************************************-->
 <head>
@@ -13,7 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>In this section, we introduce another useful variant of a graph. In a graph, the existence of an edge \(xy\) can be used to model a connection between \(x\) and \(y\) that goes in both ways. However, sometimes such a model is insufficient. For instance, perhaps it is possible to fly from Atlanta directly to Fargo but not possible to fly from Fargo directly to Atlanta. In a graph representing the airline network, an edge between Atlanta and Fargo would lose the information that the flights only operate in one direction. To deal with this problem, we introduce a new discrete structure. A <dfn class="terminology">digraph</dfn> \(\bfG\) is a pair \((V,E)\) where \(V\) is a vertex set and \(E\subset V\times V\) with \(x\neq y\) for every \((x,y)\in E\text{.}\) We consider the pair \((x,y)\) as a <dfn class="terminology">directed edge</dfn> from \(x\) to \(y\text{.}\) Note that for distinct vertices \(x\) and \(y\) from \(V\text{,}\) the ordered pairs \((x,y)\) and \((y,x)\) are distinct, so the digraph may have one, both or neither of the directed edges \((x,y)\) and \((y,x)\text{.}\) This is in contrast to graphs, where edges are sets, so \(\{x,y\}\) and \(\{y,x\}\) are the same.</p>
-<span class="incontext"><a href="s_graphalgorithms_digraphs.html#p-224">in-context</a></span>
+<p>Let's analyse where else the edge adjacent to \(v_1\) could go.  It can't go to \(v_1\) itself, as the Petersen graph has no loops, and it can't go to \(v_2\) or \(v_{10}\) as the Petersen graph has no multiple edges.  If it went to \(v_3\) or \(v_9\) it would make a three cycle, which the Petersen graph doesn't have, and if it went to \(v_4\) or \(v_7\text{,}\) there'd be a four cycle.  Hence, the only options are \(v_1\) is adjacent to \(v_5, v_6\) or \(v_7\text{.}\)  By reversing the direction of the Hamiltonian path, \(v_5\) and \(v_7\) are equivalent, and there are only two cases.</p>
+<span class="incontext"><a href="s_walks_hamiltonian.html#p-224">in-context</a></span>
 </body>
 </html>
