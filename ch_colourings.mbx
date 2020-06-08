@@ -10,4 +10,6 @@
 <xi:include href="./s_chromatic_index.mbx" />
 <xi:include href="./s_chromatic_polynomial_intro.mbx" />
 <xi:include href="./s_chromatic_polynomial_more.mbx" />
+<xi:include href="./s_chromatic_exercises.mbx" />
+
 </chapter>

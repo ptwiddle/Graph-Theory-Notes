@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--**************************************-->
 <!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-13T16:05:58+01:00    *-->
+<!--*    on 2020-04-17T09:52:48+01:00    *-->
 <!--*                                    *-->
 <!--*      https://pretextbook.org       *-->
 <!--*                                    *-->
@@ -13,7 +13,7 @@
 </head>
 <body>
 <h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Consider the graph \(\bfG\) consisting of two triangles joined at the right a vertex, shown at the right.  We can calulate \(P_\bfG(k)\) by working vertex by vertex: there are \(k\) ways to colour vertex 1, but then when we colour vertex 2 it can't be the same as vertex 1, and so there are \(k-1\) ways to colour it.  Vertex three is adjacent to both one and two, so there are \(k-2\) ways to colour it, and vertex 4 is adjacent to one coloured vertex, vertex 3, so there are again \(k-1\) ways to colour it, and finally vertex 5 is adjacent to vertices 3 and 4 and so we have \(k-2\) ways to colour it.Putting it together, we see \(P_\bfG(k)=k(k-1)^2(k-2)^2\text{.}\)</p>
+<p>Recall that the empty graph \(E_n\) has \(n\) vertices and no edges.  To compute \(P_{E_n}(k)\) we need to count the number of ways to colour the vertices with \(k\) colours.  But since \(E_n\) has no edges, we can colour each of the \(n\) vertices any of the \(k\) colours; the choices are completely independent.  So \(P_{E_n}(k)=k^n\)</p>
 <span class="incontext"><a href="s_chromatic_polynomial_intro.html#p-427">in-context</a></span>
 </body>
 </html>
