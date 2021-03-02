@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-17T09:52:44+01:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-02-28T21:05:55Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>We first show that if \(\bfG\) is Eulerian, then every vertex \(v\in\bfG\) has even degree.  For suppose the Eulerian cycle visits the vertex \(v k\) times.  Each time it must arrive by one edge, and leave by an edge. Since the walk is Eulerian, every edge adjacent to \(v\) will be used exactly once by the walk, and so we see that \(d(v)=2k\) as desired.</p>
-<p>Now we suppose that \(\bfG\) is connected and that every vertex has even degree.  We will induct on the number of edges of \(\bfG\text{.}\)  If it has no edges, then the theorem is vacuously true; we can just take the empty walk.</p>
-<p>For the inductive step, suppose that \(\bfG\) is connected with \(m\text{,}\) and that every vertex has even degree, and that every graph \(\bfH\) with these properties and less than \(m\) edges is Eulerian.  Assume for now that we can find <em class="emphasis">a</em> closed walk in \(\bfG\) Suppose for now that we can find <em class="emphasis">a</em> closed walk \(w\) in \(\bfGM\) that doesn't repeat any edges -- we will justify this at the end of the proof.  If this closed walk uses all the edges of \(\bfG\) we are done.</p>
-<p>If \(w\) doesn't use all the edges of \(\bfG\text{,}\) we can delete all the edges used in \(w\) and get a graph \(\bfG\setminus w\) with less edges.  Though \(\bfG\setminus w\) will probably not be connected, every vertex in \(\bfG\setminus w\) will have even degree, as we've subtracted an even number of edges from each vertex that \(w\) visits as argued in the first part of the proof.  Thus, by the inductive hypothesis each connected component \(\bfG\setminus w\) will have an Eulerian cycle.  Since the \(\bfG\) is connected, \(w\) must include at least one point from each component of \(\bfG\setminus w\text{,}\) and so we can insert the Eulerian walk from each component into \(w\) when we reach that component, to obtain a closed walk that uses all the vertices of \(\bfG\) as desired.</p></article><span class="incontext"><a href="s_walks_eulerian.html#proof-9">in-context</a></span>
+<article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Proof</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Consider a Hamiltonian path in \(\bfG\text{.}\)  Since every edge is between a red and blue vertex, the vertices in the path must alternate between red and blue.  Considering every other edge of the cycle pairs each red vertex with a blue vertex, and hence \(n=m\text{.}\)</p></article><span class="incontext"><a href="s_walks_hamiltonian.html#proof-9">in-context</a></span>
 </body>
 </html>

@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-17T09:52:44+01:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-02-28T21:05:56Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<h6 class="heading"><span class="type">Paragraph</span></h6>
-<p>Finally, we stitch our Eulerian paths together.  We follow our initial cycle that wasn't an Eulerian cycle, and the first time we hit a vertex that's in one of the other cycles, we insert that cycle in before we continue along our original path.  In our example, our original cycle was aeijgba.  a is not eitehr of the other components, but e is in the four cycle, so before we continue on our original cycle to i, we insert the four cycle ehije, giving aehije.  We now continue along our original cycle, adding ei, ij, jg, until we reach a vertex g that's in one of the added cycles, which we then insert, giving aehijeijgcdg as our cycle so far.</p>
-<span class="incontext"><a href="s_walks_eulerian.html#p-201">in-context</a></span>
+<h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">Thus, let \(v_1-v_2-\cdots v_n\) be a Hamiltonian path in \(\bfG\text{.}\)  We know \(v_1\) and \(v_n\) are not adjacent, as otherwise \(\bfG\) would be Hamiltonian.  Thus, since \(\bfG\) satisfies the hypothesis of Ore's theorem,  we know \(d(v_1)+d(v_n)\geq n\text{.}\)  We already have one edge adjacent to \(v_1\text{,}\) and one edge adjacent to \(v_n\text{,}\) and so there must be at least \(n-2\) other edges adjacent to one or other of these vertices.  We will see that no matter how we add \(n-2\) edges to these two vertices, we will create a Hamiltonian cycle.</p>
+<span class="incontext"><a href="s_walks_hamiltonian.html#p-201">in-context</a></span>
 </body>
 </html>

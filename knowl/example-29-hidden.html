@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-17T09:52:27+01:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-02-28T21:05:58Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:flex-start;"><p id="p-396">Consider the graph \(H\) consisting of two triangles joined along an edge. shown at the right.  We can calulate \(P_H(k)\) by working vertex by vertex: there are \(k\) ways to colour vertex 1, but then when we colour vertex 2 it can't be the same as vertex 1, and so there are \(k-1\) ways to colour it.  Vertex three is adjacent to both one and two, so there are \(k-2\) ways to colour it, and vertex 4 is adjacent to vertices 2 and 3, which have different colours as they are adjacent to each other, so there are \(k-2\) ways to colour it.  Putting it together, we see \(P_H(k)=k(k-1)(k-2)^2\)</p></div>
-<div class="sbspanel" style="width:31.5789473684211%;justify-content:flex-start;"><img src="images/image-59.svg" style="width: 100%; height: auto;" alt=""></div>
-</div></div></article></body>
+<body><article class="example example-like"><p xmlns:svg="http://www.w3.org/2000/svg">Recall that the empty graph \(E_n\) has \(n\) vertices and no edges.  To compute \(P_{E_n}(k)\) we need to count the number of ways to colour the vertices with \(k\) colours.  But since \(E_n\) has no edges, we can colour each of the \(n\) vertices any of the \(k\) colours; the choices are completely independent.  So \(P_{E_n}(k)=k^n\)</p></article></body>
 </html>

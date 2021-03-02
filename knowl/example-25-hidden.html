@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-17T09:52:48+01:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-02-28T21:05:57Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>Let's find \(\chi^\prime(K_4)\text{.}\)  Picking any vertex \(v\text{,}\) there are three edges incident to \(v\text{,}\) and none of these edges can have the same colour (as they all meet at \(v\)).  Hence, we have \(\chi^\prime(K_4)\geq 3\text{.}\)</p>
-<p>On the other hand, it is easy to colour the edges of \(K_4\) with three colours, as seen below, and so \(\chi^\prime(K_4)\leq 3\text{,}\) and hence \(\chi^\prime(K_4)=3\text{.}\)</p></article></body>
+<body><article class="example example-like"><p xmlns:svg="http://www.w3.org/2000/svg">As with trees, as long as \(n\geq 2\) the graph has at least one edge, and thus has \(\chi(C_n)\geq 2\text{.}\)  Can we colour \(C_n\) with two colours?</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">If we could, the vertices would have to alternate red-blue-red-blue all the way around.  This works if \(n\) is even, but if \(n\) is odd then the vertex we started with would have the same colour as the vertex we ended with, but they're adjacent.  Thus, when \(n\) is odd we need at least three colours to colour the graph, but it's easy to do with three colours -- we can alternate red-blue-red-blue, but make the very last vertex green, for instance.</p>
+<p>Summarizing, we have:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+\chi(C_n)=\begin{cases} 2 &amp; n \text{ odd} \\ 3 &amp; n \text{ even} \end{cases}
+\end{equation*}
+</div></article></body>
 </html>

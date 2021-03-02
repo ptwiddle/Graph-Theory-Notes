@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-17T09:52:46+01:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-02-28T21:05:57Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
-<p>We've essentially already proved it, but we'll restate the reasoning in a different way for completeness.</p>
-<p>When we draw a graph \(\bfG\) in the plane, we also draw all the subgraphs of \(\bfG\) in the plane.  Thus, if \(\bfG\) is planar, then all of its subgraphs are planar.  Our lemma is the contrapositive of this statement.</p></article><span class="incontext"><a href="s_graphs_on_surfaces_Kuratowski.html#proof-16">in-context</a></span>
+<article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Proof</span></h6>
+<p xmlns:svg="http://www.w3.org/2000/svg">One way to visualize this is imagine the sphere as being made from very flexible clay.  If we poke a small hole in the top of the sphere, we could stick our fingers in and make the hole larger, and gradually stretch and bend and reform for the sphere to be a flat disk, which could be stretched to be the whole plane, in the same way the tangent function maps the interval \((-\pi/2, pi/2)\) to the whole real line \(\reals\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Alternatively, one could use stereographic projection, as shown in Figure .  Draw \(S^2\) in \(\reals^3\) as the unit sphere at the origin, and let \(N=(0,0,1)\) be the north pole of the sphere.  Stereographic projection gives a bijection between \(S^2\setminus\{N\}\) (the sphere minus the north pole) to the plane, as follows: for any point \(p\neq N\) the line through \(p\) and \(N\) must meet the \(xy\)-plane at one point.  On the other hand, any line through \(N\) and a point on the \(xy\)-plane must meet the sphere at one other point.</p>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/stereographic.jpg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.3<span class="period">.</span></span><span class="space"> </span>Stereographic Projection</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Accepting that \(S^2\) is \(\reals^2\) minus one point, we see that we can draw a given graph \(\bfG\) on \(S^2\) if and only if we can draw \(\bfG\) on \(\reals^2\text{:}\) if we draw it on \(\reals^2\text{,}\) we can view the \(\reals^2\) as a small patch of \(S^2\text{.}\) And if we have a drawing on \(S^2\text{,}\) there must be at least one point on \(S^2\) that isn't in the drawing of \(G\text{,}\) and doing stereographic projection from that point gives a drawing of \(G\) on the plane \(\reals^2\text{.}\)</p></article><span class="incontext"><a href="s_graphs_on_surfaces_planarity_algorithm.html#proof-16">in-context</a></span>
 </body>
 </html>

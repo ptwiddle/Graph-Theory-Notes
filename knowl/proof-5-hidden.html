@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-17T09:52:43+01:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-02-28T21:05:55Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p>By assumption, \(\bfT\) has at least two vertices, say \(v_0\) and \(w_0\text{.}\)  Since \(\bfT\) is a tree it is connected, and so in particular there must be a path between \(v_0\) and \(w_0\text{;}\) let \(v_i\) be the vertices in this path, and let \(e_i\) be the edge in the path joining \(v_{i-1}\) to \(v_i\text{.}\)</p>
-<p>Since \(v_m\) is adjacent to \(e_m\) it has degree at least one; if it has degree 1 it is a leaf, and we've found a leaf.  If \(v_m\) is not a leaf, then there must be another edge coming out of it, say \(e_{m+1}\) going to \(v_{m+1}\text{.}\)  Note that \(v_{m+1}\) cannot be any of the vertices we've already found, as then we'd have more than one path between two vertices and hence a loop, but \(\bfT\) was a tree.  Thus we can make the path a bit longer.</p>
-<p>We can now continue this argument inductively as long as the vertex at the of the path has degree higher than 1.  But since \(\bfT\) is finite, and we never return to a vertex we've already visited, we this process must eventually terminate, but the only way this can happen is if the end vertex of the path has degree 1, that is, if it's a leaf.</p>
-<p>A similar argument extending from \(v_0\text{,}\) the other end of the path, shows that we must eventually reach a different leaf from that end, and so \(\bfT\) must have at least two leaves, as desired.</p></article></body>
+<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">By assumption, \(\bfT\) has at least two vertices, say \(v_0\) and \(w_0\text{.}\)  Since \(\bfT\) is a tree it is connected, and so in particular there must be a path between \(v_0\) and \(w_0\text{;}\) let \(v_i\) be the vertices in this path, and let \(e_i\) be the edge in the path joining \(v_{i-1}\) to \(v_i\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Since \(v_m\) is adjacent to \(e_m\) it has degree at least one; if it has degree 1 it is a leaf, and we've found a leaf.  If \(v_m\) is not a leaf, then there must be another edge coming out of it, say \(e_{m+1}\) going to \(v_{m+1}\text{.}\)  Note that \(v_{m+1}\) cannot be any of the vertices we've already found, as then we'd have more than one path between two vertices and hence a loop, but \(\bfT\) was a tree.  Thus we can make the path a bit longer.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">We can now continue this argument inductively as long as the vertex at the of the path has degree higher than 1.  But since \(\bfT\) is finite, and we never return to a vertex we've already visited, we this process must eventually terminate, but the only way this can happen is if the end vertex of the path has degree 1, that is, if it's a leaf.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">A similar argument extending from \(v_0\text{,}\) the other end of the path, shows that we must eventually reach a different leaf from that end, and so \(\bfT\) must have at least two leaves, as desired.</p></article></body>
 </html>

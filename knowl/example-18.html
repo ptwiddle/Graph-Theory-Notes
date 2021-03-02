@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-17T09:52:46+01:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-02-28T21:05:57Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
-<article class="example example-like"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Complete graphs.</span>
+<article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.2.10</span><span class="period">.</span><span class="space"> </span><span class="title">A planar graph.</span>
 </h6>
-<p>If \(n\gt 5\text{,}\) then \(K_n\) is not planar by <a class="xref" data-knowl="./knowl/lemma-nonplanar-subgraph.html" title="Lemma 3.3.3">Lemma 3.3.3</a>, because \(K_5\) is a subgraph of \(K_n\text{,}\) and we know that \(K_5\) isn't planar.</p>
-<p>We could also have used the fact that \(K_{3,3}\) is a subgraph of \(K_n\text{,}\) and \(K_{3,3}\) is also nonplanar.</p></article><span class="incontext"><a href="s_graphs_on_surfaces_Kuratowski.html#example-18">in-context</a></span>
+<p xmlns:svg="http://www.w3.org/2000/svg">Let's use the planarity algorithm for Hamiltonian graphs to find a planar drawing of the graph shown in the next figure.</p>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-52.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.11<span class="period">.</span></span><span class="space"> </span>A graph \(H\)</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">We see that \(H\) is Hamiltonian and take as our Hamiltonian cycle the path around the outside, namely \(abcxyza\text{.}\)  There are then six edges not contained in the Hamiltonian cycle, and we find that Cross(\(H, abcxyz\)) is as follows:</p>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-53.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.12<span class="period">.</span></span><span class="space"> </span>The graph Cross(\(H, abcxyza)\)</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">For instance, in \(H\) the edge \(ax\) crosses the three edges \(cy, cz\) and \(bz\text{,}\) and so in Cross(\(H, abcxyza\)), the vertex \(ax\) is adjacent to these vertices.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">The graph Cross(\(H, abcxyza)\) has no odd cycles and hence is bipartite -- for instance, we may color \(ax, bx\) and \(ay\) red, and the other three vertices blue.  Then, to draw \(H\) in the plane without edges crossing, we draw the red edges inside the cycle, and the blue edges outside the cycle:</p>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-54.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.13<span class="period">.</span></span><span class="space"> </span>The graph \(H\) drawn without edges crossing</figcaption></figure></article><span class="incontext"><a href="s_graphs_on_surfaces_planarity_algorithm.html#example-18">in-context</a></span>
 </body>
 </html>

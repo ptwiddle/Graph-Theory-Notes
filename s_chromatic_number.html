@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-17T09:52:40+01:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-02-28T21:05:54Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Chromatic number</title>
 <meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
@@ -41,20 +43,21 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
     \newcommand{\ints}{\mathbb{Z}}
     \newcommand{\posints}{\mathbb{N}}
     \newcommand{\rats}{\mathbb{Q}}
@@ -132,7 +135,7 @@ MathJax.Hub.Config({
 <p class="byline"></p>
 </div>
 </div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch_colourings.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_colourings.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_chromatic_index.html" title="Next">Next</a></span></div>
 </div>
@@ -140,7 +143,7 @@ MathJax.Hub.Config({
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch_colourings.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_colourings.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_chromatic_index.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
 <li class="link">
@@ -156,13 +159,21 @@ MathJax.Hub.Config({
 <li class="link">
 <a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span> <span class="title">Walks</span></a><ul>
 <li><a href="s_walks_basics.html" data-scroll="s_walks_basics">Walks: the basics</a></li>
-<li><a href="s_walks_eulerian.html" data-scroll="s_walks_eulerian">Eulerian Walks</a></li>
 <li><a href="s_walks_hamiltonian.html" data-scroll="s_walks_hamiltonian">Hamiltonian cycles</a></li>
 <li><a href="s_walks_exercises.html" data-scroll="s_walks_exercises">Exercises</a></li>
 </ul>
 </li>
 <li class="link">
-<a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">3</span> <span class="title">Graphs on Surfaces</span></a><ul>
+<a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span> <span class="title">Algorithms</span></a><ul>
+<li><a href="s_graphalgorithms_min-wt-span.html" data-scroll="s_graphalgorithms_min-wt-span">Minimum Weight Spanning Trees</a></li>
+<li><a href="s_graphalgorithms_digraphs.html" data-scroll="s_graphalgorithms_digraphs">Digraphs</a></li>
+<li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
+<li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
+<li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">4</span> <span class="title">Graphs on Surfaces</span></a><ul>
 <li><a href="s_graphs_on_surfaces_intro.html" data-scroll="s_graphs_on_surfaces_intro">Introduction to Graphs on Surfaces</a></li>
 <li><a href="s_graphs_on_surfaces_planarity_algorithm.html" data-scroll="s_graphs_on_surfaces_planarity_algorithm">The planarity algorithm for Hamiltonian graphs</a></li>
 <li><a href="s_graphs_on_surfaces_Kuratowski.html" data-scroll="s_graphs_on_surfaces_Kuratowski">Kuratowski's Theorem</a></li>
@@ -172,7 +183,7 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li class="link">
-<a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">4</span> <span class="title">Colourings</span></a><ul>
+<a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">5</span> <span class="title">Colourings</span></a><ul>
 <li><a href="s_chromatic_number.html" data-scroll="s_chromatic_number" class="active">Chromatic number</a></li>
 <li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index and applications</a></li>
 <li><a href="s_chromatic_polynomial_intro.html" data-scroll="s_chromatic_polynomial_intro">Introduction to the chromatic polynomial</a></li>
@@ -182,63 +193,63 @@ MathJax.Hub.Config({
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="s_chromatic_number"><h2 class="heading hide-type">
-<span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Chromatic number</span>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_chromatic_number"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.1</span> <span class="title">Chromatic number</span>
 </h2>
-<a href="s_chromatic_number.html" class="permalink">¶</a><p id="p-379">The study of graph colourings began with the colouring of maps.  Usually on a map, different regions (countries, counties, states, etc.) are visually distinguished from each other by giving each one a different colour, with the idea that adjance regions should have different colours so that boundaries can be easily seen.  For instance, in this old road map of England and Wales, each county is coloured either red, yellow blue or green, and bordering counties have different colours.</p>
+<p id="p-458">The study of graph colourings began with the colouring of maps.  Usually on a map, different regions (countries, counties, states, etc.) are visually distinguished from each other by giving each one a different colour, with the idea that adjance regions should have different colours so that boundaries can be easily seen.  For instance, in this old road map of England and Wales, each county is coloured either red, yellow blue or green, and bordering counties have different colours.</p>
 <figure class="figure figure-like" id="fig_colouredmapexample"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/EnglishCounties.jpg" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.1<span class="period">.</span></span><span class="space"> </span>A historical example of a map colouring.  <a class="external" href="http://www.davidrumsey.com/maps4669.html" target="_blank">Image</a> courtesy Cartography Associates under a <a class="external" href="https://creativecommons.org/licenses/by-nc-sa/2.0/" target="_blank">creative commons license</a></figcaption></figure><p id="p-380">Note that in the map above, only four colours are used.  In 1852 Francis Guthrie suggested that for any possible map drawn on a piece of a paper, four colours would be enough.  Guthrie's conjecture wasn't proven for more than a hundred years later.</p>
-<p id="p-381">Let's make Guthrie's conjecture precise and connect it to graph theory.  Note that as in Example , it makes sense to work with essential the dual picture to the map; we make the regions of the map into vertices, and we put an edge between two regions if they share a vertex.  Then we are lead to the following definitions.</p>
-<article class="definition definition-like" id="definition-27"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Colourings and Chromatic number.</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">5.1.1<span class="period">.</span></span><span class="space"> </span>A historical example of a map colouring.  <a class="external" href="http://www.davidrumsey.com/maps4669.html" target="_blank">Image</a> courtesy Cartography Associates under a <a class="external" href="https://creativecommons.org/licenses/by-nc-sa/2.0/" target="_blank">creative commons license</a></figcaption></figure><p id="p-459">Note that in the map above, only four colours are used.  In 1852 Francis Guthrie suggested that for any possible map drawn on a piece of a paper, four colours would be enough.  Guthrie's conjecture wasn't proven for more than a hundred years later.</p>
+<p id="p-460">Let's make Guthrie's conjecture precise and connect it to graph theory.  Note that as in Example , it makes sense to work with essential the dual picture to the map; we make the regions of the map into vertices, and we put an edge between two regions if they share a vertex.  Then we are lead to the following definitions.</p>
+<article class="definition definition-like" id="definition-28"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Colourings and Chromatic number.</span>
 </h6>
-<p id="p-382">Let \(\bfG\) be a graph.  A <em class="emphasis">\(k\)-colouring</em> (or sometimes <em class="emphasis">vertex colouring</em>) of \(\bfG\) with \(k\) colours is an assignment of one of \(k\) colours to each of the vertices of \(\bfG\) so that adjacent vertices have different colours.</p>
-<p id="p-383">More formally, a \(k\)-colouring is a function \(f:V(\bfG)\to\{1,\dots,k\}\) so that if \(v\sim w\) than we have \(f(v)\neq f(w)\text{.}\)</p>
-<p id="p-384">The <em class="emphasis">chromatic number</em> of a graph \(\bfG\text{,}\) written \(\chi(\bfG)\text{,}\) is the least number of colours needed to colour the vertices of \(G\) so that adjacent vertices are given different colours; that is, it's the least \(k\) so that there exists a \(k\)-colouring of \(\bfG\text{.}\)</p></article><p id="p-385">The most basic problem you will have to complete about these is the following: given a graph \(\bfG\text{,}\) determine its chromatic number\(\chi(\bfG)\text{.}\)  Because the chromatic number is the <em class="emphasis">least</em> number of colours with which it is possible to colour \(\bfG\text{,}\) showing that \(\chi(\bfG)=N\) will always require two steps:</p>
+<p id="p-461">Let \(\bfG\) be a graph.  A <em class="emphasis">\(k\)-colouring</em> (or sometimes <em class="emphasis">vertex colouring</em>) of \(\bfG\) with \(k\) colours is an assignment of one of \(k\) colours to each of the vertices of \(\bfG\) so that adjacent vertices have different colours.</p>
+<p id="p-462">More formally, a \(k\)-colouring is a function \(f:V(\bfG)\to\{1,\dots,k\}\) so that if \(v\sim w\) than we have \(f(v)\neq f(w)\text{.}\)</p>
+<p id="p-463">The <em class="emphasis">chromatic number</em> of a graph \(\bfG\text{,}\) written \(\chi(\bfG)\text{,}\) is the least number of colours needed to colour the vertices of \(G\) so that adjacent vertices are given different colours; that is, it's the least \(k\) so that there exists a \(k\)-colouring of \(\bfG\text{.}\)</p></article><p id="p-464">The most basic problem you will have to complete about these is the following: given a graph \(\bfG\text{,}\) determine its chromatic number\(\chi(\bfG)\text{.}\)  Because the chromatic number is the <em class="emphasis">least</em> number of colours with which it is possible to colour \(\bfG\text{,}\) showing that \(\chi(\bfG)=N\) will always require two steps:</p>
 <ol class="decimal">
-<li id="li-62">Show that \(\bfG\) admits a colouring with \(\chi(\bfG)=N-1\) colours</li>
-<li id="li-63">Show that \(\bfG\) does not admit a colouring with fewer colours.</li>
+<li id="li-74">Show that \(\bfG\) admits a colouring with \(\chi(\bfG)=N-1\) colours</li>
+<li id="li-75">Show that \(\bfG\) does not admit a colouring with fewer colours.</li>
 </ol>
-<article class="example example-like" id="example-21"><a data-knowl="" class="id-ref original" data-refid="hk-example-21"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Complete graph.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-21"><article class="example example-like"><p id="p-386">What's the chromatic number \(\chi(K_n)\) of the complete graph?  Since every vertex is adjacent to every other vertex, any two vertices need to have different colours, and so \(\chi(K_n)\geq n\text{.}\)  But certainly if we colour every vertex a different colour, then two adjacent vertices have the same colour, and that's a valid colouring of \(K_n\text{,}\) so \(\chi(K_n)\leq n\text{.}\)   So \(\chi(K_n)=n\text{.}\)</p></article></div>
-<article class="example example-like" id="example-22"><a data-knowl="" class="id-ref original" data-refid="hk-example-22"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Trees.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-22"><article class="example example-like"><p id="p-387">Suppose that \(T_n\) is a tree on \(n\geq 2\) vertices.  Then \(T_n\) has an edge, and the two vertices on this edge must be different colours, and so \(\chi(T_n)\geq 2\text{.}\)  On the other hand, we can colour any tree with two colours as follows: pick any vertex, and colour it blue; then pick any vertex next to it and colour it red, then we can colour the vertices next to that blue, and colour the vertices next to those red, and continuing on outwards from our starting vertex.  Hence, \(\chi(T_n)\leq 2\) and so \(\chi(T_n)=2\text{.}\)</p>
-<p id="p-388">Another way of phrasing this is that along any path we colour the vertices alternating red-blue-red-blue-red-blue.  This wouldn't work for a general graph, because there may be two paths of different lengths between a pair of vertices \(v\) and \(w\text{.}\)  But in trees because there is always exactly one path between any two vertices, and so once we colour one vertex, there's a unique way to colour all the others with two colours in this way.</p></article></div>
-<article class="example example-like" id="example-23"><a data-knowl="" class="id-ref original" data-refid="hk-example-23"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Cyclic graphs \(C_n\).</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-23"><article class="example example-like"><p id="p-389">As with trees, as long as \(n\geq 2\) the graph has at least one edge, and thus has \(\chi(C_n)\geq 2\text{.}\)  Can we colour \(C_n\) with two colours?</p>
-<p id="p-390">If we could, the vertices would have to alternate red-blue-red-blue all the way around.  This works if \(n\) is even, but if \(n\) is odd then the vertex we started with would have the same colour as the vertex we ended with, but they're adjacent.  Thus, when \(n\) is odd we need at least three colours to colour the graph, but it's easy to do with three colours -- we can alternate red-blue-red-blue, but make the very last vertex green, for instance.</p>
-<p id="p-391">Summarizing, we have:</p>
+<article class="example example-like" id="example-23"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-23"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Complete graph.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-23"><article class="example example-like"><p id="p-465">What's the chromatic number \(\chi(K_n)\) of the complete graph?  Since every vertex is adjacent to every other vertex, any two vertices need to have different colours, and so \(\chi(K_n)\geq n\text{.}\)  But certainly if we colour every vertex a different colour, then two adjacent vertices have the same colour, and that's a valid colouring of \(K_n\text{,}\) so \(\chi(K_n)\leq n\text{.}\)   So \(\chi(K_n)=n\text{.}\)</p></article></div>
+<article class="example example-like" id="example-24"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-24"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Trees.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-24"><article class="example example-like"><p id="p-466">Suppose that \(T_n\) is a tree on \(n\geq 2\) vertices.  Then \(T_n\) has an edge, and the two vertices on this edge must be different colours, and so \(\chi(T_n)\geq 2\text{.}\)  On the other hand, we can colour any tree with two colours as follows: pick any vertex, and colour it blue; then pick any vertex next to it and colour it red, then we can colour the vertices next to that blue, and colour the vertices next to those red, and continuing on outwards from our starting vertex.  Hence, \(\chi(T_n)\leq 2\) and so \(\chi(T_n)=2\text{.}\)</p>
+<p id="p-467">Another way of phrasing this is that along any path we colour the vertices alternating red-blue-red-blue-red-blue.  This wouldn't work for a general graph, because there may be two paths of different lengths between a pair of vertices \(v\) and \(w\text{.}\)  But in trees because there is always exactly one path between any two vertices, and so once we colour one vertex, there's a unique way to colour all the others with two colours in this way.</p></article></div>
+<article class="example example-like" id="example-25"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-25"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Cyclic graphs \(C_n\).</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-25"><article class="example example-like"><p id="p-468">As with trees, as long as \(n\geq 2\) the graph has at least one edge, and thus has \(\chi(C_n)\geq 2\text{.}\)  Can we colour \(C_n\) with two colours?</p>
+<p id="p-469">If we could, the vertices would have to alternate red-blue-red-blue all the way around.  This works if \(n\) is even, but if \(n\) is odd then the vertex we started with would have the same colour as the vertex we ended with, but they're adjacent.  Thus, when \(n\) is odd we need at least three colours to colour the graph, but it's easy to do with three colours -- we can alternate red-blue-red-blue, but make the very last vertex green, for instance.</p>
+<p id="p-470">Summarizing, we have:</p>
 <div class="displaymath">
 \begin{equation*}
 \chi(C_n)=\begin{cases} 2 &amp; n \text{ odd} \\ 3 &amp; n \text{ even} \end{cases}
 \end{equation*}
 </div></article></div>
-<p id="p-392">In fact, as thinking about the examples of trees and cycles should show, we've already met one instance of the chromatic number -- a graph \(\bfG\) is bipartite if and only if \(\chi(\bfG)=2\text{,}\) as follows immediately from the definition.</p>
-<p id="p-393">Another useful observation about the examples we've seen is that, since the chromatic number \(\chi(\bfG)\) is the <em class="emphasis">least</em> number of colours needed to colour \(\chi(\bfG)\text{,}\) to show that \(\chi(\bfG)=s\) requires doing two things:</p>
+<p id="p-471">In fact, as thinking about the examples of trees and cycles should show, we've already met one instance of the chromatic number -- a graph \(\bfG\) is bipartite if and only if \(\chi(\bfG)=2\text{,}\) as follows immediately from the definition.</p>
+<p id="p-472">Another useful observation about the examples we've seen is that, since the chromatic number \(\chi(\bfG)\) is the <em class="emphasis">least</em> number of colours needed to colour \(\chi(\bfG)\text{,}\) to show that \(\chi(\bfG)=s\) requires doing two things:</p>
 <ol class="decimal">
-<li id="li-64">Showing that \(\bfG\) <em class="emphasis">can</em> be coloured with \(s\) colours, and hence \(\bfG\leq s\)</li>
-<li id="li-65">Showing that \(\bfG\) <em class="emphasis">can't</em> be coloured with \(s-1\) colours, and hence \(\bfG\geq s\)</li>
+<li id="li-76">Showing that \(\bfG\) <em class="emphasis">can</em> be coloured with \(s\) colours, and hence \(\bfG\leq s\)</li>
+<li id="li-77">Showing that \(\bfG\) <em class="emphasis">can't</em> be coloured with \(s-1\) colours, and hence \(\bfG\geq s\)</li>
 </ol>
-<article class="example example-like" id="example-24"><a data-knowl="" class="id-ref original" data-refid="hk-example-24"><h6 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">The Wheel graph.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-24"><article class="example example-like"><p id="p-394">The wheel graph \(W_n\) consists of an \(n\)-cycle together with one additional vertex, that is connected to all vertices of the \(n\)-cycle.  Note that this with this convention, \(W_n\) confusingly has \(n-1\) vertices; other people may use a different convention where \(W_n\) has \(n\) vertices, but then it only has a \(n-1\) vertices on the actual wheel.</p>
-<p id="p-395">Since the central vertex is connected to all other vertices, once we colour it, we can never use that colour again.  But deleting that vertex we just have the \(n\)-cycle, and we already know the chromatic number of that.  So we have \(\chi(W_n)=\chi(C_n)+1\text{.}\)</p></article></div>
-<article class="definition definition-like" id="definition-28"><h6 class="heading">
-<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.7</span><span class="period">.</span>
+<article class="example example-like" id="example-26"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-26"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">The Wheel graph.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-26"><article class="example example-like"><p id="p-473">The wheel graph \(W_n\) consists of an \(n\)-cycle together with one additional vertex, that is connected to all vertices of the \(n\)-cycle.  Note that this with this convention, \(W_n\) confusingly has \(n-1\) vertices; other people may use a different convention where \(W_n\) has \(n\) vertices, but then it only has a \(n-1\) vertices on the actual wheel.</p>
+<p id="p-474">Since the central vertex is connected to all other vertices, once we colour it, we can never use that colour again.  But deleting that vertex we just have the \(n\)-cycle, and we already know the chromatic number of that.  So we have \(\chi(W_n)=\chi(C_n)+1\text{.}\)</p></article></div>
+<article class="definition definition-like" id="definition-29"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.1.7</span><span class="period">.</span>
 </h6>
-<p id="p-396">We write \(\Delta(\bfG)\) for the maxium degree of any vertex in \(\bfG\text{:}\)</p>
+<p id="p-475">We write \(\Delta(\bfG)\) for the maxium degree of any vertex in \(\bfG\text{:}\)</p>
 <div class="displaymath">
 \begin{equation*}
 \Delta(\bfG)=\max_{v\in \bfG} d(v)
 \end{equation*}
 </div></article><article class="theorem theorem-like" id="theorem-12"><h6 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.1.8</span><span class="period">.</span>
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.1.8</span><span class="period">.</span>
 </h6>
-<p id="p-397">We have \(\chi(\bfG)\leq \Delta(\bfG)+1\)</p></article><article class="hiddenproof" id="proof-23"><a data-knowl="" class="id-ref original" data-refid="hk-proof-23"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-23"><article class="hiddenproof"><p id="p-398">We need to show that we can colour any graph \(\bfG\) with \(\Delta(G)+1\) colours.  But we can just colour the vertices of \(\bfG\) one by one in whatever order we want.  When we go to colour the \(i\)th vertex \(v_i\text{,}\) we look at the \(d(v_i)\) vertices adjacent to \(v_i\text{.}\)  Some of them may not be coloured yet, in which case they don't affect anything, but for each vertex adjacent to \(v_i\) that is coloured, we can't use that colour for \(v_i\text{.}\)</p>
-<p id="p-399">So there are most \(d(v_i)\leq \Delta(\bfG)\) colours we have to avoid; if we have \(\Delta(\bfG)+1\) colours to choose from we can always find one that hasn't been used at a vertex adjacent to \(v_i\)</p>.</article></div></section></div></main>
+<p id="p-476">We have \(\chi(\bfG)\leq \Delta(\bfG)+1\)</p></article><article class="hiddenproof" id="proof-24"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-24"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-24"><article class="hiddenproof"><p id="p-477">We need to show that we can colour any graph \(\bfG\) with \(\Delta(G)+1\) colours.  But we can just colour the vertices of \(\bfG\) one by one in whatever order we want.  When we go to colour the \(i\)th vertex \(v_i\text{,}\) we look at the \(d(v_i)\) vertices adjacent to \(v_i\text{.}\)  Some of them may not be coloured yet, in which case they don't affect anything, but for each vertex adjacent to \(v_i\) that is coloured, we can't use that colour for \(v_i\text{.}\)</p>
+<p id="p-478">So there are most \(d(v_i)\leq \Delta(\bfG)\) colours we have to avoid; if we have \(\Delta(\bfG)+1\) colours to choose from we can always find one that hasn't been used at a vertex adjacent to \(v_i\)</p>.</article></div></section></div></main>
 </div>
 </body>
 </html>

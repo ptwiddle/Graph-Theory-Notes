@@ -26,8 +26,6 @@ A <term>face</term><idx><h>face</h></idx> of a planar drawing of a graph is a re
 \node (e) at (2,1) {};
 \node (f) at (1,0) {};
 
-
-
 \draw (a)--(b)--(c)--(d)--(e)--(f)--(a)--(e)--(b)--(d);
 \end{scope}
 
@@ -41,11 +39,7 @@ A <term>face</term><idx><h>face</h></idx> of a planar drawing of a graph is a re
 \draw (a)--(b)--(c)--(d)--(a)--(c);
 \draw (b)--(d);
 \end{scope}
-\end{tikzpicture} 
-
-
-\end{tikzpicture} 
-]]></latex-image></image></figure>
+\end{tikzpicture} ]]></latex-image></image></figure>
 
     <p>What happens if we compute the number of vertices minus the number of edges plus the number of faces for these drawings? We have
     <md>

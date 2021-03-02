@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-17T09:52:46+01:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-02-28T21:05:57Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p>The graph \(\bfG_1\) in <a class="xref" data-knowl="./knowl/fig-K33-subs.html" title="Figure 3.3.1">Figure 3.3.1</a> is \(K_{3,3}\) with a vertex and two edges added to it; put another way, \(K_{3,3}\) is a subgraph of \(\bfG_1\text{.}\)  If we could draw \(\bfG_1\) in the plane, we could just ignore this extra vertex and these two edges, and we'd have a drawing of \(K_{3,3}\) in the plane, but we know \(K_{3,3}\) isn't planar.  So to avoid contradictions we are forced to conclude that \(\bfG_1\) isn't planar.</p>
-<p>The graph \(\bfG_2\) looks just like \(K_{3,3}\text{,}\) but we have added an extra vertex of degree two in the middle of one of the edges.  Note that \(K_{3,3}\) is <em class="emphasis">not</em> a subgraph of \(\bfG_2\text{,}\) and so we need to use slightly different reasoning than we did for showing \(\bfG\) isn't planar.  But drawing \(\bfG_2\) is just like drawing \(K_{3,3}\) and then adding an extra dot for the new vertex of degree two.  If we could draw \(\bfG_2\) in the plane, we could just skip adding this extra dot, and we'd have a drawing of \(K_{3,3}\) in the plane.  Again, since we know \(K_{3,3}\) isn't planar, we see that \(\bfG_2\) isn't planar, either.</p></article></body>
+<body><article class="example example-like"><p xmlns:svg="http://www.w3.org/2000/svg">Let's apply the planarity algorithm to the complete graph \(K_5\text{.}\)  Let's label the vertices 1-5, and take our Hamiltonian cycle \(C\) to be 123451, which we've drawn as the outside pentagon in the following figure: <figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-49.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.7<span class="period">.</span></span><span class="space"> </span>The graph (\(K_5\))</figcaption></figure> Since \(K_5\) has \(\binom{5}{2}=10\) vertices, there are 5 edges that aren't used in \(C\text{,}\) namely 13,14, 24,25, and 35.  So Cross(\(K_5, 123451\)) will consist of these five vertices.  We see that 13 will be adjacent to 24 and 25, since these edges would cross if drawn inside, but 13 is not adjacent to 14 or 35, since these edges would cross 13 if drawn on the same side of the circle, as illustrated in the next figure</p>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-50.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.8<span class="period">.</span></span><span class="space"> </span>The edges 13 does and does not cross</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Similar consideration with the other edges show that Cross(\(K_5, 123451\)) is the following graph, which is isomorphic to a five cycle:</p>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-51.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.9<span class="period">.</span></span><span class="space"> </span>The graph Cross(\(K_5, 123451\))</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">In particular, Cross(\(K_5, 123451\)) is not bipartite.  Hence, by the planarity algorithm for Hamiltonian graphs, we see that \(K_5\) is not planar.</p></article></body>
 </html>

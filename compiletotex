@@ -1,0 +1,4 @@
+xsltproc --xinclude -o MAS341.tex mathbook/xsl/pretext-latex.xsl index.mbx
+
+
+
