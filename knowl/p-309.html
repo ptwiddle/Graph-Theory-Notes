@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-28T21:05:56Z       *-->
+<!--*       on 2021-03-19T11:08:39Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">And now the lowest term not on the bottom of its column is 6, so we add that:</p>
-<span class="incontext"><a href="s_graphalgorithms_prufer.html#p-309">in-context</a></span>
+<p xmlns:svg="http://www.w3.org/2000/svg">Let's see what Prim's algorithm does on the weighted graph in <a class="xref" data-knowl="./knowl/fig_graphalgorithms_spantreegraph.html" title="Figure 3.2.1">Figure 3.2.1</a>. We start with vertex \(a\) as the root vertex. The lightest edge connecting \(a\) (the only vertex in the tree so far) to the rest of the graph is \(ag\text{.}\) Next, \(fg\) is added. This is followed by \(fi\text{,}\) \(fj\text{,}\) \(bj\text{,}\) and \(bc\text{.}\) Next, the algorithm identifies \(ck\) as the lightest edge connecting \(\{a,g,i,f,j,b,c\}\) to the remaining vertices. Notice that this is considerably later than Kruskal's algorithm finds the same edge. The algorithm then determines that \(al\) and \(jd\text{,}\) both of weight \(56\) are the lightest edges connecting vertices in the tree to the other vertices. It picks arbitrarily, so let's say it takes \(al\text{.}\) It next finds \(dl\text{,}\) then \(ek\text{,}\) and then \(em\text{.}\) The final edge added is \(ch\text{.}\) The full list of edges added (in order) is shown to the right. The total weight of this spanning tree is \(504\text{.}\) This (not surprisingly) the same weight we obtained using Kruskal's algorithm. However, notice that the spanning tree found is different, as this one contains \(al\) instead of \(dj\text{.}\) This is not an issue, of course, since in both cases an arbitrary choice between two edges of equal weight was made.</p>
+<span class="incontext"><a href="s_graphalgorithms_min-wt-span.html#p-309">in-context</a></span>
 </body>
 </html>

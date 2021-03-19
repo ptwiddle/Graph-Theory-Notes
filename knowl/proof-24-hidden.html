@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-28T21:05:58Z       *-->
+<!--*       on 2021-03-19T11:08:40Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,6 +13,35 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">We need to show that we can colour any graph \(\bfG\) with \(\Delta(G)+1\) colours.  But we can just colour the vertices of \(\bfG\) one by one in whatever order we want.  When we go to colour the \(i\)th vertex \(v_i\text{,}\) we look at the \(d(v_i)\) vertices adjacent to \(v_i\text{.}\)  Some of them may not be coloured yet, in which case they don't affect anything, but for each vertex adjacent to \(v_i\) that is coloured, we can't use that colour for \(v_i\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">So there are most \(d(v_i)\leq \Delta(\bfG)\) colours we have to avoid; if we have \(\Delta(\bfG)+1\) colours to choose from we can always find one that hasn't been used at a vertex adjacent to \(v_i\)</p>.</article></body>
+<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">Let \(V, E, F\) denote the number of vertices, edges, and faces of \(\bfG\text{.}\)  Since every face is a hexagon or pentagon, we have \(E=P+H\text{,}\) and substituting this into Euler's theorem gives:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+V-E+P+H=2\tag{4.5.1}
+\end{equation}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Now we turn handshaking.  Since \(\bfG\) is trivalent, every vertex has degree three, and so vertex-edge handshaking becomes:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+2E=3V\tag{4.5.2}
+\end{equation}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Finally, since there are \(P\) pentagonal faces and \(H\) hexagonal faces, face-edge handshaking becomes:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation}
+2E=5P+6H\tag{4.5.3}
+\end{equation}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Multiplying <a class="xref" data-knowl="./knowl/footeu.html" title="Equation 4.5.1">(4.5.1)</a> by six gives:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+6V-6E+6P+6H=12
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Multiplying <a class="xref" data-knowl="./knowl/footve.html" title="Equation 4.5.2">(4.5.2)</a> by two gives \(6V-4E=0\text{,}\) which we can use to eliminate \(V\text{,}\) giving</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+-2E+5P+6H=12
+\end{equation*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Finally, using <a class="xref" data-knowl="./knowl/footfe.html" title="Equation 4.5.3">(4.5.3)</a> we can eliminate both \(E\) and \(H\) in one go, being left with \(P=12\) as desired.</p></article></body>
 </html>

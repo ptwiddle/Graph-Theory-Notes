@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-19T11:08:41Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">We will induct on \(n\text{.}\)  As a base case, when \(n=3\text{,}\) we have:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+(k-1)^3+(-1)^3(k-1)\amp =k^3-3k^2+3k-1-(k-1)\\
+\amp=k^3-3k^2+2k\\
+\amp =k(k-1)(k-2) \\
+\amp=P_{C_3}(k)
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">For the inductive step, we assume that the proposition holds for \(n-1\) and want to prove that it holds for \(n\text{.}\)  We will compute \(P_{C_n}(k)\) by deletion-contraction.  If we delete any edge of \(C_n\text{,}\) we get the path graph \(P_n\text{,}\) and we know</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\end{gather*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">If we contract any edge of \(C_n\text{,}\) we get \(C_{n-1}\text{,}\) and we know by the inductive hypothesis that</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{gather*}
+\end{gather*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Plugging these into deletion-contraction gives:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+P_{C_n}(k) \amp = P_{C_n \setminus e}(k)-P_{C_n/e}(k) \\
+\amp = P_{P_n}(k)-P_{C_{n-1}}(k) \\
+\amp = k(k-1)^{n-1} - \left((k-1)^{n-1}+(-1)^{n-1}(k-1) \right)\\
+\amp = (k-1)^{n-1}(k-1) - (-1)^{n-1}(k-1) \\
+\amp = (k-1)^n+(-1)^n(k-1) 
+\end{align*}
+</div>
+<p xmlns:svg="http://www.w3.org/2000/svg">as was desired.</p></article></body>
+</html>

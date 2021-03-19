@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-28T21:05:56Z       *-->
+<!--*       on 2021-03-19T11:08:38Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,10 +13,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">For the first fact, it suffices to note that if there were more than one distinct path from \(x\) to \(y\) in \(\bfT\text{,}\) we would be able to find a cycle in \(\bfT\text{.}\) This is impossible since it is a tree. For the second, we refer to <a class="xref" data-knowl="./knowl/fig_graphalgorithms_exchange.html" title="Figure 3.1.5">Figure 3.1.5</a>. The black and green edges in the graph shown at the left represent the spanning tree \(\bfT\text{.}\) Thus, \(f\) lies on the unique path from \(x\) to \(y\) in \(\bfT\) and \(e=xy\) is an edge of \(\bfG\) <em class="emphasis">not</em> in \(\bfT\text{.}\) Adding \(e\) to \(\bfT\) creates a graph with a unique cycle, since \(\bfT\) had a unique path from \(x\) to \(y\text{.}\) Removing \(f\) (which could be any edge \(f_i\) of the path, as stated in the proposition) destroys this cycle. Thus \(\bfT_i\) is a connected acyclic subgraph of \(\bfG\) with \(n-1+1-1=n-1\) edges, so it is a spanning tree.</p>
-<figure class="figure figure-like"><div class="sidebyside"><div class="sbsrow" style="margin-left:1%;margin-right:1%;">
-<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><img src="images/exchange1.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:48.9795918367347%;justify-content:flex-start;"><img src="images/exchange2.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-</div></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.5<span class="period">.</span></span><span class="space"> </span>The exchange principle</figcaption></figure></article></body>
+<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">Of course, a case-by-case analysis of possibile Hamiltonian cycles is possible.  The number of cases can be reduced by using symmetries of the Petersen graph. Instead, for variation and to illustrate a different proof technique, we will use another method.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Assume for contradiction that the Petersen graph is Hamiltonian, and draw the ten vertices \(v_1,v_2,\dots,v_{10}\) around the cycle.  The Hamiltonian cycle uses 10 of the 15 edges in the Petersen graph, and so there must be 5 more edges, with each vertex incident to one of them, as in the Petersen graph every vertex has degree 3.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Let's analyse where else the edge adjacent to \(v_1\) could go.  It can't go to \(v_1\) itself, as the Petersen graph has no loops, and it can't go to \(v_2\) or \(v_{10}\) as the Petersen graph has no multiple edges.  If it went to \(v_3\) or \(v_9\) it would make a three cycle, which the Petersen graph doesn't have, and if it went to \(v_4\) or \(v_7\text{,}\) there'd be a four cycle.  Hence, the only options are \(v_1\) is adjacent to \(v_5, v_6\) or \(v_7\text{.}\)  By reversing the direction of the Hamiltonian path, \(v_5\) and \(v_7\) are equivalent, and there are only two cases.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">But the same analysis holds for every vertex: the extra edge at any vertex can either go to the opposite side of the circle, or be "off by one" and skip three vertices to either direction.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">We now claim that not all the extra edges can go "directly across" -- there must be at least one edge that's off by one.  If all the extra edges went directly across, then \(v_1\) would go to \(v_6\text{,}\) and \(v_2\) would go to \(v_7\text{,}\) and \(v_1-v_6-v_7-v_2-v_1\) would be a 4 cycle.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Hence, without loss of generality we may assume that the extra edge at \(v_1\) is \(v_1-v_5\text{.}\)  Let us then consider the extra edge at \(v_6\text{.}\)  It can't go directly across, as that is \(v_1\) which already has its extra edge.  Hence it must be off by one, and go to either \(v_2\) or \(v_{10}\text{.}\)  But either way we get a four cycle: either \(v_1-v_2-v_6-v_5-v_1\text{,}\) or \(v_1-v_{10}-v_6-v_5-v_1\text{.}\)  Hence, we have a contradiction, and the Petersen graph cannot be Hamiltonian.</p></article></body>
 </html>

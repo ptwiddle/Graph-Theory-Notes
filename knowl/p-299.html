@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-28T21:05:56Z       *-->
+<!--*       on 2021-03-19T11:08:38Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,19 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Output: A \(2\times n-1\) table with entries in \(\{1,\dots,n\}\) that records the edges of \(T\) in a specified order.</p>
-<span class="incontext"><a href="s_graphalgorithms_prufer.html#p-299">in-context</a></span>
+<dl xmlns:svg="http://www.w3.org/2000/svg" class="description-list">
+<dt>Initialization.</dt>
+<dd><p>Set \(S=\emptyset\) and \(i=0\text{.}\)</p></dd>
+<dt>Inductive Step.</dt>
+<dd>
+<p>While \(|S| \lt n-1\text{,}\) let \(j\) be the least non-negative integer so that \(j &gt; i\) and there are no cycles in \(S\cup\{e_j\}\text{.}\) Then (using pseudo-code) set</p>
+<div class="displaymath">
+\begin{equation*}
+i = j\quad\text{and} \quad S= S\cup\{j\}.
+\end{equation*}
+</div>
+</dd>
+</dl>
+<span class="incontext"><a href="s_graphalgorithms_min-wt-span.html#p-299">in-context</a></span>
 </body>
 </html>

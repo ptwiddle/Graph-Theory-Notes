@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-19T11:08:35Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Traveling Salesperson Problem</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']]
+    },
+    asciimath2jax: {
+        ignoreClass: ".*",
+        processClass: "has_am"
+    },
+    jax: ["input/AsciiMath"],
+    extensions: ["asciimath2jax.js"],
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
+    \newcommand{\ints}{\mathbb{Z}}
+    \newcommand{\posints}{\mathbb{N}}
+    \newcommand{\rats}{\mathbb{Q}}
+    \newcommand{\reals}{\mathbb{R}}
+    \newcommand{\complexes}{\mathbb{C}}
+    \newcommand{\twospace}{\mathbb{R}^2}
+    \newcommand{\threepace}{\mathbb{R}^3}
+    \newcommand{\dspace}{\mathbb{R}^d}
+    \newcommand{\nni}{\mathbb{N}_0}
+    \newcommand{\nonnegints}{\mathbb{N}_0}
+    \newcommand{\dom}{\operatorname{dom}}
+    \newcommand{\ran}{\operatorname{ran}}
+    \newcommand{\prob}{\operatorname{prob}}
+    \newcommand{\Prob}{\operatorname{Prob}}
+    \newcommand{\height}{\operatorname{height}}
+    \newcommand{\width}{\operatorname{width}}
+    \newcommand{\length}{\operatorname{length}}
+    \newcommand{\crit}{\operatorname{crit}}
+    \newcommand{\inc}{\operatorname{inc}}
+    \newcommand{\HP}{\mathbf{H_P}}
+    \newcommand{\HCP}{\mathbf{H^c_P}}
+    \newcommand{\GP}{\mathbf{G_P}}
+    \newcommand{\GQ}{\mathbf{G_Q}}
+    \newcommand{\AG}{\mathbf{A_G}}
+    \newcommand{\GCP}{\mathbf{G^c_P}}
+    \newcommand{\PXP}{\mathbf{P}=(X,P)}
+    \newcommand{\QYQ}{\mathbf{Q}=(Y,Q)}
+    \newcommand{\GVE}{\mathbf{G}=(V,E)}
+    \newcommand{\HWF}{\mathbf{H}=(W,F)}
+    \newcommand{\bfC}{\mathbf{C}}
+    \newcommand{\bfG}{\mathbf{G}}
+    \newcommand{\bfH}{\mathbf{H}}
+    \newcommand{\bfF}{\mathbf{F}}
+    \newcommand{\bfI}{\mathbf{I}}
+    \newcommand{\bfK}{\mathbf{K}}
+    \newcommand{\bfP}{\mathbf{P}}
+    \newcommand{\bfQ}{\mathbf{Q}}
+    \newcommand{\bfR}{\mathbf{R}}
+    \newcommand{\bfS}{\mathbf{S}}
+    \newcommand{\bfT}{\mathbf{T}}
+    \newcommand{\bfNP}{\mathbf{NP}}
+    \newcommand{\bftwo}{\mathbf{2}}
+    \newcommand{\cgA}{\mathcal{A}}
+    \newcommand{\cgB}{\mathcal{B}}
+    \newcommand{\cgC}{\mathcal{C}}
+    \newcommand{\cgD}{\mathcal{D}}
+    \newcommand{\cgE}{\mathcal{E}}
+    \newcommand{\cgF}{\mathcal{F}}
+    \newcommand{\cgG}{\mathcal{G}}
+    \newcommand{\cgM}{\mathcal{M}}
+    \newcommand{\cgN}{\mathcal{N}}
+    \newcommand{\cgP}{\mathcal{P}}
+    \newcommand{\cgR}{\mathcal{R}}
+    \newcommand{\cgS}{\mathcal{S}}
+    \newcommand{\bfn}{\mathbf{n}}
+    \newcommand{\bfm}{\mathbf{m}}
+    \newcommand{\bfk}{\mathbf{k}}
+    \newcommand{\bfs}{\mathbf{s}}
+    \newcommand{\bijection}{\xrightarrow[\text{onto}]{\text{$1$--$1$}}}
+    \newcommand{\injection}{\xrightarrow[]{\text{$1$--$1$}}}
+    \newcommand{\surjection}{\xrightarrow[\text{onto}]{}}
+    \newcommand{\nin}{\not\in}
+    \newcommand{\prufer}{\mbox{prüfer}}
+    \DeclareMathOperator{\fix}{fix}
+    \DeclareMathOperator{\stab}{stab}
+    \DeclareMathOperator{\var}{var}
+    \newcommand{\inv}{^{-1}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="MAS341.html"><span class="title">MAS341: Graph Theory</span></a></h1>
+<p class="byline"></p>
+</div>
+</div></div>
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_graphalgorithms_longest-paths.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_algorithms.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_graphalgorithms_exercises.html" title="Next">Next</a></span></div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_graphalgorithms_longest-paths.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_algorithms.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_graphalgorithms_exercises.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
+<li class="link">
+<a href="ch_intro.html" data-scroll="ch_intro"><span class="codenumber">1</span> <span class="title">Introduction</span></a><ul>
+<li><a href="s_intro_firstlook.html" data-scroll="s_intro_firstlook">A first look at graphs</a></li>
+<li><a href="s_intro_degrees.html" data-scroll="s_intro_degrees">Degree and handshaking</a></li>
+<li><a href="s_intro_isomorphisms.html" data-scroll="s_intro_isomorphisms">Graph Isomorphisms</a></li>
+<li><a href="s_intro_instantinsanity.html" data-scroll="s_intro_instantinsanity">Instant Insanity</a></li>
+<li><a href="s_intro_trees.html" data-scroll="s_intro_trees">Trees</a></li>
+<li><a href="s_intro_exercises.html" data-scroll="s_intro_exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span> <span class="title">Walks</span></a><ul>
+<li><a href="s_walks_basics.html" data-scroll="s_walks_basics">Walks: the basics</a></li>
+<li><a href="s_walks_eulerian.html" data-scroll="s_walks_eulerian">Eulerian Walks</a></li>
+<li><a href="s_walks_hamiltonian.html" data-scroll="s_walks_hamiltonian">Hamiltonian cycles</a></li>
+<li><a href="s_walks_exercises.html" data-scroll="s_walks_exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span> <span class="title">Algorithms</span></a><ul>
+<li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
+<li><a href="s_graphalgorithms_min-wt-span.html" data-scroll="s_graphalgorithms_min-wt-span">Minimum Weight Spanning Trees</a></li>
+<li><a href="s_graphalgorithms_digraphs.html" data-scroll="s_graphalgorithms_digraphs">Digraphs</a></li>
+<li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
+<li><a href="s_graphalgorithms_longest-paths.html" data-scroll="s_graphalgorithms_longest-paths">Algorithm for Longest Paths</a></li>
+<li><a href="s_graphalgorithms_traveling-salesperson.html" data-scroll="s_graphalgorithms_traveling-salesperson" class="active">The Traveling Salesperson Problem</a></li>
+<li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">4</span> <span class="title">Graphs on Surfaces</span></a><ul>
+<li><a href="s_graphs_on_surfaces_intro.html" data-scroll="s_graphs_on_surfaces_intro">Introduction to Graphs on Surfaces</a></li>
+<li><a href="s_graphs_on_surfaces_planarity_algorithm.html" data-scroll="s_graphs_on_surfaces_planarity_algorithm">The planarity algorithm for Hamiltonian graphs</a></li>
+<li><a href="s_graphs_on_surfaces_Kuratowski.html" data-scroll="s_graphs_on_surfaces_Kuratowski">Kuratowski's Theorem</a></li>
+<li><a href="s_graphs_on_surfaces_other_surfaces.html" data-scroll="s_graphs_on_surfaces_other_surfaces">Drawing Graphs on Other surfaces</a></li>
+<li><a href="s_graphs_on_surfaces_euler.html" data-scroll="s_graphs_on_surfaces_euler">Euler's Theorem</a></li>
+<li><a href="s_graphs_on_surfaces_exercises.html" data-scroll="s_graphs_on_surfaces_exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">5</span> <span class="title">Colourings</span></a><ul>
+<li><a href="s_chromatic_number.html" data-scroll="s_chromatic_number">Chromatic number</a></li>
+<li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index and applications</a></li>
+<li><a href="s_chromatic_polynomial_intro.html" data-scroll="s_chromatic_polynomial_intro">Introduction to the chromatic polynomial</a></li>
+<li><a href="s_chromatic_polynomial_more.html" data-scroll="s_chromatic_polynomial_more">Chromatic Polynomial continued</a></li>
+<li><a href="s_chromatic_exercises.html" data-scroll="s_chromatic_exercises">Exercises</a></li>
+</ul>
+</li>
+</ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_graphalgorithms_traveling-salesperson"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.6</span> <span class="title">The Traveling Salesperson Problem</span>
+</h2>
+<section class="introduction" id="introduction-10"><p id="p-358">In this section we discuss the Travelling Salesperson problem.  In <a href="s_graphalgorithms_traveling-salesperson.html#subs_graphalgorithms_tsp_intro" class="internal" title="Subsection 3.6.1: Introduction to the Traveling Salesperson Problem">Subsection 3.6.1</a>  we introduce the problem and give some explanation of why it is very hard in general.  Rather than try to solve it exactly, we will resort to providing upper and lower bounds for the solution.  In <a href="s_graphalgorithms_traveling-salesperson.html#subs_graphalgorithms_tsp_upper" class="internal" title="Subsection 3.6.2: Finding upper bounds to the TSP">Subsection 3.6.2</a>  we discuss various methods of constructing upper bounds.  In <a href="s_graphalgorithms_traveling-salesperson.html#subs_graphalgorithms_tsp_lower" class="internal" title="Subsection 3.6.3: A lower point for TSP">Subsection 3.6.3</a>  we give a method of constructing lower bounds.</p></section><section class="subsection" id="subs_graphalgorithms_tsp_intro"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.6.1</span> <span class="title">Introduction to the Traveling Salesperson Problem</span>
+</h3>
+<p id="p-359">Let us first describe the Traveling Salesperson Problem, or TSP for short, in informal language, and then translate it into a question about graph theory.</p>
+<p id="p-360">Imagine you work for a company, travelling from city to city, trying to sell some product in each (for instance, encyclopedias).  You are assigned a list of cities you need to visit, and you need to start from your home, travel from city to city visiting them all, and finally return to your home.  Of course, travelling from city to city is expensive (either in terms of money, travel time, or something else), and to turn a profit your company wants you to organize the order you visit each of cities so that the total cost is as cheap as possible.  This minimiziation problem is the TSP.</p>
+<p id="p-361">Translated into graph theory, the TSP can be succinctly stated as follows: given a weighted graph \(\bfG\text{,}\) find the cheapest Hamiltonian path. That is, the cheapest closed walk on \(\bfG\) that visits every vertex exactly once.</p>
+<p id="p-362">First, note that it is enough to consider the complete graph \(K_n\text{.}\)  If we are given some other weighted graph \(\bfG\text{,}\) we can add all the edges not in \(\bfG\) but make their weights <em class="emphasis">much</em> larger than any of the weights inside \(\bfG\text{.}\)</p>
+<p id="p-363">Another important point is that the problem of determining whether a given graph \(\bfG\) has a Hamiltonian cycle is a special case of the traveling salesman problem.  To see this, suppose we're given a graph \(\bfG\text{,}\) and we want to determine whether it is Hamiltonian.  We create a weighted \(K_n\text{,}\) with vertices the vertices of \(\bfG\) by giving the edge \(v-w\) a very small weight \(\epsilon\) if \(v\) and \(w\) <em class="emphasis">are</em> adjacent in \(\bfG\text{,}\) and a very large weight \(M\) if \(v\) and \(w\) *are not* adjacent in \(\bfG\text{.}\)  Then, any Hamiltonian path in \(\bfG\) would have cost \(n\epsilon\text{,}\) where as any path that uses an edge not in \(\bfG\) costs more than \(M\text{.}\)  So, if we make \(M&gt;n\epsilon\text{,}\) the TSP for our weighted \(K_n\) will have a solution with cost less than \(M\) if and only if \(\bfG\) had a Hamiltonian cycle.</p>
+<p id="p-364">Since determining whether a graph \(\bfG\) is Hamiltonian is difficult (NP complete), the TSP will also be.  As such, we will not discuss any algorithms for actually solving TSP.  Instead, we will discuss methods for giving upper and lower bounds for the TSP.</p></section><section class="subsection" id="subs_graphalgorithms_tsp_upper"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.6.2</span> <span class="title">Finding upper bounds to the TSP</span>
+</h3>
+<p id="p-365">Getting <em class="emphasis">good</em> upper bounds to the TSP will turns out to be difficult.  However, finding not so good upper bounds will turn out to be quite easy.</p>
+<p id="p-366">For instance, any solution to the TSP will be a Hamiltonian cycle, and in particular if \(\bfG\) contains \(n\) vertices, the TSP solution will contain \(n\) edges.  Let \(M\) be the weight of the most expensive edge in \(\bfG\text{.}\)</p>
+<div class="displaymath">
+\begin{equation*}
+w(C)=\sum_{i=1}^n w(e_i)\leq \sum_{i=1}^ M = nM
+\end{equation*}
+</div>
+<p id="p-367">Since the TSP asks for the cheapeast Hamiltonian cycle, taking <em class="emphasis">any</em> Hamiltonian cycle and calculating its cost will be an upper bound for the TSP.  Just choosing a random Hamiltonian cycle will in general be very expensive and silly -- for instance, going from Sheffield to London to Rotherham to Edinburgh to Chesterfield to Glasgow to Nottingham to Brighton is clearly not optimal.</p>
+<p id="p-368">A greedy algorithm will give a heuristically better result: we call it the <em class="emphasis">nearst neighbor algorithm</em>.  At each step, simply go to the nearest city you have not already visited.  This will give good results at the beginning, but since we do not do any planning ahead, it will in general give bad results, as the following example illustrates:</p>
+<figure class="figure figure-like" id="fig_nearestneighbourbadexample"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-43.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.6.1<span class="period">.</span></span><span class="space"> </span>The graph \(\bfG\) where nearest neighbour struggles</figcaption></figure><p id="p-369">Consider running the Nearest Neighbor algorithm starting at \(v_0\text{.}\)  At the first step, we have a choice -- we could go to \(v_1\) or to \(v_9\text{.}\)  Suppose we go to \(v_1\text{.}\)  After that, our choice is forced -- \(v_1-v_2-v_3-v_4-v_5-v_6-v_7-v_8-v_9\) costs one at each step.  Now, we still have to visit \(T\) before returning to \(V_0\text{,}\) which will cost us 10 to detour through.  We clearly should have planned ahead and visited $$T$$ in between vertices \(v_4\) and \(v_5\) at a cost of 4.</p>
+<p id="p-370">Clearly the nearest neighbour algorithm is not in general very good, and better algorithms are possible.  We present it first to give a quick but reasonable way to get a solution to TSP that isn't <em class="emphasis">completely</em> horrible, and second to illustrate that greedy algorithms in general will not be efficient.  We briefly mention two other ways to get lower bounds.</p>
+<p id="p-371">Another, slightly better, greedy algorithm might be called <em class="emphasis">nearest insertion</em>.  It inductively builds bigger and bigger closed loops one vertex at time.  When there is a closed loop with <em class="emphasis">k</em> vertices \(v_1-v_2-v_3-\cdots - v_k-v_1\) and we want to add vertex \(w\) to the loop, we look at each of the adjacent legs \(v_i-v_{i+1}\text{,}\) and determine how much it would raise the cost to insert the next vertex \(w\) in between those two cities (changing the path to \(v_1-w-v_{i+1}\)), being sure to also check for inserting it between \(v_k\) and \(v_1\text{.}\)  This does much better at our example above, but can run into other problems, and involves a little more bookkeeping and arithmetic, so I won't ask you to implement it on the exam.</p>
+<p id="p-372">Another method inolves a qualitive change of view.  The greedy algorithms we describe so far are only heuristics to getting a decent path.  There is no guarantee that they produce an output that is in any way close to the optimal path, and indeed examples can be engineered to make them extremely bad.  It would be nice to have an upper bound that was guaranteed to not be <em class="emphasis">too</em> far off the optimal solution.  The Christofides algorithm does just that, by producing a Hamiltonian cycle that is guaranteed to have weight at most 3/2 of the weight of the optimal solution.  Very briefly, it does this by starting with a minimal weight spanning tree, makes a subgraph by adding edges to the tree until every vertex has even degree, taking an Eulerian circuit of that, and then removing edges to get a Hamiltonian cycle.</p>
+<p id="p-373">For nearly fifty years, Christofides algorithm was the best known guaranteed upper bound on the Travelling Salesperson problem, but in the summer 2020 of Nathan Klein, Anna Karlin and Shayan Oveis Gharan managed to modify the algorithm to give a very slight improvement, producing a cycle guaranteed to be within \(3/2-\varepsilon\) for some \(\varepsilon&gt;10^{-36}\text{.}\)  See this Quanta article for a popular account of their work.</p></section><section class="subsection" id="subs_graphalgorithms_tsp_lower"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">3.6.3</span> <span class="title">A lower point for TSP</span>
+</h3>
+<p id="p-374">To get a lower bound for TSP we have to be a little more intelligent.  Suppose we had a solution \(C\) to the TSP for \(\Gamma\text{,}\) and that we deleted one vertex \(v\) from \(C\text{.}\)  Deleting a vertex from a cycle gives us a path \(P\text{,}\) and in particular a tree.  Furthermore, \(P\) visits every vertex in \(\Gamma\) except for \(v\text{,}\) and so it is a spanning tree of \(\Gamma\setminus v\text{.}\)</p>
+<p id="p-375">We can use Kruskal's algorithm (or another) to find a minimal spanning tree \(T\) of \(\Gamma\setminus v\text{,}\) and we have that \(w(P)\geq w(T)\text{.}\)  The cycle \(C\) contains just two more edges, from \(v\) to two other vertices, say \(a\) and \(b\text{.}\)  We can obtain lower bounds on the weights of the edges \(v-a\) and \(v-b\) by taking the weights of the lowest two edges out of \(v\text{,}\) maybe \(e_1\) and \(e_2\text{.}\)  We have</p>
+<div class="displaymath">
+\begin{equation*}
+w(C)=w(P)+w(a-v)+w(b-v)\geq w(T)+w(e_1)+w(e_2)
+\end{equation*}
+</div>
+<p id="p-376">giving us a lower bound on solutions to the TSP.</p></section></section></div></main>
+</div>
+</body>
+</html>

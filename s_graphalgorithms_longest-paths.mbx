@@ -1,0 +1,66 @@
+<section xml:id="s_graphalgorithms_longest-paths">
+    <title>Algorithm for Longest Paths</title>
+    <introduction><p> To complement Dijkstra's algorithm for finding the short path, in this section we give an algorithm for finding the <em>longest</em> path between two vertices in a directed graph.  </p>
+    <p>It is not immediately clear why we might want to do this, so first in <xref ref="subs_graphalgorithms_longest-path-motivation" />   we give a motivational problem: scheduling work on a complicated project.  The algorithm we present will only work on <em>acyclic</em> directed graphs, so in <xref ref="subs_graphalgorithms_longest-path-acyclic-sort" /> we define these, explain why this isn't a restriction for our intended application, and give the first step of the algorithm: "topologically sorting" the vertices of an acyclic directed graph.  Finally, in <xref ref="subs_graphalgorithms_longest-path-algorithm" />   we explain the actual algorithm. </p>
+    </introduction>
+<subsection xml:id="subs_graphalgorithms_longest-path-motivation">
+
+<p>The main application of the longest path algorithm is in scheduling.  Suppose we have a large project -- say, building a house -- that is composed of many smaller projects: digging the foundation, building the walls, connecting to gas, electricity, and water, building the roof, doing the interiors, landscaping, etc.</p>
+ 
+<p>Some of these activities will require others to be done before them (you can't put the roof on before you've built the walls; you don't want to do the landscaping before you've dug your water lines), while others could be done at the same time (finishing the interiors and doing the landscaping).  Each sub-job has an expected amount of time required to finish it; you'd like to know before hand how long the whole task will take, and when the various sub-jobs should be done so you can arrange the contractors.  </p>
+
+<p>From a series of jobs like this, we will construct a weighted, directed, acyclic graph.  The edges will be the sub-jobs. The weights of each edge will be the expected length of time that job has.  The structure of the graph will encode the dependencies of the subjobs on each other -- an edge <m>e</m> will flow into an edge <m>f</m> if the job <m>f</m> immediately depends about the job <m>e</m>.  </p>
+
+<p>We will work out the construction of this graph in one example.  It is not always trivial to construct the directed graph from the table of jobs and dependencies.  It is not clear what the vertices should be, and sometimes dummy edges and vertices need to be encoded.  You do not need to worry about constructing these graphs in general, though if you're curious it can be interesting to think about.  Any exam question about this topic would supply you with the directed graph.</p>
+
+Example
+===
+
+Consider the following table, listing tasks $$A-H$$, the expected time of completion for each task, and the required tasks before a given task can be started.
+
+<table>
+<tr>
+<td> Task </td> <td> Time </td> <td> Prerequisites </td> </tr>
+<tr> <td> A </td> <td> 6 </td> <td> </td> </tr>
+<tr> <td> B </td> <td> 7 </td> <td> </td> </tr>
+<tr> <td> C </td> <td> 4 </td> <td> A </td> </tr>
+<tr> <td> D </td> <td> 3 </td> <td> A </td> </tr>
+<tr> <td> E </td> <td> 4 </td> <td> B,D </td> </tr>
+<tr> <td> F </td> <td> 10 </td> <td> C </td> </tr>
+<tr> <td> G </td> <td> 3 </td> <td> C </td> </tr>
+<tr> <td> H </td> <td> 10 </td> <td> E,G </td> </tr>
+</table>
+
+Here is the corresponding graph encoding this information:
+<image src="../Slides/Pictures/tasks.png"></image>
+
+Construction of the graph
+====
+
+We outline how the graph above was constructed.  We make one vertex for the start, one vertex for the finish, and then another vertex for each set of dependencies, that is, the entries in the third column.  Then we draw an edge for each letter, beginning at the vertex corresponding to its set of prerequisites (or the start, if it has none), and ending at the vertex that contains it as a prerequisite (or the end, if no tasks require it as a prerequisite).
+
+Note that this method works only if any two sets of prerequisites either have nontrivial intersection or are identical.  The tricky cases you don't have to worry about are when this isn't true.  
+
+Longest Paths
+----
+
+With that detour out of the way, we see why finding the longest path in a directed acyclic graph is useful: in case the edges are tasks and the weights are expected times, the length of the longest path is the minimal time the whole project would be able to be completed.
+
+Moreover, it is useful to actually know what the longest paths are -- to achieve this minimal time, each task in the longest path must be completed in the expected amount of time, and the next task in the path must be started immediately when the first one finishes.  For this reason, the longest paths are known as *critical paths*.  
+
+
+</subsection>
+
+<subsection xml:id="subs_graphalgorithms_longest-path-acyclic-sort">
+
+
+
+</subsection>
+
+<subsection xml:id="subs_graphalgorithms_longest-path-algorithm">
+
+
+</subsection>
+
+
+</section>

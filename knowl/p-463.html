@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-28T21:05:57Z       *-->
+<!--*       on 2021-03-19T11:08:40Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">The <em class="emphasis">chromatic number</em> of a graph \(\bfG\text{,}\) written \(\chi(\bfG)\text{,}\) is the least number of colours needed to colour the vertices of \(G\) so that adjacent vertices are given different colours; that is, it's the least \(k\) so that there exists a \(k\)-colouring of \(\bfG\text{.}\)</p>
-<span class="incontext"><a href="s_chromatic_number.html#p-463">in-context</a></span>
+<p xmlns:svg="http://www.w3.org/2000/svg">It makes sense to attempt a greedy algorithm -- in the standard drawing of the Petersen grpah, pick the very top vertex 1 to be "red" and the three vertices adjacent to it to, 2, 5, and 6, to be "blue".  We need two more red vertices.  All vertices left are adjacent to exactly one blue vertex, so from a greedy point of view there is no preference for which vertex we pick to be the next blue vertex.  Let us pick 9 to be another red vertex.  Then it is connected directly to blue vertex 6, but we must find paths from 9 to 2 and 5.  We could, for instance, take the path 9-4-3-2 to connect to 2, but that would use two vertices up while the path 9-7-2 only uses one extra vertex, and so seems better.  Then we can connected 9 to 5 through vertex 4, and vertex 9 has been connected to all the blue vertices.</p>
+<span class="incontext"><a href="s_graphs_on_surfaces_Kuratowski.html#p-463">in-context</a></span>
 </body>
 </html>

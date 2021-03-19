@@ -1,0 +1,76 @@
+<section xml:id="s_graphalgorithms_traveling-salesperson">
+    <title>The Traveling Salesperson Problem</title>
+    <introduction>
+    <p>In this section we discuss the Travelling Salesperson problem.  In <xref ref="subs_graphalgorithms_tsp_intro" />  we introduce the problem and give some explanation of why it is very hard in general.  Rather than try to solve it exactly, we will resort to providing upper and lower bounds for the solution.  In <xref ref="subs_graphalgorithms_tsp_upper" />  we discuss various methods of constructing upper bounds.  In <xref ref="subs_graphalgorithms_tsp_lower" />  we give a method of constructing lower bounds.</p>
+  </introduction>
+  
+  
+  <subsection xml:id="subs_graphalgorithms_tsp_intro">
+  <title>Introduction to the Traveling Salesperson Problem</title>
+  <p>Let us first describe the Traveling Salesperson Problem, or TSP for short, in informal language, and then translate it into a question about graph theory.</p>
+  
+  <p>Imagine you work for a company, travelling from city to city, trying to sell some product in each (for instance, encyclopedias).  You are assigned a list of cities you need to visit, and you need to start from your home, travel from city to city visiting them all, and finally return to your home.  Of course, travelling from city to city is expensive (either in terms of money, travel time, or something else), and to turn a profit your company wants you to organize the order you visit each of cities so that the total cost is as cheap as possible.  This minimiziation problem is the TSP.</p>
+  
+  <p>Translated into graph theory, the TSP can be succinctly stated as follows: given a weighted graph <m>\bfG</m>, find the cheapest Hamiltonian path. That is, the cheapest closed walk on <m>\bfG</m> that visits every vertex exactly once.</p>
+
+<p>First, note that it is enough to consider the complete graph <m>K_n</m>.  If we are given some other weighted graph <m>\bfG</m>, we can add all the edges not in <m>\bfG</m> but make their weights <em>much</em> larger than any of the weights inside <m>\bfG</m>.</p>
+
+<p>Another important point is that the problem of determining whether a given graph <m>\bfG</m> has a Hamiltonian cycle is a special case of the traveling salesman problem.  To see this, suppose we're given a graph <m>\bfG</m>, and we want to determine whether it is Hamiltonian.  We create a weighted <m>K_n</m>, with vertices the vertices of <m>\bfG</m> by giving the edge <m>v-w</m> a very small weight <m>\epsilon</m> if <m>v</m> and <m>w</m> <em>are</em> adjacent in <m>\bfG</m>, and a very large weight <m>M</m> if <m>v</m> and <m>w</m> *are not* adjacent in <m>\bfG</m>.  Then, any Hamiltonian path in <m>\bfG</m> would have cost <m>n\epsilon</m>, where as any path that uses an edge not in <m>\bfG</m> costs more than <m>M</m>.  So, if we make <m>M>n\epsilon</m>, the TSP for our weighted <m>K_n</m> will have a solution with cost less than <m>M</m> if and only if <m>\bfG</m> had a Hamiltonian cycle.</p>
+
+<p>Since determining whether a graph <m>\bfG</m> is Hamiltonian is difficult (NP complete), the TSP will also be.  As such, we will not discuss any algorithms for actually solving TSP.  Instead, we will discuss methods for giving upper and lower bounds for the TSP.</p>
+
+  </subsection>
+  
+  <subsection xml:id="subs_graphalgorithms_tsp_upper"> <title>Finding upper bounds to the TSP</title>
+  
+<p>Getting <em>good</em> upper bounds to the TSP will turns out to be difficult.  However, finding not so good upper bounds will turn out to be quite easy.</p>
+
+<p>For instance, any solution to the TSP will be a Hamiltonian cycle, and in particular if <m>\bfG</m> contains <m>n</m> vertices, the TSP solution will contain <m>n</m> edges.  Let <m>M</m> be the weight of the most expensive edge in <m>\bfG</m>.  </p>
+
+<me>w(C)=\sum_{i=1}^n w(e_i)\leq \sum_{i=1}^ M = nM</me>
+
+<p>Since the TSP asks for the cheapeast Hamiltonian cycle, taking <em>any</em> Hamiltonian cycle and calculating its cost will be an upper bound for the TSP.  Just choosing a random Hamiltonian cycle will in general be very expensive and silly -- for instance, going from Sheffield to London to Rotherham to Edinburgh to Chesterfield to Glasgow to Nottingham to Brighton is clearly not optimal.</p>
+
+<p>A greedy algorithm will give a heuristically better result: we call it the <em>nearst neighbor algorithm</em>.  At each step, simply go to the nearest city you have not already visited.  This will give good results at the beginning, but since we do not do any planning ahead, it will in general give bad results, as the following example illustrates:</p>
+
+<figure xml:id="fig_nearestneighbourbadexample"> <caption>The graph <m>\bfG</m> where nearest neighbour struggles</caption>
+<image width="70%">
+<latex-image><![CDATA[\begin{tikzpicture} 
+\begin{scope}[xscale=2,  every node/.style={circle, thick, draw}]
+\foreach \x in {0,1,...,9} \node (\x) at (-108-36*\x:3) {$v_\x$};
+      \node (w) at (0,7) {$w$};
+      \draw (0)--(1)--(2)--(3)--(4)--(5)--(6)--(7)--(8)--(9)--(w)--(0);
+\end{scope}
+\end{tikzpicture}
+]]>
+</latex-image></image></figure>
+
+<p>Consider running the Nearest Neighbor algorithm starting at <m>v_0</m>.  At the first step, we have a choice -- we could go to <m>v_1</m> or to <m>v_9</m>.  Suppose we go to <m>v_1</m>.  After that, our choice is forced -- <m>v_1-v_2-v_3-v_4-v_5-v_6-v_7-v_8-v_9</m> costs one at each step.  Now, we still have to visit <m>T</m> before returning to <m>V_0</m>, which will cost us 10 to detour through.  We clearly should have planned ahead and visited $$T$$ in between vertices <m>v_4</m> and <m>v_5</m> at a cost of 4.</p>
+
+<p>Clearly the nearest neighbour algorithm is not in general very good, and better algorithms are possible.  We present it first to give a quick but reasonable way to get a solution to TSP that isn't <em>completely</em> horrible, and second to illustrate that greedy algorithms in general will not be efficient.  We briefly mention two other ways to get lower bounds.</p>
+
+<p>Another, slightly better, greedy algorithm might be called <em>nearest insertion</em>.  It inductively builds bigger and bigger closed loops one vertex at time.  When there is a closed loop with <em>k</em> vertices <m>v_1-v_2-v_3-\cdots - v_k-v_1</m> and we want to add vertex <m>w</m> to the loop, we look at each of the adjacent legs <m>v_i-v_{i+1}</m>, and determine how much it would raise the cost to insert the next vertex <m>w</m> in between those two cities (changing the path to <m>v_1-w-v_{i+1}</m>), being sure to also check for inserting it between <m>v_k</m> and <m>v_1</m>.  This does much better at our example above, but can run into other problems, and involves a little more bookkeeping and arithmetic, so I won't ask you to implement it on the exam.</p>
+
+<p>Another method inolves a qualitive change of view.  The greedy algorithms we describe so far are only heuristics to getting a decent path.  There is no guarantee that they produce an output that is in any way close to the optimal path, and indeed examples can be engineered to make them extremely bad.  It would be nice to have an upper bound that was guaranteed to not be <em>too</em> far off the optimal solution.  The Christofides algorithm does just that, by producing a Hamiltonian cycle that is guaranteed to have weight at most 3/2 of the weight of the optimal solution.  Very briefly, it does this by starting with a minimal weight spanning tree, makes a subgraph by adding edges to the tree until every vertex has even degree, taking an Eulerian circuit of that, and then removing edges to get a Hamiltonian cycle.</p> 
+
+<p>For nearly fifty years, Christofides algorithm was the best known guaranteed upper bound on the Travelling Salesperson problem, but in the summer 2020 of Nathan Klein, Anna Karlin and Shayan Oveis Gharan managed to modify the algorithm to give a very slight improvement, producing a cycle guaranteed to be within <m>3/2-\varepsilon</m> for some <m>\varepsilon>10^{-36}</m>.  See <a href="https://www.quantamagazine.org/computer-scientists-break-traveling-salesperson-record-20201008/">this Quanta article</a> for a popular account of their work.</p>
+
+
+  </subsection>
+    
+<subsection xml:id="subs_graphalgorithms_tsp_lower">
+<title>A lower point for TSP</title>
+<p>To get a lower bound for TSP we have to be a little more intelligent.  Suppose we had a solution <m>C</m> to the TSP for <m>\Gamma</m>, and that we deleted one vertex <m>v</m> from <m>C</m>.  Deleting a vertex from a cycle gives us a path <m>P</m>, and in particular a tree.  Furthermore, <m>P</m> visits every vertex in <m>\Gamma</m> except for <m>v</m>, and so it is a spanning tree of <m>\Gamma\setminus v</m>.  </p>
+
+<p>We can use Kruskal's algorithm (or another) to find a minimal spanning tree <m>T</m> of <m>\Gamma\setminus v</m>, and we have that <m>w(P)\geq w(T)</m>.  The cycle <m>C</m> contains just two more edges, from <m>v</m> to two other vertices, say <m>a</m> and <m>b</m>.  We can obtain lower bounds on the weights of the edges <m>v-a</m> and <m>v-b</m> by taking the weights of the lowest two edges out of <m>v</m>, maybe <m>e_1</m> and <m>e_2</m>.  We have</p>
+
+<me>w(C)=w(P)+w(a-v)+w(b-v)\geq w(T)+w(e_1)+w(e_2)</me>
+
+<p>giving us a lower bound on solutions to the TSP.</p>
+
+
+
+
+</subsection>
+    
+    </section>

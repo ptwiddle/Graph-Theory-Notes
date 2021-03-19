@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-28T21:05:53Z       *-->
+<!--*       on 2021-03-19T11:08:35Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -137,10 +137,10 @@ MathJax.Hub.Config({
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_walks_exercises.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="MAS341.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_graphalgorithms_min-wt-span.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_walks_exercises.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="MAS341.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_graphalgorithms_prufer.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_walks_exercises.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="MAS341.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_graphalgorithms_min-wt-span.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_walks_exercises.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="MAS341.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_graphalgorithms_prufer.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -159,16 +159,19 @@ MathJax.Hub.Config({
 <li class="link">
 <a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span> <span class="title">Walks</span></a><ul>
 <li><a href="s_walks_basics.html" data-scroll="s_walks_basics">Walks: the basics</a></li>
+<li><a href="s_walks_eulerian.html" data-scroll="s_walks_eulerian">Eulerian Walks</a></li>
 <li><a href="s_walks_hamiltonian.html" data-scroll="s_walks_hamiltonian">Hamiltonian cycles</a></li>
 <li><a href="s_walks_exercises.html" data-scroll="s_walks_exercises">Exercises</a></li>
 </ul>
 </li>
 <li class="link active">
 <a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span> <span class="title">Algorithms</span></a><ul>
+<li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
 <li><a href="s_graphalgorithms_min-wt-span.html" data-scroll="s_graphalgorithms_min-wt-span">Minimum Weight Spanning Trees</a></li>
 <li><a href="s_graphalgorithms_digraphs.html" data-scroll="s_graphalgorithms_digraphs">Digraphs</a></li>
 <li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
-<li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
+<li><a href="s_graphalgorithms_longest-paths.html" data-scroll="s_graphalgorithms_longest-paths">Algorithm for Longest Paths</a></li>
+<li><a href="s_graphalgorithms_traveling-salesperson.html" data-scroll="s_graphalgorithms_traveling-salesperson">The Traveling Salesperson Problem</a></li>
 <li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises">Exercises</a></li>
 </ul>
 </li>
@@ -196,13 +199,15 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="ch_algorithms"><h2 class="heading">
 <span class="type">Chapter</span> <span class="codenumber">3</span> <span class="title">Algorithms</span>
 </h2>
-<section class="introduction" id="introduction-6"><p id="p-217">This chapter covers several graph algorithms.  We start with two algorithms for finding minimal weight spanning trees, Kruskal's algorithm and Prim's algorithm.  We discuss Dijkstra's algorithm for finding the shortest path between two points in a directed, weighted graph.</p>
-<p id="p-218">Much of the material in this chapter is taken from the open source textbook Applied Combinatorics by Keller and Trotter.</p></section><nav class="summary-links"><ul>
-<li><a href="s_graphalgorithms_min-wt-span.html"><span class="codenumber">3.1</span> <span class="title">Minimum Weight Spanning Trees</span></a></li>
-<li><a href="s_graphalgorithms_digraphs.html"><span class="codenumber">3.2</span> <span class="title">Digraphs</span></a></li>
-<li><a href="s_graphalgorithms_shortest-paths.html"><span class="codenumber">3.3</span> <span class="title">Dijkstra's Algorithm for Shortest Paths</span></a></li>
-<li><a href="s_graphalgorithms_prufer.html"><span class="codenumber">3.4</span> <span class="title">Prüfer Codes</span></a></li>
-<li><a href="s_graphalgorithms_exercises.html"><span class="codenumber">3.5</span> <span class="title">Exercises</span></a></li>
+<section class="introduction" id="introduction-6"><p id="p-255">This chapter covers several graph algorithms.  We start with two algorithms for finding minimal weight spanning trees, Kruskal's algorithm and Prim's algorithm.  We discuss Dijkstra's algorithm for finding the shortest path between two points in a directed, weighted graph.</p>
+<p id="p-256">Much of the material in this chapter is taken from the open source textbook Applied Combinatorics by Keller and Trotter.</p></section><nav class="summary-links"><ul>
+<li><a href="s_graphalgorithms_prufer.html"><span class="codenumber">3.1</span> <span class="title">Prüfer Codes</span></a></li>
+<li><a href="s_graphalgorithms_min-wt-span.html"><span class="codenumber">3.2</span> <span class="title">Minimum Weight Spanning Trees</span></a></li>
+<li><a href="s_graphalgorithms_digraphs.html"><span class="codenumber">3.3</span> <span class="title">Digraphs</span></a></li>
+<li><a href="s_graphalgorithms_shortest-paths.html"><span class="codenumber">3.4</span> <span class="title">Dijkstra's Algorithm for Shortest Paths</span></a></li>
+<li><a href="s_graphalgorithms_longest-paths.html"><span class="codenumber">3.5</span> <span class="title">Algorithm for Longest Paths</span></a></li>
+<li><a href="s_graphalgorithms_traveling-salesperson.html"><span class="codenumber">3.6</span> <span class="title">The Traveling Salesperson Problem</span></a></li>
+<li><a href="s_graphalgorithms_exercises.html"><span class="codenumber">3.7</span> <span class="title">Exercises</span></a></li>
 </ul></nav></section></div></main>
 </div>
 </body>

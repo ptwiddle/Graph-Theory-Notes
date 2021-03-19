@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-28T21:05:58Z       *-->
+<!--*       on 2021-03-19T11:08:40Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,30 +15,7 @@
 </head>
 <body>
 <article class="hiddenproof"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Proof</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">The proof follows from induction on \(m\text{,}\) the number of edges, using deletion-contraction for the inductive step.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">As a base case, we take \(m=0\text{.}\)  Then if \(\bfG\) has \(n\) vertices it must be the empty graph \(E_n\text{.}\)  We have seen that \(P_{E_n}(k)=k^n\text{,}\) which indeed has the correct form needed for the theorem.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Now, for the inductive step, we assume that for any graph \(H\) with \(\ell\lt m\) edges and \(n\) vertices, we have \(P_{H}(k)=k^n-\ell k^{n-1}+\text{lower order terms}\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Now let \(\bfG\) be any graph with \(m\) edges.  We can assume \(m\gt 0\text{,}\) as the case where \(m=0\) is the base case; this means that \(\bfG\) has at least one edge \(e\text{.}\)  We apply deletion-contraction to the edge \(e\text{.}\)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">If we delete \(e\text{,}\) the resulting graph \(\bfG\setminus e\) still has \(n\) vertices, but it now has \(m-1\) edges.  Since this is less than \(m\text{,}\) we know by the inductive hypothesis that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P_{\bfG\setminus e}(k)=k^n-(m-1)k^{n-1}+\text{lower order terms}
-\end{equation*}
-</div>
-<p xmlns:svg="http://www.w3.org/2000/svg">If we contract \(e\text{,}\) the resulting graph \(\bfG/e\) has \(n-1\) vertices, and we don't know exactly how many edges it has (contracting it may create multiple edges that need to be deleted), but it has at most \(m-1\) edges, and so by the inductive hypothesis we know that</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{equation*}
-P_{\bfG/e}(k)=k^{n-1}+\text{lower order terms}
-\end{equation*}
-</div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Thus, applying deletion-contraction we have:</p>
-<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
-\begin{align*}
-P_\bfG(k) \amp = P_{\bfG\setminus e}(k)-P_{\bfG/e}(k) \\
-\amp = k^n-(m-1)k^{n-1}+\text{lower order terms} - \left(k^{n-1}+\text{lower order terms} \right)\\
-\amp = k^n-mk^{n-1}+\text{lower order terms}
-\end{align*}
-</div>
-<p xmlns:svg="http://www.w3.org/2000/svg">which is what we needed to show to finish the inductive step.</p></article><span class="incontext"><a href="s_chromatic_polynomial_more.html#proof-31">in-context</a></span>
+<p xmlns:svg="http://www.w3.org/2000/svg">The proof is extremely similar to that of the previous proposition.  A colouring of \(\bfG\) gives us colourings of \(\bfG_1\) and \(\bfG_2\text{,}\) but not any two colourings: they need to match at both \(v\) and at \(u\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Now, \(v\) could be any of the \(k\) colours, but \(u\text{,}\) being adjacent to \(v\text{,}\) can't be the same colour, and so it has \(k-1\) possibilities given a choose of colour for \(v\text{.}\)  Thus, there are \(k(k-1)\) ways to colour \(v\) and \(u\text{,}\) and all possibilities will occur equally often within the colourings counted by \(P_{\bfG_2}(k)\text{.}\)  Hence, given a colouring of \(\bfG_1\text{,}\) there will be \(P_{\bfG_2}(k)/[k(k-1)]\) ways to extendthat colouring to one of all of \(G\text{,}\) giving us the result.</p></article><span class="incontext"><a href="s_chromatic_polynomial_intro.html#proof-31">in-context</a></span>
 </body>
 </html>

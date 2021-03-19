@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-28T21:05:53Z       *-->
+<!--*       on 2021-03-19T11:08:35Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -159,16 +159,19 @@ MathJax.Hub.Config({
 <li class="link">
 <a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span> <span class="title">Walks</span></a><ul>
 <li><a href="s_walks_basics.html" data-scroll="s_walks_basics">Walks: the basics</a></li>
+<li><a href="s_walks_eulerian.html" data-scroll="s_walks_eulerian">Eulerian Walks</a></li>
 <li><a href="s_walks_hamiltonian.html" data-scroll="s_walks_hamiltonian">Hamiltonian cycles</a></li>
 <li><a href="s_walks_exercises.html" data-scroll="s_walks_exercises" class="active">Exercises</a></li>
 </ul>
 </li>
 <li class="link">
 <a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span> <span class="title">Algorithms</span></a><ul>
+<li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
 <li><a href="s_graphalgorithms_min-wt-span.html" data-scroll="s_graphalgorithms_min-wt-span">Minimum Weight Spanning Trees</a></li>
 <li><a href="s_graphalgorithms_digraphs.html" data-scroll="s_graphalgorithms_digraphs">Digraphs</a></li>
 <li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
-<li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
+<li><a href="s_graphalgorithms_longest-paths.html" data-scroll="s_graphalgorithms_longest-paths">Algorithm for Longest Paths</a></li>
+<li><a href="s_graphalgorithms_traveling-salesperson.html" data-scroll="s_graphalgorithms_traveling-salesperson">The Traveling Salesperson Problem</a></li>
 <li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises">Exercises</a></li>
 </ul>
 </li>
@@ -194,29 +197,29 @@ MathJax.Hub.Config({
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="exercises" id="s_walks_exercises"><h2 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">2.3</span> <span class="title">Exercises</span>
+<span class="type">Exercises</span> <span class="codenumber">2.4</span> <span class="title">Exercises</span>
 </h2>
-<article class="exercise exercise-like" id="exercise-11"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
-<p id="p-206">The questions in this exercise pertain to the graph \(\bfG\) shown in <a class="xref" data-knowl="./knowl/fig_graphs_graph_ex.html" title="Figure 2.3.1">Figure 2.3.1</a>.</p>
+<article class="exercise exercise-like" id="exercise-12"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-244">The questions in this exercise pertain to the graph \(\bfG\) shown in <a class="xref" data-knowl="./knowl/fig_graphs_graph_ex.html" title="Figure 2.4.1">Figure 2.4.1</a>.</p>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:1.25%;margin-right:1.25%;">
 <div class="sbspanel" style="width:61.5384615384615%;justify-content:flex-start;"><ol class="lower-alpha">
-<li id="li-50"><p id="p-207">What is the degree of vertex \(8\text{?}\)</p></li>
-<li id="li-51"><p id="p-208">What is the degree of vertex \(10\text{?}\)</p></li>
-<li id="li-52"><p id="p-209">How many vertices of degree \(2\) are there in \(\bfG\text{?}\) List them.</p></li>
-<li id="li-53"><p id="p-210">Find a cycle of length \(8\) in \(\bfG\text{.}\)</p></li>
-<li id="li-54"><p id="p-211">What is the length of a shortest path from \(3\) to \(4\text{?}\)</p></li>
-<li id="li-55"><p id="p-212">What is the length of a shortest path from \(8\) to \(7\text{?}\)</p></li>
-<li id="li-56"><p id="p-213">Find a path of length \(5\) from vertex \(4\) to vertex \(6\text{.}\)</p></li>
+<li id="li-50"><p id="p-245">What is the degree of vertex \(8\text{?}\)</p></li>
+<li id="li-51"><p id="p-246">What is the degree of vertex \(10\text{?}\)</p></li>
+<li id="li-52"><p id="p-247">How many vertices of degree \(2\) are there in \(\bfG\text{?}\) List them.</p></li>
+<li id="li-53"><p id="p-248">Find a cycle of length \(8\) in \(\bfG\text{.}\)</p></li>
+<li id="li-54"><p id="p-249">What is the length of a shortest path from \(3\) to \(4\text{?}\)</p></li>
+<li id="li-55"><p id="p-250">What is the length of a shortest path from \(8\) to \(7\text{?}\)</p></li>
+<li id="li-56"><p id="p-251">Find a path of length \(5\) from vertex \(4\) to vertex \(6\text{.}\)</p></li>
 </ol></div>
-<div class="sbspanel" style="width:35.8974358974359%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_graphs_graph_ex"><img src="images/graph_ex.svg" role="img" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.1<span class="period">.</span></span><span class="space"> </span>A graph</figcaption></figure></div>
-</div></div></article><article class="exercise exercise-like" id="exercise-12"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
-<p id="p-214">Draw a graph with \(8\) vertices, all of odd degree, that does not contain a path of length \(3\) or explain why such a graph does not exist.</p></article><article class="exercise exercise-like" id="exercise-13"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
-<p id="p-215">Find an eulerian circuit in the graph \(\bfG\) in <a class="xref" data-knowl="./knowl/fig_graphs_euler_exercise.html" title="Figure 2.3.2">Figure 2.3.2</a> or explain why one does not exist.</p>
-<figure class="figure figure-like" id="fig_graphs_euler_exercise"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image-27.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.2<span class="period">.</span></span><span class="space"> </span>A graph \(\bfG\)</figcaption></figure></article><article class="exercise exercise-like" id="exercise-14"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
-<p id="p-216">Consider the graph \(\bfG\) in <a class="xref" data-knowl="./knowl/fig_graphs_euler_hamilton_ex.html" title="Figure 2.3.3">Figure 2.3.3</a>. Determine if the graph is eulerian. If it is, find an eulerian circuit. If it is not, explain why it is not. Determine if the graph is hamiltonian. If it is, find a hamiltonian cycle. If it is not, explain why it is not.</p>
+<div class="sbspanel" style="width:35.8974358974359%;justify-content:flex-start;"><figure class="figure figure-like" id="fig_graphs_graph_ex"><img src="images/graph_ex.svg" role="img" style="width: 100%; height: auto;" alt=""><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.1<span class="period">.</span></span><span class="space"> </span>A graph</figcaption></figure></div>
+</div></div></article><article class="exercise exercise-like" id="exercise-13"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-252">Draw a graph with \(8\) vertices, all of odd degree, that does not contain a path of length \(3\) or explain why such a graph does not exist.</p></article><article class="exercise exercise-like" id="exercise-14"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-253">Find an eulerian circuit in the graph \(\bfG\) in <a class="xref" data-knowl="./knowl/fig_graphs_euler_exercise.html" title="Figure 2.4.2">Figure 2.4.2</a> or explain why one does not exist.</p>
+<figure class="figure figure-like" id="fig_graphs_euler_exercise"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/image-33.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.2<span class="period">.</span></span><span class="space"> </span>A graph \(\bfG\)</figcaption></figure></article><article class="exercise exercise-like" id="exercise-15"><h6 class="heading"><span class="codenumber">4<span class="period">.</span></span></h6>
+<p id="p-254">Consider the graph \(\bfG\) in <a class="xref" data-knowl="./knowl/fig_graphs_euler_hamilton_ex.html" title="Figure 2.4.3">Figure 2.4.3</a>. Determine if the graph is eulerian. If it is, find an eulerian circuit. If it is not, explain why it is not. Determine if the graph is hamiltonian. If it is, find a hamiltonian cycle. If it is not, explain why it is not.</p>
 <figure class="figure figure-like" id="fig_graphs_euler_hamilton_ex"><div class="image-box" style="width: 65%; margin-left: 17.5%; margin-right: 17.5%;"><img src="images/euler_hamilton_ex.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.3.3<span class="period">.</span></span><span class="space"> </span>A graph \(\bfG\)</figcaption></figure></article></section></div></main>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.4.3<span class="period">.</span></span><span class="space"> </span>A graph \(\bfG\)</figcaption></figure></article></section></div></main>
 </div>
 </body>
 </html>

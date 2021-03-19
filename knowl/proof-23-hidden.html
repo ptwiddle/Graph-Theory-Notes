@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-28T21:05:57Z       *-->
+<!--*       on 2021-03-19T11:08:40Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,11 +13,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">Since every vertex has degree 4, vertex-edge handshaking gives \(2E=4V\text{,}\) and since every face has degree 4, face-edge handshaking gives \(2E=4F\text{.}\)  Thus, we see \(V=F=E/2\text{,}\) and plugging this in gives:</p>
+<body><article class="hiddenproof"><p xmlns:svg="http://www.w3.org/2000/svg">We give a proof by contradiction.  Suppose \(K_5\) was planar, and draw it on the plane.  We know that \(K_5\) has 5 vertices and \(\binom{5}{2}=10\) edges, and so by Euler theorem we know that any drawing of it must have 7 faces. We now use edge-face handshaking to get a contradiction.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">What could the degrees of the faces be?  We don't know for sure, but we know that none of the faces could have degree one or two, as then the edges would form a loop or multiple edges between two vertices, but \(K_5\) is simple.  Hence, every face must have \(d(f)\geq 3\text{.}\)  But then handshaking gives:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{equation*}
-V-E+F=E/2-E+E/2=0
+20=2e=\sum d(f)\geq \sum 3=3\cdot 7=21
 \end{equation*}
 </div>
-<p xmlns:svg="http://www.w3.org/2000/svg">which contradicts Euler's Theorem.  Hence, such a graph on a sphere is not possible.</p></article></body>
+<p xmlns:svg="http://www.w3.org/2000/svg">which is the desired contradiction, and so we conclude that \(K_5\) is not, in fact, planar.</p></article></body>
 </html>

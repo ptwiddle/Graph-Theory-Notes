@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-28T21:05:56Z       *-->
+<!--*       on 2021-03-19T11:08:38Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,13 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">By the inductive hypothesis, \(\delta(u_k)\) is the distance from \(r\) to \(u_k\text{,}\) and \(P(u_k)\) is a shortest path from \(r\) to \(u_k\text{.}\) Note that \(P(u_k)\) need not be the same as path \(Q\text{,}\) as we suggest in <a class="xref" data-knowl="./knowl/fig_graphalgorithms_dijkstra-proof.html" title="Figure 3.3.7">Figure 3.3.7</a>. However, if distinct, the two paths will have the same length, namely \(\delta(u_k)\text{.}\)  Also, the distance from \(r\) to \(x\) is \(\delta(u_k)+w(u_k,x)\ge \delta(u_k)\) since \(P\) is a shortest path from \(r\) to \(x\) and \(w(u_k,x)\geq 0\text{.}\)</p>
-<span class="incontext"><a href="s_graphalgorithms_shortest-paths.html#p-289">in-context</a></span>
+<p>For each \(i=0,1,2,\dots,t-1\text{,}\) let \(f_i=x_ix_{i+1}\) and then set</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+S_i = \{e\}\cup\{g\in S: g\neq f_i\},
+\end{equation*}
+</div>
+<p class="continuation">i.e., we <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">exchange</dfn> edge \(f_i\) for edge \(e\text{.}\) Then \(\bfT_i=(V,S_i)\) is a spanning tree of \(\bfG\text{.}\)</p>
+<span class="incontext"><a href="s_graphalgorithms_min-wt-span.html#p-289">in-context</a></span>
 </body>
 </html>

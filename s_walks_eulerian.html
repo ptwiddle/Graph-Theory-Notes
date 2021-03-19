@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*    on 2020-04-17T09:52:37+01:00    *-->
-<!--*                                    *-->
-<!--*      https://pretextbook.org       *-->
-<!--*                                    *-->
-<!--**************************************-->
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-03-19T11:08:34Z       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
 <html lang="en-US">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Eulerian Walks</title>
 <meta name="Keywords" content="Authored in PreTeXt">
-<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
@@ -41,20 +43,21 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
-<link href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
-<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/banner_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/toc_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/knowls_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/style_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/colors_default.css" rel="stylesheet" type="text/css">
+<link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content" style="display:none">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\newcommand{\set}[1]{\{1,2,\dotsc,#1\,\}}
     \newcommand{\ints}{\mathbb{Z}}
     \newcommand{\posints}{\mathbb{N}}
     \newcommand{\rats}{\mathbb{Q}}
@@ -132,7 +135,7 @@ MathJax.Hub.Config({
 <p class="byline"></p>
 </div>
 </div></div>
-<nav id="primary-navbar" class="navbar"><div class="container">
+<nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
 <button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="s_walks_basics.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch_walks.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="s_walks_hamiltonian.html" title="Next">Next</a></span></div>
 </div>
@@ -140,7 +143,7 @@ MathJax.Hub.Config({
 <button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="s_walks_basics.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch_walks.html" title="Up">Up</a><a class="next-button button toolbar-item" href="s_walks_hamiltonian.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
-<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
 <nav id="toc"><ul>
 <li class="link frontmatter"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></li>
 <li class="link">
@@ -162,7 +165,18 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li class="link">
-<a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">3</span> <span class="title">Graphs on Surfaces</span></a><ul>
+<a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span> <span class="title">Algorithms</span></a><ul>
+<li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
+<li><a href="s_graphalgorithms_min-wt-span.html" data-scroll="s_graphalgorithms_min-wt-span">Minimum Weight Spanning Trees</a></li>
+<li><a href="s_graphalgorithms_digraphs.html" data-scroll="s_graphalgorithms_digraphs">Digraphs</a></li>
+<li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
+<li><a href="s_graphalgorithms_longest-paths.html" data-scroll="s_graphalgorithms_longest-paths">Algorithm for Longest Paths</a></li>
+<li><a href="s_graphalgorithms_traveling-salesperson.html" data-scroll="s_graphalgorithms_traveling-salesperson">The Traveling Salesperson Problem</a></li>
+<li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch_graphs_on_surfaces.html" data-scroll="ch_graphs_on_surfaces"><span class="codenumber">4</span> <span class="title">Graphs on Surfaces</span></a><ul>
 <li><a href="s_graphs_on_surfaces_intro.html" data-scroll="s_graphs_on_surfaces_intro">Introduction to Graphs on Surfaces</a></li>
 <li><a href="s_graphs_on_surfaces_planarity_algorithm.html" data-scroll="s_graphs_on_surfaces_planarity_algorithm">The planarity algorithm for Hamiltonian graphs</a></li>
 <li><a href="s_graphs_on_surfaces_Kuratowski.html" data-scroll="s_graphs_on_surfaces_Kuratowski">Kuratowski's Theorem</a></li>
@@ -172,7 +186,7 @@ MathJax.Hub.Config({
 </ul>
 </li>
 <li class="link">
-<a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">4</span> <span class="title">Colourings</span></a><ul>
+<a href="ch_colourings.html" data-scroll="ch_colourings"><span class="codenumber">5</span> <span class="title">Colourings</span></a><ul>
 <li><a href="s_chromatic_number.html" data-scroll="s_chromatic_number">Chromatic number</a></li>
 <li><a href="s_chromatic_index.html" data-scroll="s_chromatic_index">Chromatic index and applications</a></li>
 <li><a href="s_chromatic_polynomial_intro.html" data-scroll="s_chromatic_polynomial_intro">Introduction to the chromatic polynomial</a></li>
@@ -182,10 +196,10 @@ MathJax.Hub.Config({
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section class="section" id="s_walks_eulerian"><h2 class="heading hide-type">
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_walks_eulerian"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Eulerian Walks</span>
 </h2>
-<a href="s_walks_eulerian.html" class="permalink">¶</a><p id="p-176">In this section we introduce the problem of Eulerian walks, often hailed as the origins of graph theroy. We will see that determining whether or not a walk has an Eulerian circuit will turn out to be easy; in contrast, the problem of determining whether or not one has a Hamiltonian walk, which seems very similar, will turn out to be very difficult.</p>
+<p id="p-176">In this section we introduce the problem of Eulerian walks, often hailed as the origins of graph theroy. We will see that determining whether or not a walk has an Eulerian circuit will turn out to be easy; in contrast, the problem of determining whether or not one has a Hamiltonian walk, which seems very similar, will turn out to be very difficult.</p>
 <section class="subsection" id="subsection-19"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">2.2.1</span> <span class="title">The bridges of Konigsburg</span>
 </h3>
@@ -197,9 +211,9 @@ MathJax.Hub.Config({
 <p id="p-179">We will formalize the problem presented by the citizens of Konigsburg in graph theory, which will immediately present an obvious generalization.</p>
 <p id="p-180">We may represent the city of Konigsburg as a graph \(\Gamma_K\text{;}\) the four sectors of town will be the vertices of \(\Gamma_K\text{,}\) and edges between vertices will represent the bridges (hence, this will not be a simple graph).</p>
 <p id="p-181">Then, the question reduces to finding a closed walk in the graph that will uses every edge <em class="emphasis">exactly</em> once. In particular, this walk will not use any edge more than once and hence will be a trail.</p>
-<article class="exercise exercise-like" id="exercise-11"><a data-knowl="" class="id-ref original" data-refid="hk-exercise-11"><h6 class="heading">
+<article class="exercise exercise-like" id="exercise-11"><a data-knowl="" class="id-ref exercise-knowl original" data-refid="hk-exercise-11"><h6 class="heading">
 <span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-11"><article class="exercise exercise-like">Which graphs have walks that use every vertex and edge exactly once?</article></div>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-exercise-11"><article class="exercise exercise-like"></article></div>
 <article class="definition definition-like" id="definition-21"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
 </h6>
@@ -223,32 +237,34 @@ MathJax.Hub.Config({
 <p id="p-195">You might worry that the argument above suggests we can carry on the walk forever, which we obviously can't do since the graph is finite, but the argument above doesn't work for \(v_0\text{:}\) when we start the path out at \(v_0\text{,}\) we haven't had to arrive there, and so the edge we initially leave by is not paired with anything.  Therefore, if \(\Gamma\) has all vertices with even degree, and we walk randomly for as long as we can, we'll always get stuck at our starting vertex.</p>
 <p id="p-196">Hence, we have shown that if \(\Gamma\) is a graph with all vertices having even degree, there will exist some closed walk in \(\Gamma\text{,}\) but the walk we created was chosen randomly, and there's no guarantee it will include all the edge of \(\Gamma\) -- in all likelihood, it won't.</p>
 <p id="p-197">But if we look at the edges we haven't used, they will form a simpler graph. \(\Gamma^\prime\text{.}\)  There's no reason for \(\Gamma^\prime\) to be connected, but it's not too hard to see that every vertex of \(\Gamma^\prime\) will still have even degree: in \(\Gamma\) every vertex had even degree, and we saw in our first proof that a closed walk that doesn't repeat edges uses up an even number of edges at each vertex, and so we'll have an even number of edges left at each point.  Thus, each connected piece of \(\Gamma^\prime\) satisfies the hypothesis of the problem, and is simpler, so we can try to find a closed walk on each of connected piece of \(\Gamma^\prime\text{,}\) and then "stitch" the results together to get a walk that uses all the pieces. In the formal proof, this process is best captured using induction, and we'll save the complete description until then, but for now we illustrate the process in an example</p>
-<figure class="figure figure-like" id="fig_walkdrawing_stupid"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-24.svg" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.5<span class="period">.</span></span><span class="space"> </span>Example of a walk</figcaption></figure><article class="example example-like" id="example-13"><a data-knowl="" class="id-ref original" data-refid="hk-example-13"><h6 class="heading">
+<figure class="figure figure-like" id="fig_walkdrawing_stupid"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-24.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.5<span class="period">.</span></span><span class="space"> </span>Example of a walk</figcaption></figure><article class="example example-like" id="example-13"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-13"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-13"><article class="example example-like"><p id="p-198">Let's see an example of how the process of finding an Eulerian path works for the graph \(\Gamma\) in Figure below.</p>
-<figure class="figure figure-like" id="fig_euler_example"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-25.svg" style="width: 100%; height: auto;" alt=""></div>
+<figure class="figure figure-like" id="fig_euler_example"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-25.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.7<span class="period">.</span></span><span class="space"> </span>A graph \(\Gamma\)</figcaption></figure><p id="p-199">It probably isn't hard to immediately find an Eulerian cycle for \(\Gamma\) just by examination, but to illustrate the algorithm to begin with, we are going to deliberately choose a cycle that doesn't use every edge, the cycle aeijgba show in the next figure:</p>
-<figure class="figure figure-like" id="fig_euler_example_next"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-26.svg" style="width: 100%; height: auto;" alt=""></div>
+<figure class="figure figure-like" id="fig_euler_example_next"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-26.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.8<span class="period">.</span></span><span class="space"> </span>Initializing with a closed walk in \(\Gamma\)</figcaption></figure><p id="p-200">To extend our cycle to an Eulerian cycle, we delete all the edges used in the graph, and study the remaining graph.  In our case, this graph has two connected components, a four cycle and a three cycle.  Both of these are cycles themselves, they're trivially Eulerian, -- in general, it might take some work to find an Eulerian cycle for the components, but won't be too hard as the graph will be smaller.</p>
-<figure class="figure figure-like" id="fig_euler_example_third"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-27.svg" style="width: 100%; height: auto;" alt=""></div>
+<figure class="figure figure-like" id="fig_euler_example_third"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-27.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.9<span class="period">.</span></span><span class="space"> </span>Parts of \(\Gamma\) missed by our walk</figcaption></figure><p id="p-201">Finally, we stitch our Eulerian paths together.  We follow our initial cycle that wasn't an Eulerian cycle, and the first time we hit a vertex that's in one of the other cycles, we insert that cycle in before we continue along our original path.  In our example, our original cycle was aeijgba.  a is not eitehr of the other components, but e is in the four cycle, so before we continue on our original cycle to i, we insert the four cycle ehije, giving aehije.  We now continue along our original cycle, adding ei, ij, jg, until we reach a vertex g that's in one of the added cycles, which we then insert, giving aehijeijgcdg as our cycle so far.</p>
 <p id="p-202">Continuing this process, we find aehijeijgcdgba as an Eulerian cycle.</p>
-<figure class="figure figure-like" id="fig_euler_example_last"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-28.svg" style="width: 100%; height: auto;" alt=""></div>
+<figure class="figure figure-like" id="fig_euler_example_last"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-28.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.10<span class="period">.</span></span><span class="space"> </span>The Eulerian cycle stitched together</figcaption></figure></article></div>
-<article class="hiddenproof" id="proof-9"><a data-knowl="" class="id-ref original" data-refid="hk-proof-9"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><p id="p-203">We first show that if \(\bfG\) is Eulerian, then every vertex \(v\in\bfG\) has even degree.  For suppose the Eulerian cycle visits the vertex \(v k\) times.  Each time it must arrive by one edge, and leave by an edge. Since the walk is Eulerian, every edge adjacent to \(v\) will be used exactly once by the walk, and so we see that \(d(v)=2k\) as desired.</p>
-<p id="p-204">Now we suppose that \(\bfG\) is connected and that every vertex has even degree.  We will induct on the number of edges of \(\bfG\text{.}\)  If it has no edges, then the theorem is vacuously true; we can just take the empty walk.</p>
-<p id="p-205">For the inductive step, suppose that \(\bfG\) is connected with \(m\text{,}\) and that every vertex has even degree, and that every graph \(\bfH\) with these properties and less than \(m\) edges is Eulerian.  Assume for now that we can find <em class="emphasis">a</em> closed walk in \(\bfG\) Suppose for now that we can find <em class="emphasis">a</em> closed walk \(w\) in \(\bfGM\) that doesn't repeat any edges -- we will justify this at the end of the proof.  If this closed walk uses all the edges of \(\bfG\) we are done.</p>
-<p id="p-206">If \(w\) doesn't use all the edges of \(\bfG\text{,}\) we can delete all the edges used in \(w\) and get a graph \(\bfG\setminus w\) with less edges.  Though \(\bfG\setminus w\) will probably not be connected, every vertex in \(\bfG\setminus w\) will have even degree, as we've subtracted an even number of edges from each vertex that \(w\) visits as argued in the first part of the proof.  Thus, by the inductive hypothesis each connected component \(\bfG\setminus w\) will have an Eulerian cycle.  Since the \(\bfG\) is connected, \(w\) must include at least one point from each component of \(\bfG\setminus w\text{,}\) and so we can insert the Eulerian walk from each component into \(w\) when we reach that component, to obtain a closed walk that uses all the vertices of \(\bfG\) as desired.</p></article></div>
+<article class="hiddenproof" id="proof-9"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-9"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-9"><article class="hiddenproof"><p id="p-203">We first show that if \(\bfG\) is Eulerian, then every vertex \(v\in\bfG\) has even degree.  For suppose the Eulerian cycle visits the vertex \(v k\) times.  Each time it visits \(v\) it must arrive by one edge, and leave by a different edge. Since the walk is Eulerian, every edge adjacent to \(v\) will be used exactly once by the walk, and so we see that \(d(v)=2k\) as desired.</p>
+<p id="p-204">Now we suppose that \(\bfG\) is connected and that every vertex has even degree.  We will induct on the number of edges of \(\bfG\text{.}\)  If it has no edges, then the theorem is vacuously true -- we can just take the empty walk.</p>
+<p id="p-205">For the inductive step, suppose that \(\bfG\) is connected with \(m\) edges, and that every vertex of \(\bfG\) has even degree.  Further assume, for the inductive hypothesis, that every graph \(\bfH\) with these properties and <em class="emphasis">less</em> than \(m\) edges is Eulerian.</p>
+<p id="p-206">Suppose for now that we can find <em class="emphasis">a</em> closed walk \(w\) in \(\bfGM\) that doesn't repeat any edges -- we will justify that this at the end of the proof.  If the closed walk \(w\) uses all the edges of \(\bfG\text{,}\) then \(w\) is an Eulerian cycle, and we are done.</p>
+<p id="p-207">If \(w\) doesn't use all the edges of \(\bfG\text{,}\) we can delete all the edges used in \(w\) and get a graph \(\bfG\setminus w\) with fewer than \(m\) edges.  Though \(\bfG\setminus w\) might not be connected, every vertex in \(\bfG\setminus w\) will have even degree, as we've subtracted an even number of edges from each vertex that \(w\) visits as argued in the first part of the proof.  Thus, by the inductive hypothesis each connected component \(\bfG\setminus w\) will have an Eulerian cycle.  Since the \(\bfG\) is connected, \(w\) must include at least one point from each component of \(\bfG\setminus w\text{,}\) and so we can insert the Eulerian walk on the edges of each component of \(\bfG\setminus w\) from each component into \(w\) when we reach that component, to obtain a closed walk \(w^\prime\) that uses all the edges of \(\bfG\) exactly once, as desired.</p>
+<p id="p-208">All that remains is to justify that \(\bfG\) contains at least one closed walk, given that every vertex has even degree and it contains at least one edge.  We form a walk \(w\) by starting at any vertex \(v\) and at each step choosing any edge we've never traversed before at random as the next step of the walk.  We claim that \(w\) must eventually return back to the starting vertex \(v\text{.}\)  Since \(\bfG\) is finite, and we don't repeat edges, the only way we could fail to return to \(v\) would be if our walk "got stuck" -- that is, at some point we reach a vertex \(u\) and find that every edge out of \(u\) has already been traversed.  However, we know that \(u\) has an even number of edges, and also arguing as in the first paragraph of the proof that every time the walk \(w\) visits \(u\) it must use up two edges, one for arrival and one for departure.  Hence, when we arrive at \(u\) at any time we must have used up an odd number of edges at \(u\) -- an even number from all the previous times we have visited \(u\text{,}\) plus one more that we just arrived from.  Since \(u\) has even degree, there must always be at least one edge available for us to choose from, and so we can never "get stuck" and will eventually reach \(w\) again.</p></article></div>
 <article class="remark remark-like" id="remark-1"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.2.11</span><span class="period">.</span>
 </h6>
-<p id="p-207">Note that it does <em class="emphasis">not</em> say: "A graph \(\Gamma\) is Eulerian if and only if it is connected and every vertex has even degree." This statement in quotation marks is false, but for "stupid" reasons.  If \(\Gamma\) is Eulerian, and \(E_n\) is the graph with \(n\) vertices wit no edges, then \(\Gamma\sqcup E_n\) is Eulerian but not connected.  These are the only examples of such graphs.</p></article><article class="theorem theorem-like" id="theorem-4"><h6 class="heading">
+<p id="p-209">Note that it does <em class="emphasis">not</em> say: "A graph \(\Gamma\) is Eulerian if and only if it is connected and every vertex has even degree." This statement in quotation marks is false, but for "stupid" reasons.  If \(\Gamma\) is Eulerian, and \(E_n\) is the graph with \(n\) vertices wit no edges, then \(\Gamma\sqcup E_n\) is Eulerian but not connected.  These are the only examples of such graphs.</p></article><article class="theorem theorem-like" id="theorem-4"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.2.12</span><span class="period">.</span>
 </h6>
-<p id="p-208">A connected graph \(\Gamma\) is semi-Eulerian if and only if it has exactly two vertices with odd degree.</p></article><article class="hiddenproof" id="proof-10"><a data-knowl="" class="id-ref original" data-refid="hk-proof-10"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><p id="p-209">A minor modification of our argument for Eulerian graphs shows that the condition is necessary.  Suppose that \(\Gamma\) is semi-Eulerian, with Eulerian path \(v_0, e_1, v_1,e_2,v_3,\dots,e_n,v_n\text{.}\)  Then at any vertex other than the starting or ending vertices, we can pair the entering and leaving edges up to get an even number of edges.</p>
-<p id="p-210">However, at the first vertex \(v_0\) the path leaves along \(e_1\) the first time but never enters it accordingly, so that \(v_0\) has an odd degree; similarly, at \(v_n\) the path enters one final time along \(e_n\) without leaving, and so \(v_n\) also has an odd degree.</p>
-<p id="p-211">To see the condition is sufficient we could also modify the argument for the Eulerian case slightly, but it is slicker instead to <em class="emphasis">reduce</em> to the Eulerian case.  Suppose that \(\Gamma\) is connected, and that vertices \(v\) and \(w\) have odd degree and all other vertices of \(\Gamma\) have even degree.  Then we can construct a new graph \(\Gamma^\prime\) by adding an extra edge \(e=vw\) to \(\Gamma\text{.}\)  Then \(\Gamma^\prime\) is connected and every vertex has even degree, and so it has an Eulerian cycle.  Deleting the edge \(e\) that we added from this cycle gives an Eulerian path from \(v\) to \(w\) in \(\Gamma\text{.}\)</p></article></div></section></section></div></main>
+<p id="p-210">A connected graph \(\Gamma\) is semi-Eulerian if and only if it has exactly two vertices with odd degree.</p></article><article class="hiddenproof" id="proof-10"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-10"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-10"><article class="hiddenproof"><p id="p-211">A minor modification of our argument for Eulerian graphs shows that the condition is necessary.  Suppose that \(\Gamma\) is semi-Eulerian, with Eulerian path \(v_0, e_1, v_1,e_2,v_3,\dots,e_n,v_n\text{.}\)  Then at any vertex other than the starting or ending vertices, we can pair the entering and leaving edges up to get an even number of edges.</p>
+<p id="p-212">However, at the first vertex \(v_0\) the path leaves along \(e_1\) the first time but never enters it accordingly, so that \(v_0\) has an odd degree; similarly, at \(v_n\) the path enters one final time along \(e_n\) without leaving, and so \(v_n\) also has an odd degree.</p>
+<p id="p-213">To see the condition is sufficient we could also modify the argument for the Eulerian case slightly, but it is slicker instead to <em class="emphasis">reduce</em> to the Eulerian case.  Suppose that \(\Gamma\) is connected, and that vertices \(v\) and \(w\) have odd degree and all other vertices of \(\Gamma\) have even degree.  Then we can construct a new graph \(\Gamma^\prime\) by adding an extra edge \(e=vw\) to \(\Gamma\text{.}\)  Then \(\Gamma^\prime\) is connected and every vertex has even degree, and so it has an Eulerian cycle.  Deleting the edge \(e\) that we added from this cycle gives an Eulerian path from \(v\) to \(w\) in \(\Gamma\text{.}\)</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

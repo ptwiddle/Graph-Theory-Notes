@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-28T21:05:56Z       *-->
+<!--*       on 2021-03-19T11:08:38Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">We now claim that not all the extra edges can go "directly across" -- there must be at least one edge that's off by one.  If all the extra edges went directly across, then \(v_1\) would go to \(v_6\text{,}\) and \(v_2\) would go to \(v_7\text{,}\) and \(v_1-v_6-v_7-v_2-v_1\) would be a 4 cycle.</p>
-<span class="incontext"><a href="s_walks_hamiltonian.html#p-194">in-context</a></span>
+<p xmlns:svg="http://www.w3.org/2000/svg">To construct a closed walk, we'd like to show we eventually have to return to \(v_0\text{.}\)  We're only working with finite graphs, so our walk can't continue forever; the only possibility we have to rule out is that we reach some vertex \(v_n\) and find that we have already used every vertex incident to \(v_n\text{.}\)  But as we saw before, the path will pair up the edges incident to each vertex as an arriving edge and a departing edge, and we know the degree of \(v_n\) is even.  If the path has already visited \(v_n k\) times, then we'll have used \(2k\) of the edges incident to it; when we arrive for the \(k+1\)st time we'll use one edge, and in all we'll have used \(2k+1\) edges, an odd number; since the degree of \(v_n\) is even there must be at least one edge we haven't used to exit by.</p>
+<span class="incontext"><a href="s_walks_eulerian.html#p-194">in-context</a></span>
 </body>
 </html>

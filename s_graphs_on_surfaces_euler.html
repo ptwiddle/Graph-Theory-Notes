@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-28T21:05:54Z       *-->
+<!--*       on 2021-03-19T11:08:36Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -159,16 +159,19 @@ MathJax.Hub.Config({
 <li class="link">
 <a href="ch_walks.html" data-scroll="ch_walks"><span class="codenumber">2</span> <span class="title">Walks</span></a><ul>
 <li><a href="s_walks_basics.html" data-scroll="s_walks_basics">Walks: the basics</a></li>
+<li><a href="s_walks_eulerian.html" data-scroll="s_walks_eulerian">Eulerian Walks</a></li>
 <li><a href="s_walks_hamiltonian.html" data-scroll="s_walks_hamiltonian">Hamiltonian cycles</a></li>
 <li><a href="s_walks_exercises.html" data-scroll="s_walks_exercises">Exercises</a></li>
 </ul>
 </li>
 <li class="link">
 <a href="ch_algorithms.html" data-scroll="ch_algorithms"><span class="codenumber">3</span> <span class="title">Algorithms</span></a><ul>
+<li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
 <li><a href="s_graphalgorithms_min-wt-span.html" data-scroll="s_graphalgorithms_min-wt-span">Minimum Weight Spanning Trees</a></li>
 <li><a href="s_graphalgorithms_digraphs.html" data-scroll="s_graphalgorithms_digraphs">Digraphs</a></li>
 <li><a href="s_graphalgorithms_shortest-paths.html" data-scroll="s_graphalgorithms_shortest-paths">Dijkstra's Algorithm for Shortest Paths</a></li>
-<li><a href="s_graphalgorithms_prufer.html" data-scroll="s_graphalgorithms_prufer">Prüfer Codes</a></li>
+<li><a href="s_graphalgorithms_longest-paths.html" data-scroll="s_graphalgorithms_longest-paths">Algorithm for Longest Paths</a></li>
+<li><a href="s_graphalgorithms_traveling-salesperson.html" data-scroll="s_graphalgorithms_traveling-salesperson">The Traveling Salesperson Problem</a></li>
 <li><a href="s_graphalgorithms_exercises.html" data-scroll="s_graphalgorithms_exercises">Exercises</a></li>
 </ul>
 </li>
@@ -196,30 +199,30 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_graphs_on_surfaces_euler"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">4.5</span> <span class="title">Euler's Theorem</span>
 </h2>
-<section class="introduction" id="introduction-14"><p id="p-424">This section cover's Euler's theorem on planar graphs and its applications. After defining faces, we state Euler's Theorem by induction, and gave several applications of the theorem itself: more proofs that \(K_{3,3}\) and \(K_5\) aren't planar, that footballs have five pentagons, and a proof that our video game designers couldn't have made their map into a sphere without doing something very strange.</p></section><section class="subsection" id="subsection-36"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-16"><p id="p-487">This section cover's Euler's theorem on planar graphs and its applications. After defining faces, we state Euler's Theorem by induction, and gave several applications of the theorem itself: more proofs that \(K_{3,3}\) and \(K_5\) aren't planar, that footballs have five pentagons, and a proof that our video game designers couldn't have made their map into a sphere without doing something very strange.</p></section><section class="subsection" id="subsection-45"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.1</span> <span class="title">Counting faces</span>
 </h3>
-<p id="p-425">A <dfn class="terminology">face</dfn> of a planar drawing of a graph is a region bounded by edges and vertices and not containing any other vertices or edges.</p>
-<p id="p-426"><a class="xref" data-knowl="./knowl/fig_planar.html" title="Figure 4.5.1">Figure 4.5.1</a> shows a planar drawing of a two graphs. The left graph has determines \(5\) regions, since we also count the unbounded region that surrounds the drawing.</p>
-<figure class="figure figure-like" id="fig_planar"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-62.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.1<span class="period">.</span></span><span class="space"> </span>Two planar graphs</figcaption></figure><p id="p-427">What happens if we compute the number of vertices minus the number of edges plus the number of faces for these drawings? We have</p>
+<p id="p-488">A <dfn class="terminology">face</dfn> of a planar drawing of a graph is a region bounded by edges and vertices and not containing any other vertices or edges.</p>
+<p id="p-489"><a class="xref" data-knowl="./knowl/fig_planar.html" title="Figure 4.5.1">Figure 4.5.1</a> shows a planar drawing of a two graphs. The left graph has determines \(5\) regions, since we also count the unbounded region that surrounds the drawing.</p>
+<figure class="figure figure-like" id="fig_planar"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="images/image-70.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.5.1<span class="period">.</span></span><span class="space"> </span>Two planar graphs</figcaption></figure><p id="p-490">What happens if we compute the number of vertices minus the number of edges plus the number of faces for these drawings? We have</p>
 <div class="displaymath">
 \begin{align*}
 6-9+5 \amp = 2\\
 4-6+4 \amp =2
 \end{align*}
 </div>
-<p id="p-428">While it might seem like a coincidence that this computation results in \(2\) for these planar drawings, there's a more general principle at work here, and in fact it holds for <em class="emphasis">any</em> planar drawing of <em class="emphasis">any</em> planar graph.</p>
-<p id="p-429">In fact, the number \(2\) here actually results from a fundamental property of the plane, and there are a corresponding theorems for other surfaces. However, we only need the result as stated above.</p>
-<article class="theorem theorem-like" id="theorem-9"><h6 class="heading">
+<p id="p-491">While it might seem like a coincidence that this computation results in \(2\) for these planar drawings, there's a more general principle at work here, and in fact it holds for <em class="emphasis">any</em> planar drawing of <em class="emphasis">any</em> planar graph.</p>
+<p id="p-492">In fact, the number \(2\) here actually results from a fundamental property of the plane, and there are a corresponding theorems for other surfaces. However, we only need the result as stated above.</p>
+<article class="theorem theorem-like" id="theorem-11"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Euler's Formula.</span>
 </h6>
-<p id="p-430">Let \(\bfG\) be a connected planar graph with \(n\) vertices and \(m\) edges. Every planar drawing of \(\bfG\) has \(f\) faces, where \(f\) satisfies</p>
+<p id="p-493">Let \(\bfG\) be a connected planar graph with \(n\) vertices and \(m\) edges. Every planar drawing of \(\bfG\) has \(f\) faces, where \(f\) satisfies</p>
 <div class="displaymath">
 \begin{equation*}
 n-m+f=2.
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-20"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-20"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-20"><article class="hiddenproof"><p id="p-431">Our proof is by induction on the number \(m\) of edges. If \(m=0\text{,}\) then since \(\bfG\) is connected, our graph has a single vertex, and so there is one face. Thus \(n-m+f = 1-0+1=2\) as needed. Now suppose that we have proven Euler's formula for all graphs with less than \(m\) edges and let \(\bfG\) have \(m\) edges. Pick an edge \(e\) of \(\bfG\text{.}\) What happens if we form a new graph \(\bfG'\) by deleting \(e\) from \(\bfG\text{?}\) If \(\bfG'\) is connected, our inductive hypothesis applies. Say that \(\bfG'\) has \(n'\) vertices, \(m'\) edges, and \(f'\) faces. Then by induction, these numbers satisfy</p>
+</div></article><article class="hiddenproof" id="proof-22"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-22"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-22"><article class="hiddenproof"><p id="p-494">Our proof is by induction on the number \(m\) of edges. If \(m=0\text{,}\) then since \(\bfG\) is connected, our graph has a single vertex, and so there is one face. Thus \(n-m+f = 1-0+1=2\) as needed. Now suppose that we have proven Euler's formula for all graphs with less than \(m\) edges and let \(\bfG\) have \(m\) edges. Pick an edge \(e\) of \(\bfG\text{.}\) What happens if we form a new graph \(\bfG'\) by deleting \(e\) from \(\bfG\text{?}\) If \(\bfG'\) is connected, our inductive hypothesis applies. Say that \(\bfG'\) has \(n'\) vertices, \(m'\) edges, and \(f'\) faces. Then by induction, these numbers satisfy</p>
 <div class="displaymath">
 \begin{equation*}
 n'-m'+f'=2.
@@ -250,85 +253,85 @@ n - (m-1) + (f'_1+f'_2) = 4 \iff n-m + (f'_1 + f'_2) = 3.
 \end{equation*}
 </div>
 <p class="continuation">The only thing we have yet to figure out is how \(f'_1+f'_2\) relates to \(f\text{,}\) and we have to hope that it will allow us to knock the \(3\) down to a \(2\text{.}\) Every face of \(\bfG'_1\) and \(\bfG'_2\) is a face of \(\bfG\text{,}\) since the fact that removing \(e\) disconnects \(\bfG\) means that \(e\) must be part of the boundary of the unbounded face. Further, the unbounded face is counted twice in the sum \(f'_1 + f'_2\text{,}\) so \(f=f'_1 + f'_2 -1\text{.}\) This gives exactly what we need to complete the proof.</p></article></div>
-<article class="remark remark-like" id="remark-2"><h6 class="heading">
+<article class="remark remark-like" id="remark-3"><h6 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Alternative method of dealing with the second case.</span>
 </h6>
-<p id="p-432">In our proof of Euler's theorem, the most complicated part was dealing with the situation if the edge \(e\) disconnects our graph \(\bfG\) when we remove it. In this case, instead of deleting the edge \(e\) we can contract it -- that is, shrink it to a point.  This would have result in a graph that is still planar and still connected, but with one less edge (\(e\) is no longer around), and one less vertex (the two vertices \(e\) connects are now merged into one).  The number of faces remains unchanged.  So the number of edges and the number of faces each decreased by one, these two changes cancel out when we calculate \(n-m+f\text{,}\) and hence both are equal to two.</p></article></section><section class="subsection" id="subsection-37"><h3 class="heading hide-type">
+<p id="p-495">In our proof of Euler's theorem, the most complicated part was dealing with the situation if the edge \(e\) disconnects our graph \(\bfG\) when we remove it. In this case, instead of deleting the edge \(e\) we can contract it -- that is, shrink it to a point.  This would have result in a graph that is still planar and still connected, but with one less edge (\(e\) is no longer around), and one less vertex (the two vertices \(e\) connects are now merged into one).  The number of faces remains unchanged.  So the number of edges and the number of faces each decreased by one, these two changes cancel out when we calculate \(n-m+f\text{,}\) and hence both are equal to two.</p></article></section><section class="subsection" id="subsection-46"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">4.5.2</span> <span class="title">Applications of Euler's theorem</span>
 </h3>
-<p id="p-433">By itself, Euler's theorem doesn't seem that useful: there are three variables (the numbers of edges, vertices, and faces) and only one equation between them, so there are still lots of degrees of freedom.  For it to be particularly useful, we want to have other relationships between these numbers.  In many applications, these relationships can come from handshaking.</p>
-<p id="p-434">Recall that Euler's handshaking lemma said that</p>
+<p id="p-496">By itself, Euler's theorem doesn't seem that useful: there are three variables (the numbers of edges, vertices, and faces) and only one equation between them, so there are still lots of degrees of freedom.  For it to be particularly useful, we want to have other relationships between these numbers.  In many applications, these relationships can come from handshaking.</p>
+<p id="p-497">Recall that Euler's handshaking lemma said that</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{v\in G} d(v)=2 |E(G)|,
 \end{equation*}
 </div>
 <p class="continuation">the sum of the degrees of all the vertices is twice the number of edges.  If we had some knowledge about the degrees of these vertices, we could get another relationship between the number of vertices and the number of edges.  For example, if \(G\) is regular of degree \(k\text{,}\) then every vertex has degree \(k\text{,}\) and hence the sum of all the degrees is just \(kn\text{.}\)  Hence, handshaking would tell us that \(kn=2m\text{,}\) and we would have another relationship between the three variables \(m,n\) and \(f\text{.}\)</p>
-<p id="p-435">Similarly, there is a handshaking between faces and edges.  Let the <em class="emphasis">degree</em> of a face be the number of edges that occur around it -- so, a triangle would have degree three.  Then, if we sum up the degrees of all the faces, we're counting each edge twice again -- once from the face on its left, and once from the face on its right.  so we have</p>
+<p id="p-498">Similarly, there is a handshaking between faces and edges.  Let the <em class="emphasis">degree</em> of a face be the number of edges that occur around it -- so, a triangle would have degree three.  Then, if we sum up the degrees of all the faces, we're counting each edge twice again -- once from the face on its left, and once from the face on its right.  so we have</p>
 <div class="displaymath">
 \begin{equation*}
 \sum_{f\in \text{faces}(G)}d(f)=2 |E(G)|
 \end{equation*}
 </div>
 <p class="continuation">Note that this is just the usual vertex-edge handshaking for the dual graph.</p>
-<p id="p-436">Thus, vertex-edge and face-edge handshaking can potentially give us two other sources of relationships between the numbers of vertices, edges, and faces.  Most applications of Euler's theorem proceed by combining all three relationships, as we shall see.</p>
+<p id="p-499">Thus, vertex-edge and face-edge handshaking can potentially give us two other sources of relationships between the numbers of vertices, edges, and faces.  Most applications of Euler's theorem proceed by combining all three relationships, as we shall see.</p>
 <article class="lemma theorem-like" id="lemma-13"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">4.5.4</span><span class="period">.</span>
-</h6>\(K_5\) isn't planar</article><article class="hiddenproof" id="proof-21"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-21"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-21"><article class="hiddenproof"><p id="p-437">We give a proof by contradiction.  Suppose \(K_5\) was planar, and draw it on the plane.  We know that \(K_5\) has 5 vertices and \(\binom{5}{2}=10\) edges, and so by Euler theorem we know that any drawing of it must have 7 faces. We now use edge-face handshaking to get a contradiction.</p>
-<p id="p-438">What could the degrees of the faces be?  We don't know for sure, but we know that none of the faces could have degree one or two, as then the edges would form a loop or multiple edges between two vertices, but \(K_5\) is simple.  Hence, every face must have \(d(f)\geq 3\text{.}\)  But then handshaking gives:</p>
+</h6>\(K_5\) isn't planar</article><article class="hiddenproof" id="proof-23"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-23"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-23"><article class="hiddenproof"><p id="p-500">We give a proof by contradiction.  Suppose \(K_5\) was planar, and draw it on the plane.  We know that \(K_5\) has 5 vertices and \(\binom{5}{2}=10\) edges, and so by Euler theorem we know that any drawing of it must have 7 faces. We now use edge-face handshaking to get a contradiction.</p>
+<p id="p-501">What could the degrees of the faces be?  We don't know for sure, but we know that none of the faces could have degree one or two, as then the edges would form a loop or multiple edges between two vertices, but \(K_5\) is simple.  Hence, every face must have \(d(f)\geq 3\text{.}\)  But then handshaking gives:</p>
 <div class="displaymath">
 \begin{equation*}
 20=2e=\sum d(f)\geq \sum 3=3\cdot 7=21
 \end{equation*}
 </div>
-<p id="p-439">which is the desired contradiction, and so we conclude that \(K_5\) is not, in fact, planar.</p></article></div>
-<p id="p-440">It is a good exercise to adapt this proof to prove that \(K_{3,3}\) isn't planar; one needs to use the extra fact that \(K_{3,3}\) doesn't have any three cycles (why not?)</p>
-<p id="p-441">We now prove that footballs have 12 pentagons.  More precisely, use the shorthand <em class="emphasis">football graph</em> to mean any trivalent graph drawn on the plane so that every face is a pentagon or hexagon. Then we have:</p>
-<article class="theorem theorem-like" id="theorem-10"><h6 class="heading">
+<p id="p-502">which is the desired contradiction, and so we conclude that \(K_5\) is not, in fact, planar.</p></article></div>
+<p id="p-503">It is a good exercise to adapt this proof to prove that \(K_{3,3}\) isn't planar; one needs to use the extra fact that \(K_{3,3}\) doesn't have any three cycles (why not?)</p>
+<p id="p-504">We now prove that footballs have 12 pentagons.  More precisely, use the shorthand <em class="emphasis">football graph</em> to mean any trivalent graph drawn on the plane so that every face is a pentagon or hexagon. Then we have:</p>
+<article class="theorem theorem-like" id="theorem-12"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">The football theorem.</span>
 </h6>
-<p id="p-442">Let \(\bfG\) be a football grpah drawn on the plane, with \(P\) pentagonal faces, and \(H\) hexagonal faces.  Then \(P=12\text{.}\)</p></article><article class="hiddenproof" id="proof-22"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-22"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-22"><article class="hiddenproof"><p id="p-443">Let \(V, E, F\) denote the number of vertices, edges, and faces of \(\bfG\text{.}\)  Since every face is a hexagon or pentagon, we have \(E=P+H\text{,}\) and substituting this into Euler's theorem gives:</p>
+<p id="p-505">Let \(\bfG\) be a football grpah drawn on the plane, with \(P\) pentagonal faces, and \(H\) hexagonal faces.  Then \(P=12\text{.}\)</p></article><article class="hiddenproof" id="proof-24"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-24"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-24"><article class="hiddenproof"><p id="p-506">Let \(V, E, F\) denote the number of vertices, edges, and faces of \(\bfG\text{.}\)  Since every face is a hexagon or pentagon, we have \(E=P+H\text{,}\) and substituting this into Euler's theorem gives:</p>
 <div class="displaymath">
 \begin{equation}
 V-E+P+H=2\label{footeu}\tag{4.5.1}
 \end{equation}
 </div>
-<p id="p-444">Now we turn handshaking.  Since \(\bfG\) is trivalent, every vertex has degree three, and so vertex-edge handshaking becomes:</p>
+<p id="p-507">Now we turn handshaking.  Since \(\bfG\) is trivalent, every vertex has degree three, and so vertex-edge handshaking becomes:</p>
 <div class="displaymath">
 \begin{equation}
 2E=3V\label{footve}\tag{4.5.2}
 \end{equation}
 </div>
-<p id="p-445">Finally, since there are \(P\) pentagonal faces and \(H\) hexagonal faces, face-edge handshaking becomes:</p>
+<p id="p-508">Finally, since there are \(P\) pentagonal faces and \(H\) hexagonal faces, face-edge handshaking becomes:</p>
 <div class="displaymath">
 \begin{equation}
 2E=5P+6H\label{footfe}\tag{4.5.3}
 \end{equation}
 </div>
-<p id="p-446">Multiplying <a class="xref" data-knowl="./knowl/footeu.html" title="Equation 4.5.1">(4.5.1)</a> by six gives:</p>
+<p id="p-509">Multiplying <a class="xref" data-knowl="./knowl/footeu.html" title="Equation 4.5.1">(4.5.1)</a> by six gives:</p>
 <div class="displaymath">
 \begin{equation*}
 6V-6E+6P+6H=12
 \end{equation*}
 </div>
-<p id="p-447">Multiplying <a class="xref" data-knowl="./knowl/footve.html" title="Equation 4.5.2">(4.5.2)</a> by two gives \(6V-4E=0\text{,}\) which we can use to eliminate \(V\text{,}\) giving</p>
+<p id="p-510">Multiplying <a class="xref" data-knowl="./knowl/footve.html" title="Equation 4.5.2">(4.5.2)</a> by two gives \(6V-4E=0\text{,}\) which we can use to eliminate \(V\text{,}\) giving</p>
 <div class="displaymath">
 \begin{equation*}
 -2E+5P+6H=12
 \end{equation*}
 </div>
-<p id="p-448">Finally, using <a class="xref" data-knowl="./knowl/footfe.html" title="Equation 4.5.3">(4.5.3)</a> we can eliminate both \(E\) and \(H\) in one go, being left with \(P=12\) as desired.</p></article></div>
-<p id="p-449">Finally, we prove that given some sensible restraints, video game designers cannot make a world map that's a sphere.  A videogame world locally looks like a square grid -- with every vertex and face having degree four.</p>
-<article class="theorem theorem-like" id="theorem-11"><h6 class="heading">
+<p id="p-511">Finally, using <a class="xref" data-knowl="./knowl/footfe.html" title="Equation 4.5.3">(4.5.3)</a> we can eliminate both \(E\) and \(H\) in one go, being left with \(P=12\) as desired.</p></article></div>
+<p id="p-512">Finally, we prove that given some sensible restraints, video game designers cannot make a world map that's a sphere.  A videogame world locally looks like a square grid -- with every vertex and face having degree four.</p>
+<article class="theorem theorem-like" id="theorem-13"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">The videogame theorem.</span>
 </h6>
-<p id="p-450">It is impossible to draw for a graph to be drawn on the sphere so that every vertex and every face has degree 4.</p></article><article class="hiddenproof" id="proof-23"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-23"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-23"><article class="hiddenproof"><p id="p-451">Since every vertex has degree 4, vertex-edge handshaking gives \(2E=4V\text{,}\) and since every face has degree 4, face-edge handshaking gives \(2E=4F\text{.}\)  Thus, we see \(V=F=E/2\text{,}\) and plugging this in gives:</p>
+<p id="p-513">It is impossible to draw for a graph to be drawn on the sphere so that every vertex and every face has degree 4.</p></article><article class="hiddenproof" id="proof-25"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-25"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-25"><article class="hiddenproof"><p id="p-514">Since every vertex has degree 4, vertex-edge handshaking gives \(2E=4V\text{,}\) and since every face has degree 4, face-edge handshaking gives \(2E=4F\text{.}\)  Thus, we see \(V=F=E/2\text{,}\) and plugging this in gives:</p>
 <div class="displaymath">
 \begin{equation*}
 V-E+F=E/2-E+E/2=0
 \end{equation*}
 </div>
-<p id="p-452">which contradicts Euler's Theorem.  Hence, such a graph on a sphere is not possible.</p></article></div></section></section></div></main>
+<p id="p-515">which contradicts Euler's Theorem.  Hence, such a graph on a sphere is not possible.</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

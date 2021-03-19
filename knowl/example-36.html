@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-02-28T21:05:58Z       *-->
+<!--*       on 2021-03-19T11:08:40Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,20 +15,21 @@
 </head>
 <body>
 <article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.12</span><span class="period">.</span><span class="space"> </span><span class="title">The chromatic polynomial of \(C_5\).</span>
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">5.3.11</span><span class="period">.</span><span class="space"> </span><span class="title">The chromatic polynomial of the cycle \(C_4\).</span>
 </h6>
 <div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
-<div class="sbspanel" style="width:63.1578947368421%;justify-content:flex-start;"><p xmlns:svg="http://www.w3.org/2000/svg" id="p-532">A similar case-by-case argument that we made for \(C_4\) works for \(C_5\text{,}\) except now we have a further case to deal with.  Using the vertex labellings as shown to the right, note that Vertices 3 and 4 must have different colours.  We will consider three cases: Vertices 1, 3 and 4 all have different colours, Vertex 1 has the same colour as Vertex 3, and Vertex 1 has the same colour as Vertex 4.</p></div>
-<div class="sbspanel" style="width:31.5789473684211%;justify-content:flex-start;"><img src="images/image-73.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:flex-start;"><p xmlns:svg="http://www.w3.org/2000/svg" id="p-590">Now consider the graph \(C_4\text{,}\) shown at right, and suppose we try to count the number of colourings of it with \(k\) colours.  Vertex 1 can be any of \(k\) colours, and vertex 2 has \(k-1\) possibilities -- any colour except the one used for vertex 1.  Moving to vertex 4, we see it is just adjacent to 1 as well, and so has \(k-1\) possibilities as well.</p></div>
+<div class="sbspanel" style="width:31.5789473684211%;justify-content:flex-start;"><img src="images/c4.png" style="width: 100%; height: auto;" alt=""></div>
 </div></div>
-<p xmlns:svg="http://www.w3.org/2000/svg">Case 1: 1, 3 and 4 have different colours.  Then there are \(k(k-1)(k-2)\) ways to colour vertices 1, 3, and 4, since they must all be different colours.  When we go to colour vertices 2 and 5, we see that they are each adjacent to two vertices known to have different colours, and so there are \(k-2\) ways to colour each of them.  Thus in total, Case 1 contains \(k(k-1)(k-2)^3\) colourings.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Case 2: 1 and 3 have the same colour. Then there are \(k\) ways to choose this colour, and \(k-1\) ways to choose a colour for vertex 2 (since 1 and 3 have the same colour), and \(k-1\) ways to choose a colour for vertex 4.  When we colour vertex 5, we know that 1 and 4 must have different colours, and so we have \(k-2\) ways to colour vertex 5.  Thus in total, Case 2 contains \(k(k-1)^2(k-2)\) colourings.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">By symmetry, we see that Case 3, where 1 and 4 have the same colour, is identical to Case 2.  Thus, putting the three cases together, we see that:</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">It becomes more difficult when we try to colour vertex 3.  It is adjacent to vertices 2 and 4, and so cannot be the same colour as either of these.  However, vertices 2 and 4 are not adjacent, and so we don't know whether they have the same colour or not.  If vertices 2 and 4, have the same colour there are \(k-1\) possibilities for vertex 3, while if vertices 2 and 4 have different colours, there are only \(k-2\) possibilties.  Thus, we must count how many possibilities are in each of these cases.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">If we want vertices 2 and 4 to have the same colour, we can first colour vertex 1 in \(k\) different ways, and then pick any of the remaining \(k-1\) colours for vertices 2 and 4.  Then, to complete this to a colouring of \(C_4\text{,}\) we have to colour \(v_3\text{,}\) which can be any of the \(k-1\) colours that aren't the colour \(v_2\) and \(v_4\) are coloured.  Thus, the case where \(v_2\) and \(v_4\) have the same colour has \(k(k-1)^2\) possibilities.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">If we want vertices 2 and 4 to have different colours, then we can first colour \(v_1\) any of \(k\) colours, colour \(v_2\) any of \(k-1\) colours.  Now, when we go to colour vertex 4 it can't be the same colour as vertex 1 since they are adjacent, and it can't be the same colour as vertex 2 by our supposition.  Vertices \(v_1\) and \(v_2\) have different colours, and so this leaves \(k-2\) possibilities for \(v_4\text{.}\)  Thus there are \(k(k-1)(k-2)\) possibilities to colour vertices 1, 2 and 4 so that 2 and 4 have different colours, and then there are \(k-2\) possibilities left for vertex 3, giving \(k(k-1)(k-2)^2\) ways to colour \(C_4\) so that vertices 2 and 4 have different colours.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Adding the two cases together, this gives:</p>
 <div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
 \begin{align*}
-P_{C_5}(k)\amp=k(k-1)(k-2)^3+2k(k-1)^2(k-2)\\
-\amp=k(k-1)(k-2)[(k-2)^2+2(k-1)]\\
-\amp=k(k-1)(k-2)(k^2-2k+2)
+P_{C_4}(k)\amp=k(k-1)^2+k(k-1)(k-2)^2\\
+\amp=k(k-1)[k-1+(k-2)^2]\\
+\amp=k(k-1)(k^2-3k+3)
 \end{align*}
 </div></article><span class="incontext"><a href="s_chromatic_polynomial_intro.html#example-36">in-context</a></span>
 </body>
