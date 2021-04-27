@@ -4,32 +4,28 @@
   <exercise><statement><p>
     Eleven football games are to be arranged among eight teams A to H as follows.</p>
 <me>
-  \begin{center}
-\begin{tabular}{l|l|l}
-A plays F,G,H \amp D plays C,E,G \amp F plays H \\
-B plays E,F,H \amp E plays G
-\end{tabular}
-\end{center}
+\begin{array}{l|l|l}
+A \text{ plays } F,G,H \amp D \text{ plays } C,E,G \amp F \text{ plays } H \\
+B \text{ plays } E,F,H \amp E \text{ plays }G \amp
+\end{array}
 </me>
 <p>If no team can play more than once a week, what is the minimum number of weeks needed to schedule all the games? Justify your answer.</p>
   </statement></exercise>
   <exercise><statement><p>
     Eight students A--H each have to choose two courses from a list of eight options 1--8. They choose as follows.</p>
     <me>
-\begin{center}
-\begin{tabular}{llll}
+\begin{array}{llll}
 A : 1,2\qquad \amp B : 2,6 \qquad \amp C : 3,5\qquad \amp D : 4,6 \\
 E : 5,7 \amp F : 7,8 \amp G : 5,8 \amp H : 3,8
-\end{tabular}
-\end{center}
+\end{array}
     </me>
 <p>You have to timetable the examinations in such a way that no student has to take two exams on the same day. What is the smallest number of days you need, and in how many ways can you fit the exams into these days? Describe one way.
   </p> </statement></exercise>
 
   <exercise><statement><p>Eight foods A to H are to be put in refrigerated compartments in a supermarket. Because of various regulations, some cannot share the same compartment with others, as indicated by crosses in the following table.</p>
 <me>
-\begin{center}
-\begin{tabular}{cccccccc}
+
+\begin{array}{cccccccc}
 A \amp \times \amp -- \amp -- \amp \times  \amp  \times  \amp -- \amp  \times  \\
 \amp B \amp  \times  \amp -- \amp -- \amp  \times  \amp -- \amp  \times  \\
 \amp \amp C \amp  \times  \amp -- \amp  \times  \amp  \times  \amp  \times  \\
@@ -38,8 +34,8 @@ A \amp \times \amp -- \amp -- \amp \times  \amp  \times  \amp -- \amp  \times  \
 \amp \amp \amp \amp \amp F \amp -- \amp -- \\
 \amp \amp \amp \amp \amp \amp G \amp  \times   \\
 \amp \amp \amp \amp \amp \amp \amp H
-\end{tabular}
-\end{center}
+\end{array}
+
 </me>
 <p>Determine the smallest number of compartments needed to display the foods and find a possible placing of the foods in the compartments.
 
@@ -71,6 +67,30 @@ A \amp \times \amp -- \amp -- \amp \times  \amp  \times  \amp -- \amp  \times  \
 
 
 	</statement>
+
+
+    
+    
     </exercise>
+    <exercise>
+    <statement><p>Find the chromatic polynomial of the following three graphs. You should use the chromatic polynomial of the four cycle as a given: <m>\chi_{C_4}(k)=k(k-1)(k^2-3k+3)</m></p>    
+<image source="images/ChromPolyProbA.png"/>
+<image source="images/ChromPolyProbB.png"/>
+<image source="images/ChromPolyProbC.png"/>
+
+
+</statement>
+    </exercise>
+    
+<exercise>
+<statement><p>Let <m>e</m> be any edge of <m>K_n</m>.  Derive the chromatic polynomial of <m>K_n\setminus e</m> by colouring 'vertex by vertex'.  Also find the chromatic polynomial of <m>K_n/e</m>, and then check that the deletion-contraction formula holds in this csae.</p>
+
+<p> Now let <m>f\neq e</m> be another edge of <m>K_n</m>.  What's the chromatic polynomial of <m>K_n\setminus\{e,f\}</m>?  Does it matter whether <m>e</m> and <m>f</m> share a vertex?</p>
+
+
+
+</statement>
+</exercise>
+    
 </exercises>
 

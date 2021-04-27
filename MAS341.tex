@@ -1,6 +1,6 @@
 %********************************************%
 %*       Generated from PreTeXt source      *%
-%*       on 2021-03-19T13:44:26Z       *%
+%*       on 2021-04-27T20:25:46Z       *%
 %*   A recent stable commit (2020-08-09):   *%
 %* 98f21740783f166a773df4dc83cab5293ab63a4a *%
 %*                                          *%
@@ -5150,12 +5150,10 @@ as was desired.%
 Eleven football games are to be arranged among eight teams A to H as follows.%
 %
 \begin{equation*}
-\begin{center}
-\begin{tabular}{l|l|l}
-A plays F,G,H \amp D plays C,E,G \amp F plays H \\
-B plays E,F,H \amp E plays G
-\end{tabular}
-\end{center}
+\begin{array}{l|l|l}
+A \text{ plays } F,G,H \amp D \text{ plays } C,E,G \amp F \text{ plays } H \\
+B \text{ plays } E,F,H \amp E \text{ plays }G \amp
+\end{array}
 \end{equation*}
 If no team can play more than once a week, what is the minimum number of weeks needed to schedule all the games? Justify your answer.%
 \end{divisionexercise}%
@@ -5163,12 +5161,10 @@ If no team can play more than once a week, what is the minimum number of weeks n
 Eight students A-{}-{}H each have to choose two courses from a list of eight options 1-{}-{}8. They choose as follows.%
 %
 \begin{equation*}
-\begin{center}
-\begin{tabular}{llll}
+\begin{array}{llll}
 A : 1,2\qquad \amp B : 2,6 \qquad \amp C : 3,5\qquad \amp D : 4,6 \\
 E : 5,7 \amp F : 7,8 \amp G : 5,8 \amp H : 3,8
-\end{tabular}
-\end{center}
+\end{array}
 \end{equation*}
 You have to timetable the examinations in such a way that no student has to take two exams on the same day. What is the smallest number of days you need, and in how many ways can you fit the exams into these days? Describe one way.%
 \end{divisionexercise}%
@@ -5176,8 +5172,7 @@ You have to timetable the examinations in such a way that no student has to take
 Eight foods A to H are to be put in refrigerated compartments in a supermarket. Because of various regulations, some cannot share the same compartment with others, as indicated by crosses in the following table.%
 %
 \begin{equation*}
-\begin{center}
-\begin{tabular}{cccccccc}
+\begin{array}{cccccccc}
 A \amp \times \amp -- \amp -- \amp \times  \amp  \times  \amp -- \amp  \times  \\
 \amp B \amp  \times  \amp -- \amp -- \amp  \times  \amp -- \amp  \times  \\
 \amp \amp C \amp  \times  \amp -- \amp  \times  \amp  \times  \amp  \times  \\
@@ -5186,8 +5181,7 @@ A \amp \times \amp -- \amp -- \amp \times  \amp  \times  \amp -- \amp  \times  \
 \amp \amp \amp \amp \amp F \amp -- \amp -- \\
 \amp \amp \amp \amp \amp \amp G \amp  \times   \\
 \amp \amp \amp \amp \amp \amp \amp H
-\end{tabular}
-\end{center}
+\end{array}
 \end{equation*}
 Determine the smallest number of compartments needed to display the foods and find a possible placing of the foods in the compartments.%
 \end{divisionexercise}%
@@ -5209,6 +5203,23 @@ For the graph \(\bfG\) shown below, find \(\chi(\bfG)\) and \(\chi^\prime(\bfG)\
 \tcblower
 \end{figureptx}%
 %
+\end{divisionexercise}%
+\begin{divisionexercise}{5}{}{}{g:exercise:idp248}%
+Find the chromatic polynomial of the following three graphs. You should use the chromatic polynomial of the four cycle as a given: \(\chi_{C_4}(k)=k(k-1)(k^2-3k+3)\)%
+\begin{image}{0}{1}{0}%
+\includegraphics[width=\linewidth]{images/ChromPolyProbA.png}
+\end{image}%
+\begin{image}{0}{1}{0}%
+\includegraphics[width=\linewidth]{images/ChromPolyProbB.png}
+\end{image}%
+\begin{image}{0}{1}{0}%
+\includegraphics[width=\linewidth]{images/ChromPolyProbC.png}
+\end{image}%
+\end{divisionexercise}%
+\begin{divisionexercise}{6}{}{}{g:exercise:idp249}%
+Let \(e\) be any edge of \(K_n\).  Derive the chromatic polynomial of \(K_n\setminus e\) by colouring 'vertex by vertex'.  Also find the chromatic polynomial of \(K_n/e\), and then check that the deletion-contraction formula holds in this csae.%
+\par
+Now let \(f\neq e\) be another edge of \(K_n\).  What's the chromatic polynomial of \(K_n\setminus\{e,f\}\)?  Does it matter whether \(e\) and \(f\) share a vertex?%
 \end{divisionexercise}%
 \end{exercises-section}
 \end{chapterptx}
