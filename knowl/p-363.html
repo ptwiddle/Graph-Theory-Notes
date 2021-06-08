@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T20:24:56Z       *-->
+<!--*       on 2021-06-08T08:32:02Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Another important point is that the problem of determining whether a given graph \(\bfG\) has a Hamiltonian cycle is a special case of the traveling salesman problem.  To see this, suppose we're given a graph \(\bfG\text{,}\) and we want to determine whether it is Hamiltonian.  We create a weighted \(K_n\text{,}\) with vertices the vertices of \(\bfG\) by giving the edge \(v-w\) a very small weight \(\epsilon\) if \(v\) and \(w\) <em class="emphasis">are</em> adjacent in \(\bfG\text{,}\) and a very large weight \(M\) if \(v\) and \(w\) *are not* adjacent in \(\bfG\text{.}\)  Then, any Hamiltonian path in \(\bfG\) would have cost \(n\epsilon\text{,}\) where as any path that uses an edge not in \(\bfG\) costs more than \(M\text{.}\)  So, if we make \(M&gt;n\epsilon\text{,}\) the TSP for our weighted \(K_n\) will have a solution with cost less than \(M\) if and only if \(\bfG\) had a Hamiltonian cycle.</p>
-<span class="incontext"><a href="s_graphalgorithms_traveling-salesperson.html#p-363">in-context</a></span>
+<p xmlns:svg="http://www.w3.org/2000/svg">Moreover, it is useful to actually know what the longest paths are -- to achieve this minimal time, each task in the longest path must be completed in the expected amount of time, and the next task in the path must be started immediately when the first one finishes.  For this reason, the longest paths are known as <em class="emphasis">critical paths</em>.</p>
+<span class="incontext"><a href="s_graphalgorithms_longest-paths.html#p-363">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T20:24:56Z       *-->
+<!--*       on 2021-06-08T08:32:02Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Consider running the Nearest Neighbor algorithm starting at \(v_0\text{.}\)  At the first step, we have a choice -- we could go to \(v_1\) or to \(v_9\text{.}\)  Suppose we go to \(v_1\text{.}\)  After that, our choice is forced -- \(v_1-v_2-v_3-v_4-v_5-v_6-v_7-v_8-v_9\) costs one at each step.  Now, we still have to visit \(T\) before returning to \(V_0\text{,}\) which will cost us 10 to detour through.  We clearly should have planned ahead and visited $$T$$ in between vertices \(v_4\) and \(v_5\) at a cost of 4.</p>
-<span class="incontext"><a href="s_graphalgorithms_traveling-salesperson.html#p-369">in-context</a></span>
+<p xmlns:svg="http://www.w3.org/2000/svg">Having topologically sorted the vertices, we find the longest path to each other vertex inductively, by ordering of their numbers.  Suppose that we have found the longest paths to each vertex with number lower than \(k\text{,}\) and we want to find the length of the longest path to vertex \(k\text{,}\) which we will call \(u\text{.}\)</p>
+<span class="incontext"><a href="s_graphalgorithms_longest-paths.html#p-369">in-context</a></span>
 </body>
 </html>

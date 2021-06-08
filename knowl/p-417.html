@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T20:24:57Z       *-->
+<!--*       on 2021-06-08T08:32:02Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,11 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">The solution will be to think about drawing the graphs on the sphere \(S^2\) instead of the plane.  First, let's see why this solves our problem.  On the plane, the inside of a circle is different from the outside of a circle -- the inside is bounded, but the outside is unbounded.  However, on the sphere, the two sides of a circle are equivalent -- you can deform any circle to be an equator, and then the northern hemisphere is equivalent to the southern hemisphere. This shows on there sphere, the inside and the outside aren't really different cases.</p>
-<span class="incontext"><a href="s_graphs_on_surfaces_planarity_algorithm.html#p-417">in-context</a></span>
+<p>Notice that in our discussion of Dijkstra's algorithm, we required that the edge weights be nonnegative. If the edge weights are lengths and meant to model distance, this makes perfect sense. However, in some cases, it might be reasonable to allow negative edge weights. For example, suppose that a positive weight means there is a cost to travel along the directed edge while a negative edge weight means that you make money for traveling along the directed edge. In this case, a directed path with positive total weight results in paying out to travel it, while one with negative total weight results in a profit.</p>
+<ol class="lower-alpha">
+<li><p xmlns:svg="http://www.w3.org/2000/svg">Give an example to show that Dijkstra's algorithm does not always find the path of minimum total weight when negative edge weights are allowed.</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">Bob and Xing are considering this situation, and Bob suggests that a little modification to the algorithm should solve the problem. He says that if there are negative weights, they just have to find the smallest (i.e., most negative weight) and add the absolute value of that weight to every directed edge. For example, if \(w(x,y)\geq -10\) for every directed edge \((x,y)\text{,}\) Bob is suggesting that they add \(10\) to every edge weight. Xing is skeptical, and for good reason. Give an example to show why Bob's modification won't work.</p></li>
+</ol>
+<span class="incontext"><a href="s_graphalgorithms_exercises.html#p-417">in-context</a></span>
 </body>
 </html>

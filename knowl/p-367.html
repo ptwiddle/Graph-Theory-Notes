@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T20:24:56Z       *-->
+<!--*       on 2021-06-08T08:32:02Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Since the TSP asks for the cheapeast Hamiltonian cycle, taking <em class="emphasis">any</em> Hamiltonian cycle and calculating its cost will be an upper bound for the TSP.  Just choosing a random Hamiltonian cycle will in general be very expensive and silly -- for instance, going from Sheffield to London to Rotherham to Edinburgh to Chesterfield to Glasgow to Nottingham to Brighton is clearly not optimal.</p>
-<span class="incontext"><a href="s_graphalgorithms_traveling-salesperson.html#p-367">in-context</a></span>
+<p xmlns:svg="http://www.w3.org/2000/svg">It turns out that this is the only obstacle, and as long as the graph is acyclic, it will have a compatible total ordering.  It is not too hard to prove this carefully using induction, and to turn the proof into a constructive algorithm into how to do it, and we invite you to do so.  However, in practice for small graphs it is usually not hard to find total orderings.  Start with a source (a vertex with no incoming edges, only outgoing edges), then continually look for vertices that only have incoming edges from vertices already on our list.</p>
+<span class="incontext"><a href="s_graphalgorithms_longest-paths.html#p-367">in-context</a></span>
 </body>
 </html>

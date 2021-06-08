@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T20:24:58Z       *-->
+<!--*       on 2021-06-08T08:32:03Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,5 +13,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p xmlns:svg="http://www.w3.org/2000/svg">Recall that the empty graph \(E_n\) has \(n\) vertices and no edges.  To compute \(P_{E_n}(k)\) we need to count the number of ways to colour the vertices with \(k\) colours.  But since \(E_n\) has no edges, we can colour each of the \(n\) vertices any of the \(k\) colours; the choices are completely independent.  So \(P_{E_n}(k)=k^n\)</p></article></body>
+<body><article class="example example-like"><p xmlns:svg="http://www.w3.org/2000/svg">Now, let's move on to \(K_5\text{.}\)  Again, looking at any vertex we see all the edges adjacent to that vertex must be different colours, and so we have \(\chi^\prime(K_5)\geq 4\text{.}\)   Let's try to colour the edges of \(K_5\) with 4 colours.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p xmlns:svg="http://www.w3.org/2000/svg" id="p-573">Suppose we coloured the four edges adjacent to the top vertex blue, green, red and purple, from left to right, and now look at the bottom edge.  It is adjacent to edges coloured green and red, and so must be blue or purple.  By symmetry, it's equivalent to colour it either colour, so let's suppose it's blue, giving us the following picture:</p></div>
+<div class="sbspanel" style="width:31.5789473684211%;justify-content:center;"><img src="images/K5EdgeColouring1.png" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p xmlns:svg="http://www.w3.org/2000/svg" id="p-574">Now the edge on the right is adjacent to edges coloured red, blue and purple, and so must be green.  But now we have a problem -- consider the edges labeled \(x\) and \(y\) in the next drawing:</p></div>
+<div class="sbspanel" style="width:31.5789473684211%;justify-content:center;"><img src="images/K5EdgeColouring2.png" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<p xmlns:svg="http://www.w3.org/2000/svg">Both edges share vertices with edges coloured green, blue, and purple, and hence each would need to be coloured red.  But they also share a vertex with each other, and so cannot both be coloured red.  So we see \(\chi^\prime(K_5)\geq 5\text{.}\)</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:2.5%;margin-right:2.5%;">
+<div class="sbspanel" style="width:63.1578947368421%;justify-content:center;"><p xmlns:svg="http://www.w3.org/2000/svg" id="p-576">On the other hand, it is easy to colour the edges of \(K_5\) with 5 colours:  colour each edge in the outside pentagon a different colour.  For each edge in the outside pentagon there will be a unique edge in the inside star that does meet that edge (the one "parallel" to it) -- draw that edge the same colour.  That results in the following colouring:</p></div>
+<div class="sbspanel" style="width:31.5789473684211%;justify-content:center;"><img src="images/K5EdgeColouring3.png" style="width: 100%; height: auto;" alt=""></div>
+</div></div></article></body>
 </html>

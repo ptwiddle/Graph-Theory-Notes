@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T20:24:54Z       *-->
+<!--*       on 2021-06-08T08:31:59Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -199,28 +199,28 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="s_chromatic_polynomial_more"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">5.4</span> <span class="title">Chromatic Polynomial continued</span>
 </h2>
-<section class="introduction" id="introduction-19"><p id="p-599">It may seem plausible that, if we consider enough cases, the case-by-case method of computing the chromatic polynomial would work for any graph, no matter how complicated.  Assuming this, it would follow that the chromatic polynomial \(P_\bfG(k)\) is in fact a polynomial.  However, plausibility does not make a proof.  In this section we complete the proof elegantly using induction, but first need to introduce the notion of deletion and contraction.</p></section><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
+<section class="introduction" id="introduction-19"><p id="p-624">It may seem plausible that, if we consider enough cases, the case-by-case method of computing the chromatic polynomial would work for any graph, no matter how complicated.  Assuming this, it would follow that the chromatic polynomial \(P_\bfG(k)\) is in fact a polynomial.  However, plausibility does not make a proof.  In this section we complete the proof elegantly using induction, but first need to introduce the notion of deletion and contraction.</p></section><section class="subsection" id="subsection-49"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.4.1</span> <span class="title">Deletion-Contraction</span>
 </h3>
 <article class="definition definition-like" id="definition-33"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.4.1</span><span class="period">.</span><span class="space"> </span><span class="title">Deletion.</span>
 </h6>
-<p id="p-600">Let \(\bfG\) be a graph, and let \(e\in\bfG\) be a graph.  Then we use \(\bfG\setminus e\) to denote the graph with the same vertex set as \(\bfG\text{,}\) and with all the same edges, except the edge \(e\) deleted.</p></article><article class="definition definition-like" id="def-contract"><h6 class="heading">
+<p id="p-625">Let \(\bfG\) be a graph, and let \(e\in\bfG\) be a graph.  Then we use \(\bfG\setminus e\) to denote the graph with the same vertex set as \(\bfG\text{,}\) and with all the same edges, except the edge \(e\) deleted.</p></article><article class="definition definition-like" id="def-contract"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.4.2</span><span class="period">.</span><span class="space"> </span><span class="title">Contraction.</span>
 </h6>
-<p id="p-601">Let \(\bfG\) be a simple graph, and let \(e\in \bfG\) be an edge between vertices \(v\) and \(w\text{.}\)  Then \(\bfG/e\text{,}\) the graph with \(e\) contracted.  More precisely, \(\bfG/e\) is the simple graph with vertices \(V(\bfG/e)=V(\bfG)\setminus \{v,w\}\cup {e}\text{.}\)  Two non-\(e\) vertices are adjacent in \(\bfG/e\) if and only if they were adjacent in \(\bfG\text{,}\) and a vertex \(y\) is adjacent to \(e\) in \(\bfG\) if and only if it was adjacent to \(v\) or \(w\) in \(\bfG\text{.}\)</p></article><p id="p-602">Formally, <a class="xref" data-knowl="./knowl/def-contract.html" title="Definition 5.4.2: Contraction">Definition 5.4.2</a> seems formidable, but intuitively it is not as bad as the definition looks: we are changing \(\bfG\) by making the whole edge \(e\) into one vertex.  This may create multiple edges if a vertex was adjacent to both \(v\) and \(w\text{,}\) and if so we simply remove any duplicate edges.</p>
+<p id="p-626">Let \(\bfG\) be a simple graph, and let \(e\in \bfG\) be an edge between vertices \(v\) and \(w\text{.}\)  Then \(\bfG/e\text{,}\) the graph with \(e\) contracted.  More precisely, \(\bfG/e\) is the simple graph with vertices \(V(\bfG/e)=V(\bfG)\setminus \{v,w\}\cup {e}\text{.}\)  Two non-\(e\) vertices are adjacent in \(\bfG/e\) if and only if they were adjacent in \(\bfG\text{,}\) and a vertex \(y\) is adjacent to \(e\) in \(\bfG\) if and only if it was adjacent to \(v\) or \(w\) in \(\bfG\text{.}\)</p></article><p id="p-627">Formally, <a class="xref" data-knowl="./knowl/def-contract.html" title="Definition 5.4.2: Contraction">Definition 5.4.2</a> seems formidable, but intuitively it is not as bad as the definition looks: we are changing \(\bfG\) by making the whole edge \(e\) into one vertex.  This may create multiple edges if a vertex was adjacent to both \(v\) and \(w\text{,}\) and if so we simply remove any duplicate edges.</p>
 <article class="lemma theorem-like" id="lem-deletion-contraction"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">5.4.3</span><span class="period">.</span><span class="space"> </span><span class="title">Deletion-Contraction.</span>
 </h6>
-<p id="p-603">Let \(\bfG\) be a simle graph, and let \(e\in \bfG\) be any edge.  Then we have:</p>
+<p id="p-628">Let \(\bfG\) be a simle graph, and let \(e\in \bfG\) be any edge.  Then we have:</p>
 <div class="displaymath">
 \begin{equation*}
 P_\bfG(k)=P_{\bfG\setminus e}(k)-P_{\bfG/e}(k)
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-32"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-32"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-32"><article class="hiddenproof"><p id="p-604">Since \(\bfG\) and \(\bfG\setminus e\) have the same vertex, it is not too difficult to compare their colourings.  Any valid colouring of \(\bfG\) will give a colouring of \(\bfG\setminus e\text{,}\) but not every colouring of \(\bfG\setminus e\) arises this way -- in \(\bfG\text{,}\) colourings require that \(v\) and \(w\text{,}\) the two endpoints of \(e\text{,}\) have different colours, but there is no such requirement for \(\bfG\setminus e\text{.}\)  So, we want to count the colourings of \(\bfG\setminus e\) where \(v,w\) have the same colour.  But these are just the colourings of \(\bfG/e\text{:}\) given a colouring of \(\bfG/e\)m we can get a colouring of \(\bfG\) by giving most vertices the same colour, and giving both \(v,w\) whatever colour \(e\) was.  By definition, we see that \(v\) and \(w\) will have the same colour in this colouring; and given any colouring of \(\bfG\setminus e\) where \(v,w\) have the same colour we can get a colouring of \(\bfG/e\) by colouring \(e\) the colour that \(v,w\) were.</p></article></div>
-<article class="example example-like" id="example-38"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-38"><h6 class="heading">
+</div></article><article class="hiddenproof" id="proof-32"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-32"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-32"><article class="hiddenproof"><p id="p-629">Since \(\bfG\) and \(\bfG\setminus e\) have the same vertex, it is not too difficult to compare their colourings.  Any valid colouring of \(\bfG\) will give a colouring of \(\bfG\setminus e\text{,}\) but not every colouring of \(\bfG\setminus e\) arises this way -- in \(\bfG\text{,}\) colourings require that \(v\) and \(w\text{,}\) the two endpoints of \(e\text{,}\) have different colours, but there is no such requirement for \(\bfG\setminus e\text{.}\)  So, we want to count the colourings of \(\bfG\setminus e\) where \(v,w\) have the same colour.  But these are just the colourings of \(\bfG/e\text{:}\) given a colouring of \(\bfG/e\)m we can get a colouring of \(\bfG\) by giving most vertices the same colour, and giving both \(v,w\) whatever colour \(e\) was.  By definition, we see that \(v\) and \(w\) will have the same colour in this colouring; and given any colouring of \(\bfG\setminus e\) where \(v,w\) have the same colour we can get a colouring of \(\bfG/e\) by colouring \(e\) the colour that \(v,w\) were.</p></article></div>
+<article class="example example-like" id="example-39"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-example-39"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">5.4.4</span><span class="period">.</span><span class="space"> </span><span class="title">Chromatic polynomial of \(C_4\text{,}\) again.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-38"><article class="example example-like"><p id="p-605">Let us compute \(P_{C_4}(k)\) a different way as an illustration of how deletion-contraction works.  No matter which edge of \(C_4\) we pick, \(C_4\setminus e\) will be the path graph \(P_4\text{,}\) which is a tree, and hence we know has chromatic polynomial \(k(k-1)^3\text{.}\)  Similarly, we have that \(C_4/e=C_3\text{,}\) and we know \(P_{C_3}(k)=k(k-1)(k-2)\text{.}\)  Hence we have:</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-example-39"><article class="example example-like"><p id="p-630">Let us compute \(P_{C_4}(k)\) a different way as an illustration of how deletion-contraction works.  No matter which edge of \(C_4\) we pick, \(C_4\setminus e\) will be the path graph \(P_4\text{,}\) which is a tree, and hence we know has chromatic polynomial \(k(k-1)^3\text{.}\)  Similarly, we have that \(C_4/e=C_3\text{,}\) and we know \(P_{C_3}(k)=k(k-1)(k-2)\text{.}\)  Hence we have:</p>
 <div class="displaymath">
 \begin{align*}
 P_{C_4}(k) \amp = P_{C_4\setminus e}(k)-P_{C_4/e}(k) \\
@@ -229,35 +229,35 @@ P_{C_4}(k) \amp = P_{C_4\setminus e}(k)-P_{C_4/e}(k) \\
 \amp = k(k-1)\left( (k-1)^2-(k-2)\right) = k(k-1)(k^2-3k3+3)
 \end{align*}
 </div></article></div>
-<p id="p-606">Since \(\bfG\setminus e\) and \(\bfG/e\) both have fewer edges than \(\bfG\text{,}\) it follows that we can repeatedly apply Deletion-Contraction to \(\bfG\) until we have no edges left at all, and hence that Deletion-Contraction can compute the chromatic polynomial of any graph.  In practice, this can be quite a complicated and formidable way to compute, but in the next section we show that this method can elegantly prove the chromatic polynomial is always a polynomial, and in some cases give nice formulas for this polynomial.</p></section><section class="subsection" id="subsection-51"><h3 class="heading hide-type">
+<p id="p-631">Since \(\bfG\setminus e\) and \(\bfG/e\) both have fewer edges than \(\bfG\text{,}\) it follows that we can repeatedly apply Deletion-Contraction to \(\bfG\) until we have no edges left at all, and hence that Deletion-Contraction can compute the chromatic polynomial of any graph.  In practice, this can be quite a complicated and formidable way to compute, but in the next section we show that this method can elegantly prove the chromatic polynomial is always a polynomial, and in some cases give nice formulas for this polynomial.</p></section><section class="subsection" id="subsection-50"><h3 class="heading hide-type">
 <span class="type">Subsection</span> <span class="codenumber">5.4.2</span> <span class="title">Chromatic polynomial is a polynomial</span>
 </h3>
-<p id="p-607">We first prove that the chromatic polynomial is actually a polynomial, but iterative use of deletion-contraction.</p>
+<p id="p-632">We first prove that the chromatic polynomial is actually a polynomial, but iterative use of deletion-contraction.</p>
 <article class="theorem theorem-like" id="theorem-17"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">5.4.5</span><span class="period">.</span>
 </h6>
-<p id="p-608">Let \(\bfG\) be a simple graph with \(n\) vertices and \(\) edges.  Then \(P_\bfG(k)\) is a polynomial of degree \(n\) in \(k\text{,}\) and moreover:</p>
+<p id="p-633">Let \(\bfG\) be a simple graph with \(n\) vertices and \(\) edges.  Then \(P_\bfG(k)\) is a polynomial of degree \(n\) in \(k\text{,}\) and moreover:</p>
 <div class="displaymath">
 \begin{equation*}
 P_\bfG(k)=k^n-mk^{n-1}+\text{lower order terms}
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-33"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-33"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-33"><article class="hiddenproof"><p id="p-609">The proof follows from induction on \(m\text{,}\) the number of edges, using deletion-contraction for the inductive step.</p>
-<p id="p-610">As a base case, we take \(m=0\text{.}\)  Then if \(\bfG\) has \(n\) vertices it must be the empty graph \(E_n\text{.}\)  We have seen that \(P_{E_n}(k)=k^n\text{,}\) which indeed has the correct form needed for the theorem.</p>
-<p id="p-611">Now, for the inductive step, we assume that for any graph \(H\) with \(\ell\lt m\) edges and \(n\) vertices, we have \(P_{H}(k)=k^n-\ell k^{n-1}+\text{lower order terms}\text{.}\)</p>
-<p id="p-612">Now let \(\bfG\) be any graph with \(m\) edges.  We can assume \(m\gt 0\text{,}\) as the case where \(m=0\) is the base case; this means that \(\bfG\) has at least one edge \(e\text{.}\)  We apply deletion-contraction to the edge \(e\text{.}\)</p>
-<p id="p-613">If we delete \(e\text{,}\) the resulting graph \(\bfG\setminus e\) still has \(n\) vertices, but it now has \(m-1\) edges.  Since this is less than \(m\text{,}\) we know by the inductive hypothesis that</p>
+</div></article><article class="hiddenproof" id="proof-33"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-33"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-33"><article class="hiddenproof"><p id="p-634">The proof follows from induction on \(m\text{,}\) the number of edges, using deletion-contraction for the inductive step.</p>
+<p id="p-635">As a base case, we take \(m=0\text{.}\)  Then if \(\bfG\) has \(n\) vertices it must be the empty graph \(E_n\text{.}\)  We have seen that \(P_{E_n}(k)=k^n\text{,}\) which indeed has the correct form needed for the theorem.</p>
+<p id="p-636">Now, for the inductive step, we assume that for any graph \(H\) with \(\ell\lt m\) edges and \(n\) vertices, we have \(P_{H}(k)=k^n-\ell k^{n-1}+\text{lower order terms}\text{.}\)</p>
+<p id="p-637">Now let \(\bfG\) be any graph with \(m\) edges.  We can assume \(m\gt 0\text{,}\) as the case where \(m=0\) is the base case; this means that \(\bfG\) has at least one edge \(e\text{.}\)  We apply deletion-contraction to the edge \(e\text{.}\)</p>
+<p id="p-638">If we delete \(e\text{,}\) the resulting graph \(\bfG\setminus e\) still has \(n\) vertices, but it now has \(m-1\) edges.  Since this is less than \(m\text{,}\) we know by the inductive hypothesis that</p>
 <div class="displaymath">
 \begin{equation*}
 P_{\bfG\setminus e}(k)=k^n-(m-1)k^{n-1}+\text{lower order terms}
 \end{equation*}
 </div>
-<p id="p-614">If we contract \(e\text{,}\) the resulting graph \(\bfG/e\) has \(n-1\) vertices, and we don't know exactly how many edges it has (contracting it may create multiple edges that need to be deleted), but it has at most \(m-1\) edges, and so by the inductive hypothesis we know that</p>
+<p id="p-639">If we contract \(e\text{,}\) the resulting graph \(\bfG/e\) has \(n-1\) vertices, and we don't know exactly how many edges it has (contracting it may create multiple edges that need to be deleted), but it has at most \(m-1\) edges, and so by the inductive hypothesis we know that</p>
 <div class="displaymath">
 \begin{equation*}
 P_{\bfG/e}(k)=k^{n-1}+\text{lower order terms}
 \end{equation*}
 </div>
-<p id="p-615">Thus, applying deletion-contraction we have:</p>
+<p id="p-640">Thus, applying deletion-contraction we have:</p>
 <div class="displaymath">
 \begin{align*}
 P_\bfG(k) \amp = P_{\bfG\setminus e}(k)-P_{\bfG/e}(k) \\
@@ -265,17 +265,17 @@ P_\bfG(k) \amp = P_{\bfG\setminus e}(k)-P_{\bfG/e}(k) \\
 \amp = k^n-mk^{n-1}+\text{lower order terms}
 \end{align*}
 </div>
-<p id="p-616">which is what we needed to show to finish the inductive step.</p></article></div>
-<p id="p-617">We end by showing that sometimes the inductive method of iteratively using deletion-contraction can compute explicit formulas for the chromatic polynomials of an infinite family of graphs.</p>
+<p id="p-641">which is what we needed to show to finish the inductive step.</p></article></div>
+<p id="p-642">We end by showing that sometimes the inductive method of iteratively using deletion-contraction can compute explicit formulas for the chromatic polynomials of an infinite family of graphs.</p>
 <article class="lemma theorem-like" id="lemma-15"><h6 class="heading">
 <span class="type">Lemma</span><span class="space"> </span><span class="codenumber">5.4.6</span><span class="period">.</span><span class="space"> </span><span class="title">Chromatic polynomial of \(C_n\).</span>
 </h6>
-<p id="p-618">Let \(C_n\) be the cycle graph on \(n\) vertices.  Then:</p>
+<p id="p-643">Let \(C_n\) be the cycle graph on \(n\) vertices.  Then:</p>
 <div class="displaymath">
 \begin{equation*}
 P_{C_n}(k) = (k-1)^n+(-1)^n(k-1)
 \end{equation*}
-</div></article><article class="hiddenproof" id="proof-34"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-34"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-34"><article class="hiddenproof"><p id="p-619">We will induct on \(n\text{.}\)  As a base case, when \(n=3\text{,}\) we have:</p>
+</div></article><article class="hiddenproof" id="proof-34"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-34"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-34"><article class="hiddenproof"><p id="p-644">We will induct on \(n\text{.}\)  As a base case, when \(n=3\text{,}\) we have:</p>
 <div class="displaymath">
 \begin{align*}
 (k-1)^3+(-1)^3(k-1)\amp =k^3-3k^2+3k-1-(k-1)\\
@@ -284,17 +284,17 @@ P_{C_n}(k) = (k-1)^n+(-1)^n(k-1)
 \amp=P_{C_3}(k)
 \end{align*}
 </div>
-<p id="p-620">For the inductive step, we assume that the proposition holds for \(n-1\) and want to prove that it holds for \(n\text{.}\)  We will compute \(P_{C_n}(k)\) by deletion-contraction.  If we delete any edge of \(C_n\text{,}\) we get the path graph \(P_n\text{,}\) and we know</p>
+<p id="p-645">For the inductive step, we assume that the proposition holds for \(n-1\) and want to prove that it holds for \(n\text{.}\)  We will compute \(P_{C_n}(k)\) by deletion-contraction.  If we delete any edge of \(C_n\text{,}\) we get the path graph \(P_n\text{,}\) and we know</p>
 <div class="displaymath">
 \begin{gather*}
 \end{gather*}
 </div>
-<p id="p-621">If we contract any edge of \(C_n\text{,}\) we get \(C_{n-1}\text{,}\) and we know by the inductive hypothesis that</p>
+<p id="p-646">If we contract any edge of \(C_n\text{,}\) we get \(C_{n-1}\text{,}\) and we know by the inductive hypothesis that</p>
 <div class="displaymath">
 \begin{gather*}
 \end{gather*}
 </div>
-<p id="p-622">Plugging these into deletion-contraction gives:</p>
+<p id="p-647">Plugging these into deletion-contraction gives:</p>
 <div class="displaymath">
 \begin{align*}
 P_{C_n}(k) \amp = P_{C_n \setminus e}(k)-P_{C_n/e}(k) \\
@@ -304,7 +304,7 @@ P_{C_n}(k) \amp = P_{C_n \setminus e}(k)-P_{C_n/e}(k) \\
 \amp = (k-1)^n+(-1)^n(k-1) 
 \end{align*}
 </div>
-<p id="p-623">as was desired.</p></article></div></section></section></div></main>
+<p id="p-648">as was desired.</p></article></div></section></section></div></main>
 </div>
 </body>
 </html>

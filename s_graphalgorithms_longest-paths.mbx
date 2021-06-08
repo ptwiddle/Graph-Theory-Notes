@@ -13,53 +13,99 @@
 
 <p>We will work out the construction of this graph in one example.  It is not always trivial to construct the directed graph from the table of jobs and dependencies.  It is not clear what the vertices should be, and sometimes dummy edges and vertices need to be encoded.  You do not need to worry about constructing these graphs in general, though if you're curious it can be interesting to think about.  Any exam question about this topic would supply you with the directed graph.</p>
 
-Example
-===
 
-Consider the following table, listing tasks $$A-H$$, the expected time of completion for each task, and the required tasks before a given task can be started.
-
+<subsubsection><title>Our running example</title>
+<p>Consider the following table, listing tasks <m>A-H</m>, the expected time of completion for each task, and the required tasks before a given task can be started.</p>
 <table>
-<tr>
-<td> Task </td> <td> Time </td> <td> Prerequisites </td> </tr>
-<tr> <td> A </td> <td> 6 </td> <td> </td> </tr>
-<tr> <td> B </td> <td> 7 </td> <td> </td> </tr>
-<tr> <td> C </td> <td> 4 </td> <td> A </td> </tr>
-<tr> <td> D </td> <td> 3 </td> <td> A </td> </tr>
-<tr> <td> E </td> <td> 4 </td> <td> B,D </td> </tr>
-<tr> <td> F </td> <td> 10 </td> <td> C </td> </tr>
-<tr> <td> G </td> <td> 3 </td> <td> C </td> </tr>
-<tr> <td> H </td> <td> 10 </td> <td> E,G </td> </tr>
+<title>Table showing the prerequisites for each task. </title>
+
+<tabular> 
+
+<row bottom="minor"> <cell>Task</cell> <cell> Time </cell> <cell> Prerequisites </cell> </row>
+
+<row> <cell> A </cell> <cell> 6 </cell> <cell> </cell> </row>
+<row> <cell> B </cell> <cell> 7 </cell> <cell> </cell> </row>
+<row> <cell> C </cell> <cell> 4 </cell> <cell> A </cell> </row>
+<row> <cell> D </cell> <cell> 3 </cell> <cell> A </cell> </row>
+<row> <cell> E </cell> <cell> 4 </cell> <cell> B,D </cell> </row>
+<row> <cell> F </cell> <cell> 10 </cell> <cell> C </cell> </row>
+<row> <cell> G </cell> <cell> 3 </cell> <cell> C </cell> </row>
+<row> <cell> H </cell> <cell> 10 </cell> <cell> E,G </cell> </row>
+</tabular>
 </table>
 
-Here is the corresponding graph encoding this information:
-<image src="../Slides/Pictures/tasks.png"></image>
+<p>Here is the corresponding graph encoding this information:</p>
+<image source="images/tasks.png" />
 
-Construction of the graph
-====
+<p>We outline how the graph above was constructed.  We make one vertex for the start, one vertex for the finish, and then another vertex for each set of dependencies, that is, the entries in the third column.  Then we draw an edge for each letter, beginning at the vertex corresponding to its set of prerequisites (or the start, if it has none), and ending at the vertex that contains it as a prerequisite (or the end, if no tasks require it as a prerequisite).</p>
 
-We outline how the graph above was constructed.  We make one vertex for the start, one vertex for the finish, and then another vertex for each set of dependencies, that is, the entries in the third column.  Then we draw an edge for each letter, beginning at the vertex corresponding to its set of prerequisites (or the start, if it has none), and ending at the vertex that contains it as a prerequisite (or the end, if no tasks require it as a prerequisite).
+<p>Note that this method works only if any two sets of prerequisites either have nontrivial intersection or are identical.  The tricky cases you don't have to worry about are when this isn't true.  </p>
+</subsubsection>
+<p>With that detour out of the way, we see why finding the longest path in a directed acyclic graph is useful: in case the edges are tasks and the weights are expected times, the length of the longest path is the minimal time the whole project would be able to be completed.</p>
 
-Note that this method works only if any two sets of prerequisites either have nontrivial intersection or are identical.  The tricky cases you don't have to worry about are when this isn't true.  
-
-Longest Paths
-----
-
-With that detour out of the way, we see why finding the longest path in a directed acyclic graph is useful: in case the edges are tasks and the weights are expected times, the length of the longest path is the minimal time the whole project would be able to be completed.
-
-Moreover, it is useful to actually know what the longest paths are -- to achieve this minimal time, each task in the longest path must be completed in the expected amount of time, and the next task in the path must be started immediately when the first one finishes.  For this reason, the longest paths are known as *critical paths*.  
+<p>Moreover, it is useful to actually know what the longest paths are -- to achieve this minimal time, each task in the longest path must be completed in the expected amount of time, and the next task in the path must be started immediately when the first one finishes.  For this reason, the longest paths are known as <em>critical paths</em>. </p> 
 
 
 </subsection>
 
-<subsection xml:id="subs_graphalgorithms_longest-path-acyclic-sort">
 
-
-
-</subsection>
 
 <subsection xml:id="subs_graphalgorithms_longest-path-algorithm">
+<title>Longest Path Algorithm</title>
+<p>We now describe an algorithm for finding the longest paths from a starting vertex <m>S</m> to all other vertices.  In some ways, it is similar to Dijkstra's algorithm, in that we will keep a list of "tentative longest paths found so far", and iteratively mark one of these to a vertex <m>v</m> as an actual longest path, and then update our list with potentially new longest paths by combining our longest path to <m>v</m> with the edges out of <m>v</m>.  The main difference is that the ordering this updating will happen will be chosen at the beginning -- any ordering of the vertices compatible with the directed graph structure will work.  These orderings are sometimes known as a "topological sort".   </p>
 
 
+
+<subsubsection><title>Topolgical sort</title>
+<p>The first step of the Longest Path Algortihm is to number/list the vertices of the graph so that all edges flow from a lower vertex to a higher vertex.  Such a listing is known as a "compatible total ordering" of the vertices, or a "topological sort" of the vertices. For such a list to exist, it is necessary for the graph to be acyclic.  Otherwise, we get a "what came first, the chicken or the egg?" type situation.  For instance, if we had a directed cycle <m>A\to B\to C\to A</m>, we couldn't choose any of <m>A, B,C</m> to put first, as each one has an error into it from the other vertices.</p>
+
+<p>In our running example graph, the vertices are already numbered in a way compatible with the edge structure, and so is already topologically sorted: <m>S,1,2,3,4,F</m> is an ordering satisfying the desired properties.</p>
+
+<p>It turns out that this is the only obstacle, and as long as the graph is acyclic, it will have a compatible total ordering.  It is not too hard to prove this carefully using induction, and to turn the proof into a constructive algorithm into how to do it, and we invite you to do so.  However, in practice for small graphs it is usually not hard to find total orderings.  Start with a source (a vertex with no incoming edges, only outgoing edges), then continually look for vertices that only have incoming edges from vertices already on our list.</p>
+
+<p>Finally, we should stress that the topological sort of the vertices is usually not unique.  For instance, in our running example, there is no edge between 2 and 3, so instead of <m>S,1,2,3,4,F</m> we could have ordered the vertices as <m>S,1,3,2,4,F</m>, and it also would have been a total ordering.  It won't matter which total ordering you choose -- the longest path algorithm will still work.  In practice applications a valid total ordering will often be 'obvious'.</p></subsubsection>
+
+
+<subsubsection><title>The Algorithm</title>
+<p>Having topologically sorted the vertices, we find the longest path to each other vertex inductively, by ordering of their numbers.  Suppose that we have found the longest paths to each vertex with number lower than <m>k</m>, and we want to find the length of the longest path to vertex <m>k</m>, which we will call <m>u</m>.</p>
+
+<p>  Let <m>e_i</m> be the edges that come into <m>u</m>, let <m>w(e_i)</m> be the lengths of these edges, and let <m>v_i</m> be the source vertex of <m>e_i</m>.  Since our edges go from lower numbered vertices to higher numbered vertices, all the <m>v_i</m> are labelled with numbers lower than <m>w</m> (i.e., lower than <m>k</m>), and hence by the inductive hypothesis we know the longest paths to <m>v_i</m>.   Let <m>\ell(v_i)</m> be the length of this longest path from <m>S</m> to <m>v_i</m>.</p>
+
+<p>Any path to <m>w</m> must pass through one of the <m>v_i</m>, and so the length of the longest path to <m>u</m> is the </p>
+
+<me>\ell(u)=\text{max}_i \big[\ell(v_i)+w(e_i)\big]</me>
+
+
+<p>Typically we will want to find the longest path in addition to just knowing its length, and an easy way to do this is to record the edges <m>e_i</m> that achieve the maximum.  Then we can find the long paths in reverse by starting from <m>F</m> and going to any recorded vertex.</p>
+
+<example>
+
+<p>We illustrate the longest path algorithm with our example graph.  Our start vertex is <m>S</m>, and so <m>\ell(S)=0</m>.</p>
+
+<p>Vertex 1 has only one incoming edge: <m>A</m>, with weight 6, and so <m>\ell(1)=6+\ell(S)=6</m>.</p>
+
+<p>Vertex 2 has two incoming edges: <m>B</m> and <m>D</m>, and so we see that <m>\ell(2)</m> is the maximum of <m>w(D)+\ell(1)=3+6=9</m>, and <m>w(B)+\ell(S)=7+0=7</m>, and so <m>\ell(2)=9</m>. </p> 
+
+<p>Vertex 3 has just one incoming edge: <m>C</m>, and so <m>\ell(3)=w(C)+\ell(1)=4+6=10</m>.  </p>
+
+<p>Vertex 4 has two incoming edges: <m>G</m> and <m>E</m>, and so <m>\ell(4)</m> is the maximum of <m>w(G)+\ell(3)=3+10=13</m> and <m>w(E)+\ell(2)=4+9=13</m>.  Thus, the maximum is achieved in two different ways, and we see that there are two paths of length 13 from <m>S</m> to <m>4</m> -- <m>S-1-3-4</m> and <m>S-1-2-4</m>. </p> 
+
+<p>Finally, vertex <m>F</m> has two incoming edges, <m>F</m> and <m>H</m>, and so <m>\ell(F)</m> is the maximum of <m>w(F)+\ell(3)=10+10=20</m> and <m>w(H)+\ell(4)=10+13=23</m>.  There are two paths that achieve this maximum -- <m>A-C-G-H</m> and <m>A-D-E-H</m>.  </p>
+</example>
+
+</subsubsection>
+<subsubsection><title>Critical path analysis</title>
+
+<p>Apart from knowing the minimum time for completion of the project, finding the longest paths is useful for analysing where to put resources.  In particular, which tasks, if they run slightly over, would make the whole project run late?  Which tasks, if they were able to finish slightly early, would make the whole project finish early?</p>
+
+<p>To make the whole project run later, we need to increase the length of the longest path, which means we to increase the length of *any* long path.  Thus, the edges that would make the whole project run over are those contained in *any* longest path -- in our graph, these are edges <m>A,C,D,E, G</m> and <m>H</m>.  </p>
+
+<p>To make the whole project finish early, we need to decrease the length of *every* longest path, and so these are the edges that are included in *every* longest path. In our graph, these are edges <m>A</m> and <m>H</m>.</p>
+
+<p>These ideas can be developed further, to list for each task the earliest possible starting time, and the latest starting time that is possible while still finishing the whole project in the minimum amount of time.</p>
+
+
+</subsubsection>
 </subsection>
 
 

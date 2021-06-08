@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T20:24:57Z       *-->
+<!--*       on 2021-06-08T08:32:02Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,6 +13,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p xmlns:svg="http://www.w3.org/2000/svg">The graph \(\bfG_1\) in <a class="xref" data-knowl="./knowl/fig-K33-subs.html" title="Figure 4.3.1">Figure 4.3.1</a> is \(K_{3,3}\) with a vertex and two edges added to it; put another way, \(K_{3,3}\) is a subgraph of \(\bfG_1\text{.}\)  If we could draw \(\bfG_1\) in the plane, we could just ignore this extra vertex and these two edges, and we'd have a drawing of \(K_{3,3}\) in the plane, but we know \(K_{3,3}\) isn't planar.  So to avoid contradictions we are forced to conclude that \(\bfG_1\) isn't planar.</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">The graph \(\bfG_2\) looks just like \(K_{3,3}\text{,}\) but we have added an extra vertex of degree two in the middle of one of the edges.  Note that \(K_{3,3}\) is <em class="emphasis">not</em> a subgraph of \(\bfG_2\text{,}\) and so we need to use slightly different reasoning than we did for showing \(\bfG\) isn't planar.  But drawing \(\bfG_2\) is just like drawing \(K_{3,3}\) and then adding an extra dot for the new vertex of degree two.  If we could draw \(\bfG_2\) in the plane, we could just skip adding this extra dot, and we'd have a drawing of \(K_{3,3}\) in the plane.  Again, since we know \(K_{3,3}\) isn't planar, we see that \(\bfG_2\) isn't planar, either.</p></article></body>
+<body><article class="example example-like"><p xmlns:svg="http://www.w3.org/2000/svg">Let's use the planarity algorithm for Hamiltonian graphs to find a planar drawing of the graph shown in the next figure.</p>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-60.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.11<span class="period">.</span></span><span class="space"> </span>A graph \(H\)</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">We see that \(H\) is Hamiltonian and take as our Hamiltonian cycle the path around the outside, namely \(abcxyza\text{.}\)  There are then six edges not contained in the Hamiltonian cycle, and we find that Cross(\(H, abcxyz\)) is as follows:</p>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-61.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.12<span class="period">.</span></span><span class="space"> </span>The graph Cross(\(H, abcxyza)\)</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">For instance, in \(H\) the edge \(ax\) crosses the three edges \(cy, cz\) and \(bz\text{,}\) and so in Cross(\(H, abcxyza\)), the vertex \(ax\) is adjacent to these vertices.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">The graph Cross(\(H, abcxyza)\) has no odd cycles and hence is bipartite -- for instance, we may color \(ax, bx\) and \(ay\) red, and the other three vertices blue.  Then, to draw \(H\) in the plane without edges crossing, we draw the red edges inside the cycle, and the blue edges outside the cycle:</p>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-62.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.13<span class="period">.</span></span><span class="space"> </span>The graph \(H\) drawn without edges crossing</figcaption></figure></article></body>
 </html>

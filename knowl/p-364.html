@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T20:24:56Z       *-->
+<!--*       on 2021-06-08T08:32:02Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,7 +15,7 @@
 </head>
 <body>
 <h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading"><span class="type">Paragraph</span></h6>
-<p xmlns:svg="http://www.w3.org/2000/svg">Since determining whether a graph \(\bfG\) is Hamiltonian is difficult (NP complete), the TSP will also be.  As such, we will not discuss any algorithms for actually solving TSP.  Instead, we will discuss methods for giving upper and lower bounds for the TSP.</p>
-<span class="incontext"><a href="s_graphalgorithms_traveling-salesperson.html#p-364">in-context</a></span>
+<p xmlns:svg="http://www.w3.org/2000/svg">We now describe an algorithm for finding the longest paths from a starting vertex \(S\) to all other vertices.  In some ways, it is similar to Dijkstra's algorithm, in that we will keep a list of "tentative longest paths found so far", and iteratively mark one of these to a vertex \(v\) as an actual longest path, and then update our list with potentially new longest paths by combining our longest path to \(v\) with the edges out of \(v\text{.}\)  The main difference is that the ordering this updating will happen will be chosen at the beginning -- any ordering of the vertices compatible with the directed graph structure will work.  These orderings are sometimes known as a "topological sort".</p>
+<span class="incontext"><a href="s_graphalgorithms_longest-paths.html#p-364">in-context</a></span>
 </body>
 </html>

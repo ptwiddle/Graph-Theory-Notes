@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-04-27T20:24:57Z       *-->
+<!--*       on 2021-06-08T08:32:02Z       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -13,10 +13,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 </head>
-<body><article class="example example-like"><p xmlns:svg="http://www.w3.org/2000/svg">Let's apply the planarity algorithm to the complete graph \(K_5\text{.}\)  Let's label the vertices 1-5, and take our Hamiltonian cycle \(C\) to be 123451, which we've drawn as the outside pentagon in the following figure: <figure class="figure figure-like"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-57.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.7<span class="period">.</span></span><span class="space"> </span>The graph (\(K_5\))</figcaption></figure> Since \(K_5\) has \(\binom{5}{2}=10\) vertices, there are 5 edges that aren't used in \(C\text{,}\) namely 13,14, 24,25, and 35.  So Cross(\(K_5, 123451\)) will consist of these five vertices.  We see that 13 will be adjacent to 24 and 25, since these edges would cross if drawn inside, but 13 is not adjacent to 14 or 35, since these edges would cross 13 if drawn on the same side of the circle, as illustrated in the next figure</p>
-<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-58.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.8<span class="period">.</span></span><span class="space"> </span>The edges 13 does and does not cross</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">Similar consideration with the other edges show that Cross(\(K_5, 123451\)) is the following graph, which is isomorphic to a five cycle:</p>
-<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/image-59.svg" role="img" style="width: 100%; height: auto;" alt=""></div>
-<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.2.9<span class="period">.</span></span><span class="space"> </span>The graph Cross(\(K_5, 123451\))</figcaption></figure><p xmlns:svg="http://www.w3.org/2000/svg">In particular, Cross(\(K_5, 123451\)) is not bipartite.  Hence, by the planarity algorithm for Hamiltonian graphs, we see that \(K_5\) is not planar.</p></article></body>
+<body><article class="example example-like"><p xmlns:svg="http://www.w3.org/2000/svg">We illustrate the longest path algorithm with our example graph.  Our start vertex is \(S\text{,}\) and so \(\ell(S)=0\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Vertex 1 has only one incoming edge: \(A\text{,}\) with weight 6, and so \(\ell(1)=6+\ell(S)=6\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Vertex 2 has two incoming edges: \(B\) and \(D\text{,}\) and so we see that \(\ell(2)\) is the maximum of \(w(D)+\ell(1)=3+6=9\text{,}\) and \(w(B)+\ell(S)=7+0=7\text{,}\) and so \(\ell(2)=9\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Vertex 3 has just one incoming edge: \(C\text{,}\) and so \(\ell(3)=w(C)+\ell(1)=4+6=10\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Vertex 4 has two incoming edges: \(G\) and \(E\text{,}\) and so \(\ell(4)\) is the maximum of \(w(G)+\ell(3)=3+10=13\) and \(w(E)+\ell(2)=4+9=13\text{.}\)  Thus, the maximum is achieved in two different ways, and we see that there are two paths of length 13 from \(S\) to \(4\) -- \(S-1-3-4\) and \(S-1-2-4\text{.}\)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Finally, vertex \(F\) has two incoming edges, \(F\) and \(H\text{,}\) and so \(\ell(F)\) is the maximum of \(w(F)+\ell(3)=10+10=20\) and \(w(H)+\ell(4)=10+13=23\text{.}\)  There are two paths that achieve this maximum -- \(A-C-G-H\) and \(A-D-E-H\text{.}\)</p></article></body>
 </html>
